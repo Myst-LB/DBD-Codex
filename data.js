@@ -2513,7 +2513,7 @@ const BUILDS = [
     "strategy": "Bond shows nearby teammates. Quick Gambit shows all teammates + gen boost while healthy in chase. Empathy shows injured allies anywhere. Combine for total team awareness at all times."
   },
   {
-    "name": "Barding / 1234 Combo",
+    "name": "Bardic / 1234 Combo",
     "perks": "Bardic Inspiration + 1 2 3 4 + Autodidact",
     "strategy": "Use both instrument perks at match start (if safe). Both buff skill check frequency/value. Autodidact then converts those extra skill checks into massive heal progress. High-risk, high-reward niche combo."
   }

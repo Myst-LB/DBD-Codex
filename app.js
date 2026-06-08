@@ -41,7 +41,7 @@
   navBtns.forEach(btn => btn.addEventListener("click", () => showSection(btn.dataset.section)));
 
   const hash = window.location.hash.replace("#", "") || "perks";
-  showSection(["perks","builds","killers","survivors","value","about"].includes(hash) ? hash : "perks", false);
+  showSection(["perks","builds","killers","survivors","value","theory","about"].includes(hash) ? hash : "perks", false);
 
   // ── Tooltip ─────────────────────────────────────────────────────────────────
   const tooltip = document.getElementById("perk-tooltip");
@@ -598,6 +598,299 @@
   });
 
   renderValueIndex();
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // THEORYCRAFT SECTION
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  const theorySlots   = [null, null, null, null]; // each: perk object or null
+  const theorySlotRoles = [0, 0, 0, 0];           // index into SLOT_ROLES
+  const SLOT_ROLES = ["No Role", "Early Game", "Core", "Support", "Flex"];
+
+  const theorySlotEls  = document.querySelectorAll(".theory-slot");
+  const theorySynBox   = document.getElementById("theory-synergies");
+  const theorySynList  = document.getElementById("theory-synergy-list");
+  const theoryGrid     = document.getElementById("theory-perk-grid");
+  const theorySearch   = document.getElementById("theory-search");
+  const theoryCatSel   = document.getElementById("theory-category");
+  const theoryCharSel  = document.getElementById("theory-character");
+  const theoryAnalysis = document.getElementById("theory-analysis");
+  const theoryClearBtn = document.getElementById("theory-clear");
+
+  // Strategy → category sets
+  const STRATEGY_CATS = {
+    stealth:  new Set(["Stealth","Stealth/Chase","Stealth/Healing","Stealth/Team","Chase/Stealth","Information/Stealth","Boon/Stealth"]),
+    healing:  new Set(["Healing","Healing/Chest","Healing/Stealth","Healing/Utility","Boon/Healing","Chase/Healing","Chest/Healing","Altruism","Altruism/BP","Passive Heal"]),
+    gen:      new Set(["Generator","Generator/Team","Generator/Totem","Item/Generator","Information/Gen","Chest/Generator","Trap/Gen","Skill Checks"]),
+    tunnel:   new Set(["Anti-Tunnel","Anti-Slug","Anti-Slug/Endurance","Anti-Slug/Mobility","Boon/Anti-Slug","Endurance"]),
+    chase:    new Set(["Chase","Chase/Exhaustion","Chase/Flashlight","Chase/Healing","Chase/Information","Chase/Stealth","Chase/Stun","Chase/Team","Exhaustion","Exhaustion Recovery","Exhaustion/Support","Trap/Chase","General Speed"]),
+    endgame:  new Set(["End-Game","End-Game/Selfish"]),
+    info:     new Set(["Information","Information/Chase","Information/Gen","Information/Rescue","Information/Risk","Information/Stealth","Hook/Information","Boon/Information","Chest/Information","Distraction/Info","Chase/Information"]),
+    team:     new Set(["Rescue","Rescue/Mobility","Rescue/Wiggle","Hook Support","Team","Team Support","Team Utility","Chase/Team","Altruism","Altruism/BP"]),
+  };
+  const STRATEGY_NAMES = {
+    stealth: "Stealth", healing: "Healing / Sustain", gen: "Gen Rush",
+    tunnel: "Anti-Tunnel", chase: "Chase", endgame: "End-Game",
+    info: "Information", team: "Team / Rescue",
+  };
+  const STRATEGY_DESCS = {
+    stealth:  "Stay off the killer's radar. Move quietly, avoid detection during repairs and rescues.",
+    healing:  "Invest in recovery. Keep yourself and teammates healthy to outlast killer pressure.",
+    gen:      "Push generators fast. Complete objectives quickly and force the killer to spread thin.",
+    tunnel:   "Deny the killer easy repeat hooks. Protect against being singled out and stay in longer.",
+    chase:    "Built for the loop. Buy time for your team through stamina and superior chase mechanics.",
+    endgame:  "Activates when the gates are powered. Hold on and escape in the final push.",
+    info:     "See everything. Use information advantages to track the killer and coordinate rescues.",
+    team:     "Carry your team. Rescue efficiently, take hits for others, and make up for bad plays.",
+  };
+
+  // Populate category + character dropdowns
+  const theoryCats  = [...new Set(PERKS.map(p => p.category).filter(Boolean))].sort();
+  const theoryChars = [...new Set(PERKS.map(p => p.character).filter(Boolean))].sort();
+  theoryCats.forEach(c  => theoryCatSel.insertAdjacentHTML("beforeend",  `<option value="${esc(c)}">${esc(c)}</option>`));
+  theoryChars.forEach(c => theoryCharSel.insertAdjacentHTML("beforeend", `<option value="${esc(c)}">${esc(c)}</option>`));
+
+  let theoryTierFilter = "all";
+  let theoryStratFilter = "all";
+
+  document.querySelectorAll("[data-theory-tier]").forEach(chip => {
+    chip.addEventListener("click", () => {
+      theoryTierFilter = chip.dataset.theoryTier;
+      document.querySelectorAll("[data-theory-tier]").forEach(c => c.classList.remove("active"));
+      chip.classList.add("active");
+      renderTheoryGrid();
+    });
+  });
+
+  document.querySelectorAll("[data-strategy]").forEach(chip => {
+    chip.addEventListener("click", () => {
+      theoryStratFilter = chip.dataset.strategy;
+      document.querySelectorAll("[data-strategy]").forEach(c => c.classList.remove("active"));
+      chip.classList.add("active");
+      renderTheoryGrid();
+    });
+  });
+
+  theorySearch.addEventListener("input",  renderTheoryGrid);
+  theoryCatSel.addEventListener("change", renderTheoryGrid);
+  theoryCharSel.addEventListener("change",renderTheoryGrid);
+
+  theoryClearBtn.addEventListener("click", () => {
+    theorySlots.fill(null);
+    theorySlotRoles.fill(0);
+    renderSlots();
+    renderSynergySuggestions();
+    renderBuildAnalysis();
+    renderTheoryGrid();
+    theoryClearBtn.style.display = "none";
+  });
+
+  // ── Slot management ─────────────────────────────────────────────────────────
+  function addPerkToSlot(perk) {
+    if (theorySlots.some(s => s && s.id === perk.id)) return;
+    const empty = theorySlots.indexOf(null);
+    if (empty === -1) return;
+    theorySlots[empty] = perk;
+    renderSlots();
+    renderSynergySuggestions();
+    renderBuildAnalysis();
+    renderTheoryGrid();
+    theoryClearBtn.style.display = "";
+  }
+
+  function removePerkFromSlot(i) {
+    theorySlots[i] = null;
+    renderSlots();
+    renderSynergySuggestions();
+    renderBuildAnalysis();
+    renderTheoryGrid();
+    if (!theorySlots.some(Boolean)) theoryClearBtn.style.display = "none";
+  }
+
+  function renderSlots() {
+    theorySlotEls.forEach((el, i) => {
+      const p = theorySlots[i];
+      if (p) {
+        const roleIdx  = theorySlotRoles[i];
+        const roleName = SLOT_ROLES[roleIdx];
+        const roleClass = roleName !== "No Role" ? " slot-role-set" : "";
+        el.className = "theory-slot filled";
+        el.innerHTML = `
+          <button class="slot-role-btn${roleClass}" data-slot="${i}" title="Click to change role">${esc(roleName === "No Role" ? "Set Role" : roleName)}</button>
+          <span class="slot-perk-name">${esc(p.name)}</span>
+          <span class="slot-perk-char">${esc(p.character || "Base game")}</span>
+          <span class="tier-badge ${tierBadgeClass(p.tier)} slot-tier-badge" style="font-size:0.6rem">${esc(p.tier)}</span>
+          <button class="slot-remove" data-slot="${i}" title="Remove">✕</button>`;
+      } else {
+        el.className = "theory-slot empty";
+        el.innerHTML = `<span class="slot-label">Perk ${i + 1}</span><span class="slot-hint">_ empty</span>`;
+      }
+    });
+  }
+
+  document.getElementById("theory-slots").addEventListener("click", e => {
+    const roleBtn  = e.target.closest(".slot-role-btn");
+    if (roleBtn) {
+      const idx = parseInt(roleBtn.dataset.slot);
+      theorySlotRoles[idx] = (theorySlotRoles[idx] + 1) % SLOT_ROLES.length;
+      renderSlots();
+      return;
+    }
+    const removeBtn = e.target.closest(".slot-remove");
+    if (removeBtn) { removePerkFromSlot(parseInt(removeBtn.dataset.slot)); return; }
+    const slot = e.target.closest(".theory-slot.filled");
+    if (slot) navigateToPerk(theorySlots[parseInt(slot.dataset.slot)].id);
+  });
+
+  // ── Build analysis ─────────────────────────────────────────────────────────
+  function renderBuildAnalysis() {
+    const filled = theorySlots.filter(Boolean);
+    if (filled.length < 2) { theoryAnalysis.style.display = "none"; return; }
+
+    const scores = {};
+    for (const [strat, cats] of Object.entries(STRATEGY_CATS)) {
+      scores[strat] = filled.filter(p => cats.has(p.category)).length;
+    }
+    const ranked = Object.entries(scores).filter(([, v]) => v > 0).sort((a, b) => b[1] - a[1]);
+    if (!ranked.length) { theoryAnalysis.style.display = "none"; return; }
+
+    const [topStrat, topCount] = ranked[0];
+    const secondary = ranked.slice(1, 3).filter(([, v]) => v > 0)
+      .map(([s]) => STRATEGY_NAMES[s]).join(" + ");
+    const secondaryLine = secondary ? `<span class="analysis-secondary">Secondary: ${secondary}</span>` : "";
+
+    const bars = ranked.slice(0, 4).map(([s, v]) => `
+      <div class="analysis-bar-row">
+        <span class="analysis-bar-label">${STRATEGY_NAMES[s] || s}</span>
+        <div class="analysis-bar-track"><div class="analysis-bar-fill" style="width:${Math.round((v / filled.length) * 100)}%"></div></div>
+        <span class="analysis-bar-count">${v}/${filled.length}</span>
+      </div>`).join("");
+
+    theoryAnalysis.style.display = "";
+    theoryAnalysis.innerHTML = `
+      <div class="analysis-header">
+        <span class="analysis-badge">${esc(STRATEGY_NAMES[topStrat] || topStrat)}</span>
+        ${secondaryLine}
+      </div>
+      <p class="analysis-desc">${STRATEGY_DESCS[topStrat] || ""}</p>
+      <div class="analysis-bars">${bars}</div>`;
+  }
+
+  // ── Synergy suggestions ─────────────────────────────────────────────────────
+  function renderSynergySuggestions() {
+    const filled = theorySlots.filter(Boolean);
+    if (!filled.length) { theorySynBox.style.display = "none"; return; }
+
+    const suggestCounts = {};
+    const inBuild = new Set(filled.map(p => p.name.toLowerCase()));
+    filled.forEach(p => {
+      if (!p.synergy) return;
+      p.synergy.split(",").forEach(part => {
+        const raw = part.match(/^([^(]+)/)?.[1]?.trim().toLowerCase();
+        if (!raw || inBuild.has(raw)) return;
+        const candidate = PERK_BY_NAME[raw];
+        if (candidate) suggestCounts[candidate.id] = (suggestCounts[candidate.id] || 0) + 1;
+      });
+    });
+
+    const suggestions = Object.entries(suggestCounts)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 20)
+      .map(([id, count]) => ({ perk: PERK_BY_ID[parseInt(id)], count }))
+      .filter(s => s.perk);
+
+    if (!suggestions.length) { theorySynBox.style.display = "none"; return; }
+
+    theorySynBox.style.display = "";
+    theorySynList.innerHTML = suggestions.map(({ perk, count }) => `
+      <button class="theory-suggestion" data-perk-id="${perk.id}">
+        <span class="tier-badge ${tierBadgeClass(perk.tier)}" style="font-size:0.6rem">${esc(perk.tier)}</span>
+        <span>${esc(perk.name)}</span>
+        <span class="sug-count">×${count}</span>
+      </button>`).join("");
+  }
+
+  theorySynList.addEventListener("click", e => {
+    const btn = e.target.closest(".theory-suggestion");
+    if (!btn) return;
+    const perk = PERK_BY_ID[parseInt(btn.dataset.perkId)];
+    if (!perk) return;
+    if (theorySlots.includes(null)) addPerkToSlot(perk);
+    else navigateToPerk(perk.id);
+  });
+
+  // ── Perk picker grid ─────────────────────────────────────────────────────────
+  function getSuggestionIds() {
+    const filled = theorySlots.filter(Boolean);
+    const ids = new Set();
+    filled.forEach(p => {
+      if (!p.synergy) return;
+      p.synergy.split(",").forEach(part => {
+        const raw = part.match(/^([^(]+)/)?.[1]?.trim().toLowerCase();
+        const c = raw && PERK_BY_NAME[raw];
+        if (c) ids.add(c.id);
+      });
+    });
+    return ids;
+  }
+
+  function renderTheoryGrid() {
+    const q    = theorySearch.value.toLowerCase().trim();
+    const cat  = theoryCatSel.value;
+    const char = theoryCharSel.value;
+    const sugIds = getSuggestionIds();
+    const inBuildIds = new Set(theorySlots.filter(Boolean).map(p => p.id));
+    const stratCats = theoryStratFilter !== "all" ? STRATEGY_CATS[theoryStratFilter] : null;
+
+    let filtered = PERKS.filter(p => {
+      if (theoryTierFilter !== "all" && p.tier !== theoryTierFilter) return false;
+      if (stratCats && !stratCats.has(p.category)) return false;
+      if (cat  && p.category  !== cat)  return false;
+      if (char && p.character !== char) return false;
+      if (q && !p.name.toLowerCase().includes(q) &&
+               !p.character.toLowerCase().includes(q) &&
+               !(p.description||"").toLowerCase().includes(q)) return false;
+      return true;
+    });
+
+    const tierOrder = { "Excellent": 0, "Very Good": 1, "Decent": 2, "Weak/Niche": 3, "Terrible": 4 };
+    filtered.sort((a, b) => {
+      const aSug = sugIds.has(a.id) ? 0 : 1;
+      const bSug = sugIds.has(b.id) ? 0 : 1;
+      if (aSug !== bSug) return aSug - bSug;
+      return (tierOrder[a.tier] ?? 5) - (tierOrder[b.tier] ?? 5) || a.name.localeCompare(b.name);
+    });
+
+    if (!filtered.length) {
+      theoryGrid.innerHTML = `<div class="empty-state" style="grid-column:1/-1"><span class="empty-icon">🕯️</span><h3>No perks match</h3></div>`;
+      return;
+    }
+
+    theoryGrid.innerHTML = filtered.map(p => {
+      const inBuild = inBuildIds.has(p.id);
+      const isSug   = sugIds.has(p.id) && !inBuild;
+      return `
+        <div class="theory-perk-item${inBuild ? " in-build" : ""}${isSug ? " is-suggestion" : ""}"
+             data-perk-id="${p.id}" title="${esc(p.description || "")}">
+          <span class="tpi-name">${esc(p.name)}</span>
+          <div class="tpi-meta">
+            <span class="tier-badge ${tierBadgeClass(p.tier)}" style="font-size:0.6rem;padding:0.1rem 0.3rem">${esc(p.tier)}</span>
+            <span class="tpi-char">${esc(p.character || "Base game")}</span>
+          </div>
+        </div>`;
+    }).join("");
+  }
+
+  theoryGrid.addEventListener("click", e => {
+    const item = e.target.closest(".theory-perk-item");
+    if (!item || item.classList.contains("in-build")) return;
+    const perk = PERK_BY_ID[parseInt(item.dataset.perkId)];
+    if (perk) addPerkToSlot(perk);
+  });
+
+  renderTheoryGrid();
+
+  // ── Allow "theory" as a valid hash section ───────────────────────────────────
 
   // ═══════════════════════════════════════════════════════════════════════════
   // ABOUT SECTION
