@@ -2514,7 +2514,7 @@ const BUILDS = [
   },
   {
     "name": "Barding / 1234 Combo",
-    "perks": "Barding Inspiration + 1 2 3 4 + Autodidact",
+    "perks": "Bardic Inspiration + 1 2 3 4 + Autodidact",
     "strategy": "Use both instrument perks at match start (if safe). Both buff skill check frequency/value. Autodidact then converts those extra skill checks into massive heal progress. High-risk, high-reward niche combo."
   }
 ];
