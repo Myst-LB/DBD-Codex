@@ -1003,7 +1003,7 @@ body {
   filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
 }
 .podium-rank {
-  font-family: var(--font-horror);
+  font-family: var(--font-body);
   font-size: 3rem;
   line-height: 1;
   margin-bottom: 0.2rem;
@@ -1019,7 +1019,7 @@ body {
   margin-bottom: 0.3rem;
 }
 .podium-score {
-  font-family: var(--font-horror);
+  font-family: var(--font-body);
   font-size: 2rem;
   color: var(--accent);
   line-height: 1.1;
@@ -1084,7 +1084,7 @@ body {
   gap: 0.6rem;
 }
 .char-rank {
-  font-family: var(--font-horror);
+  font-family: var(--font-body);
   font-size: 1.4rem;
   color: var(--text-muted);
   min-width: 2.2rem;
