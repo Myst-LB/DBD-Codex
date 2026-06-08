@@ -28,6 +28,18 @@
       .replace(/>/g, "&gt;").replace(/"/g, "&quot;");
   }
 
+  function perkIconUrl(name) {
+    const pascal = name.replace(/[^A-Za-z0-9 ]/g, "")
+                       .split(" ").filter(Boolean)
+                       .map(w => w[0].toUpperCase() + w.slice(1))
+                       .join("");
+    return `./images/perks/iconPerks_${pascal}.png`;
+  }
+
+  function perkIconHtml(name, cls = "perk-icon") {
+    return `<img src="${perkIconUrl(name)}" alt="" class="${cls}" loading="lazy" onerror="this.style.display='none'">`;
+  }
+
   // ── Navigation ──────────────────────────────────────────────────────────────
   const navBtns  = document.querySelectorAll(".nav-btn");
   const sections = document.querySelectorAll(".content-section");
@@ -269,8 +281,11 @@
     return `
       <article class="perk-card" id="perk-${p.id}">
         <div class="perk-card-header">
-          <span class="perk-name">${esc(p.name)}</span>
-          <span class="tier-badge ${tierBadgeClass(p.tier)}">${esc(p.tier)}</span>
+          ${perkIconHtml(p.name, "perk-card-icon")}
+          <div class="perk-card-header-text">
+            <span class="perk-name">${esc(p.name)}</span>
+            <span class="tier-badge ${tierBadgeClass(p.tier)}">${esc(p.tier)}</span>
+          </div>
         </div>
         <div class="perk-meta">
           ${characterHtml}
@@ -414,11 +429,30 @@
     survivorsContainer.innerHTML = filtered.map(survivorCard).join("");
   }
 
+  // Build lookup: survivor name (lowercase) → array of perk objects
+  const SURV_PERKS_MAP = {};
+  PERKS.forEach(p => {
+    if (!p.character || p.character.toLowerCase().includes("base game")) return;
+    const key = p.character.toLowerCase();
+    if (!SURV_PERKS_MAP[key]) SURV_PERKS_MAP[key] = [];
+    SURV_PERKS_MAP[key].push(p);
+  });
+
   function survivorCard(s) {
     const noiseClass  = (s.noise || "").toLowerCase().includes("loud") ? "loud" : "quiet";
-    const sizeClass   = (s.modelSize || "").toLowerCase().split(" ")[0]; // "large", "medium", "small"
+    const sizeClass   = (s.modelSize || "").toLowerCase().split(" ")[0];
     const statusClass = (s.status || "").toLowerCase();
-    const perksList   = (s.perks || []).filter(Boolean).join(" · ");
+
+    const charPerks = SURV_PERKS_MAP[s.name.toLowerCase()] || [];
+    const perkMinis = charPerks.map(p => `
+        <button class="surv-perk-mini synergy-link" data-perk-id="${p.id}" title="${esc(p.description || "")}">
+          ${perkIconHtml(p.name, "surv-perk-icon")}
+          <span class="surv-perk-info">
+            <span class="surv-perk-name">${esc(p.name)}</span>
+            <span class="tier-badge ${tierBadgeClass(p.tier)}" style="font-size:0.55rem">${esc(p.tier)}</span>
+          </span>
+        </button>`).join("");
+
     return `
       <article class="survivor-card" id="survivor-${s.rank}">
         <div class="survivor-card-header">
@@ -431,7 +465,7 @@
           ${s.noise     ? `<span class="survivor-tag ${noiseClass}">${esc(s.noise)}</span>` : ""}
         </div>
         ${s.notes ? `<p class="survivor-notes">${esc(s.notes)}</p>` : ""}
-        ${perksList ? `<div class="survivor-perks">Perks: ${esc(perksList)}</div>` : ""}
+        ${perkMinis ? `<div class="surv-perk-list">${perkMinis}</div>` : ""}
         ${s.price ? `<div class="survivor-price">${esc(s.price)}</div>` : ""}
       </article>`;
   }
@@ -717,6 +751,7 @@
         el.className = "theory-slot filled";
         el.innerHTML = `
           <button class="slot-role-btn${roleClass}" data-slot="${i}" title="Click to change role">${esc(roleName === "No Role" ? "Set Role" : roleName)}</button>
+          ${perkIconHtml(p.name, "slot-perk-icon")}
           <span class="slot-perk-name">${esc(p.name)}</span>
           <span class="slot-perk-char">${esc(p.character || "Base game")}</span>
           <span class="tier-badge ${tierBadgeClass(p.tier)} slot-tier-badge" style="font-size:0.6rem">${esc(p.tier)}</span>
@@ -872,6 +907,7 @@
       return `
         <div class="theory-perk-item${inBuild ? " in-build" : ""}${isSug ? " is-suggestion" : ""}"
              data-perk-id="${p.id}" title="${esc(p.description || "")}">
+          ${perkIconHtml(p.name, "tpi-icon")}
           <span class="tpi-name">${esc(p.name)}</span>
           <div class="tpi-meta">
             <span class="tier-badge ${tierBadgeClass(p.tier)}" style="font-size:0.6rem;padding:0.1rem 0.3rem">${esc(p.tier)}</span>
