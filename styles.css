@@ -424,6 +424,12 @@ body {
   text-shadow: 0 0 10px rgba(212,175,55,0.3);
 }
 
+.build-sep {
+  color: var(--text-muted);
+  font-weight: 400;
+  margin: 0 0.1rem;
+}
+
 .build-perks {
   font-family: var(--font-ui);
   font-size: 0.78rem;
@@ -432,6 +438,7 @@ body {
   border: 1px solid rgba(106,171,122,0.2);
   border-radius: 4px;
   padding: 0.4rem 0.7rem;
+  flex-wrap: wrap;
   margin-bottom: 0.75rem;
 }
 

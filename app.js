@@ -141,6 +141,21 @@
     }).join(", ");
   }
 
+  // ── Build perk list HTML (splits on " + " then falls back to comma) ─────────
+  function buildPerksHtml(perks) {
+    if (!perks) return "";
+    const parts = perks.split(/\s*\+\s*|\s*,\s*/);
+    return parts.map((part, i) => {
+      const rawName = part.match(/^([^(]+)/)?.[1]?.trim() ?? part;
+      const perk    = PERK_BY_NAME[rawName.toLowerCase()];
+      const sep     = i < parts.length - 1 ? ' <span class="build-sep">+</span> ' : "";
+      if (perk) {
+        return `<button class="synergy-link" data-perk-id="${perk.id}">${esc(perk.name)}</button>${sep}`;
+      }
+      return `<span>${esc(rawName)}</span>${sep}`;
+    }).join("");
+  }
+
   // ── Character link builder ───────────────────────────────────────────────────
   function buildCharacterHtml(character) {
     if (!character) return "";
@@ -278,7 +293,7 @@
   document.getElementById("builds-container").innerHTML = BUILDS.map(b => `
     <article class="build-card">
       <h3 class="build-name">${esc(b.name)}</h3>
-      <div class="build-perks">🔮 ${buildSynergyHtml(b.perks)}</div>
+      <div class="build-perks">🔮 ${buildPerksHtml(b.perks)}</div>
       <p class="build-strategy">${esc(b.strategy)}</p>
     </article>`).join("");
 
