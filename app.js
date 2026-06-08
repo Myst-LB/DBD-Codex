@@ -336,7 +336,7 @@
         <div class="tier-group">
           <h2 class="tier-group-header" style="color:${color}">
             <span class="tier-badge ${tierBadgeClass(tier)}">${esc(tier)}</span>
-            <span>(${perks.length})</span>
+            <span class="tier-count">(${perks.length})</span>
           </h2>
           <div class="perk-grid">${perks.map(perkCard).join("")}</div>
         </div>`;
