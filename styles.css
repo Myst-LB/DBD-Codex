@@ -640,10 +640,11 @@ body {
   padding: 0.3rem 0.5rem;
   cursor: pointer;
   text-align: left;
-  transition: border-color 0.15s, background 0.15s;
+  transition: background 0.15s, border-color 0.15s;
   flex: 1 1 0;
   min-width: 0;
 }
+.surv-perk-mini:hover { background: rgba(193,18,31,0.07); border-color: var(--accent) !important; }
 @media (max-width: 480px) {
   .surv-perk-mini { flex: none; width: 100%; }
 }

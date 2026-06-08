@@ -111,7 +111,7 @@ const PERKS = [
     "category": "Generator",
     "description": "Shows 3 closest gens + 6% repair speed on them. Spreads gens apart as you complete them. Final gen always highlighted.",
     "synergy": "Fast Track, Toolboxes, Prove Thyself",
-    "synergyCount": 14
+    "synergyCount": 13
   },
   {
     "id": 12,
@@ -174,16 +174,6 @@ const PERKS = [
     "synergyCount": 3
   },
   {
-    "id": 18,
-    "tier": "Very Good",
-    "name": "Poise",
-    "character": "Jane Romero",
-    "category": "Information/Stealth",
-    "description": "Touch a gen: see killer aura 8 s. Gen complete: no scratch marks 30 s. Great passive info perk.",
-    "synergy": "Dark Sense, Deja Vu, Adrenaline",
-    "synergyCount": 4
-  },
-  {
     "id": 19,
     "tier": "Very Good",
     "name": "Vigil",
@@ -231,7 +221,7 @@ const PERKS = [
     "category": "End-Game",
     "description": "At gates powered: instantly heal one health state + 5% speed burst. Insanely strong in end-game; can save a dead chase.",
     "synergy": "Poise, Prove Thyself, No One Left Behind",
-    "synergyCount": 5
+    "synergyCount": 4
   },
   {
     "id": 24,
@@ -351,7 +341,7 @@ const PERKS = [
     "category": "Information",
     "description": "See killer aura briefly when a gen is completed. Passive; good combo with Poise for consistent killer info throughout match.",
     "synergy": "Poise, Deja Vu",
-    "synergyCount": 3
+    "synergyCount": 2
   },
   {
     "id": 36,
@@ -741,7 +731,7 @@ const PERKS = [
     "category": "Chest",
     "description": "Search a chest a second time (4 tokens). On its own awful; shines in chest builds with Moment of Glory, Pharmacy, Specialist.",
     "synergy": "Moment of Glory, Pharmacy, Specialist",
-    "synergyCount": 8
+    "synergyCount": 7
   },
   {
     "id": 75,
@@ -947,7 +937,7 @@ const PERKS = [
     "id": 95,
     "tier": "Weak/Niche",
     "name": "Come and Get Me",
-    "character": "Base game (all)",
+    "character": "Rick Grimes",
     "category": "Distraction/Info",
     "description": "After unhooking: activate to scream + reveal your aura to killer + make nearby injured allies stealthy. Pairs with We See You.",
     "synergy": "We See You, Object of Obsession",
@@ -997,7 +987,7 @@ const PERKS = [
     "id": 100,
     "tier": "Weak/Niche",
     "name": "Diversion",
-    "character": "Jake Park",
+    "character": "Adam Francis",
     "category": "Distraction",
     "description": "Throw a pebble to create a noise event and distraction at a location. Creative utility; hard to land consistently.",
     "synergy": "Quick & Quiet, Red Herring",
@@ -1117,7 +1107,7 @@ const PERKS = [
     "id": 112,
     "tier": "Weak/Niche",
     "name": "Lightfooted",
-    "character": "Base game (all)",
+    "character": "Ellen Ripley",
     "category": "Stealth",
     "description": "Remove footstep sounds. Disables when injured or on cooldown after rush actions. Only advanced players can exploit this.",
     "synergy": "Iron Will, Fixated",
@@ -1197,11 +1187,11 @@ const PERKS = [
     "id": 120,
     "tier": "Weak/Niche",
     "name": "Plunderer's Instinct",
-    "character": "Kate Denson",
+    "character": "Base game (all)",
     "category": "Chest",
     "description": "See all chest auras from long distance + higher rarity items from chests. Reveals basement indirectly. Marginal benefit.",
     "synergy": "Appraisal, Pharmacy, Suitwise",
-    "synergyCount": 2
+    "synergyCount": 1
   },
   {
     "id": 121,
@@ -1394,16 +1384,6 @@ const PERKS = [
     "synergyCount": 0
   },
   {
-    "id": 140,
-    "tier": "Weak/Niche",
-    "name": "Suitwise",
-    "character": "Aestri Yazar & Baermar Uraz",
-    "category": "Chest/Information",
-    "description": "See killer aura 8 s when any item is depleted. Items from chests have extra charges. Creatively trigger with easy-to-deplete items.",
-    "synergy": "Appraisal, Plunderer's Instinct",
-    "synergyCount": 1
-  },
-  {
     "id": 141,
     "tier": "Weak/Niche",
     "name": "Teamwork: Power of Two",
@@ -1477,7 +1457,7 @@ const PERKS = [
     "id": 148,
     "tier": "Weak/Niche",
     "name": "Wake Up",
-    "character": "Base game (all)",
+    "character": "Quentin Smith",
     "category": "End-Game",
     "description": "50% faster gate opening + reveals gate auras to all when powered. Counters Remember Me partially; useless vs No Way Out.",
     "synergy": "No One Left Behind, Hope, Adrenaline",
@@ -1607,7 +1587,7 @@ const PERKS = [
     "id": 161,
     "tier": "Terrible",
     "name": "Lucky Star",
-    "character": "Rick Grimes",
+    "character": "Ellen Ripley",
     "category": "Utility",
     "description": "After being healed to healthy: see aura of generator the healer was last on, briefly. Nearly zero practical value.",
     "synergy": "None recommended",
@@ -1692,6 +1672,26 @@ const PERKS = [
     "description": "Get a token per chest search (max 6) → hit a great skill check on a gen to spend all for big progress. Only useful in chest builds.",
     "synergy": "Appraisal, Moment of Glory",
     "synergyCount": 2
+  },
+  {
+    "id": 170,
+    "tier": "Weak/Niche",
+    "name": "Teamwork: Toughen Up",
+    "character": "Rick Grimes",
+    "category": "Stealth/Team",
+    "description": "While injured, whenever another Survivor within 24 m blinds or Pallet-stuns the Killer, for 30 s: you make no Grunts of Pain, leave no Pools of Blood, and leave no Scratch Marks. Very situational — requires a teammate to land a stun/blind while you are already injured.",
+    "synergy": "",
+    "synergyCount": 0
+  },
+  {
+    "id": 171,
+    "tier": "Decent",
+    "name": "Teamwork: Soft-Spoken",
+    "character": "Eleven",
+    "category": "Generator/Team",
+    "description": "For each other Survivor repairing a Generator with you, the range of Generator repair noises is 25% smaller. While repairing with at least 1 other Survivor, you repair 5% faster. Minor but consistent passive bonus on co-op gens.",
+    "synergy": "",
+    "synergyCount": 0
   }
 ];
 
@@ -2556,10 +2556,10 @@ const CHAR_VALUE = [
     "name": "Base game (all)",
     "status": "Free",
     "price": "",
-    "perkCount": 15,
-    "tierScore": 35,
-    "synergyScore": 38,
-    "totalScore": 73,
+    "perkCount": 13,
+    "tierScore": 33,
+    "synergyScore": 33,
+    "totalScore": 66,
     "bestPerk": "Slippery Meat",
     "bestTier": "Excellent",
     "perks": [
@@ -2576,7 +2576,7 @@ const CHAR_VALUE = [
         "name": "Deja Vu",
         "tier": "Very Good",
         "tierScore": 4,
-        "synergyCount": 14,
+        "synergyCount": 13,
         "category": "Generator"
       },
       {
@@ -2585,14 +2585,6 @@ const CHAR_VALUE = [
         "tier": "Very Good",
         "tierScore": 4,
         "synergyCount": 2,
-        "category": "Information"
-      },
-      {
-        "id": 35,
-        "name": "Dark Sense",
-        "tier": "Decent",
-        "tierScore": 3,
-        "synergyCount": 3,
         "category": "Information"
       },
       {
@@ -2612,6 +2604,14 @@ const CHAR_VALUE = [
         "category": "General Speed"
       },
       {
+        "id": 35,
+        "name": "Dark Sense",
+        "tier": "Decent",
+        "tierScore": 3,
+        "synergyCount": 2,
+        "category": "Information"
+      },
+      {
         "id": 48,
         "name": "Hope",
         "tier": "Decent",
@@ -2626,14 +2626,6 @@ const CHAR_VALUE = [
         "tierScore": 3,
         "synergyCount": 2,
         "category": "Healing"
-      },
-      {
-        "id": 95,
-        "name": "Come and Get Me",
-        "tier": "Weak/Niche",
-        "tierScore": 1,
-        "synergyCount": 2,
-        "category": "Distraction/Info"
       },
       {
         "id": 113,
@@ -2652,20 +2644,12 @@ const CHAR_VALUE = [
         "category": "Totem"
       },
       {
-        "id": 148,
-        "name": "Wake Up",
+        "id": 120,
+        "name": "Plunderer's Instinct",
         "tier": "Weak/Niche",
         "tierScore": 1,
-        "synergyCount": 2,
-        "category": "End-Game"
-      },
-      {
-        "id": 112,
-        "name": "Lightfooted",
-        "tier": "Weak/Niche",
-        "tierScore": 1,
-        "synergyCount": 0,
-        "category": "Stealth"
+        "synergyCount": 1,
+        "category": "Chest"
       },
       {
         "id": 123,
@@ -2685,44 +2669,6 @@ const CHAR_VALUE = [
       }
     ],
     "rank": 1
-  },
-  {
-    "name": "Meg Thomas",
-    "status": "Free",
-    "price": "Base game",
-    "perkCount": 3,
-    "tierScore": 9,
-    "synergyScore": 22,
-    "totalScore": 31,
-    "bestPerk": "Sprint Burst",
-    "bestTier": "Excellent",
-    "perks": [
-      {
-        "id": 6,
-        "name": "Sprint Burst",
-        "tier": "Excellent",
-        "tierScore": 5,
-        "synergyCount": 9,
-        "category": "Exhaustion"
-      },
-      {
-        "id": 23,
-        "name": "Adrenaline",
-        "tier": "Decent",
-        "tierScore": 3,
-        "synergyCount": 5,
-        "category": "End-Game"
-      },
-      {
-        "id": 124,
-        "name": "Quick & Quiet",
-        "tier": "Weak/Niche",
-        "tierScore": 1,
-        "synergyCount": 8,
-        "category": "Stealth"
-      }
-    ],
-    "rank": 2
   },
   {
     "name": "Claudette Morel",
@@ -2760,53 +2706,45 @@ const CHAR_VALUE = [
         "category": "Healing"
       }
     ],
-    "rank": 3
+    "rank": 2
   },
   {
-    "name": "Jane Romero",
-    "status": "Paid",
-    "price": "~500 AC / ~$5",
-    "perkCount": 4,
-    "tierScore": 11,
-    "synergyScore": 15,
-    "totalScore": 26,
-    "bestPerk": "Poise",
-    "bestTier": "Very Good",
+    "name": "Meg Thomas",
+    "status": "Free",
+    "price": "Base game",
+    "perkCount": 3,
+    "tierScore": 9,
+    "synergyScore": 21,
+    "totalScore": 30,
+    "bestPerk": "Sprint Burst",
+    "bestTier": "Excellent",
     "perks": [
       {
-        "id": 18,
-        "name": "Poise",
-        "tier": "Very Good",
-        "tierScore": 4,
+        "id": 6,
+        "name": "Sprint Burst",
+        "tier": "Excellent",
+        "tierScore": 5,
+        "synergyCount": 9,
+        "category": "Exhaustion"
+      },
+      {
+        "id": 23,
+        "name": "Adrenaline",
+        "tier": "Decent",
+        "tierScore": 3,
         "synergyCount": 4,
-        "category": "Information/Stealth"
+        "category": "End-Game"
       },
       {
-        "id": 65,
-        "name": "Solidarity",
-        "tier": "Decent",
-        "tierScore": 3,
-        "synergyCount": 6,
-        "category": "Healing"
-      },
-      {
-        "id": 47,
-        "name": "Head On",
-        "tier": "Decent",
-        "tierScore": 3,
-        "synergyCount": 5,
-        "category": "Chase/Stun"
-      },
-      {
-        "id": 121,
-        "name": "Poised",
+        "id": 124,
+        "name": "Quick & Quiet",
         "tier": "Weak/Niche",
         "tierScore": 1,
-        "synergyCount": 0,
+        "synergyCount": 8,
         "category": "Stealth"
       }
     ],
-    "rank": 4
+    "rank": 3
   },
   {
     "name": "Jill Valentine",
@@ -2844,16 +2782,16 @@ const CHAR_VALUE = [
         "category": "Trap/Gen"
       }
     ],
-    "rank": 5
+    "rank": 4
   },
   {
     "name": "Jake Park",
     "status": "Free",
     "price": "Base game",
-    "perkCount": 4,
-    "tierScore": 8,
+    "perkCount": 3,
+    "tierScore": 7,
     "synergyScore": 14,
-    "totalScore": 22,
+    "totalScore": 21,
     "bestPerk": "Iron Will",
     "bestTier": "Decent",
     "perks": [
@@ -2880,17 +2818,9 @@ const CHAR_VALUE = [
         "tierScore": 1,
         "synergyCount": 2,
         "category": "Stealth"
-      },
-      {
-        "id": 100,
-        "name": "Diversion",
-        "tier": "Weak/Niche",
-        "tierScore": 1,
-        "synergyCount": 0,
-        "category": "Distraction"
       }
     ],
-    "rank": 6
+    "rank": 5
   },
   {
     "name": "Steve Harrington",
@@ -2928,7 +2858,7 @@ const CHAR_VALUE = [
         "category": "Hook Support"
       }
     ],
-    "rank": 7
+    "rank": 6
   },
   {
     "name": "Feng Min",
@@ -2966,7 +2896,7 @@ const CHAR_VALUE = [
         "category": "Generator"
       }
     ],
-    "rank": 8
+    "rank": 7
   },
   {
     "name": "Dwight Fairfield",
@@ -3004,41 +2934,79 @@ const CHAR_VALUE = [
         "category": "Team Utility"
       }
     ],
-    "rank": 9
+    "rank": 8
   },
   {
-    "name": "Elodie Rakoto",
+    "name": "Quentin Smith",
     "status": "Paid",
     "price": "~500 AC / ~$5",
     "perkCount": 3,
-    "tierScore": 5,
-    "synergyScore": 13,
+    "tierScore": 6,
+    "synergyScore": 12,
     "totalScore": 18,
-    "bestPerk": "Power Struggle",
-    "bestTier": "Decent",
+    "bestPerk": "Vigil",
+    "bestTier": "Very Good",
     "perks": [
       {
-        "id": 57,
-        "name": "Power Struggle",
-        "tier": "Decent",
-        "tierScore": 3,
-        "synergyCount": 3,
-        "category": "Anti-Pickup"
+        "id": 19,
+        "name": "Vigil",
+        "tier": "Very Good",
+        "tierScore": 4,
+        "synergyCount": 6,
+        "category": "Exhaustion Recovery"
       },
       {
-        "id": 74,
-        "name": "Appraisal",
+        "id": 119,
+        "name": "Pharmacy",
         "tier": "Weak/Niche",
         "tierScore": 1,
-        "synergyCount": 8,
-        "category": "Chest"
+        "synergyCount": 4,
+        "category": "Chest/Healing"
       },
       {
-        "id": 97,
-        "name": "Deception",
+        "id": 148,
+        "name": "Wake Up",
         "tier": "Weak/Niche",
         "tierScore": 1,
         "synergyCount": 2,
+        "category": "End-Game"
+      }
+    ],
+    "rank": 9
+  },
+  {
+    "name": "Jane Romero",
+    "status": "Paid",
+    "price": "~500 AC / ~$5",
+    "perkCount": 3,
+    "tierScore": 7,
+    "synergyScore": 11,
+    "totalScore": 18,
+    "bestPerk": "Solidarity",
+    "bestTier": "Decent",
+    "perks": [
+      {
+        "id": 65,
+        "name": "Solidarity",
+        "tier": "Decent",
+        "tierScore": 3,
+        "synergyCount": 6,
+        "category": "Healing"
+      },
+      {
+        "id": 47,
+        "name": "Head On",
+        "tier": "Decent",
+        "tierScore": 3,
+        "synergyCount": 5,
+        "category": "Chase/Stun"
+      },
+      {
+        "id": 121,
+        "name": "Poised",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "synergyCount": 0,
         "category": "Stealth"
       }
     ],
@@ -3083,47 +3051,39 @@ const CHAR_VALUE = [
     "rank": 11
   },
   {
-    "name": "Kate Denson",
+    "name": "Elodie Rakoto",
     "status": "Paid",
     "price": "~500 AC / ~$5",
-    "perkCount": 4,
-    "tierScore": 7,
-    "synergyScore": 10,
+    "perkCount": 3,
+    "tierScore": 5,
+    "synergyScore": 12,
     "totalScore": 17,
-    "bestPerk": "Windows of Opportunity",
-    "bestTier": "Very Good",
+    "bestPerk": "Power Struggle",
+    "bestTier": "Decent",
     "perks": [
       {
-        "id": 21,
-        "name": "Windows of Opportunity",
-        "tier": "Very Good",
-        "tierScore": 4,
-        "synergyCount": 7,
-        "category": "Chase"
+        "id": 57,
+        "name": "Power Struggle",
+        "tier": "Decent",
+        "tierScore": 3,
+        "synergyCount": 3,
+        "category": "Anti-Pickup"
       },
       {
-        "id": 120,
-        "name": "Plunderer's Instinct",
+        "id": 74,
+        "name": "Appraisal",
         "tier": "Weak/Niche",
         "tierScore": 1,
-        "synergyCount": 2,
+        "synergyCount": 7,
         "category": "Chest"
       },
       {
-        "id": 96,
-        "name": "Dance With Me",
+        "id": 97,
+        "name": "Deception",
         "tier": "Weak/Niche",
         "tierScore": 1,
-        "synergyCount": 1,
-        "category": "Stealth/Chase"
-      },
-      {
-        "id": 84,
-        "name": "Boil Over",
-        "tier": "Weak/Niche",
-        "tierScore": 1,
-        "synergyCount": 0,
-        "category": "Wiggle"
+        "synergyCount": 2,
+        "category": "Stealth"
       }
     ],
     "rank": 12
@@ -3205,36 +3165,6 @@ const CHAR_VALUE = [
     "rank": 14
   },
   {
-    "name": "Quentin Smith",
-    "status": "Paid",
-    "price": "~500 AC / ~$5",
-    "perkCount": 2,
-    "tierScore": 5,
-    "synergyScore": 10,
-    "totalScore": 15,
-    "bestPerk": "Vigil",
-    "bestTier": "Very Good",
-    "perks": [
-      {
-        "id": 19,
-        "name": "Vigil",
-        "tier": "Very Good",
-        "tierScore": 4,
-        "synergyCount": 6,
-        "category": "Exhaustion Recovery"
-      },
-      {
-        "id": 119,
-        "name": "Pharmacy",
-        "tier": "Weak/Niche",
-        "tierScore": 1,
-        "synergyCount": 4,
-        "category": "Chest/Healing"
-      }
-    ],
-    "rank": 15
-  },
-  {
     "name": "Laurie Strode",
     "status": "Paid",
     "price": "Halloween DLC ~$8",
@@ -3270,7 +3200,7 @@ const CHAR_VALUE = [
         "category": "End-Game"
       }
     ],
-    "rank": 16
+    "rank": 15
   },
   {
     "name": "Lee Yun-Jin",
@@ -3306,6 +3236,44 @@ const CHAR_VALUE = [
         "tierScore": 1,
         "synergyCount": 0,
         "category": "Stealth"
+      }
+    ],
+    "rank": 16
+  },
+  {
+    "name": "Kate Denson",
+    "status": "Paid",
+    "price": "~500 AC / ~$5",
+    "perkCount": 3,
+    "tierScore": 6,
+    "synergyScore": 8,
+    "totalScore": 14,
+    "bestPerk": "Windows of Opportunity",
+    "bestTier": "Very Good",
+    "perks": [
+      {
+        "id": 21,
+        "name": "Windows of Opportunity",
+        "tier": "Very Good",
+        "tierScore": 4,
+        "synergyCount": 7,
+        "category": "Chase"
+      },
+      {
+        "id": 96,
+        "name": "Dance With Me",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "synergyCount": 1,
+        "category": "Stealth/Chase"
+      },
+      {
+        "id": 84,
+        "name": "Boil Over",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "synergyCount": 0,
+        "category": "Wiggle"
       }
     ],
     "rank": 17
@@ -3349,6 +3317,44 @@ const CHAR_VALUE = [
     "rank": 18
   },
   {
+    "name": "Eleven",
+    "status": "Paid",
+    "price": "Stranger Things DLC ~$8",
+    "perkCount": 3,
+    "tierScore": 10,
+    "synergyScore": 3,
+    "totalScore": 13,
+    "bestPerk": "Extra Sensory Perception",
+    "bestTier": "Very Good",
+    "perks": [
+      {
+        "id": 13,
+        "name": "Extra Sensory Perception",
+        "tier": "Very Good",
+        "tierScore": 4,
+        "synergyCount": 1,
+        "category": "Information"
+      },
+      {
+        "id": 68,
+        "name": "We See You",
+        "tier": "Decent",
+        "tierScore": 3,
+        "synergyCount": 2,
+        "category": "Information"
+      },
+      {
+        "id": 171,
+        "name": "Teamwork: Soft-Spoken",
+        "tier": "Decent",
+        "tierScore": 3,
+        "synergyCount": 0,
+        "category": "Generator/Team"
+      }
+    ],
+    "rank": 19
+  },
+  {
     "name": "Kwon Tae-young",
     "status": "Paid",
     "price": "~500 AC / ~$5",
@@ -3384,7 +3390,7 @@ const CHAR_VALUE = [
         "category": "Stealth/Healing"
       }
     ],
-    "rank": 19
+    "rank": 20
   },
   {
     "name": "Mikaela Reid",
@@ -3422,7 +3428,7 @@ const CHAR_VALUE = [
         "category": "Information"
       }
     ],
-    "rank": 20
+    "rank": 21
   },
   {
     "name": "Ace Visconti",
@@ -3460,7 +3466,7 @@ const CHAR_VALUE = [
         "category": "Chest"
       }
     ],
-    "rank": 21
+    "rank": 22
   },
   {
     "name": "Felix Richter",
@@ -3498,7 +3504,45 @@ const CHAR_VALUE = [
         "category": "Information"
       }
     ],
-    "rank": 22
+    "rank": 23
+  },
+  {
+    "name": "Adam Francis",
+    "status": "Paid",
+    "price": "~500 AC / ~$5",
+    "perkCount": 3,
+    "tierScore": 6,
+    "synergyScore": 5,
+    "totalScore": 11,
+    "bestPerk": "Deliverance",
+    "bestTier": "Very Good",
+    "perks": [
+      {
+        "id": 12,
+        "name": "Deliverance",
+        "tier": "Very Good",
+        "tierScore": 4,
+        "synergyCount": 1,
+        "category": "Hook Escape"
+      },
+      {
+        "id": 75,
+        "name": "Autodidact",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "synergyCount": 4,
+        "category": "Healing"
+      },
+      {
+        "id": 100,
+        "name": "Diversion",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "synergyCount": 0,
+        "category": "Distraction"
+      }
+    ],
+    "rank": 24
   },
   {
     "name": "David King",
@@ -3536,7 +3580,7 @@ const CHAR_VALUE = [
         "category": "Hard Mode"
       }
     ],
-    "rank": 23
+    "rank": 25
   },
   {
     "name": "Ash Williams",
@@ -3572,66 +3616,6 @@ const CHAR_VALUE = [
         "tierScore": 0,
         "synergyCount": 0,
         "category": "Endurance"
-      }
-    ],
-    "rank": 24
-  },
-  {
-    "name": "Adam Francis",
-    "status": "Paid",
-    "price": "~500 AC / ~$5",
-    "perkCount": 2,
-    "tierScore": 5,
-    "synergyScore": 5,
-    "totalScore": 10,
-    "bestPerk": "Deliverance",
-    "bestTier": "Very Good",
-    "perks": [
-      {
-        "id": 12,
-        "name": "Deliverance",
-        "tier": "Very Good",
-        "tierScore": 4,
-        "synergyCount": 1,
-        "category": "Hook Escape"
-      },
-      {
-        "id": 75,
-        "name": "Autodidact",
-        "tier": "Weak/Niche",
-        "tierScore": 1,
-        "synergyCount": 4,
-        "category": "Healing"
-      }
-    ],
-    "rank": 25
-  },
-  {
-    "name": "Eleven",
-    "status": "Paid",
-    "price": "Stranger Things DLC ~$8",
-    "perkCount": 2,
-    "tierScore": 7,
-    "synergyScore": 3,
-    "totalScore": 10,
-    "bestPerk": "Extra Sensory Perception",
-    "bestTier": "Very Good",
-    "perks": [
-      {
-        "id": 13,
-        "name": "Extra Sensory Perception",
-        "tier": "Very Good",
-        "tierScore": 4,
-        "synergyCount": 1,
-        "category": "Information"
-      },
-      {
-        "id": 68,
-        "name": "We See You",
-        "tier": "Decent",
-        "tierScore": 3,
-        "synergyCount": 2,
-        "category": "Information"
       }
     ],
     "rank": 26
@@ -4321,47 +4305,39 @@ const CHAR_VALUE = [
     "rank": 44
   },
   {
-    "name": "Aestri Yazar & Baermar Uraz",
+    "name": "Rick Grimes",
     "status": "Paid",
-    "price": "~500 AC / ~$5",
-    "perkCount": 4,
-    "tierScore": 3,
-    "synergyScore": 1,
+    "price": "The Walking Dead DLC ~$8",
+    "perkCount": 3,
+    "tierScore": 2,
+    "synergyScore": 2,
     "totalScore": 4,
-    "bestPerk": "Suitwise",
+    "bestPerk": "Come and Get Me",
     "bestTier": "Weak/Niche",
     "perks": [
       {
-        "id": 140,
-        "name": "Suitwise",
+        "id": 95,
+        "name": "Come and Get Me",
         "tier": "Weak/Niche",
         "tierScore": 1,
-        "synergyCount": 1,
-        "category": "Chest/Information"
+        "synergyCount": 2,
+        "category": "Distraction/Info"
       },
       {
-        "id": 78,
-        "name": "Bardic Inspiration",
-        "tier": "Weak/Niche",
-        "tierScore": 1,
-        "synergyCount": 0,
-        "category": "Skill Checks"
-      },
-      {
-        "id": 137,
-        "name": "Still Sight",
+        "id": 170,
+        "name": "Teamwork: Toughen Up",
         "tier": "Weak/Niche",
         "tierScore": 1,
         "synergyCount": 0,
-        "category": "Information"
+        "category": "Stealth/Team"
       },
       {
-        "id": 163,
-        "name": "Mirrored Illusion",
+        "id": 151,
+        "name": "Apocalyptic Ingenuity",
         "tier": "Terrible",
         "tierScore": 0,
         "synergyCount": 0,
-        "category": "Deception"
+        "category": "Utility"
       }
     ],
     "rank": 45
@@ -4481,6 +4457,44 @@ const CHAR_VALUE = [
     "rank": 48
   },
   {
+    "name": "Ellen Ripley",
+    "status": "Paid",
+    "price": "Alien DLC ~$10",
+    "perkCount": 3,
+    "tierScore": 2,
+    "synergyScore": 1,
+    "totalScore": 3,
+    "bestPerk": "Chemical Trap",
+    "bestTier": "Weak/Niche",
+    "perks": [
+      {
+        "id": 93,
+        "name": "Chemical Trap",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "synergyCount": 1,
+        "category": "Trap/Chase"
+      },
+      {
+        "id": 112,
+        "name": "Lightfooted",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "synergyCount": 0,
+        "category": "Stealth"
+      },
+      {
+        "id": 161,
+        "name": "Lucky Star",
+        "tier": "Terrible",
+        "tierScore": 0,
+        "synergyCount": 0,
+        "category": "Utility"
+      }
+    ],
+    "rank": 49
+  },
+  {
     "name": "Haddie Kaur",
     "status": "Paid",
     "price": "~500 AC / ~$5",
@@ -4516,7 +4530,7 @@ const CHAR_VALUE = [
         "category": "Debuff"
       }
     ],
-    "rank": 49
+    "rank": 50
   },
   {
     "name": "Jeff Johansen",
@@ -4554,29 +4568,45 @@ const CHAR_VALUE = [
         "category": "Sabotage"
       }
     ],
-    "rank": 50
+    "rank": 51
   },
   {
-    "name": "Ellen Ripley",
+    "name": "Aestri Yazar & Baermar Uraz",
     "status": "Paid",
-    "price": "Alien DLC ~$10",
-    "perkCount": 1,
-    "tierScore": 1,
-    "synergyScore": 1,
+    "price": "~500 AC / ~$5",
+    "perkCount": 3,
+    "tierScore": 2,
+    "synergyScore": 0,
     "totalScore": 2,
-    "bestPerk": "Chemical Trap",
+    "bestPerk": "Bardic Inspiration",
     "bestTier": "Weak/Niche",
     "perks": [
       {
-        "id": 93,
-        "name": "Chemical Trap",
+        "id": 78,
+        "name": "Bardic Inspiration",
         "tier": "Weak/Niche",
         "tierScore": 1,
-        "synergyCount": 1,
-        "category": "Trap/Chase"
+        "synergyCount": 0,
+        "category": "Skill Checks"
+      },
+      {
+        "id": 137,
+        "name": "Still Sight",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "synergyCount": 0,
+        "category": "Information"
+      },
+      {
+        "id": 163,
+        "name": "Mirrored Illusion",
+        "tier": "Terrible",
+        "tierScore": 0,
+        "synergyCount": 0,
+        "category": "Deception"
       }
     ],
-    "rank": 51
+    "rank": 52
   },
   {
     "name": "Talita Lyra",
@@ -4612,36 +4642,6 @@ const CHAR_VALUE = [
         "tierScore": 0,
         "synergyCount": 0,
         "category": "Stealth"
-      }
-    ],
-    "rank": 52
-  },
-  {
-    "name": "Rick Grimes",
-    "status": "Paid",
-    "price": "The Walking Dead DLC ~$8",
-    "perkCount": 2,
-    "tierScore": 0,
-    "synergyScore": 0,
-    "totalScore": 0,
-    "bestPerk": "Apocalyptic Ingenuity",
-    "bestTier": "Terrible",
-    "perks": [
-      {
-        "id": 151,
-        "name": "Apocalyptic Ingenuity",
-        "tier": "Terrible",
-        "tierScore": 0,
-        "synergyCount": 0,
-        "category": "Utility"
-      },
-      {
-        "id": 161,
-        "name": "Lucky Star",
-        "tier": "Terrible",
-        "tierScore": 0,
-        "synergyCount": 0,
-        "category": "Utility"
       }
     ],
     "rank": 53

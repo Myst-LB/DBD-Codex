@@ -445,11 +445,12 @@
 
     const charPerks = SURV_PERKS_MAP[s.name.toLowerCase()] || [];
     const perkMinis = charPerks.map(p => `
-        <button class="surv-perk-mini synergy-link" data-perk-id="${p.id}" title="${esc(p.description || "")}">
+        <button class="surv-perk-mini synergy-link" data-perk-id="${p.id}"
+                style="border-left: 3px solid ${tierColor(p.tier)}"
+                title="${esc(p.description || "")}">
           ${perkIconHtml(p.name, "surv-perk-icon")}
           <span class="surv-perk-info">
             <span class="surv-perk-name">${esc(p.name)}</span>
-            <span class="tier-badge ${tierBadgeClass(p.tier)}" style="font-size:0.55rem">${esc(p.tier)}</span>
           </span>
         </button>`).join("");
 
