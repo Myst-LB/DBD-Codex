@@ -100,6 +100,48 @@
     tooltipVisible = false;
   }
 
+  const BUILD_ITEMS = {
+    "luck offerings": {
+      name: "Luck Offerings",
+      type: "Offering",
+      description: "Oblation offerings equipped before a trial that increase Luck for all Survivors, improving chances to escape Bear Traps and affecting item rarity found in chests."
+    },
+    "toolboxes": {
+      name: "Toolboxes",
+      type: "Item",
+      description: "Items that significantly speed up Generator repair. Can also be used to Sabotage Hooks. Higher rarity toolboxes provide stronger bonuses. Essential for gen-rush strategies."
+    },
+    "1 2 3 4": {
+      name: "1 2 3 4 (Bardic Inspiration mechanic)",
+      type: "Mechanic",
+      description: "Bardic Inspiration triggers a rhythm mini-game: press 1, 2, 3, 4 within 4 seconds. Success grants nearby Survivors a 15% Haste effect for 90 seconds and speeds up Healing and Cleansing."
+    }
+  };
+
+  function showItemTooltip(item, anchorEl) {
+    const typeColors = { "Offering": "#b47aff", "Item": "#4fc3f7", "Mechanic": "#ffb74d" };
+    const color = typeColors[item.type] || "var(--accent)";
+    tooltip.innerHTML = `
+      <div class="tooltip-type-tag" style="color:${color};border-color:${color}">${esc(item.type)}</div>
+      <div class="tooltip-name">${esc(item.name)}</div>
+      <div class="tooltip-desc">${esc(item.description)}</div>`;
+    tooltip.style.borderColor = color;
+
+    const rect = anchorEl.getBoundingClientRect();
+    const tipW = 300, tipH = 200;
+    let x = rect.left;
+    let y = rect.bottom + 8;
+    if (x + tipW > window.innerWidth  - 8) x = window.innerWidth  - tipW - 8;
+    if (y + tipH > window.innerHeight - 8) y = rect.top - tipH - 8;
+    if (x < 8) x = 8;
+
+    tooltip.style.left = x + "px";
+    tooltip.style.top  = y + "px";
+    tooltip.classList.add("visible");
+    tooltip.setAttribute("aria-hidden", "false");
+    tooltipVisible = true;
+  }
+
   // ── Navigate to a perk card ──────────────────────────────────────────────────
   function navigateToPerk(perkId) {
     hideTooltip();
@@ -166,14 +208,20 @@
   function buildPerksHtml(perks) {
     if (!perks) return "";
     const parts = perks.split(/\s*\+\s*|\s*,\s*/);
-    return parts.map((part, i) => {
+    return parts.map(part => {
       const rawName = part.match(/^([^(]+)/)?.[1]?.trim() ?? part;
       const perk    = PERK_BY_NAME[rawName.toLowerCase()];
-      const sep     = i < parts.length - 1 ? ' <span class="build-sep">+</span> ' : "";
       if (perk) {
-        return `<button class="synergy-link" data-perk-id="${perk.id}">${esc(perk.name)}</button>${sep}`;
+        return `<button class="surv-perk-mini synergy-link" data-perk-id="${perk.id}" style="background:${tierBgColor(perk.tier)}">
+          <span class="surv-perk-icon-wrap">
+            <img src="${perkIconUrl(perk.name)}" alt="" class="surv-perk-icon" loading="lazy"
+                 onerror="this.style.display='none';this.parentElement.classList.add('no-icon')">
+          </span>
+        </button>`;
       }
-      return `<span>${esc(rawName)}</span>${sep}`;
+      return `<span class="surv-perk-mini build-perk-unknown" data-build-item="${esc(rawName.toLowerCase())}">
+          <span class="surv-perk-icon-wrap no-icon"></span>
+        </span>`;
     }).join("");
   }
 
@@ -200,11 +248,18 @@
     if (sl) {
       const perk = PERK_BY_ID[parseInt(sl.dataset.perkId, 10)];
       if (perk) showTooltip(perk, sl);
+      return;
+    }
+    const bi = e.target.closest(".build-perk-unknown");
+    if (bi) {
+      const key  = (bi.dataset.buildItem || "").toLowerCase();
+      const item = BUILD_ITEMS[key];
+      if (item) showItemTooltip(item, bi);
     }
   });
 
   document.addEventListener("mouseout", e => {
-    if (e.target.closest(".synergy-link")) hideTooltip();
+    if (e.target.closest(".synergy-link") || e.target.closest(".build-perk-unknown")) hideTooltip();
   });
 
   // ═══════════════════════════════════════════════════════════════════════════
@@ -317,7 +372,7 @@
   document.getElementById("builds-container").innerHTML = BUILDS.map(b => `
     <article class="build-card">
       <h3 class="build-name">${esc(b.name)}</h3>
-      <div class="build-perks">🔮 ${buildPerksHtml(b.perks)}</div>
+      <div class="build-perks">${buildPerksHtml(b.perks)}</div>
       <p class="build-strategy">${esc(b.strategy)}</p>
     </article>`).join("");
 
