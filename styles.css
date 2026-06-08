@@ -692,17 +692,28 @@ body {
 
 .slot-label { font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; }
 .slot-hint  { font-size: 0.78rem; color: var(--text-muted); font-style: italic; }
-.slot-perk-name { font-size: 0.9rem; color: var(--bone); font-weight: 500; line-height: 1.2; }
-.slot-perk-char { font-size: 0.68rem; color: var(--text-muted); }
-.slot-perk-icon { width: 48px; height: 48px; object-fit: contain; align-self: center; border-radius: 4px; }
+
+.slot-card-header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+.slot-card-body {
+  display: flex; align-items: flex-start; gap: 0.6rem;
+  margin-bottom: 0.5rem;
+}
+.slot-card-text { display: flex; flex-direction: column; gap: 0.25rem; flex: 1; min-width: 0; }
+.slot-card-meta { display: flex; align-items: center; gap: 0.35rem; flex-wrap: wrap; }
+.slot-perk-name { font-size: 0.9rem; color: var(--bone); font-weight: 600; line-height: 1.2; }
+.slot-perk-char { font-size: 0.65rem; color: var(--text-muted); font-style: italic; }
+.slot-perk-desc { font-size: 0.75rem; color: var(--text-muted); line-height: 1.45; margin: 0; }
+.slot-perk-icon { width: 44px; height: 44px; object-fit: contain; flex: none; border-radius: 4px; }
 .slot-remove {
-  position: absolute; top: 0.4rem; right: 0.5rem;
   background: none; border: none; color: var(--text-muted);
   font-size: 0.9rem; cursor: pointer; padding: 0.1rem 0.3rem;
-  border-radius: 3px; line-height: 1;
+  border-radius: 3px; line-height: 1; flex: none;
 }
 .slot-remove:hover { color: var(--accent); background: rgba(193,18,31,0.15); }
-.slot-tier-badge { align-self: flex-start; margin-top: auto; }
+.slot-tier-badge { flex: none; }
 
 .theory-synergies {
   background: var(--surface);
@@ -801,26 +812,17 @@ body {
 }
 .theory-clear-btn:hover { background: rgba(193,18,31,0.25); border-color: var(--accent); }
 
-/* Slot role button */
-.slot-role-btn {
-  background: none;
-  border: 1px dashed var(--border);
-  color: var(--text-muted);
-  border-radius: 4px;
-  padding: 0.1rem 0.4rem;
+/* Slot role tag (auto-derived from perk category) */
+.slot-role-tag {
+  font-family: var(--font-ui);
   font-size: 0.6rem;
-  cursor: pointer;
   text-transform: uppercase;
   letter-spacing: 0.07em;
-  align-self: flex-start;
-  transition: border-color 0.15s, color 0.15s;
-}
-.slot-role-btn:hover { border-color: var(--accent); color: var(--bone); }
-.slot-role-btn.slot-role-set {
-  background: rgba(193,18,31,0.15);
-  border-color: var(--accent-dark);
-  border-style: solid;
   color: var(--accent);
+  background: rgba(193,18,31,0.15);
+  border: 1px solid var(--accent-dark);
+  border-radius: 4px;
+  padding: 0.1rem 0.4rem;
 }
 
 /* Build analysis panel */

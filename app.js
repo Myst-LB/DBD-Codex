@@ -1,4 +1,4 @@
-// The Codex of the Fog — app.js
+﻿// The Codex of the Fog — app.js
 // All data loaded from data.js (globals: PERKS, KILLERS, SURVIVORS, BUILDS, META)
 
 (function () {
@@ -255,11 +255,17 @@
       const key  = (bi.dataset.buildItem || "").toLowerCase();
       const item = BUILD_ITEMS[key];
       if (item) showItemTooltip(item, bi);
+      return;
+    }
+    const pi = e.target.closest("[data-perk-id]");
+    if (pi) {
+      const perk = PERK_BY_ID[parseInt(pi.dataset.perkId, 10)];
+      if (perk) showTooltip(perk, pi);
     }
   });
 
   document.addEventListener("mouseout", e => {
-    if (e.target.closest(".synergy-link") || e.target.closest(".build-perk-unknown")) hideTooltip();
+    if (e.target.closest(".synergy-link") || e.target.closest(".build-perk-unknown") || e.target.closest("[data-perk-id]")) hideTooltip();
   });
 
   // ═══════════════════════════════════════════════════════════════════════════
@@ -701,9 +707,23 @@
   // THEORYCRAFT SECTION
   // ═══════════════════════════════════════════════════════════════════════════
 
-  const theorySlots   = [null, null, null, null]; // each: perk object or null
-  const theorySlotRoles = [0, 0, 0, 0];           // index into SLOT_ROLES
-  const SLOT_ROLES = ["No Role", "Early Game", "Core", "Support", "Flex"];
+  const theorySlots = [null, null, null, null];
+
+  function categoryToRole(cat) {
+    if (!cat) return "";
+    const first = cat.split("/")[0].trim().toLowerCase();
+    const MAP = {
+      "stealth": "Stealth", "chase": "Chase", "exhaustion": "Chase",
+      "general speed": "Chase", "healing": "Healer", "passive heal": "Healer",
+      "altruism": "Healer", "generator": "Gen Rush", "skill checks": "Gen Rush",
+      "boon": "Boon", "anti-tunnel": "Defensive", "anti-slug": "Defensive",
+      "endurance": "Defensive", "end-game": "End Game", "information": "Intel",
+      "rescue": "Support", "hook support": "Support", "hook": "Support",
+      "team": "Support", "item": "Item", "chest": "Chest",
+      "distraction": "Distraction", "trap": "Trap",
+    };
+    return MAP[first] || cat.split("/")[0];
+  }
 
   const theorySlotEls  = document.querySelectorAll(".theory-slot");
   const theorySynBox   = document.getElementById("theory-synergies");
@@ -775,7 +795,6 @@
 
   theoryClearBtn.addEventListener("click", () => {
     theorySlots.fill(null);
-    theorySlotRoles.fill(0);
     renderSlots();
     renderSynergySuggestions();
     renderBuildAnalysis();
@@ -809,32 +828,34 @@
     theorySlotEls.forEach((el, i) => {
       const p = theorySlots[i];
       if (p) {
-        const roleIdx  = theorySlotRoles[i];
-        const roleName = SLOT_ROLES[roleIdx];
-        const roleClass = roleName !== "No Role" ? " slot-role-set" : "";
+        const role = categoryToRole(p.category);
         el.className = "theory-slot filled";
+        delete el.dataset.perkId;
         el.innerHTML = `
-          <button class="slot-role-btn${roleClass}" data-slot="${i}" title="Click to change role">${esc(roleName === "No Role" ? "Set Role" : roleName)}</button>
-          ${perkIconHtml(p.name, "slot-perk-icon")}
-          <span class="slot-perk-name">${esc(p.name)}</span>
-          <span class="slot-perk-char">${esc(p.character || "Base game")}</span>
-          <span class="tier-badge ${tierBadgeClass(p.tier)} slot-tier-badge" style="font-size:0.6rem">${esc(p.tier)}</span>
-          <button class="slot-remove" data-slot="${i}" title="Remove">✕</button>`;
+          <div class="slot-card-header">
+            ${role ? `<span class="slot-role-tag">${esc(role)}</span>` : ""}
+            <button class="slot-remove" data-slot="${i}" title="Remove">✕</button>
+          </div>
+          <div class="slot-card-body">
+            ${perkIconHtml(p.name, "slot-perk-icon")}
+            <div class="slot-card-text">
+              <span class="slot-perk-name">${esc(p.name)}</span>
+              <div class="slot-card-meta">
+                <span class="tier-badge ${tierBadgeClass(p.tier)} slot-tier-badge" style="font-size:0.6rem">${esc(p.tier)}</span>
+                <span class="slot-perk-char">${esc(p.character || "Base game")}</span>
+              </div>
+            </div>
+          </div>
+          <p class="slot-perk-desc">${esc(p.description || "")}</p>`;
       } else {
         el.className = "theory-slot empty";
+        delete el.dataset.perkId;
         el.innerHTML = `<span class="slot-label">Perk ${i + 1}</span><span class="slot-hint">_ empty</span>`;
       }
     });
   }
 
   document.getElementById("theory-slots").addEventListener("click", e => {
-    const roleBtn  = e.target.closest(".slot-role-btn");
-    if (roleBtn) {
-      const idx = parseInt(roleBtn.dataset.slot);
-      theorySlotRoles[idx] = (theorySlotRoles[idx] + 1) % SLOT_ROLES.length;
-      renderSlots();
-      return;
-    }
     const removeBtn = e.target.closest(".slot-remove");
     if (removeBtn) { removePerkFromSlot(parseInt(removeBtn.dataset.slot)); return; }
     const slot = e.target.closest(".theory-slot.filled");
@@ -970,7 +991,7 @@
       const isSug   = sugIds.has(p.id) && !inBuild;
       return `
         <div class="theory-perk-item${inBuild ? " in-build" : ""}${isSug ? " is-suggestion" : ""}"
-             data-perk-id="${p.id}" title="${esc(p.description || "")}">
+             data-perk-id="${p.id}">
           ${perkIconHtml(p.name, "tpi-icon")}
           <span class="tpi-name">${esc(p.name)}</span>
           <div class="tpi-meta">
