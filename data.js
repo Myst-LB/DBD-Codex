@@ -2668,7 +2668,7 @@ const CHAR_VALUE = [
         "category": "Information"
       }
     ],
-    "rank": 1
+    "rank": 0
   },
   {
     "name": "Claudette Morel",
@@ -2706,7 +2706,7 @@ const CHAR_VALUE = [
         "category": "Healing"
       }
     ],
-    "rank": 2
+    "rank": 1
   },
   {
     "name": "Meg Thomas",
@@ -2744,7 +2744,7 @@ const CHAR_VALUE = [
         "category": "Stealth"
       }
     ],
-    "rank": 3
+    "rank": 2
   },
   {
     "name": "Jill Valentine",
@@ -2782,7 +2782,7 @@ const CHAR_VALUE = [
         "category": "Trap/Gen"
       }
     ],
-    "rank": 4
+    "rank": 3
   },
   {
     "name": "Jake Park",
@@ -2820,7 +2820,7 @@ const CHAR_VALUE = [
         "category": "Stealth"
       }
     ],
-    "rank": 5
+    "rank": 4
   },
   {
     "name": "Steve Harrington",
@@ -2858,7 +2858,7 @@ const CHAR_VALUE = [
         "category": "Hook Support"
       }
     ],
-    "rank": 6
+    "rank": 5
   },
   {
     "name": "Feng Min",
@@ -2896,7 +2896,7 @@ const CHAR_VALUE = [
         "category": "Generator"
       }
     ],
-    "rank": 7
+    "rank": 6
   },
   {
     "name": "Dwight Fairfield",
@@ -2934,7 +2934,7 @@ const CHAR_VALUE = [
         "category": "Team Utility"
       }
     ],
-    "rank": 8
+    "rank": 7
   },
   {
     "name": "Quentin Smith",
@@ -2972,7 +2972,7 @@ const CHAR_VALUE = [
         "category": "End-Game"
       }
     ],
-    "rank": 9
+    "rank": 8
   },
   {
     "name": "Jane Romero",
@@ -3010,7 +3010,7 @@ const CHAR_VALUE = [
         "category": "Stealth"
       }
     ],
-    "rank": 10
+    "rank": 9
   },
   {
     "name": "Bill Overbeck",
@@ -3048,7 +3048,7 @@ const CHAR_VALUE = [
         "category": "End-Game/Selfish"
       }
     ],
-    "rank": 11
+    "rank": 10
   },
   {
     "name": "Elodie Rakoto",
@@ -3086,7 +3086,7 @@ const CHAR_VALUE = [
         "category": "Stealth"
       }
     ],
-    "rank": 12
+    "rank": 11
   },
   {
     "name": "Jonah Vasquez",
@@ -3124,7 +3124,7 @@ const CHAR_VALUE = [
         "category": "Team Support"
       }
     ],
-    "rank": 13
+    "rank": 12
   },
   {
     "name": "Nancy Wheeler",
@@ -3162,7 +3162,7 @@ const CHAR_VALUE = [
         "category": "Information"
       }
     ],
-    "rank": 14
+    "rank": 13
   },
   {
     "name": "Laurie Strode",
@@ -3200,7 +3200,7 @@ const CHAR_VALUE = [
         "category": "End-Game"
       }
     ],
-    "rank": 15
+    "rank": 14
   },
   {
     "name": "Lee Yun-Jin",
@@ -3238,7 +3238,7 @@ const CHAR_VALUE = [
         "category": "Stealth"
       }
     ],
-    "rank": 16
+    "rank": 15
   },
   {
     "name": "Kate Denson",
@@ -3276,7 +3276,7 @@ const CHAR_VALUE = [
         "category": "Wiggle"
       }
     ],
-    "rank": 17
+    "rank": 16
   },
   {
     "name": "Ada Wong",
@@ -3314,7 +3314,7 @@ const CHAR_VALUE = [
         "category": "Stealth"
       }
     ],
-    "rank": 18
+    "rank": 17
   },
   {
     "name": "Eleven",
@@ -3352,7 +3352,7 @@ const CHAR_VALUE = [
         "category": "Generator/Team"
       }
     ],
-    "rank": 19
+    "rank": 18
   },
   {
     "name": "Kwon Tae-young",
@@ -3390,7 +3390,7 @@ const CHAR_VALUE = [
         "category": "Stealth/Healing"
       }
     ],
-    "rank": 20
+    "rank": 19
   },
   {
     "name": "Mikaela Reid",
@@ -3428,7 +3428,7 @@ const CHAR_VALUE = [
         "category": "Information"
       }
     ],
-    "rank": 21
+    "rank": 20
   },
   {
     "name": "Ace Visconti",
@@ -3466,7 +3466,7 @@ const CHAR_VALUE = [
         "category": "Chest"
       }
     ],
-    "rank": 22
+    "rank": 21
   },
   {
     "name": "Felix Richter",
@@ -3504,7 +3504,7 @@ const CHAR_VALUE = [
         "category": "Information"
       }
     ],
-    "rank": 23
+    "rank": 22
   },
   {
     "name": "Adam Francis",
@@ -3542,7 +3542,7 @@ const CHAR_VALUE = [
         "category": "Distraction"
       }
     ],
-    "rank": 24
+    "rank": 23
   },
   {
     "name": "David King",
@@ -3580,7 +3580,7 @@ const CHAR_VALUE = [
         "category": "Hard Mode"
       }
     ],
-    "rank": 25
+    "rank": 24
   },
   {
     "name": "Ash Williams",
@@ -3618,7 +3618,7 @@ const CHAR_VALUE = [
         "category": "Endurance"
       }
     ],
-    "rank": 26
+    "rank": 25
   },
   {
     "name": "Nicolas Cage",
@@ -3656,7 +3656,7 @@ const CHAR_VALUE = [
         "category": "Information"
       }
     ],
-    "rank": 27
+    "rank": 26
   },
   {
     "name": "Rebecca Chambers",
@@ -3694,7 +3694,7 @@ const CHAR_VALUE = [
         "category": "Utility"
       }
     ],
-    "rank": 28
+    "rank": 27
   },
   {
     "name": "Yui Kimura",
@@ -3732,7 +3732,7 @@ const CHAR_VALUE = [
         "category": "Rescue/Wiggle"
       }
     ],
-    "rank": 29
+    "rank": 28
   },
   {
     "name": "Gabriel Soma",
@@ -3770,7 +3770,7 @@ const CHAR_VALUE = [
         "category": "Item Recycle"
       }
     ],
-    "rank": 30
+    "rank": 29
   },
   {
     "name": "Zarina Kassir",
@@ -3808,7 +3808,7 @@ const CHAR_VALUE = [
         "category": "Distraction"
       }
     ],
-    "rank": 31
+    "rank": 30
   },
   {
     "name": "V (Bovine Yak)",
@@ -3846,7 +3846,7 @@ const CHAR_VALUE = [
         "category": "Healing"
       }
     ],
-    "rank": 32
+    "rank": 31
   },
   {
     "name": "Detective Tapp",
@@ -3884,7 +3884,7 @@ const CHAR_VALUE = [
         "category": "Information"
       }
     ],
-    "rank": 33
+    "rank": 32
   },
   {
     "name": "Alan Wake",
@@ -3922,7 +3922,7 @@ const CHAR_VALUE = [
         "category": "Skill Checks"
       }
     ],
-    "rank": 34
+    "rank": 33
   },
   {
     "name": "Leon S. Kennedy",
@@ -3960,7 +3960,7 @@ const CHAR_VALUE = [
         "category": "Information"
       }
     ],
-    "rank": 35
+    "rank": 34
   },
   {
     "name": "Vittorio Toscano",
@@ -3998,7 +3998,7 @@ const CHAR_VALUE = [
         "category": "Generator"
       }
     ],
-    "rank": 36
+    "rank": 35
   },
   {
     "name": "Taurie Cain",
@@ -4036,7 +4036,7 @@ const CHAR_VALUE = [
         "category": "Invocation"
       }
     ],
-    "rank": 37
+    "rank": 36
   },
   {
     "name": "Sable Ward",
@@ -4074,7 +4074,7 @@ const CHAR_VALUE = [
         "category": "Invocation"
       }
     ],
-    "rank": 38
+    "rank": 37
   },
   {
     "name": "Lara Croft",
@@ -4112,7 +4112,7 @@ const CHAR_VALUE = [
         "category": "Chest/Generator"
       }
     ],
-    "rank": 39
+    "rank": 38
   },
   {
     "name": "Trevor Belmont",
@@ -4150,7 +4150,7 @@ const CHAR_VALUE = [
         "category": "Information"
       }
     ],
-    "rank": 40
+    "rank": 39
   },
   {
     "name": "Michonne Grimes",
@@ -4188,7 +4188,7 @@ const CHAR_VALUE = [
         "category": "Rescue"
       }
     ],
-    "rank": 41
+    "rank": 40
   },
   {
     "name": "Aurélie Dubois",
@@ -4226,7 +4226,7 @@ const CHAR_VALUE = [
         "category": "Exhaustion/Support"
       }
     ],
-    "rank": 42
+    "rank": 41
   },
   {
     "name": "Dustin Henderson",
@@ -4264,7 +4264,7 @@ const CHAR_VALUE = [
         "category": "Item Recycle"
       }
     ],
-    "rank": 43
+    "rank": 42
   },
   {
     "name": "Renato Lyra",
@@ -4302,7 +4302,7 @@ const CHAR_VALUE = [
         "category": "Stealth/Team"
       }
     ],
-    "rank": 44
+    "rank": 43
   },
   {
     "name": "Rick Grimes",
@@ -4340,7 +4340,7 @@ const CHAR_VALUE = [
         "category": "Utility"
       }
     ],
-    "rank": 45
+    "rank": 44
   },
   {
     "name": "Nea Karlsson",
@@ -4378,7 +4378,7 @@ const CHAR_VALUE = [
         "category": "Stealth"
       }
     ],
-    "rank": 46
+    "rank": 45
   },
   {
     "name": "Cheryl Mason",
@@ -4416,7 +4416,7 @@ const CHAR_VALUE = [
         "category": "Generator"
       }
     ],
-    "rank": 47
+    "rank": 46
   },
   {
     "name": "Yoichi Asakawa",
@@ -4454,7 +4454,7 @@ const CHAR_VALUE = [
         "category": "Stealth"
       }
     ],
-    "rank": 48
+    "rank": 47
   },
   {
     "name": "Ellen Ripley",
@@ -4492,7 +4492,7 @@ const CHAR_VALUE = [
         "category": "Utility"
       }
     ],
-    "rank": 49
+    "rank": 48
   },
   {
     "name": "Haddie Kaur",
@@ -4530,7 +4530,7 @@ const CHAR_VALUE = [
         "category": "Debuff"
       }
     ],
-    "rank": 50
+    "rank": 49
   },
   {
     "name": "Jeff Johansen",
@@ -4568,7 +4568,7 @@ const CHAR_VALUE = [
         "category": "Sabotage"
       }
     ],
-    "rank": 51
+    "rank": 50
   },
   {
     "name": "Aestri Yazar & Baermar Uraz",
@@ -4606,7 +4606,7 @@ const CHAR_VALUE = [
         "category": "Deception"
       }
     ],
-    "rank": 52
+    "rank": 51
   },
   {
     "name": "Talita Lyra",
@@ -4644,6 +4644,6 @@ const CHAR_VALUE = [
         "category": "Stealth"
       }
     ],
-    "rank": 53
+    "rank": 52
   }
 ];
