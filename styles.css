@@ -567,14 +567,14 @@ body {
 }
 
 .survivor-rank {
-  font-family: var(--font-horror);
-  font-size: 1.2rem;
+  font-size: 1rem;
+  font-weight: 600;
   color: var(--text-muted);
   min-width: 2rem;
   text-align: center;
 }
 
-.survivor-name { font-weight: 600; font-size: 1rem; }
+.survivor-name { font-size: 1rem; font-weight: 600; color: var(--bone); }
 
 .survivor-tags {
   display: flex;
@@ -622,53 +622,44 @@ body {
 .surv-perk-list {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   gap: 0.4rem;
   border-top: 1px solid var(--border-light);
   padding-top: 0.5rem;
 }
-@media (max-width: 480px) {
-  .surv-perk-list { flex-direction: column; }
-}
 .surv-perk-mini {
+  width: 46px;
+  height: 46px;
+  flex: none;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  background: rgba(255,255,255,0.03);
+  justify-content: center;
+  background: rgba(255,255,255,0.04);
   border: 1px solid var(--border);
   border-radius: 6px;
-  padding: 0.3rem 0.5rem;
+  padding: 0;
   cursor: pointer;
-  text-align: left;
-  transition: background 0.15s, border-color 0.15s;
-  flex: 1 1 0;
-  min-width: 0;
+  transition: filter 0.15s, transform 0.12s;
 }
-.surv-perk-mini:hover { background: rgba(193,18,31,0.07); border-color: var(--accent) !important; }
-@media (max-width: 480px) {
-  .surv-perk-mini { flex: none; width: 100%; }
+.surv-perk-mini:hover { filter: brightness(1.25); transform: scale(1.1); }
+.surv-perk-mini.synergy-link { border-bottom: none; color: inherit; }
+.surv-perk-icon-wrap {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.surv-perk-mini:hover { border-color: var(--accent); background: rgba(193,18,31,0.07); }
 .surv-perk-icon {
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   object-fit: contain;
-  flex-shrink: 0;
   border-radius: 3px;
 }
-.surv-perk-info {
-  display: flex;
-  flex-direction: column;
-  gap: 0.15rem;
-  min-width: 0;
-}
-.surv-perk-name {
-  font-size: 0.78rem;
-  font-weight: 500;
-  color: var(--bone);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+.surv-perk-icon-wrap.no-icon::after {
+  content: "?";
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-muted);
 }
 .surv-perk-unknown { font-size: 0.72rem; color: var(--text-muted); padding: 0.2rem 0; }
 

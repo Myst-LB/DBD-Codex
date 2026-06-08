@@ -22,6 +22,14 @@
              "Weak/Niche": "#8a8a8a", "Terrible": "#b71c1c" }[tier] || "#9a948a";
   }
 
+  function tierBgColor(tier) {
+    return { "Excellent":  "rgba(212,175,55,0.28)",
+             "Very Good":  "rgba(76,175,80,0.22)",
+             "Decent":     "rgba(63,127,191,0.22)",
+             "Weak/Niche": "rgba(138,138,138,0.15)",
+             "Terrible":   "rgba(183,28,28,0.22)" }[tier] || "rgba(154,148,138,0.12)";
+  }
+
   function esc(str) {
     return String(str ?? "")
       .replace(/&/g, "&amp;").replace(/</g, "&lt;")
@@ -68,6 +76,7 @@
       </div>
       <div class="tooltip-desc">${esc(perk.description)}</div>
       <div class="tooltip-hint">Click to view perk</div>`;
+    tooltip.style.borderColor = tierColor(perk.tier);
 
     // Position near anchor element
     const rect = anchorEl.getBoundingClientRect();
@@ -446,11 +455,10 @@
     const charPerks = SURV_PERKS_MAP[s.name.toLowerCase()] || [];
     const perkMinis = charPerks.map(p => `
         <button class="surv-perk-mini synergy-link" data-perk-id="${p.id}"
-                style="border-left: 3px solid ${tierColor(p.tier)}"
-                title="${esc(p.description || "")}">
-          ${perkIconHtml(p.name, "surv-perk-icon")}
-          <span class="surv-perk-info">
-            <span class="surv-perk-name">${esc(p.name)}</span>
+                style="background:${tierBgColor(p.tier)}">
+          <span class="surv-perk-icon-wrap">
+            <img src="${perkIconUrl(p.name)}" alt="" class="surv-perk-icon" loading="lazy"
+                 onerror="this.style.display='none';this.parentElement.classList.add('no-icon')">
           </span>
         </button>`).join("");
 
