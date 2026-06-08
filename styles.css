@@ -674,6 +674,7 @@ body {
   padding: 0.3rem 0.7rem;
   cursor: pointer;
   font-size: 0.8rem;
+  color: var(--text-secondary);
   transition: border-color 0.15s, background 0.15s;
 }
 .theory-suggestion:hover { border-color: var(--accent); background: rgba(193,18,31,0.1); }
