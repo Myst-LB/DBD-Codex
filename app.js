@@ -9,6 +9,13 @@
   const PERK_BY_ID       = Object.fromEntries(PERKS.map(p => [p.id, p]));
   const SURVIVOR_BY_NAME = Object.fromEntries(SURVIVORS.map(s => [s.name.toLowerCase(), s]));
 
+  // ── Dynamic subtitle ────────────────────────────────────────────────────────
+  (function () {
+    const el = document.getElementById("site-subtitle");
+    if (el) el.textContent =
+      `Dead by Daylight · Patch ${META.version} · ${PERKS.length} Perks · ${KILLERS.length} Killers · ${SURVIVORS.length} Survivors`;
+  })();
+
   // ── Constants ───────────────────────────────────────────────────────────────
   const TIER_ORDER   = ["Excellent", "Very Good", "Decent", "Weak/Niche", "Terrible"];
   const KILLER_TIERS = ["S", "A", "B", "C", "D"];
@@ -432,6 +439,9 @@
   }
 
   function killerCard(k) {
+    const perksHtml = (k.perks && k.perks.length)
+      ? `<div class="killer-perks">${k.perks.map(n => `<span class="killer-perk-tag">${esc(n)}</span>`).join("")}</div>`
+      : "";
     return `
       <article class="killer-card" id="killer-${k.rank}">
         <div class="killer-card-header">
@@ -446,6 +456,7 @@
         <div class="killer-detail killer-weaknesses">
           <strong>Weaknesses</strong>${esc(k.weaknesses)}
         </div>
+        ${perksHtml}
         <div class="killer-price">${esc(k.status)} · ${esc(k.price)}</div>
       </article>`;
   }

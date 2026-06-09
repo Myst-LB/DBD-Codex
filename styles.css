@@ -545,6 +545,23 @@ body {
 .killer-strengths { color: var(--synergy); }
 .killer-weaknesses { color: #e07070; }
 
+.killer-perks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-top: 0.4rem;
+}
+.killer-perk-tag {
+  font-family: var(--font-ui);
+  font-size: 0.68rem;
+  color: var(--accent);
+  background: rgba(180,140,80,0.12);
+  border: 1px solid rgba(180,140,80,0.3);
+  border-radius: 3px;
+  padding: 0.1rem 0.45rem;
+  white-space: nowrap;
+}
+
 .killer-price {
   font-family: var(--font-ui);
   font-size: 0.7rem;

@@ -1699,222 +1699,617 @@ const KILLERS = [
   {
     "rank": 1,
     "tier": "S",
-    "name": "Freddy / The Nightmare",
-    "power": "Dream Snares + Gen Teleport",
-    "strengths": "Passive abilities, forgiving gameplay, great map control, snares slow survivors at loops, dream world disorients",
-    "weaknesses": "None significant; arguably too easy to play",
-    "status": "Paid",
-    "price": "A Nightmare on Elm Street DLC — ~$8"
+    "name": "Nurse",
+    "power": "Blink teleport",
+    "strengths": "Unmatched mobility, no map safety, ends chases instantly with skill",
+    "weaknesses": "Very high skill floor; blink misses are costly",
+    "status": "Free",
+    "price": "Base game",
+    "perks": [
+      "A Nurse's Calling",
+      "Stridor",
+      "Thanatophobia"
+    ]
   },
   {
     "rank": 2,
-    "tier": "A",
-    "name": "Spirit",
-    "power": "Phase Walk (invisible sprint)",
-    "strengths": "Least counter-play of any killer, leaves husk decoy, near-impossible to read",
-    "weaknesses": "Tricky for new players to track survivors while phasing",
+    "tier": "S",
+    "name": "Blight",
+    "power": "Rush + Lethal Rush bounce",
+    "strengths": "Best mobility of any killer, high skill ceiling, lethal at walls and loops",
+    "weaknesses": "Steep learning curve; easy to whiff Rushes",
     "status": "Paid",
-    "price": "~500 AC / ~$5"
+    "price": "Archives / ~$8",
+    "perks": [
+      "Dragon's Grip",
+      "Hex: Blood Favour",
+      "Hex: Undying"
+    ]
   },
   {
     "rank": 3,
-    "tier": "A",
-    "name": "Oni",
-    "power": "Blood Fury sprint + insta-down",
-    "strengths": "Best snowball killer, forgiving sprint collision, great add-ons for charge time/duration",
-    "weaknesses": "Power-reliant; slow starts",
+    "tier": "S",
+    "name": "Krasue",
+    "power": "Tethered Chains (grapple + chain hooks)",
+    "strengths": "Exceptional map mobility, chains through obstacles, relentless pressure",
+    "weaknesses": "New killer; nerfs expected; survivors still learning counterplay",
     "status": "Paid",
-    "price": "~500 AC / ~$5"
+    "price": "~500 AC / ~$5",
+    "perks": [
+      "Hex: Overture of Doom",
+      "Ravenous",
+      "Wandering Eye"
+    ]
   },
   {
     "rank": 4,
-    "tier": "B",
-    "name": "Nurse",
-    "power": "Blink teleport",
-    "strengths": "Incredible map mobility, ends chases fast, very high skill ceiling payoff",
-    "weaknesses": "Very hard to master; poor for new players",
+    "tier": "A",
+    "name": "Hillbilly",
+    "power": "Chainsaw sprint (insta-down)",
+    "strengths": "Fastest non-power traversal, shreds pallets, A+ threat in skilled hands",
+    "weaknesses": "Tight turning radius; overheat mechanic post-nerf",
     "status": "Free",
-    "price": "Base game"
+    "price": "Base game",
+    "perks": [
+      "Enduring",
+      "Lightborn",
+      "Tinkerer"
+    ]
   },
   {
     "rank": 5,
-    "tier": "B",
-    "name": "Huntress",
-    "power": "Thrown hatchets (ranged)",
-    "strengths": "Best ranged killer, simple to learn, transferable aim skill, strong add-ons",
-    "weaknesses": "Must reload hatchets; manageable with good throws",
-    "status": "Free",
-    "price": "Base game"
+    "tier": "A",
+    "name": "Twins",
+    "power": "Charlotte + Victor split control",
+    "strengths": "Victor grants free pressure and map coverage, unique hook/tunnel threat",
+    "weaknesses": "Complex to master; coordination required between both bodies",
+    "status": "Paid",
+    "price": "~500 AC / ~$5",
+    "perks": [
+      "Coup de Grace",
+      "Hoarder",
+      "Oppression"
+    ]
   },
   {
     "rank": 6,
-    "tier": "B",
-    "name": "Executioner / Pyramid Head",
-    "power": "Trails of Torment + Cages",
-    "strengths": "Circumvents Unbreakable/DS via cages, ranged attack through walls/pallets, many meta counters",
-    "weaknesses": "Punishing for beginners; cooldown on ranged attack",
+    "tier": "A",
+    "name": "Ghoul / Kaneki",
+    "power": "Kagune Frenzy (multi-hit dash)",
+    "strengths": "Strong 1v4, Deep Wound on multiple survivors, high skill ceiling chase power",
+    "weaknesses": "Frenzy recovery leaves brief vulnerability; requires skill to maximise",
     "status": "Paid",
-    "price": "Silent Hill DLC — ~$8"
+    "price": "Tokyo Ghoul DLC ~$8",
+    "perks": [
+      "Hex: Nothing But Misery",
+      "Forever Entwined",
+      "None Are Free"
+    ]
   },
   {
     "rank": 7,
-    "tier": "B",
-    "name": "Plague",
-    "power": "Vile Purge (vomit stream) + Corrupt Purge",
-    "strengths": "Efficiently injures whole teams, great information tool, strong add-ons",
-    "weaknesses": "Tricky for new players; survivors can choose not to cleanse",
+    "tier": "A",
+    "name": "Singularity",
+    "power": "Slipstream + Biopod teleport",
+    "strengths": "Unmatched map control via pods, teleport to infected survivors, great intel",
+    "weaknesses": "Moderate learning curve; flamethrower counters when survivors coordinate",
     "status": "Paid",
-    "price": "~500 AC / ~$5"
+    "price": "~500 AC / ~$5",
+    "perks": [
+      "Genetic Limits",
+      "Forced Hesitation",
+      "Machine Learning"
+    ]
   },
   {
     "rank": 8,
-    "tier": "B",
-    "name": "Hag",
-    "power": "Phantasm Traps (teleport trap)",
-    "strengths": "Best area-control killer, 10 instant traps, guaranteed teleport hit, 3-gen lock potential",
-    "weaknesses": "High skill gap; camping is common crutch",
-    "status": "Free",
-    "price": "Base game"
+    "tier": "A",
+    "name": "Dark Lord / Dracula",
+    "power": "Vampiric Powers (Bat / Wolf / Armored forms)",
+    "strengths": "Three versatile forms, Bat for mobility, Wolf for chase, Armor for power",
+    "weaknesses": "Form switching takes time; high mental load managing all abilities",
+    "status": "Paid",
+    "price": "Castlevania DLC ~$8",
+    "perks": [
+      "Hex: Wretched Fate",
+      "Human Greed",
+      "Dominance"
+    ]
   },
   {
     "rank": 9,
-    "tier": "B",
-    "name": "Deathslinger",
-    "power": "Spear Gun (ranged chain)",
-    "strengths": "Little counter-play, small terror radius, relies on transferable aim skill",
-    "weaknesses": "Slow map control; misses are punishing",
+    "tier": "A",
+    "name": "Spirit",
+    "power": "Phase Walk (invisible sprint)",
+    "strengths": "Extremely hard to read while phasing, leaves husk decoy, strong chase power",
+    "weaknesses": "Tricky to track survivors while phasing; high mental load",
     "status": "Paid",
-    "price": "~500 AC / ~$5"
+    "price": "~500 AC / ~$5",
+    "perks": [
+      "Spirit Fury",
+      "Hex: Haunted Ground",
+      "Rancor"
+    ]
   },
   {
     "rank": 10,
-    "tier": "C",
-    "name": "Cannibal / Bubba",
-    "power": "Chainsaw charges (extended swing)",
-    "strengths": "Post-rework: great on loops, multi-down potential, insta-downs, solid teachables",
-    "weaknesses": "Add-ons merely OK",
-    "status": "Free",
-    "price": "Base game (The Texas Chain Saw Massacre DLC variant — ~$8)"
+    "tier": "A",
+    "name": "Oni",
+    "power": "Blood Fury sprint + insta-down",
+    "strengths": "Best snowball killer, forgiving sprint collision, strong add-ons",
+    "weaknesses": "Slow start; needs early hits to fuel Blood Fury",
+    "status": "Paid",
+    "price": "~500 AC / ~$5",
+    "perks": [
+      "Zanshin Tactics",
+      "Blood Echo",
+      "Nemesis"
+    ]
   },
   {
     "rank": 11,
-    "tier": "C",
-    "name": "Hillbilly",
-    "power": "Chainsaw sprint (9.2 m/s insta-down)",
-    "strengths": "Fastest map traversal, insta-down, pallet-break on sprint",
-    "weaknesses": "Tight turning radius, collision breaks sprint, post-nerf overheat",
-    "status": "Free",
-    "price": "Base game"
+    "tier": "A",
+    "name": "Plague",
+    "power": "Vile Purge + Corrupt Purge",
+    "strengths": "Efficiently injures whole team, great information tool, pressure on healers",
+    "weaknesses": "Survivors can refuse to cleanse; corrupt purge timing",
+    "status": "Paid",
+    "price": "~500 AC / ~$5",
+    "perks": [
+      "Corrupt Intervention",
+      "Infectious Fright",
+      "Dark Devotion"
+    ]
   },
   {
     "rank": 12,
-    "tier": "C",
-    "name": "Legion",
-    "power": "Feral Frenzy sprint + Deep Wound",
-    "strengths": "Injures full team fast, great information/location on first swing, disrupts healing-focused teams",
-    "weaknesses": "Reverts to basic M1 if nobody heals",
+    "tier": "A",
+    "name": "Artist",
+    "power": "Birds of Torment (projectile crow swarms)",
+    "strengths": "Anti-loop ranged pressure, punishes healing, crowd control across distance",
+    "weaknesses": "Birds can be body-blocked; power wasted at wrong loops",
     "status": "Paid",
-    "price": "~500 AC / ~$5"
+    "price": "~500 AC / ~$5",
+    "perks": [
+      "Grim Embrace",
+      "Scourge Hook: Pain Resonance",
+      "Hex: Pentimento"
+    ]
   },
   {
     "rank": 13,
-    "tier": "C",
-    "name": "Ghostface",
-    "power": "Night Shroud stalk (individual exposed)",
-    "strengths": "Stealthiest killer, fast stalk, undetectable in stalk mode, lean/crouch tricks",
-    "weaknesses": "Survivors can break stalk by looking at him",
+    "tier": "A",
+    "name": "Freddy / The Nightmare",
+    "power": "Dream Snares + Gen Teleport",
+    "strengths": "Strong gen pressure via teleport, snares slow loops, passive ability drains survivors",
+    "weaknesses": "Counter-play in waking up; somewhat passive power",
     "status": "Paid",
-    "price": "Scream DLC — ~$8"
+    "price": "A Nightmare on Elm Street DLC ~$8",
+    "perks": [
+      "Fire Up",
+      "Remember Me",
+      "Blood Warden"
+    ]
   },
   {
     "rank": 14,
-    "tier": "C",
-    "name": "Twins",
-    "power": "Charlotte + Victor switch (teleport mechanic)",
-    "strengths": "Map teleport between two bodies, Victor reveals/traps survivors, unique map control",
-    "weaknesses": "Difficult to master; requires playing both characters together",
+    "tier": "A",
+    "name": "Houndmaster",
+    "power": "Scout (dog companion + fetch)",
+    "strengths": "Dog provides additional chase tool, searches areas independently, creates 2v1 pressure",
+    "weaknesses": "Dog pathing inconsistent; requires coordination to maximise",
     "status": "Paid",
-    "price": "~500 AC / ~$5"
+    "price": "~500 AC / ~$5",
+    "perks": [
+      "All-Shaking Thunder",
+      "Scourge Hook: Jagged Compass",
+      "No Quarter"
+    ]
   },
   {
     "rank": 15,
-    "tier": "C",
-    "name": "Doctor",
-    "power": "Static Blast + Shock Therapy",
-    "strengths": "Easy survivor location, simple to learn, shocks stop pallet/window interactions",
-    "weaknesses": "Low complexity ceiling; not very powerful",
-    "status": "Free",
-    "price": "Base game"
+    "tier": "A",
+    "name": "Mastermind / Wesker",
+    "power": "Virulent Bound (dash + grab/throw)",
+    "strengths": "Strong mobility dash, throws survivors into obstacles for bonus hits, high skill expression",
+    "weaknesses": "Dash can be dodged; must close gap before using power",
+    "status": "Paid",
+    "price": "Resident Evil DLC ~$8",
+    "perks": [
+      "Superior Anatomy",
+      "Awakened Awareness",
+      "Terminus"
+    ]
   },
   {
     "rank": 16,
-    "tier": "D",
-    "name": "Wraith",
-    "power": "Cloak/Uncloak",
-    "strengths": "Strong add-ons (Bone Clapper, Silent Bell), hard counter to low-awareness survivors",
-    "weaknesses": "Poor map control; single location only; red-rank survivors adapt quickly",
-    "status": "Free",
-    "price": "Base game"
+    "tier": "A",
+    "name": "Lich / Vecna",
+    "power": "Spellbook (Mage Hand, Fly, Dispelling Sphere)",
+    "strengths": "Multiple spells for varied situations; Fly grants exceptional mobility burst",
+    "weaknesses": "Spell selection is situational; spells recharge slowly",
+    "status": "Paid",
+    "price": "Dungeons & Dragons DLC ~$8",
+    "perks": [
+      "Weave Attunement",
+      "Languid Touch",
+      "Dark Arrogance"
+    ]
   },
   {
     "rank": 17,
-    "tier": "D",
-    "name": "The Shape / Myers",
-    "power": "Evil Within stalking (Tier 1→3)",
-    "strengths": "Tier 3 insta-downs + speed, top-5 snowball potential, strong add-ons (Tombstone, infinite T3)",
-    "weaknesses": "Slow early game; map-dependent; inconsistent",
+    "tier": "B",
+    "name": "Executioner / Pyramid Head",
+    "power": "Trails of Torment + Cages",
+    "strengths": "Circumvents Unbreakable/DS via cages, ranged hits through obstacles, punishes pallet drops",
+    "weaknesses": "Ranged attack cooldown; cage rescues require distance management",
     "status": "Paid",
-    "price": "Halloween DLC — ~$8"
+    "price": "Silent Hill DLC ~$8",
+    "perks": [
+      "Forced Penance",
+      "Trail of Torment",
+      "Deathbound"
+    ]
   },
   {
     "rank": 18,
-    "tier": "D",
-    "name": "Clown",
-    "power": "Afterpiece Tonic bottles (slow + distort)",
-    "strengths": "Strong vs inexperienced survivors, closes loops well, decent range on bottles, good add-ons",
-    "weaknesses": "Limited bottles need reload; inconsistent pressure",
+    "tier": "B",
+    "name": "Cenobite / Pinhead",
+    "power": "Summons of Pain + Chain Hunt",
+    "strengths": "Chain Hunt escalates pressure automatically, good area denial, punishes box-hunting",
+    "weaknesses": "Survivors can solve box to pause chain hunt; requires perks to stay threatening",
     "status": "Paid",
-    "price": "~500 AC / ~$5"
+    "price": "Hellraiser DLC ~$8",
+    "perks": [
+      "Deadlock",
+      "Hex: Plaything",
+      "Scourge Hook: Gift of Pain"
+    ]
   },
   {
     "rank": 19,
-    "tier": "D",
-    "name": "Trapper",
-    "power": "Bear Traps",
-    "strengths": "Simple to learn, high skill ceiling, accessible at all ranks",
-    "weaknesses": "RNG-dependent traps, slow setup, traps can be disarmed",
-    "status": "Free",
-    "price": "Base game"
+    "tier": "B",
+    "name": "Good Guy / Chucky",
+    "power": "Scamper + Hidey-Ho (tiny stealth)",
+    "strengths": "Extremely hard to see, fast Scamper through obstacles, low terror radius",
+    "weaknesses": "Small hitbox can make precision difficult; survivors adapt to size quickly",
+    "status": "Paid",
+    "price": "Child's Play DLC ~$8",
+    "perks": [
+      "Hex: Two Can Play",
+      "Friends 'til the End",
+      "Batteries Included"
+    ]
   },
   {
     "rank": 20,
-    "tier": "D",
-    "name": "Blight",
-    "power": "Rush + wall-bounce lethal attack",
-    "strengths": "Insane map traversal speed, can break pallets mid-sprint",
-    "weaknesses": "One health-state hits only (not insta-down), requires high skill to shine",
+    "tier": "B",
+    "name": "Unknown",
+    "power": "UVX (ranged projectile + teleport)",
+    "strengths": "Strong anti-loop ranged hit, teleport to a UVX-struck survivor, relentless pressure",
+    "weaknesses": "UVX requires good aim; teleport telegraphed",
     "status": "Paid",
-    "price": "~500 AC / ~$5"
+    "price": "~500 AC / ~$5",
+    "perks": [
+      "Unbound",
+      "Unforeseen",
+      "Undone"
+    ]
   },
   {
     "rank": 21,
-    "tier": "D",
-    "name": "Demogorgon",
-    "power": "Portals + Shred lunge",
-    "strengths": "Fun to play, portals give map presence, Shred is fast long-range attack",
-    "weaknesses": "Portals breakable/visible, Shred is easy to dodge once committed",
+    "tier": "B",
+    "name": "Animatronic / Springtrap",
+    "power": "Dire Crank (mechanical ambush tool)",
+    "strengths": "Good versatility, jack-of-all-trades toolkit, low downtime between chases",
+    "weaknesses": "Average at everything; lacks explosive power of higher-tier killers",
     "status": "Paid",
-    "price": "Stranger Things DLC — ~$8"
+    "price": "Five Nights at Freddy's DLC ~$8",
+    "perks": [
+      "Help Wanted",
+      "Phantom Fear",
+      "Haywire"
+    ]
   },
   {
     "rank": 22,
-    "tier": "D",
-    "name": "Pig / Amanda Young",
-    "power": "Reverse Bear Traps + Ambush Dash",
-    "strengths": "Can panic lower-skill teams, secondary ambush stealth",
-    "weaknesses": "Heavy RNG on traps, stealth restricts attacks and visibility, low pressure",
+    "tier": "B",
+    "name": "Huntress",
+    "power": "Thrown hatchets (ranged)",
+    "strengths": "Strong DPS with hatchets, threatening at safe loops, simple transferable skill",
+    "weaknesses": "Must reload from lockers; predictable lullaby; lost defensive-play era advantages",
+    "status": "Free",
+    "price": "Base game",
+    "perks": [
+      "Beast of Prey",
+      "Territorial Imperative",
+      "Hex: Huntress Lullaby"
+    ]
+  },
+  {
+    "rank": 23,
+    "tier": "B",
+    "name": "Deathslinger",
+    "power": "Spear Gun (ranged chain + Deep Wound)",
+    "strengths": "Strong 1v1, hits through structures, good at punishing pre-drops",
+    "weaknesses": "Limited map pressure; bugs hurt consistency; no explosive mobility",
     "status": "Paid",
-    "price": "Saw DLC — ~$5–8"
+    "price": "~500 AC / ~$5",
+    "perks": [
+      "Gearhead",
+      "Dead Man's Switch",
+      "Hex: Retribution"
+    ]
+  },
+  {
+    "rank": 24,
+    "tier": "B",
+    "name": "Hag",
+    "power": "Phantasm Traps (teleport trap)",
+    "strengths": "Best area control, instant teleport on trap trigger, great on indoor maps",
+    "weaknesses": "Coordinate 3-gen required; less effective vs coordinated tournament teams",
+    "status": "Free",
+    "price": "Base game",
+    "perks": [
+      "Hex: Devour Hope",
+      "Hex: Ruin",
+      "Hex: The Third Seal"
+    ]
+  },
+  {
+    "rank": 25,
+    "tier": "B",
+    "name": "Doctor",
+    "power": "Static Blast + Shock Therapy",
+    "strengths": "Great information and map pressure, madness disrupts actions, strong at loops",
+    "weaknesses": "No mobility; body blocks are significant weakness at high level",
+    "status": "Free",
+    "price": "Base game",
+    "perks": [
+      "Monitor & Abuse",
+      "Overcharge",
+      "Overwhelming Presence"
+    ]
+  },
+  {
+    "rank": 26,
+    "tier": "B",
+    "name": "Wraith",
+    "power": "Cloak + high uncloaked speed",
+    "strengths": "Very fast movement while cloaked, strong add-ons, minimal downtime between chases",
+    "weaknesses": "Must uncloak to attack; predictable at high MMR; no strong map power",
+    "status": "Free",
+    "price": "Base game",
+    "perks": [
+      "Bloodhound",
+      "Predator",
+      "Shadowborn"
+    ]
+  },
+  {
+    "rank": 27,
+    "tier": "B",
+    "name": "Dredge",
+    "power": "Nightfall + Locker teleport",
+    "strengths": "Locker control denies safety spots, Nightfall boosts detection and mobility",
+    "weaknesses": "Experienced survivors counter locker pathing; Nightfall inconsistent on open maps",
+    "status": "Paid",
+    "price": "~500 AC / ~$5",
+    "perks": [
+      "Dissolution",
+      "Darkness Revealed",
+      "Septic Touch"
+    ]
+  },
+  {
+    "rank": 28,
+    "tier": "B",
+    "name": "Xenomorph",
+    "power": "Crawler Mode + Tail Attack",
+    "strengths": "Tail attack hits through pallets, tunnel traversal, surprisingly strong at close range",
+    "weaknesses": "Flamethrower turrets hard-counter when survivors coordinate placement",
+    "status": "Paid",
+    "price": "Alien DLC ~$8",
+    "perks": [
+      "Rapid Brutality",
+      "Alien Instinct",
+      "Ultimate Weapon"
+    ]
+  },
+  {
+    "rank": 29,
+    "tier": "B",
+    "name": "Nemesis",
+    "power": "Tentacle Strike (3-tier contamination) + Zombies",
+    "strengths": "Zombie harassment for free, tentacle reaches through pallets, vaccine disrupts survivors",
+    "weaknesses": "Zombies inconsistent; add-ons hit-or-miss; needs 3 hits to contaminate",
+    "status": "Paid",
+    "price": "Resident Evil DLC ~$8",
+    "perks": [
+      "Lethal Pursuer",
+      "Hysteria",
+      "Eruption"
+    ]
+  },
+  {
+    "rank": 30,
+    "tier": "B",
+    "name": "Knight",
+    "power": "Guardia Compagnia (summon guards)",
+    "strengths": "Guards pressure distant gens, harassment tools, partially base-kitted improvements",
+    "weaknesses": "Guards require 50/50 wins; normal movement speed; power not immediately oppressive",
+    "status": "Paid",
+    "price": "~500 AC / ~$5",
+    "perks": [
+      "Nowhere to Hide",
+      "Hex: Face the Darkness",
+      "Hubris"
+    ]
+  },
+  {
+    "rank": 31,
+    "tier": "C",
+    "name": "Onryo / Sadako",
+    "power": "Condemned (TV manifestation + tape mechanic)",
+    "strengths": "Side-objective pressure, confuses inexperienced teams, stealth manifestation tricks",
+    "weaknesses": "Half a power at high level; stealth mediocre; counterplay is simple for good survivors",
+    "status": "Paid",
+    "price": "The Ring DLC ~$8",
+    "perks": [
+      "Scourge Hook: Floods of Rage",
+      "Call of Brine",
+      "Merciless Storm"
+    ]
+  },
+  {
+    "rank": 32,
+    "tier": "C",
+    "name": "Trickster",
+    "power": "Showstopper (knife throws + Main Event)",
+    "strengths": "Main Event bursts down grouped survivors, punishes body blocks, high skill ceiling",
+    "weaknesses": "No map mobility; reload from lockers; weird add-ons; rework incoming",
+    "status": "Paid",
+    "price": "~500 AC / ~$5",
+    "perks": [
+      "Starstruck",
+      "Hex: Crowd Control",
+      "No Way Out"
+    ]
+  },
+  {
+    "rank": 33,
+    "tier": "C",
+    "name": "Clown",
+    "power": "Bottles: slowdown (purple) + speed (yellow)",
+    "strengths": "Forces early pallet drops, strong tunneling, good loop pressure near pallets",
+    "weaknesses": "No map mobility; hook-stage changes hurt defensive playstyle",
+    "status": "Paid",
+    "price": "~500 AC / ~$5",
+    "perks": [
+      "Bamboozle",
+      "Coulrophobia",
+      "Pop Goes the Weasel"
+    ]
+  },
+  {
+    "rank": 34,
+    "tier": "C",
+    "name": "Pig / Amanda Young",
+    "power": "Ambush + Reverse Bear Traps",
+    "strengths": "Built-in gen stall, traps force box searches, great noob stomper",
+    "weaknesses": "Chase power situational; trap RNG punishes poor first chases",
+    "status": "Paid",
+    "price": "~500 AC / ~$5",
+    "perks": [
+      "Scourge Hook: Hangman's Trick",
+      "Surveillance",
+      "Make Your Choice"
+    ]
+  },
+  {
+    "rank": 35,
+    "tier": "C",
+    "name": "Cannibal / Bubba",
+    "power": "Extended chainsaw swing (Chainsaw Tantrum)",
+    "strengths": "Great noob stomper, multi-hit chainsaw, strong hook-side threat",
+    "weaknesses": "Countered by windows; add-on dependent; pallet density hurts badly",
+    "status": "Free",
+    "price": "Base game",
+    "perks": [
+      "Knock Out",
+      "Barbecue & Chilli",
+      "Franklin's Demise"
+    ]
+  },
+  {
+    "rank": 36,
+    "tier": "C",
+    "name": "The Shape / Myers",
+    "power": "Evil Within stalking (tier system)",
+    "strengths": "Stealthy approach, tier-3 insta-down, pallet-break in evil within mode",
+    "weaknesses": "Stalking telegraphed; tier-3 undercooked post-rework; no mobility",
+    "status": "Paid",
+    "price": "Halloween DLC ~$8",
+    "perks": [
+      "Save the Best for Last",
+      "Play with Your Food",
+      "Dying Light"
+    ]
+  },
+  {
+    "rank": 37,
+    "tier": "C",
+    "name": "Legion",
+    "power": "Feral Frenzy sprint + Deep Wound",
+    "strengths": "Injures whole team fast, low skill floor, keeps survivors busy mending",
+    "weaknesses": "No power once survivors are injured; pallet density benefits survivors",
+    "status": "Paid",
+    "price": "~500 AC / ~$5",
+    "perks": [
+      "Discordance",
+      "Mad Grit",
+      "Iron Maiden"
+    ]
+  },
+  {
+    "rank": 38,
+    "tier": "C",
+    "name": "Demogorgon",
+    "power": "Shred + Portals (map teleport)",
+    "strengths": "Balanced all-rounder, portal map control, strong Shred at close range",
+    "weaknesses": "All strengths gradually nerfed; average at everything, best at nothing",
+    "status": "Paid",
+    "price": "Stranger Things DLC ~$8",
+    "perks": [
+      "Surge",
+      "Mindbreaker",
+      "Cruel Limits"
+    ]
+  },
+  {
+    "rank": 39,
+    "tier": "D",
+    "name": "Ghostface",
+    "power": "Night Shroud stalk (individual exposed)",
+    "strengths": "Sneaky, fast stalk, explosive burst potential when multiple survivors are 99% stalked",
+    "weaknesses": "Survivors can break stalk by looking; very limited toolkit beyond stalk burst",
+    "status": "Paid",
+    "price": "Scream DLC ~$8",
+    "perks": [
+      "Furtive Chase",
+      "I'm All Ears",
+      "Thrilling Tremors"
+    ]
+  },
+  {
+    "rank": 40,
+    "tier": "D",
+    "name": "Trapper",
+    "power": "Bear Traps (set + trigger)",
+    "strengths": "Punishes unaware survivors, traps lock down areas with good map knowledge",
+    "weaknesses": "Modern pallet density destroys trap control; slowest setup; D tier in current meta",
+    "status": "Free",
+    "price": "Base game",
+    "perks": [
+      "Unnerving Presence",
+      "Brutal Strength",
+      "Agitation"
+    ]
+  },
+  {
+    "rank": 41,
+    "tier": "D",
+    "name": "Skull Merchant",
+    "power": "Drones (scan + claw traps)",
+    "strengths": "Drone area control, some information gathering, occasional claw trap catches",
+    "weaknesses": "Reworked into near-useless state; F tier in Otz ranking; awaiting full rework",
+    "status": "Paid",
+    "price": "~500 AC / ~$5",
+    "perks": [
+      "THWACK!",
+      "Leverage",
+      "Game Afoot"
+    ]
   }
 ];
 
