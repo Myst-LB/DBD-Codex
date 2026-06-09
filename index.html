@@ -24,6 +24,7 @@
         <button class="nav-btn active" data-section="perks">Survivor Perks</button>
         <button class="nav-btn" data-section="builds">Combo Builds</button>
         <button class="nav-btn" data-section="killers">Killers</button>
+        <button class="nav-btn" data-section="killerperks">Killer Perks</button>
         <button class="nav-btn" data-section="survivors">Survivors</button>
         <button class="nav-btn" data-section="value">Perk Value</button>
         <button class="nav-btn" data-section="theory">Theorycraft</button>
@@ -98,6 +99,35 @@
         <div class="result-count" id="killer-count" aria-live="polite"></div>
       </div>
       <div id="killers-container" class="killers-container"></div>
+    </section>
+
+    <!-- ═══════════════ KILLER PERKS SECTION ═══════════════ -->
+    <section id="section-killerperks" class="content-section">
+      <div class="controls-bar">
+        <div class="search-wrap">
+          <input type="search" id="kperk-search" class="search-input" placeholder="Search killer perks, killers, categories…" aria-label="Search killer perks" />
+        </div>
+        <div class="filter-row">
+          <div class="filter-group" aria-label="Filter by tier">
+            <button class="chip active" data-kperk-tier="all">All</button>
+            <button class="chip tier-excellent"  data-kperk-tier="Excellent">Excellent</button>
+            <button class="chip tier-verygood"   data-kperk-tier="Very Good">Very Good</button>
+            <button class="chip tier-decent"     data-kperk-tier="Decent">Decent</button>
+            <button class="chip tier-niche"      data-kperk-tier="Weak/Niche">Weak/Niche</button>
+            <button class="chip tier-terrible"   data-kperk-tier="Terrible">Terrible</button>
+          </div>
+          <div class="filter-group">
+            <select id="kperk-category-filter" class="filter-select" aria-label="Filter by category">
+              <option value="">All Categories</option>
+            </select>
+            <select id="kperk-character-filter" class="filter-select" aria-label="Filter by killer">
+              <option value="">All Killers</option>
+            </select>
+          </div>
+        </div>
+        <div class="result-count" id="kperk-count" aria-live="polite"></div>
+      </div>
+      <div id="killerperks-container" class="perks-container"></div>
     </section>
 
     <!-- ═══════════════ SURVIVORS SECTION ═══════════════ -->

@@ -560,7 +560,20 @@ body {
   border-radius: 3px;
   padding: 0.1rem 0.45rem;
   white-space: nowrap;
+  cursor: default;
 }
+button.killer-perk-tag {
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+button.killer-perk-tag:hover { filter: brightness(1.3); }
+
+/* Tier-tinted killer perk tags */
+.tier-kperk-Excellent  { color:#d4af37; background:rgba(212,175,55,0.18);  border-color:rgba(212,175,55,0.45); }
+.tier-kperk-Very-Good  { color:#4caf50; background:rgba(76,175,80,0.15);   border-color:rgba(76,175,80,0.4);  }
+.tier-kperk-Decent     { color:#3f7fbf; background:rgba(63,127,191,0.15);  border-color:rgba(63,127,191,0.4); }
+.tier-kperk-Weak\/Niche{ color:#9a9a9a; background:rgba(138,138,138,0.12); border-color:rgba(138,138,138,0.3);}
+.tier-kperk-Terrible   { color:#b71c1c; background:rgba(183,28,28,0.15);   border-color:rgba(183,28,28,0.4);  }
 
 .killer-price {
   font-family: var(--font-ui);

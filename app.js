@@ -5,9 +5,12 @@
   "use strict";
 
   // ── Lookup maps ─────────────────────────────────────────────────────────────
-  const PERK_BY_NAME     = Object.fromEntries(PERKS.map(p => [p.name.toLowerCase(), p]));
-  const PERK_BY_ID       = Object.fromEntries(PERKS.map(p => [p.id, p]));
-  const SURVIVOR_BY_NAME = Object.fromEntries(SURVIVORS.map(s => [s.name.toLowerCase(), s]));
+  const PERK_BY_NAME        = Object.fromEntries(PERKS.map(p => [p.name.toLowerCase(), p]));
+  const PERK_BY_ID          = Object.fromEntries(PERKS.map(p => [p.id, p]));
+  const SURVIVOR_BY_NAME    = Object.fromEntries(SURVIVORS.map(s => [s.name.toLowerCase(), s]));
+  const KILLER_PERK_BY_NAME = Object.fromEntries(KILLER_PERKS.map(p => [p.name.toLowerCase(), p]));
+  const KILLER_PERK_BY_ID   = Object.fromEntries(KILLER_PERKS.map(p => [p.id, p]));
+  const KILLER_BY_NAME      = Object.fromEntries(KILLERS.map(k => [k.name.toLowerCase(), k]));
 
   // ── Dynamic subtitle ────────────────────────────────────────────────────────
   (function () {
@@ -68,7 +71,7 @@
   navBtns.forEach(btn => btn.addEventListener("click", () => showSection(btn.dataset.section)));
 
   const hash = window.location.hash.replace("#", "") || "perks";
-  showSection(["perks","builds","killers","survivors","value","theory","about"].includes(hash) ? hash : "perks", false);
+  showSection(["perks","builds","killers","killerperks","survivors","value","theory","about"].includes(hash) ? hash : "perks", false);
 
   // ── Tooltip ─────────────────────────────────────────────────────────────────
   const tooltip = document.getElementById("perk-tooltip");
@@ -440,7 +443,14 @@
 
   function killerCard(k) {
     const perksHtml = (k.perks && k.perks.length)
-      ? `<div class="killer-perks">${k.perks.map(n => `<span class="killer-perk-tag">${esc(n)}</span>`).join("")}</div>`
+      ? `<div class="killer-perks">${k.perks.map(n => {
+          const kp = KILLER_PERK_BY_NAME[n.toLowerCase()];
+          if (kp) {
+            return `<button class="killer-perk-tag tier-kperk-${kp.tier.replace(/[\s\/]+/g,"-")}"
+                            data-killer-perk-id="${kp.id}">${esc(n)}</button>`;
+          }
+          return `<span class="killer-perk-tag">${esc(n)}</span>`;
+        }).join("")}</div>`
       : "";
     return `
       <article class="killer-card" id="killer-${k.rank}">
@@ -464,6 +474,190 @@
   killerSearch.addEventListener("input", renderKillers);
   killerSort.addEventListener("change", renderKillers);
   renderKillers();
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // KILLER PERKS SECTION
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  const kperkSearch     = document.getElementById("kperk-search");
+  const kperkCatFilter  = document.getElementById("kperk-category-filter");
+  const kperkCharFilter = document.getElementById("kperk-character-filter");
+  const kperkCount      = document.getElementById("kperk-count");
+  const kperksContainer = document.getElementById("killerperks-container");
+
+  // Populate dropdowns
+  [...new Set(KILLER_PERKS.map(p => p.category).filter(Boolean))].sort().forEach(c => {
+    kperkCatFilter.appendChild(Object.assign(document.createElement("option"), { value: c, textContent: c }));
+  });
+  [...new Set(KILLER_PERKS.map(p => p.character).filter(Boolean))].sort().forEach(c => {
+    kperkCharFilter.appendChild(Object.assign(document.createElement("option"), { value: c, textContent: c }));
+  });
+
+  let activeKperkTier = "all";
+  document.querySelectorAll("[data-kperk-tier]").forEach(chip => {
+    chip.addEventListener("click", () => {
+      activeKperkTier = chip.dataset.kperkTier;
+      document.querySelectorAll("[data-kperk-tier]").forEach(c => c.classList.remove("active"));
+      chip.classList.add("active");
+      renderKillerPerks();
+    });
+  });
+
+  function renderKillerPerks() {
+    const query   = kperkSearch.value.toLowerCase().trim();
+    const catVal  = kperkCatFilter.value;
+    const charVal = kperkCharFilter.value;
+
+    const filtered = KILLER_PERKS.filter(p => {
+      if (activeKperkTier !== "all" && p.tier !== activeKperkTier) return false;
+      if (catVal  && p.category  !== catVal)  return false;
+      if (charVal && p.character !== charVal) return false;
+      if (query) {
+        const hay = (p.name + " " + p.character + " " + p.category + " " + p.description).toLowerCase();
+        if (!hay.includes(query)) return false;
+      }
+      return true;
+    });
+
+    kperkCount.textContent = `Showing ${filtered.length} of ${KILLER_PERKS.length} killer perks`;
+
+    if (!filtered.length) {
+      kperksContainer.innerHTML = `
+        <div class="empty-state">
+          <span class="empty-icon">🔪</span>
+          <h3>No perks found in the fog…</h3>
+          <p>No killer perks match your search. Try clearing some filters.</p>
+        </div>`;
+      return;
+    }
+
+    const grouped = Object.fromEntries(TIER_ORDER.map(t => [t, []]));
+    filtered.forEach(p => { if (grouped[p.tier]) grouped[p.tier].push(p); });
+
+    let html = "";
+    TIER_ORDER.forEach(tier => {
+      const tierPerks = grouped[tier];
+      if (!tierPerks.length) return;
+      const color = tierColor(tier);
+      html += `
+        <div class="tier-group">
+          <h2 class="tier-group-header" style="color:${color}">
+            <span class="tier-badge ${tierBadgeClass(tier)}">${esc(tier)}</span>
+            <span class="tier-count">(${tierPerks.length})</span>
+          </h2>
+          <div class="perk-grid">${tierPerks.map(killerPerkCard).join("")}</div>
+        </div>`;
+    });
+
+    kperksContainer.innerHTML = html;
+  }
+
+  function killerPerkCard(p) {
+    const killerObj = KILLER_BY_NAME[p.character.toLowerCase()];
+    const charHtml  = killerObj
+      ? `<button class="character-link perk-character kperk-killer-link" data-killer-rank="${killerObj.rank}">${esc(p.character)}</button>`
+      : `<span class="perk-character">${esc(p.character)}</span>`;
+    return `
+      <article class="perk-card" id="kperk-${p.id}">
+        <div class="perk-card-header">
+          <div class="perk-card-header-text">
+            <span class="perk-name">${esc(p.name)}</span>
+            <span class="tier-badge ${tierBadgeClass(p.tier)}">${esc(p.tier)}</span>
+          </div>
+        </div>
+        <div class="perk-meta">
+          ${charHtml}
+          ${p.category ? `<span class="perk-category">${esc(p.category)}</span>` : ""}
+        </div>
+        <p class="perk-desc">${esc(p.description)}</p>
+      </article>`;
+  }
+
+  function navigateToKillerPerk(id) {
+    const p = KILLER_PERK_BY_ID[id];
+    if (!p) return;
+    activeKperkTier = "all";
+    document.querySelectorAll("[data-kperk-tier]").forEach(c => c.classList.toggle("active", c.dataset.kperkTier === "all"));
+    kperkSearch.value = "";
+    kperkCatFilter.value  = "";
+    kperkCharFilter.value = "";
+    showSection("killerperks");
+    renderKillerPerks();
+    requestAnimationFrame(() => {
+      const el = document.getElementById("kperk-" + id);
+      if (!el) return;
+      el.scrollIntoView({ behavior: "smooth", block: "center" });
+      el.classList.remove("card-highlight");
+      void el.offsetWidth;
+      el.classList.add("card-highlight");
+      el.addEventListener("animationend", () => el.classList.remove("card-highlight"), { once: true });
+    });
+  }
+
+  function navigateToKillerCard(rank) {
+    activeKillerTier = "all";
+    document.querySelectorAll("[data-killer-tier]").forEach(c => c.classList.toggle("active", c.dataset.killerTier === "all"));
+    killerSearch.value = "";
+    killerSort.value = "rank";
+    showSection("killers");
+    renderKillers();
+    requestAnimationFrame(() => {
+      const el = document.getElementById("killer-" + rank);
+      if (!el) return;
+      el.scrollIntoView({ behavior: "smooth", block: "center" });
+      el.classList.remove("card-highlight");
+      void el.offsetWidth;
+      el.classList.add("card-highlight");
+      el.addEventListener("animationend", () => el.classList.remove("card-highlight"), { once: true });
+    });
+  }
+
+  // Delegate killer-perk-tag clicks and killer card links from perk cards
+  document.addEventListener("click", e => {
+    const kpt = e.target.closest("[data-killer-perk-id]");
+    if (kpt) { navigateToKillerPerk(parseInt(kpt.dataset.killerPerkId, 10)); return; }
+    const kkl = e.target.closest(".kperk-killer-link");
+    if (kkl) { navigateToKillerCard(parseInt(kkl.dataset.killerRank, 10)); return; }
+  });
+
+  // Tooltip for killer perk tags on killer cards
+  document.addEventListener("mouseover", e => {
+    const kpt = e.target.closest("[data-killer-perk-id]");
+    if (kpt) {
+      const p = KILLER_PERK_BY_ID[parseInt(kpt.dataset.killerPerkId, 10)];
+      if (p) {
+        tooltip.innerHTML = `
+          <div class="tooltip-name">${esc(p.name)}</div>
+          <div class="tooltip-meta">
+            <span class="tier-badge ${tierBadgeClass(p.tier)}">${esc(p.tier)}</span>
+            <span class="tooltip-char">${esc(p.character)}</span>
+          </div>
+          <div class="tooltip-desc">${esc(p.description)}</div>
+          <div class="tooltip-hint">Click to view perk</div>`;
+        tooltip.style.borderColor = tierColor(p.tier);
+        const rect = kpt.getBoundingClientRect();
+        const tipW = 300, tipH = 200;
+        let x = rect.left, y = rect.bottom + 8;
+        if (x + tipW > window.innerWidth  - 8) x = window.innerWidth  - tipW - 8;
+        if (y + tipH > window.innerHeight - 8) y = rect.top - tipH - 8;
+        if (x < 8) x = 8;
+        tooltip.style.left = x + "px";
+        tooltip.style.top  = y + "px";
+        tooltip.classList.add("visible");
+        tooltip.setAttribute("aria-hidden", "false");
+        tooltipVisible = true;
+      }
+    }
+  });
+
+  document.addEventListener("mouseout", e => {
+    if (e.target.closest("[data-killer-perk-id]")) hideTooltip();
+  });
+
+  kperkSearch.addEventListener("input", renderKillerPerks);
+  kperkCatFilter.addEventListener("change", renderKillerPerks);
+  kperkCharFilter.addEventListener("change", renderKillerPerks);
+  renderKillerPerks();
 
   // ═══════════════════════════════════════════════════════════════════════════
   // SURVIVORS SECTION
