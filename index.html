@@ -25,6 +25,8 @@
         <button class="nav-btn" data-section="builds">Combo Builds</button>
         <button class="nav-btn" data-section="killers">Killers</button>
         <button class="nav-btn" data-section="killerperks">Killer Perks</button>
+        <button class="nav-btn" data-section="killervalue">Killer Value</button>
+        <button class="nav-btn" data-section="killertheory">Killer Theory</button>
         <button class="nav-btn" data-section="survivors">Survivors</button>
         <button class="nav-btn" data-section="value">Perk Value</button>
         <button class="nav-btn" data-section="theory">Theorycraft</button>
@@ -128,6 +130,96 @@
         <div class="result-count" id="kperk-count" aria-live="polite"></div>
       </div>
       <div id="killerperks-container" class="perks-container"></div>
+    </section>
+
+    <!-- ═══════════════ KILLER VALUE SECTION ═══════════════ -->
+    <section id="section-killervalue" class="content-section">
+      <div class="value-header">
+        <h2 class="section-heading">Killer Perk Value Index</h2>
+        <p class="section-desc">Which killers give the best perks to unlock? Ranked by tier quality — invest your Iridescent Shards wisely.</p>
+        <div class="value-legend-row">
+          <div class="value-legend-item">
+            <span class="vl-dot" style="background:#d4af37"></span>
+            <span><strong>Tier Score</strong> — sum of perk tier ratings (Excellent=5, Very Good=4, Decent=3, Niche=1, Terrible=0)</span>
+          </div>
+        </div>
+      </div>
+      <div class="controls-bar">
+        <div class="filter-row">
+          <div class="filter-group">
+            <button class="chip active" data-kvalue-filter="all">All Killers</button>
+            <button class="chip" data-kvalue-filter="Free">Free Only</button>
+            <button class="chip" data-kvalue-filter="Paid">Paid Only</button>
+          </div>
+          <div class="filter-group">
+            <select id="kvalue-sort" class="filter-select" aria-label="Sort killer value index">
+              <option value="total">Sort: Total Score</option>
+              <option value="tier">Sort: Tier Score</option>
+              <option value="name">Sort: Name A–Z</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div id="kvalue-general" class="value-basegame"></div>
+      <div id="kvalue-podium" class="value-podium"></div>
+      <div id="kvalue-container" class="value-container"></div>
+    </section>
+
+    <!-- ═══════════════ KILLER THEORYCRAFT SECTION ═══════════════ -->
+    <section id="section-killertheory" class="content-section">
+      <div class="section-intro">
+        <h2 class="section-heading">Killer Theorycraft</h2>
+        <p class="section-desc">Build your killer loadout. Pick 4 perks from the full killer pool — the analyzer identifies your dominant strategy.</p>
+      </div>
+
+      <div class="theory-build-header">
+        <span class="theory-build-label">Your Killer Build</span>
+        <button id="ktheory-clear" class="theory-clear-btn" style="display:none">Clear Build ×</button>
+      </div>
+
+      <div class="theory-slots" id="ktheory-slots">
+        <div class="theory-slot empty" data-kslot="0"><span class="slot-label">Perk 1</span><span class="slot-hint">_ empty</span></div>
+        <div class="theory-slot empty" data-kslot="1"><span class="slot-label">Perk 2</span><span class="slot-hint">_ empty</span></div>
+        <div class="theory-slot empty" data-kslot="2"><span class="slot-label">Perk 3</span><span class="slot-hint">_ empty</span></div>
+        <div class="theory-slot empty" data-kslot="3"><span class="slot-label">Perk 4</span><span class="slot-hint">_ empty</span></div>
+      </div>
+
+      <div class="theory-analysis" id="ktheory-analysis" style="display:none"></div>
+
+      <div class="theory-picker">
+        <div class="strategy-row">
+          <span class="strategy-label">Strategy:</span>
+          <div class="strategy-chips" id="kstrategy-chips">
+            <button class="strat-chip active" data-kstrategy="all">All</button>
+            <button class="strat-chip" data-kstrategy="genctrl">Gen Control</button>
+            <button class="strat-chip" data-kstrategy="chase">Chase</button>
+            <button class="strat-chip" data-kstrategy="stealth">Stealth</button>
+            <button class="strat-chip" data-kstrategy="info">Information</button>
+            <button class="strat-chip" data-kstrategy="hex">Hex</button>
+            <button class="strat-chip" data-kstrategy="endgame">End-Game</button>
+            <button class="strat-chip" data-kstrategy="utility">Utility</button>
+          </div>
+        </div>
+        <div class="controls-bar" style="margin-bottom:0.5rem">
+          <div class="search-wrap">
+            <input type="search" id="ktheory-search" class="search-input" placeholder="Search killer perks, killers, categories…" />
+          </div>
+          <div class="filter-row">
+            <div class="filter-group">
+              <button class="chip active" data-ktheory-tier="all">All</button>
+              <button class="chip tier-excellent"  data-ktheory-tier="Excellent">Excellent</button>
+              <button class="chip tier-verygood"   data-ktheory-tier="Very Good">Very Good</button>
+              <button class="chip tier-decent"     data-ktheory-tier="Decent">Decent</button>
+              <button class="chip tier-niche"      data-ktheory-tier="Weak/Niche">Niche</button>
+            </div>
+            <div class="filter-group">
+              <select id="ktheory-category" class="filter-select"><option value="">All Categories</option></select>
+              <select id="ktheory-character" class="filter-select"><option value="">All Killers</option></select>
+            </div>
+          </div>
+        </div>
+        <div id="ktheory-perk-grid" class="theory-perk-grid"></div>
+      </div>
     </section>
 
     <!-- ═══════════════ SURVIVORS SECTION ═══════════════ -->

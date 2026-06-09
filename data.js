@@ -6172,3 +6172,1538 @@ const CHAR_VALUE = [
     "rank": 52
   }
 ];
+
+const KILLER_CHAR_VALUE = [
+  {
+    "name": "General (all killers)",
+    "status": "Free",
+    "price": "",
+    "perkCount": 13,
+    "tierScore": 20,
+    "totalScore": 20,
+    "bestPerk": "Hex: Thrill of the Hunt",
+    "bestTier": "Excellent",
+    "perks": [
+      {
+        "id": 1005,
+        "name": "Hex: Thrill of the Hunt",
+        "tier": "Excellent",
+        "tierScore": 5,
+        "category": "Hex"
+      },
+      {
+        "id": 1013,
+        "name": "Hex: No One Escapes Death",
+        "tier": "Very Good",
+        "tierScore": 4,
+        "category": "End-Game"
+      },
+      {
+        "id": 1023,
+        "name": "Sloppy Butcher",
+        "tier": "Very Good",
+        "tierScore": 4,
+        "category": "Utility"
+      },
+      {
+        "id": 1073,
+        "name": "Spies from the Shadows",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "category": "Information"
+      },
+      {
+        "id": 1077,
+        "name": "Deerstalker",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "category": "Information"
+      },
+      {
+        "id": 1097,
+        "name": "Whispers",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "category": "Information"
+      },
+      {
+        "id": 1103,
+        "name": "Scourge Hook: Monstrous Shrine",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "category": "Utility"
+      },
+      {
+        "id": 1106,
+        "name": "Bitter Murmur",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "category": "Information"
+      },
+      {
+        "id": 1127,
+        "name": "Unrelenting",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "category": "Chase"
+      },
+      {
+        "id": 1129,
+        "name": "Iron Grasp",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "category": "Utility"
+      },
+      {
+        "id": 1134,
+        "name": "Insidious",
+        "tier": "Terrible",
+        "tierScore": 0,
+        "category": "Stealth"
+      },
+      {
+        "id": 1136,
+        "name": "Distressing",
+        "tier": "Terrible",
+        "tierScore": 0,
+        "category": "Utility"
+      },
+      {
+        "id": 1139,
+        "name": "Shattered Hope",
+        "tier": "Terrible",
+        "tierScore": 0,
+        "category": "Utility"
+      }
+    ],
+    "rank": 0
+  },
+  {
+    "name": "Artist",
+    "status": "Paid",
+    "price": "~500 AC / ~$5",
+    "perkCount": 3,
+    "tierScore": 13,
+    "totalScore": 13,
+    "bestPerk": "Scourge Hook: Pain Resonance",
+    "bestTier": "Excellent",
+    "perks": [
+      {
+        "id": 1002,
+        "name": "Scourge Hook: Pain Resonance",
+        "tier": "Excellent",
+        "tierScore": 5,
+        "category": "Gen Control"
+      },
+      {
+        "id": 1009,
+        "name": "Grim Embrace",
+        "tier": "Very Good",
+        "tierScore": 4,
+        "category": "Gen Control"
+      },
+      {
+        "id": 1025,
+        "name": "Hex: Pentimento",
+        "tier": "Very Good",
+        "tierScore": 4,
+        "category": "Hex"
+      }
+    ],
+    "rank": 1
+  },
+  {
+    "name": "The First / Henry Creel",
+    "status": "Paid",
+    "price": "Stranger Things DLC ~$8",
+    "perkCount": 3,
+    "tierScore": 13,
+    "totalScore": 13,
+    "bestPerk": "Turn Back the Clock",
+    "bestTier": "Excellent",
+    "perks": [
+      {
+        "id": 1006,
+        "name": "Turn Back the Clock",
+        "tier": "Excellent",
+        "tierScore": 5,
+        "category": "Gen Control"
+      },
+      {
+        "id": 1016,
+        "name": "Hex: Hive Mind",
+        "tier": "Very Good",
+        "tierScore": 4,
+        "category": "Hex"
+      },
+      {
+        "id": 1021,
+        "name": "Secret Project",
+        "tier": "Very Good",
+        "tierScore": 4,
+        "category": "Gen Control"
+      }
+    ],
+    "rank": 2
+  },
+  {
+    "name": "Hag",
+    "status": "Free",
+    "price": "Base game",
+    "perkCount": 3,
+    "tierScore": 11,
+    "totalScore": 11,
+    "bestPerk": "Hex: Ruin",
+    "bestTier": "Excellent",
+    "perks": [
+      {
+        "id": 1004,
+        "name": "Hex: Ruin",
+        "tier": "Excellent",
+        "tierScore": 5,
+        "category": "Hex"
+      },
+      {
+        "id": 1026,
+        "name": "Hex: Devour Hope",
+        "tier": "Decent",
+        "tierScore": 3,
+        "category": "Hex"
+      },
+      {
+        "id": 1052,
+        "name": "Hex: The Third Seal",
+        "tier": "Decent",
+        "tierScore": 3,
+        "category": "Hex"
+      }
+    ],
+    "rank": 3
+  },
+  {
+    "name": "Clown",
+    "status": "Paid",
+    "price": "~500 AC / ~$5",
+    "perkCount": 3,
+    "tierScore": 11,
+    "totalScore": 11,
+    "bestPerk": "Pop Goes the Weasel",
+    "bestTier": "Excellent",
+    "perks": [
+      {
+        "id": 1008,
+        "name": "Pop Goes the Weasel",
+        "tier": "Excellent",
+        "tierScore": 5,
+        "category": "Gen Control"
+      },
+      {
+        "id": 1028,
+        "name": "Bamboozle",
+        "tier": "Decent",
+        "tierScore": 3,
+        "category": "Chase"
+      },
+      {
+        "id": 1050,
+        "name": "Coulrophobia",
+        "tier": "Decent",
+        "tierScore": 3,
+        "category": "Utility"
+      }
+    ],
+    "rank": 4
+  },
+  {
+    "name": "Blight",
+    "status": "Paid",
+    "price": "Archives / ~$8",
+    "perkCount": 3,
+    "tierScore": 11,
+    "totalScore": 11,
+    "bestPerk": "Hex: Undying",
+    "bestTier": "Very Good",
+    "perks": [
+      {
+        "id": 1011,
+        "name": "Hex: Undying",
+        "tier": "Very Good",
+        "tierScore": 4,
+        "category": "Hex"
+      },
+      {
+        "id": 1015,
+        "name": "Hex: Blood Favour",
+        "tier": "Very Good",
+        "tierScore": 4,
+        "category": "Hex"
+      },
+      {
+        "id": 1038,
+        "name": "Dragon's Grip",
+        "tier": "Decent",
+        "tierScore": 3,
+        "category": "Gen Control"
+      }
+    ],
+    "rank": 5
+  },
+  {
+    "name": "Nemesis",
+    "status": "Paid",
+    "price": "Resident Evil DLC ~$8",
+    "perkCount": 3,
+    "tierScore": 10,
+    "totalScore": 10,
+    "bestPerk": "Eruption",
+    "bestTier": "Excellent",
+    "perks": [
+      {
+        "id": 1007,
+        "name": "Eruption",
+        "tier": "Excellent",
+        "tierScore": 5,
+        "category": "Gen Control"
+      },
+      {
+        "id": 1014,
+        "name": "Lethal Pursuer",
+        "tier": "Very Good",
+        "tierScore": 4,
+        "category": "Information"
+      },
+      {
+        "id": 1113,
+        "name": "Hysteria",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "category": "Information"
+      }
+    ],
+    "rank": 6
+  },
+  {
+    "name": "Cenobite / Pinhead",
+    "status": "Paid",
+    "price": "Hellraiser DLC ~$8",
+    "perkCount": 3,
+    "tierScore": 10,
+    "totalScore": 10,
+    "bestPerk": "Deadlock",
+    "bestTier": "Very Good",
+    "perks": [
+      {
+        "id": 1010,
+        "name": "Deadlock",
+        "tier": "Very Good",
+        "tierScore": 4,
+        "category": "Gen Control"
+      },
+      {
+        "id": 1041,
+        "name": "Scourge Hook: Gift of Pain",
+        "tier": "Decent",
+        "tierScore": 3,
+        "category": "Utility"
+      },
+      {
+        "id": 1069,
+        "name": "Hex: Plaything",
+        "tier": "Decent",
+        "tierScore": 3,
+        "category": "Hex"
+      }
+    ],
+    "rank": 7
+  },
+  {
+    "name": "Trickster",
+    "status": "Paid",
+    "price": "~500 AC / ~$5",
+    "perkCount": 3,
+    "tierScore": 10,
+    "totalScore": 10,
+    "bestPerk": "No Way Out",
+    "bestTier": "Very Good",
+    "perks": [
+      {
+        "id": 1012,
+        "name": "No Way Out",
+        "tier": "Very Good",
+        "tierScore": 4,
+        "category": "End-Game"
+      },
+      {
+        "id": 1037,
+        "name": "Starstruck",
+        "tier": "Decent",
+        "tierScore": 3,
+        "category": "Utility"
+      },
+      {
+        "id": 1044,
+        "name": "Hex: Crowd Control",
+        "tier": "Decent",
+        "tierScore": 3,
+        "category": "Hex"
+      }
+    ],
+    "rank": 8
+  },
+  {
+    "name": "Plague",
+    "status": "Paid",
+    "price": "~500 AC / ~$5",
+    "perkCount": 3,
+    "tierScore": 9,
+    "totalScore": 9,
+    "bestPerk": "Corrupt Intervention",
+    "bestTier": "Excellent",
+    "perks": [
+      {
+        "id": 1001,
+        "name": "Corrupt Intervention",
+        "tier": "Excellent",
+        "tierScore": 5,
+        "category": "Gen Control"
+      },
+      {
+        "id": 1065,
+        "name": "Infectious Fright",
+        "tier": "Decent",
+        "tierScore": 3,
+        "category": "Information"
+      },
+      {
+        "id": 1099,
+        "name": "Dark Devotion",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "category": "Stealth"
+      }
+    ],
+    "rank": 9
+  },
+  {
+    "name": "Deathslinger",
+    "status": "Paid",
+    "price": "~500 AC / ~$5",
+    "perkCount": 3,
+    "tierScore": 9,
+    "totalScore": 9,
+    "bestPerk": "Dead Man's Switch",
+    "bestTier": "Excellent",
+    "perks": [
+      {
+        "id": 1003,
+        "name": "Dead Man's Switch",
+        "tier": "Excellent",
+        "tierScore": 5,
+        "category": "Gen Control"
+      },
+      {
+        "id": 1061,
+        "name": "Hex: Retribution",
+        "tier": "Decent",
+        "tierScore": 3,
+        "category": "Hex"
+      },
+      {
+        "id": 1072,
+        "name": "Gearhead",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "category": "Information"
+      }
+    ],
+    "rank": 10
+  },
+  {
+    "name": "Onryo / Sadako",
+    "status": "Paid",
+    "price": "The Ring DLC ~$8",
+    "perkCount": 3,
+    "tierScore": 9,
+    "totalScore": 9,
+    "bestPerk": "Call of Brine",
+    "bestTier": "Decent",
+    "perks": [
+      {
+        "id": 1033,
+        "name": "Call of Brine",
+        "tier": "Decent",
+        "tierScore": 3,
+        "category": "Gen Control"
+      },
+      {
+        "id": 1034,
+        "name": "Scourge Hook: Floods of Rage",
+        "tier": "Decent",
+        "tierScore": 3,
+        "category": "Information"
+      },
+      {
+        "id": 1048,
+        "name": "Merciless Storm",
+        "tier": "Decent",
+        "tierScore": 3,
+        "category": "Gen Control"
+      }
+    ],
+    "rank": 11
+  },
+  {
+    "name": "Xenomorph",
+    "status": "Paid",
+    "price": "Alien DLC ~$8",
+    "perkCount": 3,
+    "tierScore": 9,
+    "totalScore": 9,
+    "bestPerk": "Rapid Brutality",
+    "bestTier": "Decent",
+    "perks": [
+      {
+        "id": 1046,
+        "name": "Rapid Brutality",
+        "tier": "Decent",
+        "tierScore": 3,
+        "category": "Chase"
+      },
+      {
+        "id": 1053,
+        "name": "Alien Instinct",
+        "tier": "Decent",
+        "tierScore": 3,
+        "category": "Information"
+      },
+      {
+        "id": 1066,
+        "name": "Ultimate Weapon",
+        "tier": "Decent",
+        "tierScore": 3,
+        "category": "Information"
+      }
+    ],
+    "rank": 12
+  },
+  {
+    "name": "Trapper",
+    "status": "Free",
+    "price": "Base game",
+    "perkCount": 3,
+    "tierScore": 8,
+    "totalScore": 8,
+    "bestPerk": "Agitation",
+    "bestTier": "Very Good",
+    "perks": [
+      {
+        "id": 1018,
+        "name": "Agitation",
+        "tier": "Very Good",
+        "tierScore": 4,
+        "category": "Utility"
+      },
+      {
+        "id": 1054,
+        "name": "Brutal Strength",
+        "tier": "Decent",
+        "tierScore": 3,
+        "category": "Utility"
+      },
+      {
+        "id": 1132,
+        "name": "Unnerving Presence",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "category": "Utility"
+      }
+    ],
+    "rank": 13
+  },
+  {
+    "name": "Cannibal / Bubba",
+    "status": "Free",
+    "price": "Base game",
+    "perkCount": 3,
+    "tierScore": 8,
+    "totalScore": 8,
+    "bestPerk": "Barbecue & Chilli",
+    "bestTier": "Very Good",
+    "perks": [
+      {
+        "id": 1019,
+        "name": "Barbecue & Chilli",
+        "tier": "Very Good",
+        "tierScore": 4,
+        "category": "Information"
+      },
+      {
+        "id": 1071,
+        "name": "Franklin's Demise",
+        "tier": "Decent",
+        "tierScore": 3,
+        "category": "Utility"
+      },
+      {
+        "id": 1119,
+        "name": "Knock Out",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "category": "Utility"
+      }
+    ],
+    "rank": 14
+  },
+  {
+    "name": "Hillbilly",
+    "status": "Free",
+    "price": "Base game",
+    "perkCount": 3,
+    "tierScore": 8,
+    "totalScore": 8,
+    "bestPerk": "Tinkerer",
+    "bestTier": "Very Good",
+    "perks": [
+      {
+        "id": 1020,
+        "name": "Tinkerer",
+        "tier": "Very Good",
+        "tierScore": 4,
+        "category": "Information"
+      },
+      {
+        "id": 1039,
+        "name": "Enduring",
+        "tier": "Decent",
+        "tierScore": 3,
+        "category": "Chase"
+      },
+      {
+        "id": 1110,
+        "name": "Lightborn",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "category": "Utility"
+      }
+    ],
+    "rank": 15
+  },
+  {
+    "name": "Demogorgon",
+    "status": "Paid",
+    "price": "Stranger Things DLC ~$8",
+    "perkCount": 3,
+    "tierScore": 8,
+    "totalScore": 8,
+    "bestPerk": "Surge",
+    "bestTier": "Very Good",
+    "perks": [
+      {
+        "id": 1024,
+        "name": "Surge",
+        "tier": "Very Good",
+        "tierScore": 4,
+        "category": "Gen Control"
+      },
+      {
+        "id": 1057,
+        "name": "Mindbreaker",
+        "tier": "Decent",
+        "tierScore": 3,
+        "category": "Gen Control"
+      },
+      {
+        "id": 1111,
+        "name": "Cruel Limits",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "category": "Chase"
+      }
+    ],
+    "rank": 16
+  },
+  {
+    "name": "Ghostface",
+    "status": "Paid",
+    "price": "Scream DLC ~$8",
+    "perkCount": 3,
+    "tierScore": 7,
+    "totalScore": 7,
+    "bestPerk": "Furtive Chase",
+    "bestTier": "Decent",
+    "perks": [
+      {
+        "id": 1031,
+        "name": "Furtive Chase",
+        "tier": "Decent",
+        "tierScore": 3,
+        "category": "Stealth"
+      },
+      {
+        "id": 1042,
+        "name": "Thrilling Tremors",
+        "tier": "Decent",
+        "tierScore": 3,
+        "category": "Gen Control"
+      },
+      {
+        "id": 1090,
+        "name": "I'm All Ears",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "category": "Information"
+      }
+    ],
+    "rank": 17
+  },
+  {
+    "name": "Twins",
+    "status": "Paid",
+    "price": "~500 AC / ~$5",
+    "perkCount": 3,
+    "tierScore": 7,
+    "totalScore": 7,
+    "bestPerk": "Coup de Grâce",
+    "bestTier": "Decent",
+    "perks": [
+      {
+        "id": 1036,
+        "name": "Coup de Grâce",
+        "tier": "Decent",
+        "tierScore": 3,
+        "category": "Chase"
+      },
+      {
+        "id": 1070,
+        "name": "Oppression",
+        "tier": "Decent",
+        "tierScore": 3,
+        "category": "Gen Control"
+      },
+      {
+        "id": 1117,
+        "name": "Hoarder",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "category": "Information"
+      }
+    ],
+    "rank": 18
+  },
+  {
+    "name": "Freddy / The Nightmare",
+    "status": "Paid",
+    "price": "A Nightmare on Elm Street DLC ~$8",
+    "perkCount": 3,
+    "tierScore": 7,
+    "totalScore": 7,
+    "bestPerk": "Fire Up",
+    "bestTier": "Decent",
+    "perks": [
+      {
+        "id": 1040,
+        "name": "Fire Up",
+        "tier": "Decent",
+        "tierScore": 3,
+        "category": "Utility"
+      },
+      {
+        "id": 1047,
+        "name": "Remember Me",
+        "tier": "Decent",
+        "tierScore": 3,
+        "category": "End-Game"
+      },
+      {
+        "id": 1102,
+        "name": "Blood Warden",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "category": "End-Game"
+      }
+    ],
+    "rank": 19
+  },
+  {
+    "name": "Spirit",
+    "status": "Paid",
+    "price": "~500 AC / ~$5",
+    "perkCount": 3,
+    "tierScore": 7,
+    "totalScore": 7,
+    "bestPerk": "Rancor",
+    "bestTier": "Decent",
+    "perks": [
+      {
+        "id": 1056,
+        "name": "Rancor",
+        "tier": "Decent",
+        "tierScore": 3,
+        "category": "End-Game"
+      },
+      {
+        "id": 1062,
+        "name": "Hex: Haunted Ground",
+        "tier": "Decent",
+        "tierScore": 3,
+        "category": "Hex"
+      },
+      {
+        "id": 1086,
+        "name": "Spirit Fury",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "category": "Chase"
+      }
+    ],
+    "rank": 20
+  },
+  {
+    "name": "Knight",
+    "status": "Paid",
+    "price": "~500 AC / ~$5",
+    "perkCount": 3,
+    "tierScore": 6,
+    "totalScore": 6,
+    "bestPerk": "Nowhere to Hide",
+    "bestTier": "Very Good",
+    "perks": [
+      {
+        "id": 1017,
+        "name": "Nowhere to Hide",
+        "tier": "Very Good",
+        "tierScore": 4,
+        "category": "Information"
+      },
+      {
+        "id": 1080,
+        "name": "Hex: Face the Darkness",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "category": "Hex"
+      },
+      {
+        "id": 1088,
+        "name": "Hubris",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "category": "Chase"
+      }
+    ],
+    "rank": 21
+  },
+  {
+    "name": "Nurse",
+    "status": "Free",
+    "price": "Base game",
+    "perkCount": 3,
+    "tierScore": 6,
+    "totalScore": 6,
+    "bestPerk": "A Nurse's Calling",
+    "bestTier": "Very Good",
+    "perks": [
+      {
+        "id": 1022,
+        "name": "A Nurse's Calling",
+        "tier": "Very Good",
+        "tierScore": 4,
+        "category": "Information"
+      },
+      {
+        "id": 1107,
+        "name": "Thanatophobia",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "category": "Utility"
+      },
+      {
+        "id": 1133,
+        "name": "Stridor",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "category": "Information"
+      }
+    ],
+    "rank": 22
+  },
+  {
+    "name": "Dark Lord / Dracula",
+    "status": "Paid",
+    "price": "Castlevania DLC ~$8",
+    "perkCount": 3,
+    "tierScore": 5,
+    "totalScore": 5,
+    "bestPerk": "Hex: Wretched Fate",
+    "bestTier": "Decent",
+    "perks": [
+      {
+        "id": 1027,
+        "name": "Hex: Wretched Fate",
+        "tier": "Decent",
+        "tierScore": 3,
+        "category": "Hex"
+      },
+      {
+        "id": 1074,
+        "name": "Human Greed",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "category": "Stealth"
+      },
+      {
+        "id": 1085,
+        "name": "Dominance",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "category": "Information"
+      }
+    ],
+    "rank": 23
+  },
+  {
+    "name": "Good Guy / Chucky",
+    "status": "Paid",
+    "price": "Child's Play DLC ~$8",
+    "perkCount": 3,
+    "tierScore": 5,
+    "totalScore": 5,
+    "bestPerk": "Friends 'til the End",
+    "bestTier": "Decent",
+    "perks": [
+      {
+        "id": 1030,
+        "name": "Friends 'til the End",
+        "tier": "Decent",
+        "tierScore": 3,
+        "category": "Information"
+      },
+      {
+        "id": 1095,
+        "name": "Batteries Included",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "category": "Utility"
+      },
+      {
+        "id": 1126,
+        "name": "Hex: Two Can Play",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "category": "Hex"
+      }
+    ],
+    "rank": 24
+  },
+  {
+    "name": "Dredge",
+    "status": "Paid",
+    "price": "~500 AC / ~$5",
+    "perkCount": 3,
+    "tierScore": 5,
+    "totalScore": 5,
+    "bestPerk": "Dissolution",
+    "bestTier": "Decent",
+    "perks": [
+      {
+        "id": 1032,
+        "name": "Dissolution",
+        "tier": "Decent",
+        "tierScore": 3,
+        "category": "Chase"
+      },
+      {
+        "id": 1096,
+        "name": "Darkness Revealed",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "category": "Information"
+      },
+      {
+        "id": 1118,
+        "name": "Septic Touch",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "category": "Utility"
+      }
+    ],
+    "rank": 25
+  },
+  {
+    "name": "Legion",
+    "status": "Paid",
+    "price": "~500 AC / ~$5",
+    "perkCount": 3,
+    "tierScore": 5,
+    "totalScore": 5,
+    "bestPerk": "Discordance",
+    "bestTier": "Decent",
+    "perks": [
+      {
+        "id": 1035,
+        "name": "Discordance",
+        "tier": "Decent",
+        "tierScore": 3,
+        "category": "Information"
+      },
+      {
+        "id": 1112,
+        "name": "Mad Grit",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "category": "Chase"
+      },
+      {
+        "id": 1121,
+        "name": "Iron Maiden",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "category": "Information"
+      }
+    ],
+    "rank": 26
+  },
+  {
+    "name": "Wraith",
+    "status": "Free",
+    "price": "Base game",
+    "perkCount": 3,
+    "tierScore": 5,
+    "totalScore": 5,
+    "bestPerk": "Predator",
+    "bestTier": "Decent",
+    "perks": [
+      {
+        "id": 1045,
+        "name": "Predator",
+        "tier": "Decent",
+        "tierScore": 3,
+        "category": "Information"
+      },
+      {
+        "id": 1130,
+        "name": "Shadowborn",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "category": "Utility"
+      },
+      {
+        "id": 1131,
+        "name": "Bloodhound",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "category": "Information"
+      }
+    ],
+    "rank": 27
+  },
+  {
+    "name": "Mastermind / Wesker",
+    "status": "Paid",
+    "price": "Resident Evil DLC ~$8",
+    "perkCount": 3,
+    "tierScore": 5,
+    "totalScore": 5,
+    "bestPerk": "Terminus",
+    "bestTier": "Decent",
+    "perks": [
+      {
+        "id": 1049,
+        "name": "Terminus",
+        "tier": "Decent",
+        "tierScore": 3,
+        "category": "End-Game"
+      },
+      {
+        "id": 1094,
+        "name": "Superior Anatomy",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "category": "Chase"
+      },
+      {
+        "id": 1098,
+        "name": "Awakened Awareness",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "category": "Information"
+      }
+    ],
+    "rank": 28
+  },
+  {
+    "name": "Skull Merchant",
+    "status": "Paid",
+    "price": "~500 AC / ~$5",
+    "perkCount": 3,
+    "tierScore": 5,
+    "totalScore": 5,
+    "bestPerk": "Leverage",
+    "bestTier": "Decent",
+    "perks": [
+      {
+        "id": 1055,
+        "name": "Leverage",
+        "tier": "Decent",
+        "tierScore": 3,
+        "category": "Utility"
+      },
+      {
+        "id": 1084,
+        "name": "Game Afoot",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "category": "Chase"
+      },
+      {
+        "id": 1100,
+        "name": "THWACK!",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "category": "Utility"
+      }
+    ],
+    "rank": 29
+  },
+  {
+    "name": "Singularity",
+    "status": "Paid",
+    "price": "~500 AC / ~$5",
+    "perkCount": 3,
+    "tierScore": 5,
+    "totalScore": 5,
+    "bestPerk": "Genetic Limits",
+    "bestTier": "Decent",
+    "perks": [
+      {
+        "id": 1058,
+        "name": "Genetic Limits",
+        "tier": "Decent",
+        "tierScore": 3,
+        "category": "Chase"
+      },
+      {
+        "id": 1082,
+        "name": "Machine Learning",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "category": "Gen Control"
+      },
+      {
+        "id": 1092,
+        "name": "Forced Hesitation",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "category": "Chase"
+      }
+    ],
+    "rank": 30
+  },
+  {
+    "name": "Doctor",
+    "status": "Free",
+    "price": "Base game",
+    "perkCount": 3,
+    "tierScore": 5,
+    "totalScore": 5,
+    "bestPerk": "Overwhelming Presence",
+    "bestTier": "Decent",
+    "perks": [
+      {
+        "id": 1059,
+        "name": "Overwhelming Presence",
+        "tier": "Decent",
+        "tierScore": 3,
+        "category": "Utility"
+      },
+      {
+        "id": 1091,
+        "name": "Monitor & Abuse",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "category": "Stealth"
+      },
+      {
+        "id": 1104,
+        "name": "Overcharge",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "category": "Gen Control"
+      }
+    ],
+    "rank": 31
+  },
+  {
+    "name": "Pig / Amanda Young",
+    "status": "Paid",
+    "price": "~500 AC / ~$5",
+    "perkCount": 3,
+    "tierScore": 5,
+    "totalScore": 5,
+    "bestPerk": "Scourge Hook: Hangman's Trick",
+    "bestTier": "Decent",
+    "perks": [
+      {
+        "id": 1060,
+        "name": "Scourge Hook: Hangman's Trick",
+        "tier": "Decent",
+        "tierScore": 3,
+        "category": "Information"
+      },
+      {
+        "id": 1076,
+        "name": "Surveillance",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "category": "Information"
+      },
+      {
+        "id": 1087,
+        "name": "Make Your Choice",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "category": "Chase"
+      }
+    ],
+    "rank": 32
+  },
+  {
+    "name": "Ghoul / Kaneki",
+    "status": "Paid",
+    "price": "Tokyo Ghoul DLC ~$8",
+    "perkCount": 3,
+    "tierScore": 5,
+    "totalScore": 5,
+    "bestPerk": "Forever Entwined",
+    "bestTier": "Decent",
+    "perks": [
+      {
+        "id": 1063,
+        "name": "Forever Entwined",
+        "tier": "Decent",
+        "tierScore": 3,
+        "category": "Gen Control"
+      },
+      {
+        "id": 1122,
+        "name": "Hex: Nothing But Misery",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "category": "Hex"
+      },
+      {
+        "id": 1124,
+        "name": "None Are Free",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "category": "Utility"
+      }
+    ],
+    "rank": 33
+  },
+  {
+    "name": "Oni",
+    "status": "Paid",
+    "price": "~500 AC / ~$5",
+    "perkCount": 3,
+    "tierScore": 5,
+    "totalScore": 5,
+    "bestPerk": "Zanshin Tactics",
+    "bestTier": "Decent",
+    "perks": [
+      {
+        "id": 1064,
+        "name": "Zanshin Tactics",
+        "tier": "Decent",
+        "tierScore": 3,
+        "category": "Information"
+      },
+      {
+        "id": 1081,
+        "name": "Nemesis",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "category": "Utility"
+      },
+      {
+        "id": 1109,
+        "name": "Blood Echo",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "category": "Chase"
+      }
+    ],
+    "rank": 34
+  },
+  {
+    "name": "Lich / Vecna",
+    "status": "Paid",
+    "price": "Dungeons & Dragons DLC ~$8",
+    "perkCount": 3,
+    "tierScore": 5,
+    "totalScore": 5,
+    "bestPerk": "Languid Touch",
+    "bestTier": "Decent",
+    "perks": [
+      {
+        "id": 1067,
+        "name": "Languid Touch",
+        "tier": "Decent",
+        "tierScore": 3,
+        "category": "Chase"
+      },
+      {
+        "id": 1083,
+        "name": "Weave Attunement",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "category": "Information"
+      },
+      {
+        "id": 1101,
+        "name": "Dark Arrogance",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "category": "Stealth"
+      }
+    ],
+    "rank": 35
+  },
+  {
+    "name": "The Shape / Myers",
+    "status": "Paid",
+    "price": "Halloween DLC ~$8",
+    "perkCount": 3,
+    "tierScore": 5,
+    "totalScore": 5,
+    "bestPerk": "Save the Best for Last",
+    "bestTier": "Decent",
+    "perks": [
+      {
+        "id": 1068,
+        "name": "Save the Best for Last",
+        "tier": "Decent",
+        "tierScore": 3,
+        "category": "Chase"
+      },
+      {
+        "id": 1089,
+        "name": "Play with Your Food",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "category": "Chase"
+      },
+      {
+        "id": 1108,
+        "name": "Dying Light",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "category": "Utility"
+      }
+    ],
+    "rank": 36
+  },
+  {
+    "name": "Unknown",
+    "status": "Paid",
+    "price": "~500 AC / ~$5",
+    "perkCount": 3,
+    "tierScore": 4,
+    "totalScore": 4,
+    "bestPerk": "Unforeseen",
+    "bestTier": "Decent",
+    "perks": [
+      {
+        "id": 1029,
+        "name": "Unforeseen",
+        "tier": "Decent",
+        "tierScore": 3,
+        "category": "Stealth"
+      },
+      {
+        "id": 1115,
+        "name": "Unbound",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "category": "Information"
+      },
+      {
+        "id": 1137,
+        "name": "Undone",
+        "tier": "Terrible",
+        "tierScore": 0,
+        "category": "Gen Control"
+      }
+    ],
+    "rank": 37
+  },
+  {
+    "name": "Houndmaster",
+    "status": "Paid",
+    "price": "~500 AC / ~$5",
+    "perkCount": 3,
+    "tierScore": 4,
+    "totalScore": 4,
+    "bestPerk": "Scourge Hook: Jagged Compass",
+    "bestTier": "Decent",
+    "perks": [
+      {
+        "id": 1043,
+        "name": "Scourge Hook: Jagged Compass",
+        "tier": "Decent",
+        "tierScore": 3,
+        "category": "Gen Control"
+      },
+      {
+        "id": 1116,
+        "name": "All-Shaking Thunder",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "category": "Gen Control"
+      },
+      {
+        "id": 1135,
+        "name": "No Quarter",
+        "tier": "Terrible",
+        "tierScore": 0,
+        "category": "Utility"
+      }
+    ],
+    "rank": 38
+  },
+  {
+    "name": "Animatronic / Springtrap",
+    "status": "Paid",
+    "price": "Five Nights at Freddy's DLC ~$8",
+    "perkCount": 3,
+    "tierScore": 4,
+    "totalScore": 4,
+    "bestPerk": "Phantom Fear",
+    "bestTier": "Decent",
+    "perks": [
+      {
+        "id": 1051,
+        "name": "Phantom Fear",
+        "tier": "Decent",
+        "tierScore": 3,
+        "category": "Information"
+      },
+      {
+        "id": 1123,
+        "name": "Help Wanted",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "category": "Information"
+      },
+      {
+        "id": 1138,
+        "name": "Haywire",
+        "tier": "Terrible",
+        "tierScore": 0,
+        "category": "Gen Control"
+      }
+    ],
+    "rank": 39
+  },
+  {
+    "name": "Executioner / Pyramid Head",
+    "status": "Paid",
+    "price": "Silent Hill DLC ~$8",
+    "perkCount": 3,
+    "tierScore": 3,
+    "totalScore": 3,
+    "bestPerk": "Trail of Torment",
+    "bestTier": "Weak/Niche",
+    "perks": [
+      {
+        "id": 1075,
+        "name": "Trail of Torment",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "category": "Stealth"
+      },
+      {
+        "id": 1078,
+        "name": "Deathbound",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "category": "Information"
+      },
+      {
+        "id": 1093,
+        "name": "Forced Penance",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "category": "Utility"
+      }
+    ],
+    "rank": 40
+  },
+  {
+    "name": "Huntress",
+    "status": "Free",
+    "price": "Base game",
+    "perkCount": 3,
+    "tierScore": 3,
+    "totalScore": 3,
+    "bestPerk": "Hex: Huntress Lullaby",
+    "bestTier": "Weak/Niche",
+    "perks": [
+      {
+        "id": 1079,
+        "name": "Hex: Huntress Lullaby",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "category": "Hex"
+      },
+      {
+        "id": 1114,
+        "name": "Beast of Prey",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "category": "Stealth"
+      },
+      {
+        "id": 1128,
+        "name": "Territorial Imperative",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "category": "Information"
+      }
+    ],
+    "rank": 41
+  },
+  {
+    "name": "Krasue",
+    "status": "Paid",
+    "price": "~500 AC / ~$5",
+    "perkCount": 3,
+    "tierScore": 3,
+    "totalScore": 3,
+    "bestPerk": "Ravenous",
+    "bestTier": "Weak/Niche",
+    "perks": [
+      {
+        "id": 1105,
+        "name": "Ravenous",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "category": "Chase"
+      },
+      {
+        "id": 1120,
+        "name": "Wandering Eye",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "category": "Information"
+      },
+      {
+        "id": 1125,
+        "name": "Hex: Overture of Doom",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "category": "Hex"
+      }
+    ],
+    "rank": 42
+  }
+];

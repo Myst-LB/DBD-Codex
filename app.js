@@ -71,7 +71,7 @@
   navBtns.forEach(btn => btn.addEventListener("click", () => showSection(btn.dataset.section)));
 
   const hash = window.location.hash.replace("#", "") || "perks";
-  showSection(["perks","builds","killers","killerperks","survivors","value","theory","about"].includes(hash) ? hash : "perks", false);
+  showSection(["perks","builds","killers","killerperks","killervalue","killertheory","survivors","value","theory","about"].includes(hash) ? hash : "perks", false);
 
   // ── Tooltip ─────────────────────────────────────────────────────────────────
   const tooltip = document.getElementById("perk-tooltip");
@@ -1217,6 +1217,378 @@
   renderTheoryGrid();
 
   // ── Allow "theory" as a valid hash section ───────────────────────────────────
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // KILLER PERK VALUE INDEX SECTION
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  const kvaluePodium    = document.getElementById("kvalue-podium");
+  const kvalueGeneral   = document.getElementById("kvalue-general");
+  const kvalueContainer = document.getElementById("kvalue-container");
+  const kvalueSort      = document.getElementById("kvalue-sort");
+  let activeKValueFilter = "all";
+
+  const K_GENERAL = KILLER_CHAR_VALUE.find(c => c.name === "General (all killers)");
+  const K_RANKED  = KILLER_CHAR_VALUE.filter(c => c.name !== "General (all killers)");
+
+  const kScores   = K_RANKED.map(c => c.totalScore);
+  const kMaxScore = Math.max(...kScores);
+  function kValueTier(score) {
+    const pct = score / kMaxScore;
+    if (pct >= 0.72) return "S";
+    if (pct >= 0.50) return "A";
+    if (pct >= 0.30) return "B";
+    if (pct >= 0.14) return "C";
+    return "D";
+  }
+
+  document.querySelectorAll("[data-kvalue-filter]").forEach(chip => {
+    chip.addEventListener("click", () => {
+      activeKValueFilter = chip.dataset.kvalueFilter;
+      document.querySelectorAll("[data-kvalue-filter]").forEach(c => c.classList.remove("active"));
+      chip.classList.add("active");
+      renderKillerValueIndex();
+    });
+  });
+  kvalueSort.addEventListener("change", renderKillerValueIndex);
+
+  function sortedKRanked() {
+    let list = K_RANKED.filter(c => {
+      if (activeKValueFilter === "Free") return c.status === "Free";
+      if (activeKValueFilter === "Paid") return c.status === "Paid";
+      return true;
+    });
+    const by = kvalueSort.value;
+    if (by === "tier")  list.sort((a, b) => b.tierScore  - a.tierScore);
+    if (by === "name")  list.sort((a, b) => a.name.localeCompare(b.name));
+    if (by === "total") list.sort((a, b) => b.totalScore - a.totalScore);
+    return list;
+  }
+
+  function renderKillerValueIndex() {
+    const list = sortedKRanked();
+    const topList = K_RANKED.slice(0, 3);
+
+    const medals = ["🥇", "🥈", "🥉"];
+    const podiumClasses = ["gold", "silver", "bronze"];
+    kvaluePodium.innerHTML = topList.map((c, i) => {
+      const statusCls = c.status === "Free" ? "tier-verygood" : "tier-niche";
+      return `
+        <div class="podium-card ${podiumClasses[i]}">
+          <span class="podium-status"><span class="tier-badge ${statusCls}">${esc(c.status || "")}</span></span>
+          <span class="podium-medal">${medals[i]}</span>
+          <div class="podium-rank">#${c.rank}</div>
+          <div class="podium-name">${esc(c.name)}</div>
+          <div class="podium-score">${c.totalScore}</div>
+          <div class="podium-score-label">tier score</div>
+          <div class="podium-best">Best: <em>${esc(c.bestPerk)}</em></div>
+        </div>`;
+    }).join("");
+
+    if (K_GENERAL) {
+      kvalueGeneral.innerHTML = `
+        <strong>General Perks (${K_GENERAL.perkCount} perks, Score ${K_GENERAL.totalScore})</strong>
+        — These perks are usable by every killer and not included in the ranking above.
+        Notable: ${K_GENERAL.perks.slice(0, 5).map(p => `<em>${esc(p.name)}</em> (${esc(p.tier)})`).join(", ")} and more.`;
+    }
+
+    if (!list.length) {
+      kvalueContainer.innerHTML = `<div class="empty-state"><span class="empty-icon">🔪</span><h3>No killers match this filter</h3></div>`;
+      return;
+    }
+
+    const tierOrder = ["S", "A", "B", "C", "D"];
+    const VALUE_TIER_LABELS_K = {
+      S: { label: "S — Essential", color: "#d4af37", desc: "Must-unlock — top-tier perks usable on any killer" },
+      A: { label: "A — High Value", color: "#4caf50", desc: "Strong perks worth prioritising early" },
+      B: { label: "B — Solid",      color: "#3f7fbf", desc: "Good perks worth picking up eventually" },
+      C: { label: "C — Situational",color: "#8a8a8a", desc: "Niche perks — useful in specific builds" },
+      D: { label: "D — Skip",       color: "#b71c1c", desc: "Low-impact perks — rarely worth prestige" },
+    };
+    const grouped = Object.fromEntries(tierOrder.map(t => [t, []]));
+    list.forEach(c => grouped[kValueTier(c.totalScore)].push(c));
+
+    let html = "";
+    tierOrder.forEach(vt => {
+      const chars = grouped[vt];
+      if (!chars.length) return;
+      const meta = VALUE_TIER_LABELS_K[vt];
+      html += `
+        <div class="value-tier-group">
+          <h3 class="value-tier-header" style="color:${meta.color}">
+            <span class="tier-badge badge-${vt}" style="color:${meta.color};border-color:${meta.color};font-size:0.9rem">${vt}</span>
+            ${esc(meta.label)}
+            <span class="value-tier-desc">${esc(meta.desc)}</span>
+          </h3>
+          <div class="value-grid">
+            ${chars.map(c => killerCharCard(c, kMaxScore)).join("")}
+          </div>
+        </div>`;
+    });
+    kvalueContainer.innerHTML = html;
+  }
+
+  function killerCharCard(c, maxScore) {
+    const tierW    = Math.round((c.tierScore / maxScore) * 100);
+    const statusCls = c.status === "Free" ? "tier-verygood" : "tier-niche";
+    const perkRows  = c.perks.map(p => `
+      <div class="char-perk-row">
+        <span class="tier-badge ${tierBadgeClass(p.tier)}" style="font-size:0.6rem;padding:0.1rem 0.35rem">${esc(p.tier)}</span>
+        <span class="char-perk-name kvalue-perk-link" data-killer-perk-id="${p.id}">${esc(p.name)}</span>
+      </div>`).join("");
+
+    return `
+      <article class="char-card" id="kchar-${c.rank}">
+        <div class="char-card-header">
+          <span class="char-rank">#${c.rank}</span>
+          <span class="char-name">${esc(c.name)}</span>
+          <span class="tier-badge ${statusCls}">${esc(c.status || "")}</span>
+        </div>
+        <div class="score-bar-wrap">
+          <div class="score-bar-labels">
+            <span>Tier <strong style="color:#d4af37">${c.tierScore}</strong></span>
+            <span class="score-total-label">Total <strong>${c.totalScore}</strong></span>
+          </div>
+          <div class="score-bar-track">
+            <div class="score-bar-tier" style="width:${tierW}%"></div>
+          </div>
+        </div>
+        <div class="char-perk-list">${perkRows}</div>
+      </article>`;
+  }
+
+  document.addEventListener("click", e => {
+    const kpn = e.target.closest(".kvalue-perk-link");
+    if (kpn && kpn.dataset.killerPerkId) navigateToKillerPerk(parseInt(kpn.dataset.killerPerkId, 10));
+  });
+
+  renderKillerValueIndex();
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // KILLER THEORYCRAFT SECTION
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  const kTheorySlots = [null, null, null, null];
+
+  function kCategoryToRole(cat) {
+    if (!cat) return "";
+    const MAP = {
+      "gen control": "Gen Control", "hex": "Hex",
+      "chase": "Chase", "stealth": "Stealth",
+      "information": "Info", "end-game": "End-Game",
+      "utility": "Utility",
+    };
+    return MAP[cat.toLowerCase()] || cat.split("/")[0];
+  }
+
+  const kTheorySlotEls  = document.querySelectorAll("#ktheory-slots .theory-slot");
+  const kTheoryGrid     = document.getElementById("ktheory-perk-grid");
+  const kTheorySearch   = document.getElementById("ktheory-search");
+  const kTheoryCatSel   = document.getElementById("ktheory-category");
+  const kTheoryCharSel  = document.getElementById("ktheory-character");
+  const kTheoryAnalysis = document.getElementById("ktheory-analysis");
+  const kTheoryClearBtn = document.getElementById("ktheory-clear");
+
+  const K_STRATEGY_CATS = {
+    genctrl: new Set(["Gen Control"]),
+    chase:   new Set(["Chase"]),
+    stealth: new Set(["Stealth"]),
+    info:    new Set(["Information"]),
+    hex:     new Set(["Hex"]),
+    endgame: new Set(["End-Game"]),
+    utility: new Set(["Utility"]),
+  };
+  const K_STRATEGY_NAMES = {
+    genctrl: "Gen Control", chase: "Chase", stealth: "Stealth",
+    info: "Information", hex: "Hex", endgame: "End-Game", utility: "Utility",
+  };
+  const K_STRATEGY_DESCS = {
+    genctrl: "Lock down generators. Apply pressure that forces survivors off gens and snowballs early hooks.",
+    chase:   "Dominate 1v1 loops. Built to end chases fast, leaving more time for map pressure.",
+    stealth: "Hunt in silence. Approach without audio/visual cues and ambush unsuspecting survivors.",
+    info:    "See everything. Track survivors across the map and anticipate their every move.",
+    hex:     "Totem power. High-upside perks that reward keeping your totems alive.",
+    endgame: "Seal the deal. Perks that activate at end-game to prevent any escape.",
+    utility: "Flexible toolkit. Perks that provide value across multiple phases of the match.",
+  };
+
+  // Populate dropdowns
+  const kTheoryCats  = [...new Set(KILLER_PERKS.map(p => p.category).filter(Boolean))].sort();
+  const kTheoryChars = [...new Set(KILLER_PERKS.map(p => p.character).filter(Boolean))].sort();
+  kTheoryCats.forEach(c  => kTheoryCatSel.insertAdjacentHTML("beforeend",  `<option value="${esc(c)}">${esc(c)}</option>`));
+  kTheoryChars.forEach(c => kTheoryCharSel.insertAdjacentHTML("beforeend", `<option value="${esc(c)}">${esc(c)}</option>`));
+
+  let kTheoryTierFilter = "all";
+  let kTheoryStratFilter = "all";
+
+  document.querySelectorAll("[data-ktheory-tier]").forEach(chip => {
+    chip.addEventListener("click", () => {
+      kTheoryTierFilter = chip.dataset.ktheoryTier;
+      document.querySelectorAll("[data-ktheory-tier]").forEach(c => c.classList.remove("active"));
+      chip.classList.add("active");
+      renderKTheoryGrid();
+    });
+  });
+
+  document.querySelectorAll("[data-kstrategy]").forEach(chip => {
+    chip.addEventListener("click", () => {
+      kTheoryStratFilter = chip.dataset.kstrategy;
+      document.querySelectorAll("[data-kstrategy]").forEach(c => c.classList.remove("active"));
+      chip.classList.add("active");
+      renderKTheoryGrid();
+    });
+  });
+
+  kTheorySearch.addEventListener("input",   renderKTheoryGrid);
+  kTheoryCatSel.addEventListener("change",  renderKTheoryGrid);
+  kTheoryCharSel.addEventListener("change", renderKTheoryGrid);
+
+  kTheoryClearBtn.addEventListener("click", () => {
+    kTheorySlots.fill(null);
+    renderKSlots();
+    renderKBuildAnalysis();
+    renderKTheoryGrid();
+    kTheoryClearBtn.style.display = "none";
+  });
+
+  function addKPerkToSlot(perk) {
+    if (kTheorySlots.some(s => s && s.id === perk.id)) return;
+    const empty = kTheorySlots.indexOf(null);
+    if (empty === -1) return;
+    kTheorySlots[empty] = perk;
+    renderKSlots();
+    renderKBuildAnalysis();
+    renderKTheoryGrid();
+    kTheoryClearBtn.style.display = "";
+  }
+
+  function removeKPerkFromSlot(i) {
+    kTheorySlots[i] = null;
+    renderKSlots();
+    renderKBuildAnalysis();
+    renderKTheoryGrid();
+    if (!kTheorySlots.some(Boolean)) kTheoryClearBtn.style.display = "none";
+  }
+
+  function renderKSlots() {
+    kTheorySlotEls.forEach((el, i) => {
+      const p = kTheorySlots[i];
+      if (p) {
+        const role = kCategoryToRole(p.category);
+        el.className = "theory-slot filled";
+        el.innerHTML = `
+          <div class="slot-card-header">
+            ${role ? `<span class="slot-role-tag">${esc(role)}</span>` : ""}
+            <button class="kslot-remove" data-kslot="${i}" title="Remove">✕</button>
+          </div>
+          <div class="slot-card-body">
+            <div class="slot-card-text">
+              <span class="slot-perk-name">${esc(p.name)}</span>
+              <div class="slot-card-meta">
+                <span class="tier-badge ${tierBadgeClass(p.tier)} slot-tier-badge" style="font-size:0.6rem">${esc(p.tier)}</span>
+                <span class="slot-perk-char">${esc(p.character || "General")}</span>
+              </div>
+            </div>
+          </div>
+          <p class="slot-perk-desc">${esc(p.description || "")}</p>`;
+      } else {
+        el.className = "theory-slot empty";
+        el.innerHTML = `<span class="slot-label">Perk ${i + 1}</span><span class="slot-hint">_ empty</span>`;
+      }
+    });
+  }
+
+  document.getElementById("ktheory-slots").addEventListener("click", e => {
+    const removeBtn = e.target.closest(".kslot-remove");
+    if (removeBtn) { removeKPerkFromSlot(parseInt(removeBtn.dataset.kslot)); return; }
+    const slot = e.target.closest(".theory-slot.filled");
+    if (slot) {
+      const idx = parseInt(slot.dataset.kslot);
+      const p = kTheorySlots[idx];
+      if (p) navigateToKillerPerk(p.id);
+    }
+  });
+
+  function renderKBuildAnalysis() {
+    const filled = kTheorySlots.filter(Boolean);
+    if (filled.length < 2) { kTheoryAnalysis.style.display = "none"; return; }
+
+    const scores = {};
+    for (const [strat, cats] of Object.entries(K_STRATEGY_CATS)) {
+      scores[strat] = filled.filter(p => cats.has(p.category)).length;
+    }
+    const ranked = Object.entries(scores).filter(([, v]) => v > 0).sort((a, b) => b[1] - a[1]);
+    if (!ranked.length) { kTheoryAnalysis.style.display = "none"; return; }
+
+    const [topStrat, ] = ranked[0];
+    const secondary = ranked.slice(1, 3).filter(([, v]) => v > 0)
+      .map(([s]) => K_STRATEGY_NAMES[s]).join(" + ");
+    const secondaryLine = secondary ? `<span class="analysis-secondary">Secondary: ${secondary}</span>` : "";
+
+    const bars = ranked.slice(0, 4).map(([s, v]) => `
+      <div class="analysis-bar-row">
+        <span class="analysis-bar-label">${K_STRATEGY_NAMES[s] || s}</span>
+        <div class="analysis-bar-track"><div class="analysis-bar-fill" style="width:${Math.round((v / filled.length) * 100)}%"></div></div>
+        <span class="analysis-bar-count">${v}/${filled.length}</span>
+      </div>`).join("");
+
+    kTheoryAnalysis.style.display = "";
+    kTheoryAnalysis.innerHTML = `
+      <div class="analysis-header">
+        <span class="analysis-badge">${esc(K_STRATEGY_NAMES[topStrat] || topStrat)}</span>
+        ${secondaryLine}
+      </div>
+      <p class="analysis-desc">${K_STRATEGY_DESCS[topStrat] || ""}</p>
+      <div class="analysis-bars">${bars}</div>`;
+  }
+
+  function renderKTheoryGrid() {
+    const q    = kTheorySearch.value.toLowerCase().trim();
+    const cat  = kTheoryCatSel.value;
+    const char = kTheoryCharSel.value;
+    const inBuildIds = new Set(kTheorySlots.filter(Boolean).map(p => p.id));
+    const stratCats  = kTheoryStratFilter !== "all" ? K_STRATEGY_CATS[kTheoryStratFilter] : null;
+
+    let filtered = KILLER_PERKS.filter(p => {
+      if (kTheoryTierFilter !== "all" && p.tier !== kTheoryTierFilter) return false;
+      if (stratCats && !stratCats.has(p.category)) return false;
+      if (cat  && p.category  !== cat)  return false;
+      if (char && p.character !== char) return false;
+      if (q && !p.name.toLowerCase().includes(q) &&
+               !p.character.toLowerCase().includes(q) &&
+               !(p.description||"").toLowerCase().includes(q)) return false;
+      return true;
+    });
+
+    const tierOrder = { "Excellent": 0, "Very Good": 1, "Decent": 2, "Weak/Niche": 3, "Terrible": 4 };
+    filtered.sort((a, b) => (tierOrder[a.tier] ?? 5) - (tierOrder[b.tier] ?? 5) || a.name.localeCompare(b.name));
+
+    if (!filtered.length) {
+      kTheoryGrid.innerHTML = `<div class="empty-state" style="grid-column:1/-1"><span class="empty-icon">🔪</span><h3>No perks match</h3></div>`;
+      return;
+    }
+
+    kTheoryGrid.innerHTML = filtered.map(p => {
+      const inBuild = inBuildIds.has(p.id);
+      return `
+        <div class="theory-perk-item${inBuild ? " in-build" : ""}" data-kperk-id="${p.id}">
+          <span class="tpi-name">${esc(p.name)}</span>
+          <div class="tpi-meta">
+            <span class="tier-badge ${tierBadgeClass(p.tier)}" style="font-size:0.6rem;padding:0.1rem 0.3rem">${esc(p.tier)}</span>
+            <span class="tpi-char">${esc(p.character || "General")}</span>
+          </div>
+        </div>`;
+    }).join("");
+  }
+
+  kTheoryGrid.addEventListener("click", e => {
+    const item = e.target.closest(".theory-perk-item[data-kperk-id]");
+    if (!item || item.classList.contains("in-build")) return;
+    const perk = KILLER_PERK_BY_ID[parseInt(item.dataset.kperkId)];
+    if (perk) addKPerkToSlot(perk);
+  });
+
+  renderKTheoryGrid();
 
   // ═══════════════════════════════════════════════════════════════════════════
   // ABOUT SECTION
