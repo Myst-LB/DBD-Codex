@@ -46,6 +46,19 @@
       .replace(/>/g, "&gt;").replace(/"/g, "&quot;");
   }
 
+  // Escape, then colour tier triples (e.g. 40/50/60s, 50/60/70%) so each value
+  // maps to its perk level: Tier I green, Tier II blue, Tier III purple.
+  // A trailing % stays with the third value; other units are left neutral.
+  function descHtml(str) {
+    return esc(str).replace(
+      /(\d+(?:\.\d+)?)\/(\d+(?:\.\d+)?)\/(\d+(?:\.\d+)?)(\s*%)?/g,
+      (_m, a, b, c, pct) =>
+        `<span class="tier tier-1">${a}</span>/` +
+        `<span class="tier tier-2">${b}</span>/` +
+        `<span class="tier tier-3">${c}${pct || ""}</span>`
+    );
+  }
+
   function perkIconUrl(name) {
     const pascal = name.replace(/[^A-Za-z0-9 ]/g, "")
                        .split(" ").filter(Boolean)
@@ -56,6 +69,14 @@
 
   function perkIconHtml(name, cls = "perk-icon") {
     return `<img src="${perkIconUrl(name)}" alt="" class="${cls}" loading="lazy" onerror="this.style.display='none'">`;
+  }
+
+  // Character portrait (killers / survivors). Path is baked into data.js by
+  // build_data.py; absent for characters with no portrait asset yet.
+  function portraitHtml(c, cls = "char-portrait") {
+    if (!c || !c.portrait) return "";
+    return `<img src="./${c.portrait}" alt="" class="${cls} ${cls}-img" loading="lazy"
+                 onerror="this.closest('.${cls}-wrap')?.classList.add('no-portrait');this.remove()">`;
   }
 
   // ── Navigation ──────────────────────────────────────────────────────────────
@@ -70,8 +91,8 @@
 
   navBtns.forEach(btn => btn.addEventListener("click", () => showSection(btn.dataset.section)));
 
-  const hash = window.location.hash.replace("#", "") || "perks";
-  showSection(["perks","builds","killers","killerperks","killervalue","killertheory","survivors","value","theory","about"].includes(hash) ? hash : "perks", false);
+  const hash = window.location.hash.replace("#", "") || "survivors";
+  showSection(["perks","builds","killers","killerperks","killervalue","killertheory","survivors","value","theory","about"].includes(hash) ? hash : "survivors", false);
 
   // ── Tooltip ─────────────────────────────────────────────────────────────────
   const tooltip = document.getElementById("perk-tooltip");
@@ -84,7 +105,7 @@
         <span class="tier-badge ${tierBadgeClass(perk.tier)}">${esc(perk.tier)}</span>
         ${perk.character ? `<span class="tooltip-char">${esc(perk.character)}</span>` : ""}
       </div>
-      <div class="tooltip-desc">${esc(perk.description)}</div>
+      <div class="tooltip-desc">${descHtml(perk.description)}</div>
       <div class="tooltip-hint">Click to view perk</div>`;
     tooltip.style.borderColor = tierColor(perk.tier);
 
@@ -114,17 +135,14 @@
     "luck offerings": {
       name: "Luck Offerings",
       type: "Offering",
+      icon: "./images/Favors/iconFavors_ivoryChalkPouch.png",
       description: "Oblation offerings equipped before a trial that increase Luck for all Survivors, improving chances to escape Bear Traps and affecting item rarity found in chests."
     },
     "toolboxes": {
       name: "Toolboxes",
       type: "Item",
+      icon: "./images/Items/iconItems_toolbox.png",
       description: "Items that significantly speed up Generator repair. Can also be used to Sabotage Hooks. Higher rarity toolboxes provide stronger bonuses. Essential for gen-rush strategies."
-    },
-    "1 2 3 4": {
-      name: "1 2 3 4 (Bardic Inspiration mechanic)",
-      type: "Mechanic",
-      description: "Bardic Inspiration triggers a rhythm mini-game: press 1, 2, 3, 4 within 4 seconds. Success grants nearby Survivors a 15% Haste effect for 90 seconds and speeds up Healing and Cleansing."
     }
   };
 
@@ -229,8 +247,14 @@
           </span>
         </button>`;
       }
-      return `<span class="surv-perk-mini build-perk-unknown" data-build-item="${esc(rawName.toLowerCase())}">
-          <span class="surv-perk-icon-wrap no-icon"></span>
+      const key  = rawName.toLowerCase();
+      const item = BUILD_ITEMS[key];
+      const iconImg = item && item.icon
+        ? `<img src="${item.icon}" alt="" class="surv-perk-icon" loading="lazy"
+                onerror="this.style.display='none';this.parentElement.classList.add('no-icon')">`
+        : "";
+      return `<span class="surv-perk-mini build-perk-unknown" data-build-item="${esc(key)}">
+          <span class="surv-perk-icon-wrap${iconImg ? "" : " no-icon"}">${iconImg}</span>
         </span>`;
     }).join("");
   }
@@ -247,11 +271,72 @@
 
   // ── Event delegation for synergy links and character links ──────────────────
   document.addEventListener("click", e => {
+    const vb = e.target.closest(".version-btn");
+    if (vb) {
+      const [kind, id] = vb.dataset.versionPerk.split(":");
+      openVersionModal(kind, parseInt(id, 10));
+      return;
+    }
     const sl = e.target.closest(".synergy-link");
     if (sl) { navigateToPerk(parseInt(sl.dataset.perkId, 10)); return; }
     const cl = e.target.closest(".character-link");
     if (cl) { navigateToSurvivor(cl.dataset.survivorName); return; }
   });
+
+  // ── Perk version history (official change log from nightlight.gg) ────────────
+  function versionBtnHtml(p, kind) {
+    const n = (p.versionHistory || []).length;
+    if (!n) return "";
+    return `<button class="version-btn" data-version-perk="${kind}:${p.id}">`
+         + `<span class="version-btn-icon">⟲</span> Version history `
+         + `<span class="version-btn-count">${n}</span></button>`;
+  }
+
+  const vhModal = (function buildVersionModal() {
+    const el = document.createElement("div");
+    el.className = "vh-overlay";
+    el.innerHTML = `
+      <div class="vh-modal" role="dialog" aria-modal="true" aria-labelledby="vh-title">
+        <div class="vh-modal-header">
+          <h3 id="vh-title" class="vh-modal-title"></h3>
+          <button class="vh-close" aria-label="Close">×</button>
+        </div>
+        <div class="vh-modal-body"></div>
+      </div>`;
+    document.body.appendChild(el);
+    el.addEventListener("click", ev => {
+      if (ev.target === el || ev.target.closest(".vh-close")) closeVersionModal();
+    });
+    return el;
+  })();
+
+  function closeVersionModal() { vhModal.classList.remove("open"); }
+
+  document.addEventListener("keydown", e => {
+    if (e.key === "Escape") closeVersionModal();
+  });
+
+  function openVersionModal(kind, id) {
+    const p = kind === "killer" ? KILLER_PERK_BY_ID[id] : PERK_BY_ID[id];
+    if (!p) return;
+    const entries = (p.versionHistory || []).map(v => {
+      const changes = (v.changes || []).map(c =>
+        `<li><span class="vh-tag vh-${esc((c.type || "note").toLowerCase())}">${esc(c.type || "note")}</span>`
+        + `<span class="vh-text">${esc(c.text)}</span></li>`).join("");
+      return `
+        <div class="vh-entry">
+          <div class="vh-entry-head">
+            <span class="vh-version">${esc(v.version || "—")}</span>
+            ${v.date ? `<span class="vh-date">${esc(v.date)}</span>` : ""}
+          </div>
+          <ul class="vh-changes">${changes}</ul>
+        </div>`;
+    }).join("");
+    vhModal.querySelector(".vh-modal-title").textContent = `${p.name} — version history`;
+    vhModal.querySelector(".vh-modal-body").innerHTML =
+      entries || `<p class="vh-empty">No recorded changes.</p>`;
+    vhModal.classList.add("open");
+  }
 
   document.addEventListener("mouseover", e => {
     const sl = e.target.closest(".synergy-link");
@@ -371,7 +456,8 @@
           ${characterHtml}
           ${p.category ? `<span class="perk-category">${esc(p.category)}</span>` : ""}
         </div>
-        <p class="perk-desc">${esc(p.description)}</p>
+        <p class="perk-desc">${descHtml(p.description)}</p>
+        ${versionBtnHtml(p, "survivor")}
         ${synergyHtml ? `<div class="perk-synergy"><strong>Synergy:</strong> ${synergyHtml}</div>` : ""}
       </article>`;
   }
@@ -443,18 +529,22 @@
 
   function killerCard(k) {
     const perksHtml = (k.perks && k.perks.length)
-      ? `<div class="killer-perks">${k.perks.map(n => {
+      ? `<div class="surv-perk-list">${k.perks.map(n => {
           const kp = KILLER_PERK_BY_NAME[n.toLowerCase()];
-          if (kp) {
-            return `<button class="killer-perk-tag tier-kperk-${kp.tier.replace(/[\s\/]+/g,"-")}"
-                            data-killer-perk-id="${kp.id}">${esc(n)}</button>`;
-          }
-          return `<span class="killer-perk-tag">${esc(n)}</span>`;
+          const tier = kp ? kp.tier : "";
+          const idAttr = kp ? ` data-killer-perk-id="${kp.id}"` : "";
+          return `<button class="surv-perk-mini"${idAttr} style="background:${tierBgColor(tier)}">
+              <span class="surv-perk-icon-wrap">
+                <img src="${perkIconUrl(kp ? kp.name : n)}" alt="" class="surv-perk-icon" loading="lazy"
+                     onerror="this.style.display='none';this.parentElement.classList.add('no-icon')">
+              </span>
+            </button>`;
         }).join("")}</div>`
       : "";
     return `
       <article class="killer-card" id="killer-${k.rank}">
         <div class="killer-card-header">
+          ${k.portrait ? `<span class="char-portrait-wrap killer-portrait-wrap">${portraitHtml(k, "char-portrait")}</span>` : ""}
           <span class="killer-rank">#${k.rank}</span>
           <span class="killer-name">${esc(k.name)}</span>
           <span class="tier-badge badge-${esc(k.tier)}">${esc(k.tier)}</span>
@@ -560,6 +650,7 @@
     return `
       <article class="perk-card" id="kperk-${p.id}">
         <div class="perk-card-header">
+          ${perkIconHtml(p.name, "perk-card-icon")}
           <div class="perk-card-header-text">
             <span class="perk-name">${esc(p.name)}</span>
             <span class="tier-badge ${tierBadgeClass(p.tier)}">${esc(p.tier)}</span>
@@ -569,7 +660,8 @@
           ${charHtml}
           ${p.category ? `<span class="perk-category">${esc(p.category)}</span>` : ""}
         </div>
-        <p class="perk-desc">${esc(p.description)}</p>
+        <p class="perk-desc">${descHtml(p.description)}</p>
+        ${versionBtnHtml(p, "killer")}
       </article>`;
   }
 
@@ -632,7 +724,7 @@
             <span class="tier-badge ${tierBadgeClass(p.tier)}">${esc(p.tier)}</span>
             <span class="tooltip-char">${esc(p.character)}</span>
           </div>
-          <div class="tooltip-desc">${esc(p.description)}</div>
+          <div class="tooltip-desc">${descHtml(p.description)}</div>
           <div class="tooltip-hint">Click to view perk</div>`;
         tooltip.style.borderColor = tierColor(p.tier);
         const rect = kpt.getBoundingClientRect();
@@ -731,6 +823,7 @@
     return `
       <article class="survivor-card" id="survivor-${s.rank}">
         <div class="survivor-card-header">
+          ${s.portrait ? `<span class="char-portrait-wrap survivor-portrait-wrap">${portraitHtml(s, "char-portrait")}</span>` : ""}
           <span class="survivor-rank">#${s.rank}</span>
           <span class="survivor-name">${esc(s.name)}</span>
         </div>
@@ -1051,7 +1144,7 @@
               </div>
             </div>
           </div>
-          <p class="slot-perk-desc">${esc(p.description || "")}</p>`;
+          <p class="slot-perk-desc">${descHtml(p.description || "")}</p>`;
       } else {
         el.className = "theory-slot empty";
         delete el.dataset.perkId;
@@ -1490,7 +1583,7 @@
               </div>
             </div>
           </div>
-          <p class="slot-perk-desc">${esc(p.description || "")}</p>`;
+          <p class="slot-perk-desc">${descHtml(p.description || "")}</p>`;
       } else {
         el.className = "theory-slot empty";
         el.innerHTML = `<span class="slot-label">Perk ${i + 1}</span><span class="slot-hint">_ empty</span>`;

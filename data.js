@@ -9,9 +9,117 @@ const PERKS = [
     "name": "Decisive Strike",
     "character": "Laurie Strode",
     "category": "Anti-Tunnel",
-    "description": "Escape the killer's grasp within 60 s of being unhooked via a skill check. Psychologically deters tunneling; resets deep wound, status effects.",
+    "description": "Until all Generators are completed, whenever you are unhooked, for the next 40/50/60s: when the Killer picks you up, once per trial, hit a Special Skill check:\nStun the Killer for 4s.\nBecome the Obsession.\nThis is disabled by conspicuous actions. At the start of the trial, you are more likely to be the Obsession.\n\"There is nothing to be scared of.\" -Laurie Strode",
     "synergy": "Resurgence, Unbreakable, Sprint Burst",
-    "synergyCount": 4
+    "synergyCount": 4,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "8.0.0",
+        "date": "3 June 2024",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Decreased the stun duration to 4 seconds (was 5 seconds)"
+          }
+        ]
+      },
+      {
+        "version": "7.7.0",
+        "date": "23 April 2024",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Reverted the stun duration back to 5 seconds (was 3)"
+          }
+        ]
+      },
+      {
+        "version": "6.1.0",
+        "date": "19 July 2022",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "The perk and its effects are disabled if the exit gates are powered"
+          },
+          {
+            "type": "nerf",
+            "text": "Now disabled when the Survivor performs a Conspicuous Action"
+          },
+          {
+            "type": "nerf",
+            "text": "Stun duration reduced to 3s (down from 5s)"
+          }
+        ]
+      },
+      {
+        "version": "4.6.0",
+        "date": "30 March 2021",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Performing certain actions which aren't part of evading the killer will now deactivate Decisive Strike"
+          }
+        ]
+      },
+      {
+        "version": "2.6.3",
+        "date": "2 April 2019",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased stun duration to 5 seconds with the survivor being able to move after 1 second"
+          }
+        ]
+      },
+      {
+        "version": "2.6.0",
+        "date": "19 March 2019",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Reduced the stun time to 3 seconds for all tiers"
+          },
+          {
+            "type": "qol",
+            "text": "Changed the skill check to appear immediately after being picked up"
+          },
+          {
+            "type": "nerf",
+            "text": "Non-obsession survivors now need to wiggle a certain amount before the skill check will appear (no change for the obsession)"
+          }
+        ]
+      },
+      {
+        "version": "1.4.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Non-obsession survivors now need to wiggle a certain amount before the skill check will appear (no change for the obsession)"
+          }
+        ]
+      },
+      {
+        "version": "1.3.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Reduced stun duration to 3/3.5/4 seconds"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 2,
@@ -19,9 +127,39 @@ const PERKS = [
     "name": "Fast Track",
     "character": "Lee Yun-Jin",
     "category": "Generator",
-    "description": "Each hooked survivor grants a token; each token = 1% instant gen progress on a great skill check. Ignores co-op gen penalty.",
+    "description": "Whenever you unhook another Survivor, you earn 1 Token(s), up to 1/2/3.\nWhile repairing, whenever you hit a great basic Skill Check, spend all Tokens. For each Token spent, the Generator gains 5% permanent progress.\n\"The weak are sacrificed first. It's nature, it's business... it's the truth most refuse to face.\" -Yun-jin",
     "synergy": "Toolboxes, Prove Thyself, Deja Vu",
-    "synergyCount": 6
+    "synergyCount": 6,
+    "versionHistory": [
+      {
+        "version": "9.6.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "rework",
+            "text": "Now only gains tokens for when you unhook another Survivor, up to 1/2/3. Previously 1/2/3 tokens whenever a Survivor is unhooked up to 9."
+          },
+          {
+            "type": "rework",
+            "text": "Tokens now grant 5% permanent progress each, up from 2%"
+          }
+        ]
+      },
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Now permanently reduces the charge needed to repair a generator by 2 for each token when hitting a great Skill Check instead of adding regular repair progression."
+          },
+          {
+            "type": "nerf",
+            "text": "Max tokens are now capped at 9."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 3,
@@ -29,9 +167,31 @@ const PERKS = [
     "name": "Resurgence",
     "character": "Jill Valentine",
     "category": "Healing",
-    "description": "Start 70% healed on unhook. Teammate heals you in ~3 s instead of 16 s. Near-instant health recovery after every hook.",
+    "description": "Whenever you are unhooked, you gain 50/60/70% healing progress.\n\"It's my turn, bitch.\" -Jill Valentine",
     "synergy": "Decisive Strike, Overcome, Dead Hard",
-    "synergyCount": 9
+    "synergyCount": 9,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "8.1.0",
+        "date": "16 July 2024",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased the healing progress gained to 50/60/70%. (was 40/45/50%)"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 4,
@@ -39,9 +199,31 @@ const PERKS = [
     "name": "Shoulder the Burden",
     "character": "Taurie Cain",
     "category": "Anti-Tunnel",
-    "description": "Unhook a teammate on 2nd hook → steal their hook state onto yourself. Rescued survivor resets to 1 hook. Makes you exposed 40 s.",
+    "description": "Once per trial, while you do not have 2 Hook States and are next to a hooked Survivor, use Active Ability Button 2 to unhook them:\nThey lose 1 Hook State.\nYou gain 1 Hook State.\nYou scream.\nYou gain Exposed for 60/50/40s.\n\"It's not your time yet. Now go on!\" -Taurie Cain",
     "synergy": "Decisive Strike, Babysitter",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "8.4.0",
+        "date": "28 November 2024",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Increased the duration of the Exposed status effect to 60/50/40 seconds (was 30/25/20)"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 5,
@@ -49,9 +231,63 @@ const PERKS = [
     "name": "Slippery Meat",
     "character": "Base game (all)",
     "category": "Luck/Self-Unhook",
-    "description": "6 hook escape attempts at 8% each. On its own ~40% chance to self-unhook; combined with Up the Ante + offerings = near 100%.",
+    "description": "You can attempt to unhook yourself up to 3 times and have 2/3/4% more chance to succeed.",
     "synergy": "Up the Ante (MUST pair together)",
-    "synergyCount": 1
+    "synergyCount": 1,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "4.3.0",
+        "date": "20 October 2020",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "No longer affects Bear Trap escapes"
+          },
+          {
+            "type": "buff",
+            "text": "Now increased hook escape attempt probabilities by an additive 2/3/4%"
+          }
+        ]
+      },
+      {
+        "version": "2.6.2",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "All tiers now grant 3 extra escape attempts"
+          }
+        ]
+      },
+      {
+        "version": "1.7.0",
+        "date": "14 September 2017",
+        "changes": [
+          {
+            "type": "mechanic",
+            "text": "Removed the increased change to escape a hook and replace it with increased escape efficiency, the resulting effect is 1/2/3 extra escape attempts"
+          },
+          {
+            "type": "nerf",
+            "text": "Removed increased escape attempt speed on hooks and traps"
+          },
+          {
+            "type": "buff",
+            "text": "Increased the odds of escaping a bear trap from 0/5/10 to 15/20/25"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 6,
@@ -59,9 +295,51 @@ const PERKS = [
     "name": "Sprint Burst",
     "character": "Meg Thomas",
     "category": "Exhaustion",
-    "description": "50% haste for 3 s when you start running. Best exhaustion perk; counters stealth killers and teleporters.",
+    "description": "Whenever you start running:\nYou gain 50% Haste for 3s.\nYou gain Exhausted for 60/50/40s.",
     "synergy": "Vigil (cuts cooldown to ~24 s), Fixated",
-    "synergyCount": 9
+    "synergyCount": 9,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "1.5.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Now shares the Exhausted status effect cooldown with other exhaustion perks"
+          }
+        ]
+      },
+      {
+        "version": "1.3.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Adjusted so that recuperation time takes twice as long while running"
+          }
+        ]
+      },
+      {
+        "version": "1.0.2",
+        "date": "",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Increased cooldown from 40/30/20 seconds to 60/50/40 seconds"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 7,
@@ -69,9 +347,41 @@ const PERKS = [
     "name": "Unbreakable",
     "character": "Bill Overbeck",
     "category": "Anti-Slug",
-    "description": "Recover from downed state 35% faster + one-time self-pickup. Counters slug strategies entirely.",
+    "description": "Once per trial, while downed by the Killer, you can fully recover.\nWhile downed, you recover 25/30/35% faster.\n\"Goddammit, I am seriously FUBAR!\" -Bill",
     "synergy": "Tenacity, Flip-Flop, Plot Twist",
-    "synergyCount": 7
+    "synergyCount": 7,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Now only applies when downed by the Killer."
+          }
+        ]
+      },
+      {
+        "version": "3.0.0",
+        "date": "18 June 2019",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased recovery speed to 25%/30%/35% up from 15%/20%/25%"
+          }
+        ]
+      },
+      {
+        "version": "1.8.1",
+        "date": "",
+        "changes": [
+          {
+            "type": "qol",
+            "text": "Survivors now wake up when healed from the dying state"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 8,
@@ -79,9 +389,21 @@ const PERKS = [
     "name": "Up the Ante",
     "character": "Ace Visconti",
     "category": "Luck/Self-Unhook",
-    "description": "Grants 3% luck per survivor alive (stacks x4). Combine with Slippery Meat + luck offerings for near-100% self-unhook.",
+    "description": "For each other Survivor alive, all Survivors are 1/2/3% luckier.\nAll Survivors can attempt to unhook themselves.\n“What can I say? I'm just a very lucky guy… I'm sure some of it will rub off on you.” -Ace",
     "synergy": "Slippery Meat (MUST pair together)",
-    "synergyCount": 1
+    "synergyCount": 1,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 9,
@@ -89,9 +411,87 @@ const PERKS = [
     "name": "Babysitter",
     "character": "Steve Harrington",
     "category": "Rescue",
-    "description": "After unhooking: rescued survivor leaves no blood and moves faster; you gain endurance. Great stealth start for the unhooked.",
+    "description": "Whenever you unhook a Survivor:\nThey gain 10% Haste for 20/25/30s.\nThey leave no Pools of Blood for 20/25/30s.\nThey leave no Scratch Marks for 20/25/30s.\nYou see the Killer's Aura for 8s.\n“I promised to keep you shitheads safe, and that's exactly what I plan on doing.” -Steve Harrington",
     "synergy": "Deliverance, Borrowed Time, Will Make It",
-    "synergyCount": 7
+    "synergyCount": 7,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.0.0",
+        "date": "17 June 2025",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Reduced Haste bonus for the unhooked Survivor to 10% (was 15%)."
+          }
+        ]
+      },
+      {
+        "version": "8.7.0",
+        "date": "6 May 2025",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased Haste effect granted to the unhooked Survivor to 15%. (was 10%)"
+          }
+        ]
+      },
+      {
+        "version": "8.1.0",
+        "date": "16 July 2024",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased the Haste bonus to 10%. (was 7%)"
+          },
+          {
+            "type": "buff",
+            "text": "Increased the duration to 20/25/30 seconds. (was 4/6/8 seconds)"
+          }
+        ]
+      },
+      {
+        "version": "7.3.3",
+        "date": "",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Reverted to the original name, \"Babysitter\" with the return of the Stranger Things chapter"
+          }
+        ]
+      },
+      {
+        "version": "5.3.0",
+        "date": "19 October 2021",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Added a 7% Haste status effect for the rescued survivor."
+          },
+          {
+            "type": "buff",
+            "text": "Removed the Killer seeing your aura."
+          },
+          {
+            "type": "buff",
+            "text": "Killer aura visibility for you increased to 8 seconds (was 4 seconds)"
+          },
+          {
+            "type": "note",
+            "text": "Renamed from \"Babysitter\" to \"Guardian\""
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 10,
@@ -99,9 +499,41 @@ const PERKS = [
     "name": "Built to Last",
     "character": "Felix Richter",
     "category": "Item/Generator",
-    "description": "Recycle an empty item from a locker (3 times: 100%/66%/33%). Broken with toolboxes: do 2 gens fast, get toolbox back in 8 s.",
+    "description": "While holding a depleted item, after hiding in a Locker for 14/12/10s, it is recharged to 99%.\nEach time you recharge an item this way, it recharges 33% fewer Charges.\n\"Architecture is the soul of civilization.” -Felix Richter",
     "synergy": "Toolboxes (commodious recommended), Inner Strength",
-    "synergyCount": 1
+    "synergyCount": 1,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.1.0",
+        "date": "29 July 2025",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Decreased the time spent in a locker to 14/12/10 seconds (was 14/13/12)"
+          }
+        ]
+      },
+      {
+        "version": "5.3.0",
+        "date": "19 October 2021",
+        "changes": [
+          {
+            "type": "rework",
+            "text": "After hiding inside a Locker for 14/13/12 seconds with a depleted item in hand, 99% of its charges are refilled. Each use of Built to Last reduces the amount of charges refilled by 33%. Added stinger audio when item charges are refilled"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 11,
@@ -109,9 +541,65 @@ const PERKS = [
     "name": "Deja Vu",
     "character": "Base game (all)",
     "category": "Generator",
-    "description": "Shows 3 closest gens + 6% repair speed on them. Spreads gens apart as you complete them. Final gen always highlighted.",
+    "description": "You see the Auras of the 3 Generators closest to each other and repair them 4/5/6% faster.",
     "synergy": "Fast Track, Toolboxes, Prove Thyself",
-    "synergyCount": 13
+    "synergyCount": 13,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.1.0",
+        "date": "29 July 2025",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Maps no longer track revealed generators"
+          }
+        ]
+      },
+      {
+        "version": "7.0.0",
+        "date": "13 June 2023",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Removed the duration limit (now indefinite)"
+          },
+          {
+            "type": "buff",
+            "text": "Increased the repair speed bonus to 4/5/6% (was 3/4/5%)"
+          }
+        ]
+      },
+      {
+        "version": "6.1.0",
+        "date": "19 July 2022",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Gain a 5% repair speed bonus on the generators revealed by Déjà Vu"
+          }
+        ]
+      },
+      {
+        "version": "2.1.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "rework",
+            "text": "Now shows the auras of the 3 generators which are in the closest proximity to one another for 30/45/60 seconds at the start of the match and each time a generator is completed."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 12,
@@ -119,9 +607,21 @@ const PERKS = [
     "name": "Deliverance",
     "character": "Adam Francis",
     "category": "Hook Escape",
-    "description": "Unhook yourself after rescuing a teammate (first hook only). Requires performing a rescue first. 100% success on normal hooks.",
+    "description": "Once per trial, when you safely unhook another Survivor, you can unhook yourself. When you unhook yourself this way, you gain Broken for 100/80/60s.\n“I was raised by a strict man who taught me how to make the best of a bad situation.” -Adam Francis",
     "synergy": "Babysitter (protect after self-unhook)",
-    "synergyCount": 1
+    "synergyCount": 1,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 13,
@@ -129,9 +629,21 @@ const PERKS = [
     "name": "Extra Sensory Perception",
     "character": "Eleven",
     "category": "Information",
-    "description": "Crouch to see generators, totems, chests + killer aura in a wide radius. Much stronger than Stillside.",
+    "description": "After crouching for 4s:\nYou see Auras in an expanding radius up to 44m.\nYou gain Elusive.\nYou gain Oblivious.\nWhen you stop crouching, or after 11s, cooldown: 60/50/40s.\n\"What is friend?\" —Eleven",
     "synergy": "Open Handed, Deja Vu",
-    "synergyCount": 1
+    "synergyCount": 1,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 14,
@@ -139,9 +651,21 @@ const PERKS = [
     "name": "Five Moves Ahead",
     "character": "Kwon Tae-young",
     "category": "Chase/Information",
-    "description": "While in chase or killer terror radius: see 5 nearest pallet/window auras AND drop pallets 50% faster. Rivals Windows of Opportunity.",
+    "description": "While you are in the Killer's Terror Radius or chased by the Killer:\nYou see the Auras of the 5/5/5 closest Pallets and Windows.\nYou drop Pallets 50/50/50% faster.\nWhenever you drop a Pallet, cooldown: 30/25/20s.\n“Every problem has a solution. It's only a question of complexity.” – Kwon Tae-young",
     "synergy": "Windows of Opportunity (comparison), Vigil",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 15,
@@ -149,9 +673,45 @@ const PERKS = [
     "name": "Kindred",
     "character": "Base game (all)",
     "category": "Information",
-    "description": "On hook: shows all survivor auras to each other + killer aura if nearby. Works for you when others are hooked too. Essential solo-Q perk.",
+    "description": "While you are hooked, all Survivors see each others' Auras. While the Killer is within 8/12/16m, all Survivors sees the Killer's Aura.\nWhile another Survivor is hooked, you see the Auras of other Survivors. While the Killer is within 8/12/16m of the hooked Survivor, you see the Killer's Aura.\n“Be kind to one another. We're all in this together.” -Lost Tapes: Sujan",
     "synergy": "Open Handed (extends killer reveal range)",
-    "synergyCount": 2
+    "synergyCount": 2,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "3.4.0",
+        "date": "3 December 2019",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Now reveals the aura of all other survivors to you when one is on the hook"
+          }
+        ]
+      },
+      {
+        "version": "2.6.0",
+        "date": "19 March 2019",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Now reveals the killers aura to all other survivors if the killer is within 8/12/16 meters of the hook"
+          },
+          {
+            "type": "buff",
+            "text": "Now shows all Survivor's auras at all tiers"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 16,
@@ -159,9 +719,31 @@ const PERKS = [
     "name": "Lithe",
     "character": "Feng Min",
     "category": "Exhaustion",
-    "description": "Speed burst after vaulting a window. Very consistent; works on every vault in chase.",
+    "description": "Whenever you medium or fast-vault:\nYou gain 50% Haste for 3s.\nYou gain Exhausted for 60/50/40s.\n“U mad?” -Feng Min",
     "synergy": "Vigil, Windows of Opportunity",
-    "synergyCount": 3
+    "synergyCount": 3,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "2.6.0",
+        "date": "19 March 2019",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Removed the chase condition, now only triggers on rushed vaults"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 17,
@@ -169,9 +751,21 @@ const PERKS = [
     "name": "Overcome",
     "character": "Jonah Vasquez",
     "category": "Exhaustion",
-    "description": "Burst of speed after being hit while healthy (not exhausted). Strong with Resurgence to maintain health state; requires being healthy.",
+    "description": "Whenever you take damage:\nYou retain your speed boost for 2s longer.\nYou gain Exhausted for 60/50/40s.\n\"After careful analysis, we're getting the hell out of here!\" -Jonah Vasquez",
     "synergy": "Resurgence, Dead Hard",
-    "synergyCount": 3
+    "synergyCount": 3,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 19,
@@ -179,9 +773,85 @@ const PERKS = [
     "name": "Vigil",
     "character": "Quentin Smith",
     "category": "Exhaustion Recovery",
-    "description": "66% faster exhaustion recovery for you + nearby allies. Pairs insanely well with Sprint Burst (~24 s cooldown).",
+    "description": "All Survivors within 16m of you:\nLose Blindness 44/55/66% faster.\nLose Broken 44/55/66% faster.\nLose Exhausted 44/55/66% faster.\nLose Exposed 44/55/66% faster.\nLose Hemorrhage 44/55/66% faster.\nLose Hindered 44/55/66% faster.\nLose Mangled 44/55/66% faster.\nLose Oblivious 44/55/66% faster.\nAfter they leave your range, this ends after 15s.\n\"I'm gonna be here when you wake up. You're gonna make it.\" -Quentin Smith",
     "synergy": "Sprint Burst (MUST pair), Dead Hard, Lithe",
-    "synergyCount": 6
+    "synergyCount": 6,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.2.0",
+        "date": "23 September 2025",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Survivors can now only benefit from one Vigil perk's effect at a time (previously stacked with other versions of itself)."
+          }
+        ]
+      },
+      {
+        "version": "8.5.2",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased the affect radius to 16 metres (was 8)"
+          }
+        ]
+      },
+      {
+        "version": "7.6.0",
+        "date": "12 March 2024",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Now affects the Mangled status effect (as it did previously) due to it returning to being timer based"
+          }
+        ]
+      },
+      {
+        "version": "5.3.0",
+        "date": "19 October 2021",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Recovery bonus increased to 20/25/30% (was 10/15/20%)"
+          },
+          {
+            "type": "qol",
+            "text": "Added Broken, Exposed, and Oblivious to the list of modified status effects"
+          }
+        ]
+      },
+      {
+        "version": "4.5.0",
+        "date": "9 February 2021",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "No longer affects the Mangled status effect"
+          }
+        ]
+      },
+      {
+        "version": "2.3.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "The effects now persist for 15 seconds after the perk owner is out of range"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 20,
@@ -189,9 +859,31 @@ const PERKS = [
     "name": "Wicked",
     "character": "Sable Ward",
     "category": "Hook/Information",
-    "description": "See killer aura 20 s after unhook. Self-unhook from basement with 100% success on first hook. Underrated perk.",
+    "description": "While in the Basement, you can unhook yourself.\nWhenever you are unhooked, you see the Killer's Aura for 16/18/20s.\n“I haven't let anyone get in my way before. You think I'm gonna start now?” -Sable",
     "synergy": "Decisive Strike, Resurgence",
-    "synergyCount": 1
+    "synergyCount": 1,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.3.2",
+        "date": "",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Reverted to the version before 9.3.0"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 21,
@@ -199,9 +891,45 @@ const PERKS = [
     "name": "Windows of Opportunity",
     "character": "Kate Denson",
     "category": "Chase",
-    "description": "Highlights pallets, windows and breakable walls. Most popular perk in game; great for learning maps and pallet/window locations.",
+    "description": "Within 24/28/32m of you:\nYou see the Auras of Pallets.\nYou see the Auras of Breakable Walls.\nYou see the Auras of Windows.\n“Carve your name/Value faith an' family, don't complain/Open your windows of opportunity.” -Kate Denson's Windows of Opportunity",
     "synergy": "Sprint Burst, Dead Hard, Lithe",
-    "synergyCount": 7
+    "synergyCount": 7,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "5.3.0",
+        "date": "19 October 2021",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Removed cooldown after vaulting/dropping a Pallet."
+          },
+          {
+            "type": "buff",
+            "text": "Increased effective range to 24/28/32 meters (was 20 meters)."
+          }
+        ]
+      },
+      {
+        "version": "3.0.0",
+        "date": "18 June 2019",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Reduced cooldown values to 30/25/20 seconds down from 60/50/40"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 22,
@@ -209,9 +937,45 @@ const PERKS = [
     "name": "Wiretap",
     "character": "Ada Wong",
     "category": "Information",
-    "description": "Reveal killer aura to all in a radius around a gen you've worked on. Lasts 60 s; killer can destroy by kicking gen.",
+    "description": "After repairing 40% of Generators, while next to a Generator, use Active Ability Button 2 to trap it for 100/110/120s or until the Killer damages that Generator. All Survivors see that Generator's Aura for that time.\nWhile the Killer is within 14m of that Generator, all Survivors see the Killer's Aura.",
     "synergy": "Blast Mine (trap same gen), Alert",
-    "synergyCount": 9
+    "synergyCount": 9,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "8.2.0",
+        "date": "27 August 2024",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Activates after completing a total of 40% worth of repair progress on generators. (was 50%)"
+          }
+        ]
+      },
+      {
+        "version": "7.1.0",
+        "date": "25 July 2023",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Increased the activation progress requirement to 50% of a generator (was 33%)"
+          },
+          {
+            "type": "buff",
+            "text": "Increased the active duration when installed to 100/110/120 seconds (was 60/70/80)"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 23,
@@ -219,9 +983,75 @@ const PERKS = [
     "name": "Adrenaline",
     "character": "Meg Thomas",
     "category": "End-Game",
-    "description": "At gates powered: instantly heal one health state + 5% speed burst. Insanely strong in end-game; can save a dead chase.",
+    "description": "When all Generators are completed, if you are downed or injured, heal instantly. Then, ignoring Exhausted:\nYou gain 50% Haste for 3s.\nYou gain Exhausted for 60/50/40s.",
     "synergy": "Poise, Prove Thyself, No One Left Behind",
-    "synergyCount": 4
+    "synergyCount": 4,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "7.7.0",
+        "date": "23 April 2024",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Burst of speed now lasts 3 seconds (was 5 seconds)"
+          },
+          {
+            "type": "nerf",
+            "text": "Adrenaline no longer activates if you are hooked or carried when the Gates are powered (previously applied when being dropped or unhooked)"
+          },
+          {
+            "type": "nerf",
+            "text": "Adrenaline no longer causes you to wake up when facing The Nightmare"
+          }
+        ]
+      },
+      {
+        "version": "1.8.1",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Adrenaline will now heal a health state regardless of the survivors current state across all tiers"
+          },
+          {
+            "type": "buff",
+            "text": "Tier 1 Adrenaline will now also provide a 5 second sprint boost"
+          },
+          {
+            "type": "qol",
+            "text": "Adrenaline will now wake you up from the Dream State"
+          }
+        ]
+      },
+      {
+        "version": "1.5.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "qol",
+            "text": "Adrenaline causes Exhaustion but will still trigger when Exhausted"
+          },
+          {
+            "type": "mechanic",
+            "text": "Now shares the Exhausted status effect cooldown with other exhaustion perks"
+          },
+          {
+            "type": "qol",
+            "text": "If you are being carried/hooked/etc Adrenaline will now wait until you are freed to activate"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 24,
@@ -229,9 +1059,45 @@ const PERKS = [
     "name": "Alert",
     "character": "Feng Min",
     "category": "Information",
-    "description": "See killer aura when they break a pallet or wall. Useful intel; tells you killer position passively throughout match.",
+    "description": "Whenever the Killer breaks a Pallet or Breakable Wall, or damages a Generator:\nYou hear a sound cue.\nYou see their Aura for 3/4/5s.\n“I have true sight.” -Feng Min",
     "synergy": "Wiretap, Poise, Any Means Necessary",
-    "synergyCount": 9
+    "synergyCount": 9,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "2.3.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Reduced aura duration to 3/4/5 seconds"
+          },
+          {
+            "type": "buff",
+            "text": "Removed the range limit and cooldown"
+          }
+        ]
+      },
+      {
+        "version": "1.5.2c",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased killer aura duration to 6 seconds"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 25,
@@ -239,9 +1105,65 @@ const PERKS = [
     "name": "Blast Mine",
     "character": "Jill Valentine",
     "category": "Trap/Gen",
-    "description": "Place a trap on a gen: killer kicked it = stunned 4 s + blinded. Shines vs gen-kick builds; does nothing vs Ruin.",
+    "description": "After repairing 40% of Generators, while next to a Generator, use Active Ability Button 2 to trap it for 100/110/120s. All Survivors see that Generator's Aura for that time.\nWhen the Killer damages that Generator, the trap explodes, then:\nThey are stunned for 4s.\nEveryone nearby looking at the detonation is blinded.\n\"You want S.T.A.R.S.? I'll give you S.T.A.R.S.! \" -Jill Valentine",
     "synergy": "Wiretap (trap + info on same gen), Red Herring",
-    "synergyCount": 2
+    "synergyCount": 2,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "8.2.0",
+        "date": "27 August 2024",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Activates after completing a total of 40% worth of repair progress on generators. (was 50%)"
+          }
+        ]
+      },
+      {
+        "version": "7.1.0",
+        "date": "25 July 2023",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased the time an installed trap stays active to 100/110/120 seconds (was 40/45/50)"
+          }
+        ]
+      },
+      {
+        "version": "6.2.2",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Trap stays active for 40/45/50 seconds (was 35/40/45)"
+          },
+          {
+            "type": "qol",
+            "text": "Requires 50% of a generator to activate (was 66%)"
+          }
+        ]
+      },
+      {
+        "version": "6.2.0",
+        "date": "30 August 2022",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Now resets earned generator progress if the mine times out without being triggered"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 26,
@@ -249,9 +1171,31 @@ const PERKS = [
     "name": "Boon: Circle of Healing",
     "character": "Mikaela Reid",
     "category": "Boon/Healing",
-    "description": "Boon totem: 100% faster healing within radius. Heals in ~8 s. Re-boon after killer breaks it. No longer allows self-heal.",
+    "description": "While next to a totem, use Active Ability Button 1 to bless it, creating a unique Boon Totem that combines all your Boons.\nSurvivors within the Boon's range:\nWhile healing without a Med-Kit, they heal others 50/75/100% faster.\nWhile injured, other Survivors see their Aura.\n\"Try this, it's better than anything you'll find in a pharmacy.\" -Mikaela Reid",
     "synergy": "Boon: Shadow Step, Flow State, Botany Knowledge",
-    "synergyCount": 5
+    "synergyCount": 5,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "5.5.0",
+        "date": "25 January 2022",
+        "changes": [
+          {
+            "type": "qol",
+            "text": "Decreased healing speed bonus to 65/70/75% (was 90/95/100%)"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 27,
@@ -259,9 +1203,21 @@ const PERKS = [
     "name": "Boon: Exponential",
     "character": "Jonah Vasquez",
     "category": "Boon/Anti-Slug",
-    "description": "Boon totem: survivors recover from slug AND pick each other up faster in range. Niche but powerful vs slugging killers.",
+    "description": "While next to a totem, use Active Ability Button 1 to bless it, creating a unique Boon totem that combines all your Boons.\nDowned Survivors within the Boon's range:\nRecover 90/95/100% faster.\nCan fully recover.\n\"It's not our time to die... probably.\" -Jonah Vasquez",
     "synergy": "Tenacity, Unbreakable",
-    "synergyCount": 3
+    "synergyCount": 3,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 28,
@@ -269,9 +1225,21 @@ const PERKS = [
     "name": "Boon: Shadow Step",
     "character": "Mikaela Reid",
     "category": "Boon/Stealth",
-    "description": "Boon totem: hides scratch marks + aura inside range. Great vs aura-reading killers. Lingering effect when you leave.",
+    "description": "While next to a Totem, use Active Ability Button 1 to bless it, creating a unique Boon Totem that combines all your Boons. Survivors within the Boon's range:\nLeave no Scratch Marks.\nTheir Auras cannot be seen by the Killer.\nWhen leaving the range, this ends after 2/3/4s.\n\"Stick to the shadows and cover your tracks.\" -Mikaela Reid",
     "synergy": "Boon: Circle of Healing, Boon: Exponential",
-    "synergyCount": 1
+    "synergyCount": 1,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 29,
@@ -279,9 +1247,65 @@ const PERKS = [
     "name": "Botany Knowledge",
     "character": "Claudette Morel",
     "category": "Healing",
-    "description": "50% faster healing speed for self and others. Counters Sloppy Butcher. Removed old medkit debuff — works great with medkits now.",
+    "description": "You heal 30/40/50% faster.\n\"Basic botany knowledge could save your life someday.\" -Claudette Morel",
     "synergy": "Medkits, Self-Care, Desperate Measures",
-    "synergyCount": 10
+    "synergyCount": 10,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.0.0",
+        "date": "17 June 2025",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Healing item efficiency reduction removed (was 20%)."
+          }
+        ]
+      },
+      {
+        "version": "6.1.0",
+        "date": "19 July 2022",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Removed Med-Kit efficiency bonus and (after PTB) replaced it with a penalty of -20%"
+          },
+          {
+            "type": "buff",
+            "text": "Increased healing speed bonus to 30/40/50% (was 11/22/33%)"
+          }
+        ]
+      },
+      {
+        "version": "2.3.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased speed and item efficiency to 11/22/33%"
+          }
+        ]
+      },
+      {
+        "version": "1.0.2",
+        "date": "",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Reduced speed and item efficiency to 10/15/20%"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 30,
@@ -289,9 +1313,41 @@ const PERKS = [
     "name": "Camaraderie",
     "character": "Steve Harrington",
     "category": "Hook Support",
-    "description": "2nd hook stage: extends by 34 s when a teammate comes within 16 m. Works through floors. Up to 104 s on hook total.",
+    "description": "While you are struggling on Hook, when another Survivor gets within 16m, the timer is paused for 26/30/34s.\n\"So, remember once you get in there… pretend like you don't care. There you go, you're learning my friend. You're learning.” -Steve Harrington",
     "synergy": "Reassurance, Decisive Strike",
-    "synergyCount": 1
+    "synergyCount": 1,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "7.3.3",
+        "date": "",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Reverted to the original name, \"Camaraderie\" with the return of the Stranger Things chapter"
+          }
+        ]
+      },
+      {
+        "version": "5.3.0",
+        "date": "19 October 2021",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Renamed from \"Camaraderie\" to \"Kinship\""
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 31,
@@ -299,9 +1355,31 @@ const PERKS = [
     "name": "Champion of Light",
     "character": "Alan Wake",
     "category": "Chase/Flashlight",
-    "description": "While aiming a flashlight: move at full speed (no slow). You don't lose ground vs the killer while blinding them. Pair with Built to Last for infinite uses.",
+    "description": "While you are using a Flashlight, you gain 50% Haste.\nWhenever you blind the Killer, they gain 20% Hindered for 6s. Cooldown: 60/50/40s.\n“I squeezed the flashlight like my life depended on it, willing it to stop coming any closer.” – Departure",
     "synergy": "Built to Last, Flashbang",
-    "synergyCount": 1
+    "synergyCount": 1,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.0.0",
+        "date": "17 June 2025",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Decreased cooldown to 60/50/40 seconds (was 80/70/60 seconds)."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 32,
@@ -309,9 +1387,31 @@ const PERKS = [
     "name": "Conviction",
     "character": "Michonne Grimes",
     "category": "Anti-Slug/Mobility",
-    "description": "One-time: get up from dying state for 30 s fully mobile. Can escape, complete objectives, or even exit during end game. One of the most unique anti-slug perks.",
+    "description": "After you finish healing 1 other Survivor, while downed with at least 25% recovery, use Active Ability Button 1 to recover instantly.\nYou gain Broken, then, after 20/25/30s, you are downed instantly.\n\"It's enough to keep going. Keep trying. Keep fighting. Keep dreaming.\" -Michonne Grimes",
     "synergy": "Unbreakable, Adrenaline",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.3.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Updated perk to require specifically healing another Survivor (to prevent infinite interaction with Plot Twist)."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 33,
@@ -319,9 +1419,35 @@ const PERKS = [
     "name": "Corrective Action",
     "character": "Jonah Vasquez",
     "category": "Team Support",
-    "description": "When a teammate misses a skill check: negates the penalty. Applies to whole team passively. Shines vs Doctor/Wesker skill-check builds.",
+    "description": "When the trial starts, you earn 1/2/3 Tokens, up to 5.\nWhenever you hit a great basic Skill Check, earn 1 Token.\nWhenever another Survivor misses a basic Skill Check, spend 1 Token:\nThe missed Skill Check becomes a good Skill Check.\nYou see that Survivor's Aura for 6s.\n\"Can't hurt to have another set of eyes on the problem.\" -Jonah Vasquez",
     "synergy": "Autodidact (gives more skill checks to benefit from)",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "8.3.0",
+        "date": "8 October 2024",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Now reveals the aura of the Survivor who consumes a token by failing a Skill Check for 6 seconds"
+          },
+          {
+            "type": "buff",
+            "text": "Now also applies to Survivors repairing other Generators (not just to co-op repairs)"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 34,
@@ -329,9 +1455,39 @@ const PERKS = [
     "name": "Counterforce",
     "character": "Jill Valentine",
     "category": "Generator/Totem",
-    "description": "Cleansing speed increases per totem cleansed + shows nearest totem aura. Consistent gen speed for totem-focused builds.",
+    "description": "When the trial starts, you earn 1 Token.\nWhenever you cleanse a Totem, earn 1 Token, then, you see the Aura of the farthest Totem for 10/12/14s.\nFor each Token, you cleanse Totems 25% faster.\n\"I don't mind a little detective work.\" -Jill Valentine",
     "synergy": "Inner Strength, Small Game, Deja Vu",
-    "synergyCount": 3
+    "synergyCount": 3,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.0.0",
+        "date": "17 June 2025",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased bonus Totem cleansing speed to 25% (was 20%)."
+          },
+          {
+            "type": "buff",
+            "text": "Increased furthest Totem aura reveal duration to 10/12/14 seconds (was 2/3/4 seconds)."
+          },
+          {
+            "type": "buff",
+            "text": "Increased stackable Totem cleansing speed bonus to 25% (was 20%)."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 35,
@@ -339,9 +1495,55 @@ const PERKS = [
     "name": "Dark Sense",
     "character": "Base game (all)",
     "category": "Information",
-    "description": "See killer aura briefly when a gen is completed. Passive; good combo with Poise for consistent killer info throughout match.",
+    "description": "Whenever a Generator is completed, when the Killer gets within 24m of you, you see their Aura for 5/7/10s.\n\"Slow down, don't rush and try not to worry so much! The best way to beat him is to know how he thinks.\" -Lost Tapes: Murf",
     "synergy": "Poise, Deja Vu",
-    "synergyCount": 2
+    "synergyCount": 2,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "6.1.0",
+        "date": "19 July 2022",
+        "changes": [
+          {
+            "type": "rework",
+            "text": "Each time a generator is completed, Dark Sense activates. While Dark Sense is active, if the Killer is within (or enters) a 24-meter radius around you their aura will be revealed for 5/7/10 seconds. Once the aura's duration expires, Dark Sense deactivates."
+          }
+        ]
+      },
+      {
+        "version": "3.2.0",
+        "date": "17 September 2019",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Now triggers on any generator completion rather than just ones completed by the perk's user"
+          }
+        ]
+      },
+      {
+        "version": "2.1.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "mechanic",
+            "text": "Reveals the killer's aura for 5 seconds each time a generator is completed"
+          },
+          {
+            "type": "buff",
+            "text": "Changed exit gate powered effect to last gen completion and increased duration to 5/7/10 seconds"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 36,
@@ -349,9 +1551,79 @@ const PERKS = [
     "name": "Dead Hard",
     "character": "David King",
     "category": "Exhaustion",
-    "description": "Dash forward to avoid a hit while healthy. High skill ceiling; mistimed uses lead to downs. Requires cold blood.",
+    "description": "Whenever you are unhooked, while injured and running, use Active Ability Button 1:\nYou gain Endurance for 0.5s.\nYou gain Exhausted for 60/50/40s.\n“I thought to myself, ‘Gonna 'ave some fun ‘ere lads, let's get stuck in!' It were a right dust up, I swear down!” -David King",
     "synergy": "Vigil, Resurgence, Overcome",
-    "synergyCount": 5
+    "synergyCount": 5,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "6.7.0",
+        "date": "18 April 2023",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Now requires an unhook action (either by you or on you) to activate"
+          }
+        ]
+      },
+      {
+        "version": "6.1.0",
+        "date": "19 July 2022",
+        "changes": [
+          {
+            "type": "rework",
+            "text": "Removed the dash / dodge element of the perk. Activating Dead Hard now grants the Survivor Endurance for 1 second. An animation plays when activated so Killers can see when the perk is used without the Survivor being hit"
+          },
+          {
+            "type": "note",
+            "text": "Endurance duration was reduced from 1 second to 0.5 seconds after the 6.1.0 PTB"
+          }
+        ]
+      },
+      {
+        "version": "5.3.1",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Added hit validation"
+          }
+        ]
+      },
+      {
+        "version": "2.0.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "qol",
+            "text": "Added a new animation to indicate the perk is active (part 2/2 for making Dead Hard more visible from the Killer's perspective)"
+          },
+          {
+            "type": "qol",
+            "text": "Removed the speed boost while in the air (aims to fix a variety of game hostage issues in multiple maps)"
+          }
+        ]
+      },
+      {
+        "version": "1.9.1",
+        "date": "",
+        "changes": [
+          {
+            "type": "qol",
+            "text": "Changed the speed curve to better match the animation (part 1/2 for making Dead Hard more visible from the Killer's perspective)"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 37,
@@ -359,19 +1631,53 @@ const PERKS = [
     "name": "Desperate Measures",
     "character": "Felix Richter",
     "category": "Healing",
-    "description": "Scales healing AND unhook speed with injured survivors (up to 80% faster). Faster unhooking helps trade situations.",
+    "description": "For each injured, downed, or hooked Survivor:\nYou heal 16/18/20% faster.\nYou unhook 16/18/20% faster.\n\"When they come with a wrecking ball, build stronger walls.” -Felix Richter",
     "synergy": "Botany Knowledge, Self-Care, Medkits",
-    "synergyCount": 2
+    "synergyCount": 2,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.0.0",
+        "date": "17 June 2025",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased scaling bonus speed to healing and unhook actions to 16/18/20% (was 10/12/14%)."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 38,
     "tier": "Decent",
     "name": "Do No Harm",
-    "character": "Aurélie Dubois",
+    "character": "Orela Rose",
     "category": "Healing",
-    "description": "Heal speed scales with how many hooks the target has (0→50%→100% faster). Best when killer has hooked several survivors.",
+    "description": "While healing another Survivor:\nFor each Hook State they have, you heal 30/40/50% faster.\nWhenever you hit a great basic Skill Check, you gain 3% more progress.\n\"Look at me. My name's Orela, and I'm gonna make sure you're all right.\" -Orela Rose",
     "synergy": "Botany Knowledge, Flow State",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 39,
@@ -379,9 +1685,31 @@ const PERKS = [
     "name": "Dramaturgy",
     "character": "Nicolas Cage",
     "category": "Exhaustion",
-    "description": "While healthy: speed burst + one of 4 random effects (2nd boost, scream, item, or exposed). Never repeats same effect twice in a row.",
+    "description": "While healthy and running, use Active Ability Button 1:\nYou gain 25% Haste for 2s.\nYou gain Exhausted for 60/50/40s.\nThen, one happens at random:\nYou gain 25% Haste for 2s.\nYou gain Exposed for 12s.\nYou gain a random rare item with random add-ons.\nYou scream, but nothing happens.\nThe same effect cannot happen twice in a row.\n“Take the part. It's a good movie, he says. What's the worst that can happen?” –Nicolas Cage",
     "synergy": "Resurgence, Vigil, Medkits",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "7.1.0",
+        "date": "25 July 2023",
+        "changes": [
+          {
+            "type": "note",
+            "text": "No changes from PTB"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 40,
@@ -389,9 +1717,31 @@ const PERKS = [
     "name": "Empathy",
     "character": "Claudette Morel",
     "category": "Information",
-    "description": "See injured survivor auras up to 128 m (= entire map). Near-wallhacks vs Legion/Plague/Twins who keep everyone injured.",
+    "description": "Within 64/96/128m, you see the Auras of injured Survivors.",
     "synergy": "Bond, Solidarity, Background Player",
-    "synergyCount": 8
+    "synergyCount": 7,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "2.6.0",
+        "date": "19 March 2019",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Increased aura reading range to 64/96/128 meters. Note that due to the size of maps reducing the range from unlimited to 128 meters isn't actually a nerf."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 41,
@@ -399,9 +1749,21 @@ const PERKS = [
     "name": "Finesse",
     "character": "Lara Croft",
     "category": "Chase",
-    "description": "Vault significantly faster (30 s cooldown). Works on pallets and windows; best for experienced loopers who know exact window timing.",
+    "description": "While healthy, you fast-vault 20% faster.\nWhenever you fast-vault, cooldown: 40/35/30s.\n\"Just need to push myself a bit further.\" -Lara Croft",
     "synergy": "Windows of Opportunity, Sprint Burst",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 42,
@@ -409,9 +1771,51 @@ const PERKS = [
     "name": "Fixated",
     "character": "Nancy Wheeler",
     "category": "Chase/Stealth",
-    "description": "See your own scratch marks + 20% faster walking speed. Helps hold Sprint Burst; useful for stealth walking and fast-vault timing.",
+    "description": "While walking, you gain 10/15/20% Haste.\nYou see your own Scratch Marks.\n\"I wanna finish what we started. I want to kill it.\" -Nancy Wheeler",
     "synergy": "Sprint Burst, Ghost Notes, Lightweight",
-    "synergyCount": 4
+    "synergyCount": 4,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "7.3.3",
+        "date": "",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Reverted to the original name, \"Fixated\" with the return of the Stranger Things chapter"
+          }
+        ]
+      },
+      {
+        "version": "5.3.0",
+        "date": "19 October 2021",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Renamed from \"Fixated\" to \"Self-Aware\""
+          }
+        ]
+      },
+      {
+        "version": "4.5.0",
+        "date": "9 February 2021",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Now works while injured"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 43,
@@ -419,9 +1823,41 @@ const PERKS = [
     "name": "Flashbang",
     "character": "Leon S. Kennedy",
     "category": "Chase/Stun",
-    "description": "Craft a flashbang in a locker after gen progress. Blind/stun killer at close range; can be left for teammates.",
+    "description": "After repairing 50/45/40% of Generators, while hiding in a Locker, use Active Ability Button 1 to craft a Flashbang.\nWhen you use the Flashbang:\nEveryone nearby looking at the detonation is blinded.\nThe Killer is alerted.\n\"Get outta my face!\" -Leon S. Kennedy",
     "synergy": "Quick & Quiet, Head On",
-    "synergyCount": 2
+    "synergyCount": 3,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "8.2.0",
+        "date": "27 August 2024",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Activates after completing a total of 50/45/40% worth of repair progress on generators. (was 70/60/50%)"
+          }
+        ]
+      },
+      {
+        "version": "7.0.0",
+        "date": "13 June 2023",
+        "changes": [
+          {
+            "type": "qol",
+            "text": "No longer requires an empty-hand to obtain"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 44,
@@ -429,9 +1865,21 @@ const PERKS = [
     "name": "Flip-Flop",
     "character": "Ash Williams",
     "category": "Anti-Slug",
-    "description": "Convert recovery progress to wiggle progress (50% max). On its own limited; pairs with Power Struggle to self-rescue.",
+    "description": "While downed, whenever the Killer picks you up, 50% of your recovery progress is added to your wiggle progress, up to 40/45/50%.\n\"Catch ya on the flip-flop.\" -Ash Williams",
     "synergy": "Power Struggle, Tenacity, Unbreakable",
-    "synergyCount": 7
+    "synergyCount": 7,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 45,
@@ -439,9 +1887,21 @@ const PERKS = [
     "name": "Flow State",
     "character": "Kwon Tae-young",
     "category": "Healing/Utility",
-    "description": "Scales healing, unhooking, and totem speed with gens completed (up to 50% at end-game). Nice late-game medic perk.",
+    "description": "Whenever a generator is completed, earn 1/1/1 Token, up to 5/5/5.\nFor each Token:\nYou bless and cleanse 8/9/10% faster.\nYou heal 8/9/10% faster.\nYou unhook Survivors 8/9/10% faster.\n“I'm sorry… I didn't realize I was working so late.” – Kwon Tae-young",
     "synergy": "Boon: Circle of Healing, Resurgence",
-    "synergyCount": 5
+    "synergyCount": 5,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 46,
@@ -449,9 +1909,21 @@ const PERKS = [
     "name": "Fog Wise",
     "character": "Vittorio Toscano",
     "category": "Information",
-    "description": "Hit a great skill check on a gen → see killer aura 3 s. Passive info; activates frequently on gens. Easy no-effort intel.",
+    "description": "While repairing, whenever you hit a great basic Skill Check, you see the Killer's Aura for 4/5/6s.\n\"I have seen great cruelty… and I have also seen another way. \" - Vittorio Toscano",
     "synergy": "Alert, Dark Sense, Wiretap",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 47,
@@ -459,9 +1931,41 @@ const PERKS = [
     "name": "Head On",
     "character": "Jane Romero",
     "category": "Chase/Stun",
-    "description": "Stun killer from locker after 3 s inside. Requires setup; pairs well with Quick & Quiet and Flash Grenade.",
-    "synergy": "Quick & Quiet, Exultation, Flash Grenade",
-    "synergyCount": 5
+    "description": "After hiding in a Locker for 3s, fast-exit to stun the Killer for 3s if they are within 2.5m, then gain Exhausted for 60/50/40s.\n“People are remembered for what they overcome. You run or you face your fears and remind the world who you are.” –Jane Romero",
+    "synergy": "Quick & Quiet, Exultation, Flashbang",
+    "synergyCount": 5,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "3.7.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "qol",
+            "text": "Added a timer on the perk in the in-game HUD to indicate how soon the perk will be ready for use"
+          }
+        ]
+      },
+      {
+        "version": "3.1.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Can no longer be used if you have idle crows"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 48,
@@ -469,9 +1973,55 @@ const PERKS = [
     "name": "Hope",
     "character": "Base game (all)",
     "category": "End-Game",
-    "description": "5% haste after exit gates are powered. Lets you outrun most killers. Good vs No Way Out. Less useful if already escaping safely.",
+    "description": "When all Generators are completed, you gain 3/4/5% Haste.\n\"Buckle up, fuckos! Let's roll!\" -Lost Tapes: Nikki",
     "synergy": "Adrenaline, Wake Up, No One Left Behind",
-    "synergyCount": 2
+    "synergyCount": 2,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.2.0",
+        "date": "23 September 2025",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Decreased the Haste status effect gained when the Exit Gates are powered to 3/4/5% (was 5/6/7%)."
+          }
+        ]
+      },
+      {
+        "version": "6.1.0",
+        "date": "19 July 2022",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Removed the limit limit - let's go hOPe abusers!"
+          }
+        ]
+      },
+      {
+        "version": "1.3.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Now is only active for 120 seconds"
+          },
+          {
+            "type": "buff",
+            "text": "Increased speed bonus from 2/3/4% to 5/6/7%"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 49,
@@ -479,9 +2029,31 @@ const PERKS = [
     "name": "Hyperfocus",
     "character": "Rebecca Chambers",
     "category": "Generator",
-    "description": "Consecutive great skill checks on same gen give +1% bonus progress + a stacking speed token. Up to +4% gen speed per token. Requires dedicated build to shine.",
+    "description": "Whenever you hit a great basic Skill Check, you earn 1 Token, up to 6.\nFor each Token, basic Skill Checks:\nAppear 4% more often.\nSpin 4% faster.\nWhenever you hit a great, give 10/20/30% more progress.\nWhenever you miss a basic Skill Check, hit a good Skill Check, or stop healing or repairing, lose all Tokens.",
     "synergy": "Stake Out, Prove Thyself, Toolboxes",
-    "synergyCount": 1
+    "synergyCount": 1,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "6.2.0",
+        "date": "30 August 2022",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased Skill check chance per token to 4% (was 2%)"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 50,
@@ -489,9 +2061,41 @@ const PERKS = [
     "name": "Inner Strength",
     "character": "Nancy Wheeler",
     "category": "Healing",
-    "description": "Heal fully by spending 10 s in a locker after cleansing a totem. Reliable passive heal; synergizes with totem builds.",
+    "description": "Whenever you cleanse a Totem, while injured and not Broken, after hiding in a Locker for 10/9/8s, you become healthy instantly.\n“All this time I've been trying so hard to pretend like everything's fine, but it's not.” -Nancy Wheeler",
     "synergy": "Small Game, Counterforce, Build to Last",
-    "synergyCount": 5
+    "synergyCount": 5,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "7.3.3",
+        "date": "",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Reverted to the original name, \"Inner Strength\" with the return of the Stranger Things chapter"
+          }
+        ]
+      },
+      {
+        "version": "5.3.0",
+        "date": "19 October 2021",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Renamed from \"Inner Strength\" to \"Inner Healing\""
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 51,
@@ -499,9 +2103,69 @@ const PERKS = [
     "name": "Iron Will",
     "character": "Jake Park",
     "category": "Stealth",
-    "description": "Complete silence while injured (grunts of pain suppressed). Doesn't work while exhausted. Great vs Spirit, Dracula, audio-reliant killers.",
+    "description": "While injured and not Exhausted, your Grunts of Pain are 80/90/100% quieter.",
     "synergy": "Lucky Break (no sound + no blood = invisible)",
-    "synergyCount": 9
+    "synergyCount": 9,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "8.1.0",
+        "date": "16 July 2024",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased the grunts of pain reduction to 80/90/100%. (was 25/50/75%)"
+          }
+        ]
+      },
+      {
+        "version": "6.1.0",
+        "date": "19 July 2022",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Reduced the grunts of pain volume reduction to 25/50/75% (was 50/75/100%)"
+          },
+          {
+            "type": "nerf",
+            "text": "Does not function while Exhausted. Does not inflict Exhausted"
+          }
+        ]
+      },
+      {
+        "version": "5.1.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Effects that modify sound are now multiplicative rather than additive. This means that sounds that are reduced to 0% will no longer be increased by perks such as \"\"Stridor\"\" and will instead remain at 0."
+          }
+        ]
+      },
+      {
+        "version": "2.3.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Adjusted the volume reduction from 75/100/100% to 50/75/100%"
+          },
+          {
+            "type": "buff",
+            "text": "Removed the stillness condition from levels 1 and 2"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 52,
@@ -509,9 +2173,55 @@ const PERKS = [
     "name": "Lucky Break",
     "character": "Yui Kimura",
     "category": "Stealth/Chase",
-    "description": "No blood trail + no scratch marks for a timer after being injured. Helps lose killer right after a hit. Recharge by healing others.",
+    "description": "While injured, for up to 40/50/60s:\nYou leave no Pools of Blood.\nYou leave no Scratch Marks.\nFor each second spent healing another Survivor, recharge the duration by 1s.\n“That's not enough to beat me. Not even close.” -Yui Kimura",
     "synergy": "Iron Will (combo: no sound + no trail), Medkits",
-    "synergyCount": 2
+    "synergyCount": 2,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "6.1.0",
+        "date": "19 July 2022",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "For each 1 second spent healing another Survivor, increase Lucky Break's duration by 1 second. Lucky Break's duration cannot increase beyond its starting value"
+          }
+        ]
+      },
+      {
+        "version": "5.0.0",
+        "date": "15 June 2021",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased duration from 35/40/45 seconds to 40/50/60 seconds"
+          }
+        ]
+      },
+      {
+        "version": "4.7.0",
+        "date": "4 May 2021",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Reduced duration to 35/40/45 seconds"
+          },
+          {
+            "type": "buff",
+            "text": "Now hides scratch marks as well"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 53,
@@ -519,9 +2229,21 @@ const PERKS = [
     "name": "Made for This",
     "character": "Gabriel Soma",
     "category": "Chase/Healing",
-    "description": "Passive speed boost while injured; heal to healthy after performing a conspicuous action. Rewards smart injured play.",
+    "description": "While injured, whenever you finish healing another Survivor, you gain Endurance for 6/8/10s.\nWhile you have Deep Wound, you gain 3% Haste.\n“I didn't come here to be robot food.” –Gabriel Soma",
     "synergy": "Resurgence, Botany Knowledge",
-    "synergyCount": 2
+    "synergyCount": 2,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 54,
@@ -529,9 +2251,81 @@ const PERKS = [
     "name": "No One Left Behind",
     "character": "Base game (all)",
     "category": "End-Game",
-    "description": "After gates powered: 2× faster rescue speed + bonus BP. Speed boost after unhooking in end-game. Great in coordinated teams.",
+    "description": "When all Generators are completed:\nYou heal 50/75/100% faster.\nYou unhook other Survivors 50/75/100% faster.\nWhenever you unhook a Survivor, they gain 10% more Haste.\nYou see the Auras of other Survivors.\n“Yeah, no shit. But we can outsmart and overthrow him if we work together. Don't be predictable and selfish!” -Lost Tapes: Clyde",
     "synergy": "Adrenaline, Wake Up, Flow State",
-    "synergyCount": 3
+    "synergyCount": 3,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "8.4.0",
+        "date": "28 November 2024",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "No longer grants additional Bloodpoints for healing and unhooking other Survivors"
+          },
+          {
+            "type": "buff",
+            "text": "Increased the bonus action speed for healing and hooking other survivors to 50/75/100% (was 30/40/50%)"
+          },
+          {
+            "type": "buff",
+            "text": "Increased the 7% Haste bonus Survivors you unhooked got for 10 seconds to 10% for 15 seconds"
+          }
+        ]
+      },
+      {
+        "version": "6.1.0",
+        "date": "19 July 2022",
+        "changes": [
+          {
+            "type": "qol",
+            "text": "Now triggers when the Exit Gates are powered (was triggered when an Exit Gate was opened)"
+          },
+          {
+            "type": "buff",
+            "text": "When unhooking a Survivor, they now gain a 7% movement bonus for 10 seconds."
+          }
+        ]
+      },
+      {
+        "version": "3.4.0",
+        "date": "3 December 2019",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased Healing and Unhooking speed bonus to 30/40/50%"
+          },
+          {
+            "type": "buff",
+            "text": "Now reveals the aura of all other survivors"
+          },
+          {
+            "type": "rework",
+            "text": "Now activated when at least one Exit Gate is opened"
+          }
+        ]
+      },
+      {
+        "version": "1.0.2",
+        "date": "",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Reduced Altruistic action speed bonus from 5/10/15% to 4/8/12%"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 55,
@@ -539,9 +2333,81 @@ const PERKS = [
     "name": "Off the Record",
     "character": "Zarina Kassir",
     "category": "Anti-Tunnel",
-    "description": "40 s endurance + stealth (no scratch marks/moans) after unhook. Outclassed by Decisive+Resurgence but still solid; works in end-game.",
+    "description": "Until all Generators are completed, whenever you are unhooked, for the next 30/35/40s:\nYou gain Endurance.\nYour Grunts of Pain are 100% quieter.\nThe Killer cannot see your Aura.\n\"Trust me, I investigate thoroughly and discreetly.\" -Zarina Kassir",
     "synergy": "Medkits, Self-Care",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.3.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "No longer hides scratch marks while sprinting"
+          }
+        ]
+      },
+      {
+        "version": "9.2.2",
+        "date": "",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Decreased the perk duration to 30/35/40 seconds. (was 60/70/80 seconds)"
+          },
+          {
+            "type": "buff",
+            "text": "Re-added the Endurance status effect."
+          },
+          {
+            "type": "nerf",
+            "text": "This perk and its effects are disabled once the exit gates are powered."
+          }
+        ]
+      },
+      {
+        "version": "9.2.0",
+        "date": "23 September 2025",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Removed the Endurance status effect."
+          },
+          {
+            "type": "buff",
+            "text": "Removed the stipulation that it disables once Exit Gates are powered."
+          },
+          {
+            "type": "buff",
+            "text": "Added a new effect: While active, you do not leave scratch marks while sprinting."
+          }
+        ]
+      },
+      {
+        "version": "6.1.0",
+        "date": "19 July 2022",
+        "changes": [
+          {
+            "type": "rework",
+            "text": "Once you are unhooked or escape from the hook, Off the Record activates for 60/70/80 seconds and grants the Endurance status effect"
+          },
+          {
+            "type": "note",
+            "text": "Change from PTB: is now disabled when exit gates are powered"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 56,
@@ -549,9 +2415,41 @@ const PERKS = [
     "name": "Plot Twist",
     "character": "Nicolas Cage",
     "category": "Anti-Slug",
-    "description": "Voluntarily down yourself (crouch + ability). When you recover (by any means): instantly heal to healthy. Counters slugging; resets injured state.",
+    "description": "While injured, crouched and idle, use Active Ability Button 2 to be downed silently.\nWhile downed this way, once per trial:\nYou make no Grunts of Pain.\nYou leave no Pools of Blood.\nYou recover 25% faster.\nYou can fully recover.\nWhenever you recover this way:\nYou gain 50% Haste for 2/3/4s.\nYou are healed instantly.\nWhen all Generators are completed, you can use this ability once again.\n“I think you'll find this shooting location… captivating.” –Pauline Stamper",
     "synergy": "Flip-Flop, Unbreakable, Power Struggle",
-    "synergyCount": 2
+    "synergyCount": 2,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.2.0",
+        "date": "23 September 2025",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Added a new effect: Increases recovery speed by 25% when used."
+          }
+        ]
+      },
+      {
+        "version": "7.1.0",
+        "date": "25 July 2023",
+        "changes": [
+          {
+            "type": "note",
+            "text": "No changes from PTB"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 57,
@@ -559,9 +2457,31 @@ const PERKS = [
     "name": "Power Struggle",
     "character": "Elodie Rakoto",
     "category": "Anti-Pickup",
-    "description": "Drop a pallet while being carried at 15%+ wiggle. Works on its own; pairs with Flip-Flop to reduce threshold from 50%→15%.",
+    "description": "While carried by the Killer, while you have at least 25/20/15% wiggle and next to an Upright Pallet, you can drop it to stun the Killer.\nWhile downed, you see the Auras of Upright Pallets.\n“I relied on others to protect me once and I lost everything. Never again.” -Élodie Rakoto",
     "synergy": "Flip-Flop, Plot Twist",
-    "synergyCount": 3
+    "synergyCount": 3,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "5.5.0",
+        "date": "25 January 2022",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Decreased the activation threshold to 25/20/15% wiggle progress (was 35/30/25%)"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 58,
@@ -569,9 +2489,59 @@ const PERKS = [
     "name": "Prove Thyself",
     "character": "Dwight Fairfield",
     "category": "Generator",
-    "description": "Speed up gen repair for each nearby survivor; removes some co-op penalty. Punishes killers who ignore grouped survivors.",
+    "description": "For each other Survivor within 4m of you, all Survivors repair 6/8/10% faster.\n\"Show me what you can do!\" -Dwight",
     "synergy": "Deja Vu, Fast Track, Toolboxes",
-    "synergyCount": 11
+    "synergyCount": 11,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "7.1.0",
+        "date": "25 July 2023",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Decreased repair speed bonus to 6/8/10% (was 15%)"
+          },
+          {
+            "type": "nerf",
+            "text": "Removed the coop Bloodpoint bonus"
+          }
+        ]
+      },
+      {
+        "version": "3.7.0",
+        "date": "28 April 2020",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased repair speed bonus from 10% to 15%"
+          }
+        ]
+      },
+      {
+        "version": "2.5.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "rework",
+            "text": "Now grants 50/75/100% more Bloodpoints for coop actions"
+          },
+          {
+            "type": "rework",
+            "text": "Now gives a 10% repair speed bonus to every other survivor working on the same generator"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 59,
@@ -579,9 +2549,49 @@ const PERKS = [
     "name": "Quick Gambit",
     "character": "Vittorio Toscano",
     "category": "Information/Gen",
-    "description": "While in chase (healthy): allies gain 5% gen speed + you see all teammate auras. Great info perk for coordinated teams.",
+    "description": "While chased by the Killer:\nYou see the Auras of other Survivors.\nOther Survivors repair 3/4/5% faster.\nWhenever you take damage, cooldown: 40s.\n\"We need not resort to violence. And I shall prove it.\" - Vittorio Toscano",
     "synergy": "Sprint Burst, Windows of Opportunity",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.2.0",
+        "date": "23 September 2025",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Decreased the cooldown when losing a health state to 40 seconds (was 60 seconds)."
+          }
+        ]
+      },
+      {
+        "version": "8.3.0",
+        "date": "8 October 2024",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Removed the range condition"
+          },
+          {
+            "type": "nerf",
+            "text": "Reduced the repair speed boost to 3/4/5% (was 6/7/8%)"
+          },
+          {
+            "type": "nerf",
+            "text": "Now goes on cooldown for 60 seconds when you lose a health state"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 60,
@@ -589,9 +2599,31 @@ const PERKS = [
     "name": "Reassurance",
     "character": "Rebecca Chambers",
     "category": "Hook Support",
-    "description": "Extend hooked survivor's timer 30 s from 6 m. Works through floors. Great in multi-floor maps. Less useful now that base hook timer is 70 s.",
+    "description": "Once per Hook State, while within 6m of a hooked Survivor, use Active Ability Button 2 to stop the sacrifice progress for 20/25/30s.",
     "synergy": "Camaraderie, Babysitter",
-    "synergyCount": 1
+    "synergyCount": 1,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "6.2.0",
+        "date": "30 August 2022",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Changed the restriction to once per survivor per hook instance (was a 40 second cooldown)"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 61,
@@ -599,9 +2631,31 @@ const PERKS = [
     "name": "Resilience",
     "character": "Base game (all)",
     "category": "General Speed",
-    "description": "9% speed to ALL actions (gens, heals, unhooks, vaults, gates) while injured. Subtle but stacks with everything.",
+    "description": "While injured:\nYou bless and cleanse Totems 3/6/9% faster.\nYou heal 3/6/9% faster.\nYou open Exit Gates 3/6/9% faster.\nYou repair 3/6/9% faster.\nYou sabotage Hooks 3/6/9% faster.\nYou unhook Survivors 3/6/9% faster.\nYou unlock chests 3/6/9% faster.\nYou vault 3/6/9% faster.\n\"Focus, even in these desperate times.\"",
     "synergy": "Deja Vu, Fast Track, Iron Will",
-    "synergyCount": 3
+    "synergyCount": 3,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "6.2.0",
+        "date": "30 August 2022",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Added blessing totems to the list of actions affected"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 62,
@@ -609,9 +2663,87 @@ const PERKS = [
     "name": "Saboteur",
     "character": "Jake Park",
     "category": "Sabotage",
-    "description": "Infinite hook sabo on cooldown; highlights scorch/Pain Resonance hooks in yellow. Best in dedicated sabo builds.",
+    "description": "Within 56m of where another Survivor was picked-up by the Killer and is being carried, you see the Auras of Hooks and Scourge Hooks.\nYou can sabotage Hooks. Cooldown: 70/65/60s.",
     "synergy": "Toolboxes, Background Player, Flip-Flop",
-    "synergyCount": 3
+    "synergyCount": 3,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "7.1.0",
+        "date": "25 July 2023",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Decreased cooldown to 70/65/60 seconds (was 90/75/60)"
+          },
+          {
+            "type": "buff",
+            "text": "Decreased sabotage time to 2.3 seconds (was 2.5)"
+          }
+        ]
+      },
+      {
+        "version": "6.1.0",
+        "date": "19 July 2022",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Scourge Hooks now have a yellow aura when a Survivor is being carried"
+          }
+        ]
+      },
+      {
+        "version": "3.6.0",
+        "date": "10 March 2020",
+        "changes": [
+          {
+            "type": "rework",
+            "text": "Sabotaging without a toolbox now takes 2.5 seconds"
+          },
+          {
+            "type": "rework",
+            "text": "Now reveals the hook auras within a 56 meter radius of where a survivor is picked up while they are being carried"
+          },
+          {
+            "type": "nerf",
+            "text": "The sabotage action now has a 90/75/60 secondcooldown"
+          }
+        ]
+      },
+      {
+        "version": "2.3.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "rework",
+            "text": "Now causes the hooks and traps you sabotage to stay sabotaged for an extra 10/20/30 seconds"
+          },
+          {
+            "type": "buff",
+            "text": "All tiers now allow for sabotaging without a toolbox at 50% speed"
+          }
+        ]
+      },
+      {
+        "version": "1.0.2",
+        "date": "",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Decreased sabotage speed from 60/70/80% to 30/40/50%"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 63,
@@ -619,9 +2751,51 @@ const PERKS = [
     "name": "Second Wind",
     "character": "Steve Harrington",
     "category": "Healing",
-    "description": "Auto-heal over 20 s after being unhooked — but only after you fully heal another survivor. Works in end-game unlike many perks.",
+    "description": "After you heal 1 Survivor, while not Broken, when you are unhooked, you gain Broken.\nAfter 28/24/20s, if you are not downed, you are instantly healed.\n\"Yeah, that's a no.\" -Steve Harrington",
     "synergy": "For the People (triggers it), Solidarity",
-    "synergyCount": 2
+    "synergyCount": 2,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "7.3.3",
+        "date": "",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Reverted to the original name, \"Second Wind\" with the return of the Stranger Things chapter"
+          }
+        ]
+      },
+      {
+        "version": "5.3.0",
+        "date": "19 October 2021",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Renamed from \"Second Wind\" to \"Renewal\""
+          }
+        ]
+      },
+      {
+        "version": "4.5.0",
+        "date": "9 February 2021",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Reduced the duration from 34/32/30 seconds to 28/24/20 seconds"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 64,
@@ -629,9 +2803,59 @@ const PERKS = [
     "name": "Self-Care",
     "character": "Claudette Morel",
     "category": "Healing",
-    "description": "Heal yourself without a medkit (slower). Can finish a partial heal from someone else. Always reliable fallback.",
+    "description": "You can heal yourself at 25/30/35% speed.",
     "synergy": "Botany Knowledge, Medkits, Desperate Measures",
-    "synergyCount": 4
+    "synergyCount": 4,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "6.1.0",
+        "date": "19 July 2022",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Reduced the self heal speed to 25/30/35% (was 50%)"
+          },
+          {
+            "type": "nerf",
+            "text": "Removed Med-Kit efficiency bonus"
+          }
+        ]
+      },
+      {
+        "version": "1.7.0",
+        "date": "14 September 2017",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Removed increased difficulty Skill check from tiers 1 and 2"
+          },
+          {
+            "type": "nerf",
+            "text": "Reduced efficiency of healing items during self-heal from 50/75/100% to 10/15/20%"
+          }
+        ]
+      },
+      {
+        "version": "1.0.2",
+        "date": "",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Reduced speed from 40/50/60% to 30/40/50%"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 65,
@@ -639,9 +2863,31 @@ const PERKS = [
     "name": "Solidarity",
     "character": "Jane Romero",
     "category": "Healing",
-    "description": "Heal others while injured: you simultaneously heal yourself at 70% rate. Heal two people to heal yourself passively.",
+    "description": "While injured and healing another Survivor without a Med-Kit, you also gain healing progress at 50/60/70% speed.\n“Showing up when things get rough and supporting those in need; that's how you become stronger, that's how you grow.” –Jane Romero",
     "synergy": "Second Wind, For the People, Botany Knowledge",
-    "synergyCount": 6
+    "synergyCount": 6,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "8.1.0",
+        "date": "16 July 2024",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased the heal conversion rate to 50/60/70%. (was 40/45/50%)"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 66,
@@ -649,9 +2895,21 @@ const PERKS = [
     "name": "Teamwork: Full Circuit",
     "character": "Dustin Henderson",
     "category": "Generator/Team",
-    "description": "After completing a gen with a teammate: skill checks are easier and gen repair speed is faster for 30 s. Passive win-win for co-op gens.",
+    "description": "For each other Survivor repairing a Generator with you, good basic Skill Check zones are 15/20/25% bigger.\nWhile repairing with at least 1 other Survivor, you repair 5% faster.\n“How many times do I have to be right on the money before you guys just trust me?” —Dustin Henderson",
     "synergy": "Prove Thyself, Fast Track",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 67,
@@ -659,9 +2917,21 @@ const PERKS = [
     "name": "Troubleshooter",
     "character": "Gabriel Soma",
     "category": "Information/Chase",
-    "description": "While in chase: see aura of the generator the killer last damaged. Helps teammates avoid your chase and find safe gens.",
+    "description": "While chased by the Killer:\nYou see the Aura of the Generator with the most progress.\nWhenever you drop a Pallet, you see the Killer's Aura for 4/5/6s.\nWhen the Killer stops chasing you, this ends after 6/8/10s.\n“Nothing gets done around here if I don't do it.” –Gabriel Soma",
     "synergy": "Alert, Wiretap, Deja Vu",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 68,
@@ -669,9 +2939,21 @@ const PERKS = [
     "name": "We See You",
     "character": "Eleven",
     "category": "Information",
-    "description": "Every 4 aura reveals to killer = see killer aura 15 s for whole team. Pairs with Object of Obsession or Come and Get Me.",
+    "description": "Whenever the Killer sees your Aura, you earn 1 Token. Cooldown: 10s.\nWhen you have 4 Tokens, spend them all. Then, all Survivors see the Killer's Aura for 10/12.5/15s.\n“It is not me. It is you. You are the monster.” —Eleven",
     "synergy": "Object of Obsession, Come and Get Me",
-    "synergyCount": 2
+    "synergyCount": 2,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 69,
@@ -679,9 +2961,55 @@ const PERKS = [
     "name": "Will Make It",
     "character": "Base game (all)",
     "category": "Healing",
-    "description": "After unhooking: heal that survivor 100% faster (8 s total). Bonus lingers 90 s. Power-crept by Resurgence but still solid.",
+    "description": "Whenever you unhook a Survivor, for 30/60/90s, you heal other Survivors 100% faster.\n\"I'm confident we can all escape in one piece if we help each other.\"",
     "synergy": "Resurgence, Babysitter, Botany Knowledge",
-    "synergyCount": 2
+    "synergyCount": 2,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "2.6.0",
+        "date": "19 March 2019",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased all tiers to 100% healing speed"
+          }
+        ]
+      },
+      {
+        "version": "1.9.3",
+        "date": "",
+        "changes": [
+          {
+            "type": "qol",
+            "text": "Players will now receive a notification when they're unhooked by someone with We'll make it"
+          }
+        ]
+      },
+      {
+        "version": "1.0.2",
+        "date": "",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Reduce maximum bonus"
+          },
+          {
+            "type": "nerf",
+            "text": "Now only affects healing others"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 70,
@@ -689,9 +3017,21 @@ const PERKS = [
     "name": "1 2 3 4",
     "character": "V (Bovine Yak)",
     "category": "Skill Checks",
-    "description": "Play instrument 15 s → you + nearby allies: +20% skill check frequency 90 s. Situational; only pops off in coordinated teams.",
+    "description": "While idle, use Active Ability Button 2 to perform, empowering all Survivors within 16m for up to 15s. While you are performing, other Survivors will see your Aura. You get special Skill Checks during that time: while healing or repairing, basic Skill Checks are 20% more likely to appear.\nIf you complete the performance, the effect ends after 90s. Cooldown: 110/100/90s.\n“We are loud! We are heavy! WE ARE AXEKICK!” - Vee Boonyasak",
     "synergy": "Autodidact (needs more skill checks), Toolboxes",
-    "synergyCount": 2
+    "synergyCount": 2,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 71,
@@ -699,9 +3039,21 @@ const PERKS = [
     "name": "A Place for Us",
     "character": "Kwon Tae-young",
     "category": "Stealth/Healing",
-    "description": "Healing another survivor: your position is hidden from aura-reading for 6 s. Passive safety while doing altruistic actions.",
+    "description": "While healing another Survivor, you both gain Elusive.\nWhenever you finish healing the Obsession, you both gain Elusive for 20/25/30s.\nWhen the trial starts, you are less likely to be the Obsession.\n“I understand computers… systems. Problems. But this… I wonder if I'll ever understand.” – Kwon Tae-young",
     "synergy": "Botany Knowledge, Solidarity",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 72,
@@ -709,9 +3061,21 @@ const PERKS = [
     "name": "Aftercare",
     "character": "Jeff Johansen",
     "category": "Information",
-    "description": "See auras of survivors you've performed altruistic actions on/for. Stacks are hard to build quickly; weak early game.",
+    "description": "You and up to 1/2/3 Survivors see each other's Auras whenever:\nYou unhook them, or they unhook you.\nYou finish healing them, or they finish healing you.\nThis effect lasts until you are hooked.\n“Oil work to honor my best buddies, the best musicians I know. Their album got me through dark times.” –Jeff, oil on canvas, 16x16",
     "synergy": "Empathy, Bond",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 73,
@@ -719,9 +3083,69 @@ const PERKS = [
     "name": "Any Means Necessary",
     "character": "Yui Kimura",
     "category": "Utility",
-    "description": "See all dropped pallets; stand-up dropped pallets (takes a few seconds). Highlights pallets as they drop — similar to Alert for pallet-breaks.",
+    "description": "While next to a Dropped Pallet, use Active Ability Button 1 for 5/4/3s to reset it.\nYou see the Auras of Dropped Pallets.\n“I'll hit you with everything I've got. Then I'll do it again.” -Yui Kimura",
     "synergy": "Alert, Windows of Opportunity",
-    "synergyCount": 2
+    "synergyCount": 2,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.1.0",
+        "date": "29 July 2025",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Decreased the time it takes to raise a pallet to 5/4/3 seconds (was 6/5/4)"
+          }
+        ]
+      },
+      {
+        "version": "6.6.0",
+        "date": "7 March 2023",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Removed the cooldown"
+          },
+          {
+            "type": "nerf",
+            "text": "Increased the resetting time to 6 & 5 seconds for Tiers 1 & 2 respectively"
+          }
+        ]
+      },
+      {
+        "version": "5.3.0",
+        "date": "19 October 2021",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Now reveals the auras of dropped pallets"
+          }
+        ]
+      },
+      {
+        "version": "4.3.0",
+        "date": "20 October 2020",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Reduced cooldown to 100/80/60 seconds"
+          },
+          {
+            "type": "buff",
+            "text": "Now awards bloodpoints for resetting pallets"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 74,
@@ -729,9 +3153,45 @@ const PERKS = [
     "name": "Appraisal",
     "character": "Elodie Rakoto",
     "category": "Chest",
-    "description": "Search a chest a second time (4 tokens). On its own awful; shines in chest builds with Moment of Glory, Pharmacy, Specialist.",
+    "description": "When the trial starts, you earn 4 Tokens.\nSpend 1 Token to rummage an empty Chest, up to 2 times per chest.\nYou rummage Chests 40/60/80% faster.",
     "synergy": "Moment of Glory, Pharmacy, Specialist",
-    "synergyCount": 7
+    "synergyCount": 7,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.1.0",
+        "date": "29 July 2025",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased the number of tokens to 4 (was 3)"
+          },
+          {
+            "type": "buff",
+            "text": "Each chest can now be rummaged twice (was once)"
+          }
+        ]
+      },
+      {
+        "version": "4.4.1",
+        "date": "",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Appraisal can now only be used one per chest"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 75,
@@ -739,9 +3199,31 @@ const PERKS = [
     "name": "Autodidact",
     "character": "Adam Francis",
     "category": "Healing",
-    "description": "5 tokens from healing skill checks → skill checks deal 60% heal progress. Initially nerfs team healing. Incredibly RNG-dependent.",
+    "description": "You start the trial with 0 Tokens, up to 3/4/5, and your good basic healing Skill Checks give 15% less progress.\nWhile healing without a Med-Kit:\nWhenever you hit a basic Skill Check, you earn 1 token.\nWhenever you hit a basic Skill Check, for each Token, you gain 15% more progress.\nYou cannot get great basic Skill Checks.\n“There's no limit to what you can achieve, as long as you back it up with hard work.” -Adam Francis",
     "synergy": "Deadline (more skill checks), 1 2 3 4",
-    "synergyCount": 4
+    "synergyCount": 4,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "8.1.0",
+        "date": "16 July 2024",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Decreased the initial progress penalty to 15%. (was 25%)"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 76,
@@ -749,9 +3231,35 @@ const PERKS = [
     "name": "Background Player",
     "character": "Renato Lyra",
     "category": "Rescue/Mobility",
-    "description": "Speed burst when killer picks up a survivor. Sprint to hook sabotage or flashlight rescue before killer arrives.",
+    "description": "Whenever the Killer picks-up another Survivor, for the next 10s, when you start running:\nGain 50% Haste for 5s.\nGain Exhausted for 30/25/20s.\n“You forget about me?” –Renato Lyra",
     "synergy": "Saboteur, Flashlight, Empathy",
-    "synergyCount": 4
+    "synergyCount": 4,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "8.0.0",
+        "date": "3 June 2024",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Decreased the movement speed bonus to 150%. (was 200%)"
+          },
+          {
+            "type": "buff",
+            "text": "Decreased the Exhaustion duration to 30/25/20 seconds. (was 60/50/40 seconds)"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 77,
@@ -759,9 +3267,77 @@ const PERKS = [
     "name": "Balanced Landing",
     "character": "Nea Karlsson",
     "category": "Chase/Exhaustion",
-    "description": "Drop from height: sprint at 150% speed for 3 s + no stumble. Great when it activates — but maps often lack height drops outside shack.",
+    "description": "Whenener you fall from at least 1.25m:\nYou gain 50% Haste for 3s.\nYou gain Exhausted for 60/50/40s.\nYour stagger is 75% shorter.\nYour Grunts from falling are 100% quieter.\n\"I've jumped from higher places.\" -Nea",
     "synergy": "Windows of Opportunity, Sprint Burst",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "3.4.0",
+        "date": "3 December 2019",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Now muffles grunts from falling by 100% while not Exhausted"
+          },
+          {
+            "type": "nerf",
+            "text": "Stagger reduction is no longer granted when Exhausted"
+          }
+        ]
+      },
+      {
+        "version": "2.0.0",
+        "date": "12 June 2018",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Sprint is now available for all tiers (no longer just tier 3)"
+          },
+          {
+            "type": "nerf",
+            "text": "Increased Exhaustion duration to 60/50/40 seconds (affects lower tiers)"
+          },
+          {
+            "type": "buff",
+            "text": "Stagger reduction is now 75% for all tiers"
+          }
+        ]
+      },
+      {
+        "version": "1.5.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Now shares the Exhausted status effect cooldown with other exhaustion perks"
+          }
+        ]
+      },
+      {
+        "version": "1.3.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased sprint duration to 3 seconds"
+          },
+          {
+            "type": "buff",
+            "text": "Decreased cooldown to 40 seconds"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 78,
@@ -769,9 +3345,21 @@ const PERKS = [
     "name": "Bardic Inspiration",
     "character": "Aestri Yazar & Baermar Uraz",
     "category": "Skill Checks",
-    "description": "Play instrument → roll a dice; bonus to gens or heals for team. Random; can be great or useless. Pairs with skill-check builds.",
+    "description": "While idle, use Active Ability Button 1 to perform, empowering all Survivors within 16m for up to 15s. While you are performing, other Survivors will see your Aura. Roll a d20:\n1 | You scream, but nothing happens.\n2-10 | Basic Skill Checks give +1% progress.\n11-19 | Basic Skill Checks give +2% progress.\n20 | Basic Skill Checks give +3% progress.\nIf you complete the performance, this effect ends after 90s. Cooldown: 110/100/90s.\n\"Listen closely! I'm about to save your life!\" -Aestri",
     "synergy": "1 2 3 4, Autodidact",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 79,
@@ -779,9 +3367,21 @@ const PERKS = [
     "name": "Better Boom",
     "character": "Dustin Henderson",
     "category": "Trap/Chase",
-    "description": "Set a chem trap on a window. Killer vaults through it: slowed 6 s. Fun perk; windows are common so this triggers more often than pallets.",
+    "description": "After repairing 20% of Generators, while next to a Window, use Active Ability Button 2 to trap it for 40/50/60s. All Survivors see that Window's Aura for that time.\nWhen the Killer vaults that Window, the trap explodes and they gain 50% Hindered for 4s.\n\"Never tell me the odds.\" -Dustin Henderson",
     "synergy": "Chemical Trap, Alert",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 80,
@@ -789,9 +3389,43 @@ const PERKS = [
     "name": "Better Than New",
     "character": "Rebecca Chambers",
     "category": "Utility",
-    "description": "16% speed boost to healing/other actions for survivors you heal. Numbers far too small to be reliable. 'Better than nothing'.",
+    "description": "Whenever you finish healing another Survivor, until they take damage:\nThey bless and cleanse 12/14/16% faster.\nThey heal 12/14/16% faster.\nThey unlock Chests 12/14/16% faster.",
     "synergy": "Botany Knowledge (strictly better)",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "6.2.0",
+        "date": "30 August 2022",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Removed the generator repair boost"
+          },
+          {
+            "type": "qol",
+            "text": "Added totem blessing to the list of effects"
+          },
+          {
+            "type": "buff",
+            "text": "Increased speed boost to 12%/14%/16% (was 6%)"
+          },
+          {
+            "type": "qol",
+            "text": "Removed effect duration: Survivors now keep the bonus until they lose a health state"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 81,
@@ -799,9 +3433,59 @@ const PERKS = [
     "name": "Better Together",
     "character": "Nancy Wheeler",
     "category": "Information",
-    "description": "See aura of the gen you're repairing + auras of teammates repairing gens. Minor team coordination; Bond is generally better.",
+    "description": "While you are repairing a Generator:\nOther Survivors see that Generator's Aura.\nWhenever the Killer downs a Survivor, you see the Auras of all Survivors for 20/25/30s.\n“Let's burn that lab to the ground.” -Nancy Wheeler",
     "synergy": "Bond, Empathy",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Plot Twist can no longer force this Perk's effect to activate out of the Survivor's control."
+          },
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.1.0",
+        "date": "29 July 2025",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "The aura of the generator you are repairing no longer has a range limit"
+          },
+          {
+            "type": "buff",
+            "text": "Increased the duration of Survivor aura reading to 20/25/30 seconds (was 8/9/10)."
+          }
+        ]
+      },
+      {
+        "version": "7.3.3",
+        "date": "",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Reverted to the original name, \"Better Together\" with the return of the Stranger Things chapter"
+          }
+        ]
+      },
+      {
+        "version": "5.3.0",
+        "date": "19 October 2021",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Renamed from \"Better Together\" to \"Situational Awareness\""
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 82,
@@ -809,9 +3493,21 @@ const PERKS = [
     "name": "Bite the Bullet",
     "character": "Leon S. Kennedy",
     "category": "Healing/Stealth",
-    "description": "Suppress all healing sounds (no grunts, no cues). Pairs with self-healing for quiet recovery; counters audio-reliant killers.",
+    "description": "While healing, you and the healed Survivor make no noises or Grunts of Pain. Whenever you miss a basic Skill Check:\nYou lose only 3/2/1% progress.\nThe Killer is not alerted.\n\"I can do this.\" -Leon S. Kennedy",
     "synergy": "Iron Will, Medkits, Self-Care",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 83,
@@ -819,9 +3515,35 @@ const PERKS = [
     "name": "Blood Pact",
     "character": "Cheryl Mason",
     "category": "Chase/Team",
-    "description": "Speed boost when injured near another injured survivor. Situational; works best vs mass-injure killers.",
+    "description": "While you are not the Obsession:\nWhile you or the Obsession are injured, you see each other's Auras.\nWhenever you finish healing the Obsession, or they finish healing you, while within 16m of each other, you both gain 5/6/7% Haste.\nWhen the trial starts, you are less likely to be the Obsession.",
     "synergy": "Made for This, Solidarity",
-    "synergyCount": 1
+    "synergyCount": 1,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "4.3.0",
+        "date": "20 October 2020",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Changed Haste effect to last until the two survivors are no longer within 16m of each other instead of 6/8/10 seconds."
+          },
+          {
+            "type": "nerf",
+            "text": "Reduced Haste effect for lower tiers, it's now 5/6/7%"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 84,
@@ -829,9 +3551,49 @@ const PERKS = [
     "name": "Boil Over",
     "character": "Kate Denson",
     "category": "Wiggle",
-    "description": "Increased wiggle + obscures killer navigation while carried. Only powerful on very specific maps with height/holes.",
+    "description": "While carried by the Killer:\nWhenever the Killer falls from at least 1.25m, you gain 33% of your current wiggle progress.\nYour wiggle is 60/70/80% stronger.\nWithin 16m, the Killer cannot see Hook Auras.\n“Buck and Wild/ Swing to be free/Your hands just can't keep ahold of me.” -Kate Denson's Boil Over",
     "synergy": "Power Struggle, Flip-Flop",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "5.5.2",
+        "date": "",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Changed to give 33% of current wiggle progress when falling from great heights (was a flat 25% increase)"
+          }
+        ]
+      },
+      {
+        "version": "5.5.0",
+        "date": "25 January 2022",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased wiggle strafe intensity to 50/75/100% (was 25/50/75%)"
+          },
+          {
+            "type": "buff",
+            "text": "Increased hook obscure radius to 16 meters (was 10/12/14 meters)"
+          },
+          {
+            "type": "buff",
+            "text": "New effect: You gain 25% wiggling progress when the killer drops from great heights."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 85,
@@ -839,9 +3601,31 @@ const PERKS = [
     "name": "Bond",
     "character": "Dwight Fairfield",
     "category": "Information",
-    "description": "See nearby survivor auras within range. Situational; helps with gen coordination and knowing who to heal or avoid doubling up.",
+    "description": "Within 20/28/36m, you see other Survivors' Auras.\n\"We have to work as a team, I need you to survive so that I can survive!\" -Dwight",
     "synergy": "Empathy, Prove Thyself",
-    "synergyCount": 4
+    "synergyCount": 3,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "2.3.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased aura reading range for Tiers I and II to 20/28 meters"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 86,
@@ -849,9 +3633,31 @@ const PERKS = [
     "name": "Boon: Dark Theory",
     "character": "Yoichi Asakawa",
     "category": "Boon/Haste",
-    "description": "Boon totem: 3% haste inside range. Gimmicky; 3% is barely noticeable. Can stack with Hope but rarely worth a slot.",
+    "description": "While next to a totem, use Active Ability Button 1 to bless it, creating a unique Boon Totem that combines all your Boons.\nSurvivors within the Boon's range gain 3% Haste. When leaving the range, this ends after 2/3/4s.",
     "synergy": "Hope (stacks), Boon: Circle of Healing",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "8.7.0",
+        "date": "6 May 2025",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased the Haste effect to 3%. (was 2%)"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 87,
@@ -859,9 +3665,21 @@ const PERKS = [
     "name": "Boon: Illumination",
     "character": "Alan Wake",
     "category": "Boon/Information",
-    "description": "Boon totem: reveal all gens + chests to team; 10% faster boon setup (useless secondary). Deja Vu is strictly better for gen info.",
+    "description": "While next to a totem, use Active Ability Button 1 to bless it, creating a unique Boon totem that combines all your Boons.\nSurvivors within the Boon's range:\nSee the Auras of Chests.\nSee the Auras of Generators.\nWhile you have a Boon Totem, you bless and cleanse 6/8/10% faster.\n\"A shift in reality. Heavy with hidden meanings.\" – Return",
     "synergy": "Boon: Circle of Healing, Deja Vu",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 88,
@@ -869,9 +3687,101 @@ const PERKS = [
     "name": "Borrowed Time",
     "character": "Bill Overbeck",
     "category": "Rescue",
-    "description": "Unhooking grants 10 extra seconds of endurance (on top of base 15 s). Works in end-game. Power-crept but still decent extra safety.",
+    "description": "Whenever you unhook a Survivor:\nThey retain their unhook Endurance for 6/8/10s longer.\nThey retain their unhook Haste for 10s longer.\n\"Probably stings like hell, but it ain't gonna kill ya. Up and at 'em soldier. Time to move!\" -Bill Overbeck",
     "synergy": "Will Make It, Babysitter, Resurgence",
-    "synergyCount": 4
+    "synergyCount": 4,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "6.1.0",
+        "date": "19 July 2022",
+        "changes": [
+          {
+            "type": "rework",
+            "text": "Reworked to account for the baseline version of the effect. Survivors you unhook keep their Endurance status effect for an extra 6/8/10 seconds and their movement speed bonus for an extra 10 seconds."
+          }
+        ]
+      },
+      {
+        "version": "4.7.0",
+        "date": "4 May 2021",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Endurance timer reduced to 8/10/12 seconds"
+          },
+          {
+            "type": "buff",
+            "text": "No longer requires being in the Killer's Terror Radius to trigger"
+          }
+        ]
+      },
+      {
+        "version": "4.5.0",
+        "date": "9 February 2021",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Mending period changed to 20 seconds across all tiers"
+          },
+          {
+            "type": "nerf",
+            "text": "The Endurance status effect period now varies by perk level (10/12/15 seconds)"
+          }
+        ]
+      },
+      {
+        "version": "2.4.0",
+        "date": "11 December 2018",
+        "changes": [
+          {
+            "type": "mechanic",
+            "text": "Unhooked survivors are now affected by the Deep Wound status effect"
+          },
+          {
+            "type": "nerf",
+            "text": "Reduced the bleed out timer to 10/15/20 seconds"
+          }
+        ]
+      },
+      {
+        "version": "1.9.2",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "No longer single use"
+          },
+          {
+            "type": "nerf",
+            "text": "Changed Borrowed Time to only protect the unhooked survivor"
+          }
+        ]
+      },
+      {
+        "version": "1.7.0",
+        "date": "14 September 2017",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Reduced the bleed out timer to 15/20/25 seconds"
+          },
+          {
+            "type": "nerf",
+            "text": "Reduced the activation window to 15 seconds after unhooking"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 89,
@@ -879,9 +3789,45 @@ const PERKS = [
     "name": "Breakout",
     "character": "Yui Kimura",
     "category": "Rescue/Wiggle",
-    "description": "10% haste near a carried survivor + they wiggle 25% faster. Sprint to sabotage and out-run carrier. Don't make it obvious.",
+    "description": "Within 5m of a carried Survivor:\nYou gain 6/8/10% Haste.\nThe carried Survivor wiggles 25% faster.\n“Come, we're going to rip our way out of this.” -Yui Kimura",
     "synergy": "Saboteur, Background Player",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "8.7.0",
+        "date": "6 May 2025",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased the Haste effect while near a carried Survivor to 6/8/10%. (was 5/6/7%)"
+          }
+        ]
+      },
+      {
+        "version": "7.1.0",
+        "date": "25 July 2023",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Reduced the activation area to 5 meters (was 6)"
+          },
+          {
+            "type": "buff",
+            "text": "Increased the wiggle speed bonus to 25% (was 20%)"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 90,
@@ -889,9 +3835,65 @@ const PERKS = [
     "name": "Buckle Up",
     "character": "Ash Williams",
     "category": "Information/Rescue",
-    "description": "See dying survivors' auras. When you pick them up they gain endurance briefly. Decent in dedicated slug builds.",
+    "description": "While healing a downed Survivor, you both see the Killer's Aura.\nWhenever you finish healing a downed Survivor:\nThey gain 50% Haste for 3/4/5s.\nThey leave no Scratch Marks for 3/4/5s.\n“Ghost beaters never leave a man behind.\" -Ash Williams",
     "synergy": "Flip-Flop, Tenacity, We're Gonna Live Forever",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "8.4.0",
+        "date": "28 November 2024",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Updated the description for clarify"
+          }
+        ]
+      },
+      {
+        "version": "8.0.0",
+        "date": "3 June 2024",
+        "changes": [
+          {
+            "type": "rework",
+            "text": "No longer grants endurance, now causes the healed Survivor to break into a sprint at 150% of their normal Running Movement speed for 3/4/5 seconds and leave no scratch marks during that time"
+          }
+        ]
+      },
+      {
+        "version": "7.1.0",
+        "date": "25 July 2023",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Now shows the Killer's aura while healing instead of after"
+          },
+          {
+            "type": "buff",
+            "text": "Now provides Endurance for 6/8/10 seconds to both you and the healed survivor (previously gave 10% haste and only to the healed survivor)"
+          }
+        ]
+      },
+      {
+        "version": "5.5.0",
+        "date": "25 January 2022",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased aura reveal duration to 6/8/10 seconds (was 4/5/6 seconds)"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 91,
@@ -899,9 +3901,65 @@ const PERKS = [
     "name": "Calm Spirit",
     "character": "Jake Park",
     "category": "Stealth",
-    "description": "Suppress screams + no crow disturbances. Counters Iridescent Head Trickster screams and Doctor scream effects.",
+    "description": "You do not scare Crows or scream.\nYou bless and cleanse Totems, and unlock Chests silently, but 40/35/30% slower.",
     "synergy": "Iron Will, Fixated",
-    "synergyCount": 2
+    "synergyCount": 2,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "6.1.0",
+        "date": "19 July 2022",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased chance to avoid alerting crows to 100% (was 80/90/100%)"
+          },
+          {
+            "type": "buff",
+            "text": "Now allows you to open chests and cleanse/bless totems silently, but at 40/35/30% reduced speed."
+          }
+        ]
+      },
+      {
+        "version": "2.7.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Effect now prevents all screaming and any associated loud noise notifications"
+          }
+        ]
+      },
+      {
+        "version": "2.1.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Effect now prevents screaming due to madness, intoxication, and getting hit by the killer"
+          }
+        ]
+      },
+      {
+        "version": "1.3.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased values to 80/90/100%"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 92,
@@ -909,9 +3967,21 @@ const PERKS = [
     "name": "Change of Plan",
     "character": "Dustin Henderson",
     "category": "Item Recycle",
-    "description": "Use a fully depleted toolbox: go into a locker → exit with a medkit of same rarity + add-ons. Usable twice per match.",
+    "description": "When the trial starts, you earn 2 Tokens.\nWhile hiding in a Locker and holding a non-event Toolbox, use Active Ability Button 2 and spend 1 Token to transform your Toolbox and add-ons into a Med-Kit of the same rarity with 80/90/100% Charges and random add-ons of the same rarity.\n“Oh my god, oh my god, oh my god, oh my god.” —Dustin Henderson",
     "synergy": "Build to Last (comparison), Toolboxes",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 93,
@@ -919,9 +3989,35 @@ const PERKS = [
     "name": "Chemical Trap",
     "character": "Ellen Ripley",
     "category": "Trap/Chase",
-    "description": "Set a trap on a dropped pallet. Killer breaks it: slowed 2 s extra. Main benefit: killers refuse to break trapped pallets, forcing them to go round.",
+    "description": "After repairing 20% of Generators, while next to a Dropped Pallet, use Active Ability Button 2 to trap it for 40/50/60s. All Survivors see that Pallet's Aura for that time.\nWhen the Killer breaks that Pallet, the trap explodes and they gain 50% Hindered for 4s.\n“How do we kill it, Ash?” –Ellen Ripley",
     "synergy": "Alert, Any Means Necessary",
-    "synergyCount": 1
+    "synergyCount": 1,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "8.2.0",
+        "date": "27 August 2024",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Activates after completing a total of 20% worth of repair progress on generators. (was 50%)"
+          },
+          {
+            "type": "nerf",
+            "text": "Stays active for 40/50/60 seconds. (was 100/110/120 seconds)"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 94,
@@ -929,9 +4025,51 @@ const PERKS = [
     "name": "Clairvoyance",
     "character": "Mikaela Reid",
     "category": "Information",
-    "description": "After cleansing/blessing totem + no item in hand: see gens, chests, hatch, exit gates within 64 m. Best hatch-finder in game.",
+    "description": "Whenever you bless or cleanse a Totem, while not holding an item, use {Input.UseItem} to, for up to 10/11/12s and within 64m:\nSee the Auras of Chests.\nSee the Auras of Exit Gate Switches.\nSee the Auras of Generators.\nSee the Aura of the Hatch.\nSee the Auras of Hooks.\n\"Does anyone else see that? Just me?\" -Mikaela Reid",
     "synergy": "Totem builds, Inner Strength",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.2.0",
+        "date": "23 September 2025",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased aura reading duration to 10/11/12 seconds (was 8/9/10 seconds)."
+          }
+        ]
+      },
+      {
+        "version": "7.1.0",
+        "date": "25 July 2023",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Now also activated whenever you bless a Totem (previously just on cleansing)"
+          }
+        ]
+      },
+      {
+        "version": "5.3.1",
+        "date": "",
+        "changes": [
+          {
+            "type": "qol",
+            "text": "Added the Hatch to the auras revealed. The Hatch aura is only visible after The Hatch has spawned."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 95,
@@ -939,9 +4077,31 @@ const PERKS = [
     "name": "Come and Get Me",
     "character": "Rick Grimes",
     "category": "Distraction/Info",
-    "description": "After unhooking: activate to scream + reveal your aura to killer + make nearby injured allies stealthy. Pairs with We See You.",
+    "description": "Whenever you unhook a Survivor, while crouched and idle, use Active Ability Button 1 to make injured and downed Survivors within 24m:\nLeave no Pools of Blood for 10/12.5/15s.\nLeave no Scratch Marks for 10/12.5/15s.\nYou scream, then the Killer sees your Aura for 5s.\n“We're the ones who live.” -Rick Grimes",
     "synergy": "We See You, Object of Obsession",
-    "synergyCount": 2
+    "synergyCount": 2,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.1.0",
+        "date": "29 July 2025",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Added \"or make grunts of pain\" to the perk description"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 96,
@@ -949,9 +4109,45 @@ const PERKS = [
     "name": "Dance With Me",
     "character": "Kate Denson",
     "category": "Stealth/Chase",
-    "description": "No scratch marks 5 s after vaulting or exiting a locker (15 s cooldown). Great for losing killer after window vault in shack.",
+    "description": "Whenever you fast-exit a Locker, medium-vault, or fast-vault, you leave no Scratch Marks for 5s. Cooldown: 25/20/15s.\n“Dance with me, there's a storm comin'/Follow my boots, try to keep up/Dance with me, until sun up.” -Kate Denson's Dance With Me",
     "synergy": "Quick & Quiet, Head On",
-    "synergyCount": 1
+    "synergyCount": 1,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "8.6.0",
+        "date": "2 April 2025",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased hidden scratch mark duration to 5 seconds (was 3 seconds)"
+          },
+          {
+            "type": "buff",
+            "text": "Decreased cooldown to 25/20/15 seconds (was 30/25/20 seconds)"
+          }
+        ]
+      },
+      {
+        "version": "8.2.0",
+        "date": "27 August 2024",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Decreased cooldown to 30/25/20 seconds. (was 60/50/40 seconds)"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 97,
@@ -959,9 +4155,45 @@ const PERKS = [
     "name": "Deception",
     "character": "Elodie Rakoto",
     "category": "Stealth",
-    "description": "Fake entering a locker without going in; killer sees a fake locker shake. Confuses killer pathing; requires reads.",
+    "description": "Whenever you attempt to fast-enter a Locker:\nYou do not enter the Locker.\nThe Killer is alerted.\nYou leave no Scratch Marks for 5s.\nCooldown: 25/20/15s.",
     "synergy": "Quick & Quiet, Head On",
-    "synergyCount": 2
+    "synergyCount": 2,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "8.6.0",
+        "date": "2 April 2025",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased hidden scratch mark duration to 5 seconds (was 3 seconds)"
+          },
+          {
+            "type": "buff",
+            "text": "Decreased cooldown to 25/20/15 seconds (was 30/25/20 seconds)"
+          }
+        ]
+      },
+      {
+        "version": "8.2.0",
+        "date": "27 August 2024",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Decreased cooldown to 30/25/20 seconds. (was 60/50/40 seconds)"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 98,
@@ -969,9 +4201,49 @@ const PERKS = [
     "name": "Detective's Hunch",
     "character": "Detective Tapp",
     "category": "Information",
-    "description": "Pop a generator: see auras of nearby gens, totems, chests for 5 s. Passive info every time a gen completes — always triggers.",
+    "description": "Whenever a Generator is completed, for 20s, within 32/48/64m of you:\nYou see the Auras of Chests.\nYou see the Auras of Generators.\nYou see the Auras of Totems.\n\"Are you able to tell us where you were last night?\" -Detective David Tapp",
     "synergy": "Deja Vu, Alert, Wiretap",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.1.0",
+        "date": "29 July 2025",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased aura reading duration to 20 seconds (was 10)"
+          },
+          {
+            "type": "nerf",
+            "text": "Maps no longer track revealed objects"
+          }
+        ]
+      },
+      {
+        "version": "3.3.1",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Now triggers any time a generator is completed"
+          },
+          {
+            "type": "buff",
+            "text": "Increased aura reading duration to 10 seconds"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 99,
@@ -979,9 +4251,77 @@ const PERKS = [
     "name": "Distortion",
     "character": "Jeff Johansen",
     "category": "Anti-Aura",
-    "description": "Tokens (max 4) hide your aura when killer would see it. Strong vs aura-heavy killers; tokens recharge in darkness.",
+    "description": "When the trial starts, and after being chased for 15s, you earn 1 Token, up to 2.\nWhile not downed, whenever the Killer attempts to see your Aura, spend 1 Token. Then, for the next 8/10/12s:\nThe Killer cannot see your Aura.\nYou leave no Scratch Marks.\n“Exploration of Norse mythology: bravery can conceal your flaws, even at your most vulnerable.” –Jeff, pencil on toned paper",
     "synergy": "Quick & Quiet, Iron Will",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "8.3.2",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Decreased the requirement to regain a token to 15 seconds in chase (was 30 seconds)"
+          }
+        ]
+      },
+      {
+        "version": "8.3.0",
+        "date": "8 October 2024",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Now starts with 1 token (was 3)"
+          },
+          {
+            "type": "buff",
+            "text": "Now hides scratch marks and your aura for 8/10/12 seconds upon activation (was 6/8/10)"
+          },
+          {
+            "type": "rework",
+            "text": "Tokens now recharge at a rate of one for every 30 seconds of chase (was while hiding inside the Killer's Terror Radius)"
+          }
+        ]
+      },
+      {
+        "version": "6.1.0",
+        "date": "19 July 2022",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Reduced the starting tokens to 3 (was 4)"
+          },
+          {
+            "type": "buff",
+            "text": "Removed stipulation preventing the perk from activating when in a Killer Trap"
+          },
+          {
+            "type": "buff",
+            "text": "Regain a token for each 30 seconds spent inside the Killer's Terror Radius. Distortion may not have more than 3 tokens"
+          }
+        ]
+      },
+      {
+        "version": "5.5.0",
+        "date": "25 January 2022",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased the token count to 4 (was 3)"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 100,
@@ -989,19 +4329,77 @@ const PERKS = [
     "name": "Diversion",
     "character": "Adam Francis",
     "category": "Distraction",
-    "description": "Throw a pebble to create a noise event and distraction at a location. Creative utility; hard to land consistently.",
+    "description": "After hiding for 30/25/20s within the Killer's Terror Radius, while crouched and idle, use Active Ability Button 1 to throw a pebble 20m away:\nThe Killer is alerted.\nThe pebble leaves Scratch Marks.\n“There's what is easy and then there's what is right. If you confuse the two, there's no telling what you become.” -Adam Francis",
     "synergy": "Quick & Quiet, Red Herring",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "8.2.0",
+        "date": "27 August 2024",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Activates after being in the Killer's Terror Radius while not in a Chase for 30/25/20 seconds. (was 40/35/30 seconds)"
+          }
+        ]
+      },
+      {
+        "version": "4.5.0",
+        "date": "9 February 2021",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Reduced charge time to 40/35/30 seconds"
+          },
+          {
+            "type": "buff",
+            "text": "Increased throw distance to 20 meters for all tiers"
+          }
+        ]
+      },
+      {
+        "version": "2.4.0",
+        "date": "11 December 2018",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Scratch marks now appear at the location of the loud noise from the pebble"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 101,
     "tier": "Weak/Niche",
     "name": "Duty of Care",
-    "character": "Aurélie Dubois",
+    "character": "Orela Rose",
     "category": "Altruism",
-    "description": "Take a protection hit for a survivor: you + all survivors within 32 m gain 25% haste for 6 s. Niche but has potential to stop tunneling.",
+    "description": "While healthy, whenever you take a protection hit, other Survivors within 12m gain 25% Haste for 4/5/6s.\n\"Don't worry about me. I've got a knack for bouncing back.\" -Orela Rose",
     "synergy": "Borrowed Time, Babysitter",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 102,
@@ -1009,9 +4407,45 @@ const PERKS = [
     "name": "Empathic Connection",
     "character": "Yoichi Asakawa",
     "category": "Information",
-    "description": "Injured survivors can see your aura; you gain a small bonus to healing injured survivors. A more convoluted, weaker version of Empathy.",
+    "description": "You heal other Survivors 25/30/35% faster.\nInjured Survivors see your Aura.",
     "synergy": "Empathy (strictly better)",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.0.0",
+        "date": "17 June 2025",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Injured Survivor(s) can now see the aura of Survivor(s) with Empathic Connection anywhere on a map (was 32/64/96 meters)."
+          },
+          {
+            "type": "buff",
+            "text": "Updated healing speed bonus to other Survivors to 25/30/35% across Tiers (was 30% across all Tiers)."
+          }
+        ]
+      },
+      {
+        "version": "8.1.0",
+        "date": "16 July 2024",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased the speed at which you heal others to 30% faster. (was 10%)"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 103,
@@ -1019,9 +4453,35 @@ const PERKS = [
     "name": "Exultation",
     "character": "Trevor Belmont",
     "category": "Item Recycle",
-    "description": "Pallet-stunning the killer refills and upgrades your held item. Fun cycling of toolboxes/medkits; outclassed by Build to Last.",
+    "description": "Whenever you Pallet-stun the Killer:\nYour item rarity is upgraded to the next tier, if possible.\nIf the item was upgraded, it recharges 75% Charges.\nCooldown: 30/25/20s.\n\"You will not take me this day!\" -Trevor",
     "synergy": "Head On, Build to Last (comparison)",
-    "synergyCount": 1
+    "synergyCount": 1,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.0.0",
+        "date": "17 June 2025",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased the item recharge amount for stunning the Killer with a pallet to 75% (was 25%)."
+          },
+          {
+            "type": "buff",
+            "text": "Decreased cooldown to 30/25/20 seconds (was 40/35/30 seconds)"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 104,
@@ -1029,9 +4489,21 @@ const PERKS = [
     "name": "Eyes of Belmond",
     "character": "Trevor Belmont",
     "category": "Information",
-    "description": "All aura-reading perks extend range by 6 m. See killer aura 5 s when a gen completes. Nice utility if running aura builds.",
+    "description": "Whenever a Generator is completed, you see the Killer's Aura for 1/2/3s.\nWhenever you see the Killer's Aura for a duration, it is 2s longer.\n\"Ha! Your secret has been revealed!\" -Trevor",
     "synergy": "Kindred, Open Handed, Wiretap",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 105,
@@ -1039,9 +4511,41 @@ const PERKS = [
     "name": "For the People",
     "character": "Zarina Kassir",
     "category": "Healing",
-    "description": "Instantly heal another at the cost of going injured yourself. High-risk; triggers Second Wind. Use carefully.",
+    "description": "While healthy and healing another Survivor without a Med-Kit, use Active Ability Button 1 to heal them instantly:\nYou take damage.\nYou gain Broken for 80/70/60s.\nYou become the Obsession.\nWhen the trial starts, you are less likely to be the Obsession.\n\"We can write our own story and decide how it really ends.\" -Zarina Kassir",
     "synergy": "Second Wind, Solidarity",
-    "synergyCount": 2
+    "synergyCount": 2,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "5.3.0",
+        "date": "19 October 2021",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Reduced the duration of the Broken status effect to 80/70/60 seconds (was 110/100/90 seconds)"
+          }
+        ]
+      },
+      {
+        "version": "4.3.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Now awards Bloodpoints when used"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 106,
@@ -1049,9 +4553,31 @@ const PERKS = [
     "name": "Friendly Competition",
     "character": "Talita Lyra",
     "category": "Generator",
-    "description": "Complete a gen with a teammate: both gain 5% gen speed for 2 minutes. Minor passive buff; requires co-op gen which itself has a co-op penalty.",
+    "description": "Whenever you finish repairing a Generator with at least 1 other Survivor, Survivors who finished repairing it repair 5% faster for 100/110/120s.\n“C'mon, let's do this.” –Thalita Lyra",
     "synergy": "Prove Thyself, Fast Track",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.2.0",
+        "date": "23 September 2025",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased the bonus repair progress speed duration to 100/110/120 seconds (was 45/60/75 seconds)."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 107,
@@ -1059,9 +4585,21 @@ const PERKS = [
     "name": "Ghost Notes",
     "character": "V (Bovine Yak)",
     "category": "Stealth",
-    "description": "Scratch marks fade 33% faster + 10% faster exhaustion recovery. On its own subtle; deadly stacked with Lightweight.",
+    "description": "While you have Exhausted, your Scratch Marks disappear 50% faster.\nYou lose Exhausted 5/7.5/10% faster.\n“Let's take it to the bridge!” -Vee Boonyasak",
     "synergy": "Lightweight (MUST pair — marks fade in ~2.5 s)",
-    "synergyCount": 4
+    "synergyCount": 4,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 108,
@@ -1069,9 +4607,21 @@ const PERKS = [
     "name": "Hardened",
     "character": "Lara Croft",
     "category": "Anti-Aura",
-    "description": "After searching a chest: see killer aura for 4 s + immune to Killer Instinct for 30 s. Chest-based activation limits its use significantly.",
+    "description": "When you have blessed or cleansed a Totem and unlocked a Chest, whenever you would scream, you see the Killer's Aura for 3/4/5s instead.\n\"Got to keep quiet. That thing is still out there.\" -Lara Croft",
     "synergy": "Appraisal, Plunderer's Instinct",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 109,
@@ -1079,9 +4629,55 @@ const PERKS = [
     "name": "Inner Focus",
     "character": "Haddie Kaur",
     "category": "Information",
-    "description": "See teammate scratch marks; see killer aura 10 s when a teammate loses a health state. Lighter version of Empathy + Alert.",
+    "description": "Whenever the Killer damages another Survivor, you see the Killer's Aura for 6/8/10s.\nYou see other Survivors' Scratch Marks.\n\"The death, the trauma, the fear… it all leads here. The Overlap.\" –Haddie Kaur, Ravages of the Abyss Episode 11",
     "synergy": "Alert, Empathy, Background Player",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "8.3.2",
+        "date": "",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Now only triggers from health state loss caused by the Killer"
+          }
+        ]
+      },
+      {
+        "version": "8.3.0",
+        "date": "8 October 2024",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "No longer has a range condition"
+          },
+          {
+            "type": "buff",
+            "text": "Increased the duration the Killer's aura is revealed to you to 6/8/10 seconds (was 3/4/5)"
+          }
+        ]
+      },
+      {
+        "version": "6.1.0",
+        "date": "19 July 2022",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "No longer has a distance restriction for viewing scratch marks"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 110,
@@ -1089,9 +4685,31 @@ const PERKS = [
     "name": "Last Stand",
     "character": "Michonne Grimes",
     "category": "Chase/Stun",
-    "description": "After 90 s in chase (total across match): next fast vault while healthy stuns the killer briefly. Hard to pull off but can completely catch killer off guard.",
+    "description": "After hiding for 120/105/90s within the Killer's Terror Radius, when you fast-vault, once per trial, stun the Killer for 3s if they are within 2.5m.\n\"Some bullies, you can live with. Others, you gotta fight.\" - Michonne Grimes",
     "synergy": "Sprint Burst, Lithe",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.1.0",
+        "date": "29 July 2025",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Increased the time needed to hide in the Killer's Terror Radius to activate this perk to 120/105/90 seconds (was 80/70/60 seconds)"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 111,
@@ -1099,9 +4717,59 @@ const PERKS = [
     "name": "Leader",
     "character": "Dwight Fairfield",
     "category": "Team Utility",
-    "description": "Speeds up actions 15% for nearby survivors. Marginal gains; mostly outclassed by perk-specific speed bonuses.",
+    "description": "Within 10m of you, other Survivors:\nCleanse Totems 20/25/30% faster.\nHeal 20/25/30% faster.\nOpen Exit Gates 20/25/30% faster.\nSabotage Hooks 20/25/30% faster.\nUnhook Survivors 20/25/30% faster.\nUnlock Chests 20/25/30% faster.\nAfter they leave your range, this ends after 20s.",
     "synergy": "Prove Thyself, Flow State",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.2.0",
+        "date": "23 September 2025",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased action speed bonus value to 20/25/30% (was 15/20/25%)."
+          },
+          {
+            "type": "buff",
+            "text": "Increased action speed bonus range to 10 meters (was 8 meters)."
+          },
+          {
+            "type": "note",
+            "text": "Updated perk description to simplify linger effect."
+          }
+        ]
+      },
+      {
+        "version": "2.5.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "All action speeds, with the exception of repair speed, are increased to 15/20/25% instead of 3/6/9%"
+          }
+        ]
+      },
+      {
+        "version": "2.3.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "The effects now persist for 15 seconds after the perk owner is out of range"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 112,
@@ -1109,9 +4777,31 @@ const PERKS = [
     "name": "Lightfooted",
     "character": "Ellen Ripley",
     "category": "Stealth",
-    "description": "Remove footstep sounds. Disables when injured or on cooldown after rush actions. Only advanced players can exploit this.",
+    "description": "While healthy and running, your footsteps are silent to the Killer.\nWhenever you do a fast-action, cooldown: 14/12/10s.\n“Come on, cat.” –Ellen Ripley",
     "synergy": "Iron Will, Fixated",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.0.0",
+        "date": "17 June 2025",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Decreased cooldown to 14/12/10 seconds (was 28/24/20 seconds)."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 113,
@@ -1119,9 +4809,35 @@ const PERKS = [
     "name": "Lightweight",
     "character": "Base game (all)",
     "category": "Stealth",
-    "description": "Scratch marks disappear faster. Combine with Ghost Notes for near-invisible trails; killer loses you in 2–3 s.",
+    "description": "Your Scratch Marks disappear 3/4/5s faster and appear more spread out.\n\"Take it slow, he knows where you've been… just like I've always said: live slow and die old.\" -Lost Tapes: Dylan",
     "synergy": "Ghost Notes (MUST pair)",
-    "synergyCount": 2
+    "synergyCount": 2,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "6.1.0",
+        "date": "19 July 2022",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased reduction of scratch mark duration to 3/4/5 seconds (was 1/2/3 seconds)"
+          },
+          {
+            "type": "buff",
+            "text": "Your scratch marks are spaced more inconsistently."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 114,
@@ -1129,9 +4845,21 @@ const PERKS = [
     "name": "Moment of Glory",
     "character": "Trevor Belmont",
     "category": "Healing/Chest",
-    "description": "Search 2 chests → heal over 60 s passively (or activate now to heal mid-chase). Fun but power-crept by Resurgence.",
+    "description": "After you rummage or unlock 2 Chests, while not Broken, when you become injured, gain Broken.\nIf you do not take damage, after 80/70/60s, you are instantly healed.\n\"Never lose hope for a brighter tomorrow.\" -Trevor",
     "synergy": "Appraisal, Specialist, Pharmacy",
-    "synergyCount": 2
+    "synergyCount": 2,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 115,
@@ -1139,9 +4867,35 @@ const PERKS = [
     "name": "Object of Obsession",
     "character": "Laurie Strode",
     "category": "Information/Risk",
-    "description": "Share aura mutually with killer when obsession. High-risk info perk; pairs with We See You for team reveal synergy.",
+    "description": "While you are the Obsession, every 30s, the Killer sees your Aura for 3s.\nWhile the Killer sees your Aura:\nYou see their Aura.\nYou cleanse totems 2/4/6% faster.\nYou heal 2/4/6% faster.\nYou repair 2/4/6% faster.\nWhen the trial starts, you are more likely to be the Obsession.\n“He was watching me!” -Laurie Strode",
     "synergy": "We See You, Come and Get Me",
-    "synergyCount": 2
+    "synergyCount": 2,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "4.7.0",
+        "date": "4 May 2021",
+        "changes": [
+          {
+            "type": "rework",
+            "text": "If you are the Obsession, your aura is revealed to the killer for 3 seconds once every 30 seconds"
+          },
+          {
+            "type": "rework",
+            "text": "Reveals the killer's aura to you when they see yours and gain a 2/4/6% bonus to healing, repair, and cleansing speeds during that time."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 116,
@@ -1149,9 +4903,45 @@ const PERKS = [
     "name": "Open Handed",
     "character": "Ace Visconti",
     "category": "Team Utility",
-    "description": "Extends aura-reading range of all perks for all survivors. Makes Kindred, Wiretap, Bond, etc. work at much longer range.",
+    "description": "All Survivors see Auras that have a range from 8/12/16m farther.\n“Paying attention is what kept me alive through the years. That, and my good looks of course.” -Ace",
     "synergy": "Kindred, Wiretap, Extra Sensory Perception",
-    "synergyCount": 4
+    "synergyCount": 4,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "4.7.0",
+        "date": "4 May 2021",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased aura reading bonus to 8/12/16 meters"
+          },
+          {
+            "type": "nerf",
+            "text": "No longer stacks"
+          }
+        ]
+      },
+      {
+        "version": "1.5.2",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Now also increases the aura reading range of your teammates by 4/6/8 meters (stackable)"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 117,
@@ -1159,9 +4949,49 @@ const PERKS = [
     "name": "Overzealous",
     "character": "Haddie Kaur",
     "category": "Generator/Totem",
-    "description": "10% gen speed after cleansing a totem (20% for hex totems). Only worthwhile if you planned to do totems anyway.",
+    "description": "Whenever you bless or cleanse a Totem, until you take damage, you repair 8/9/10% faster. If that Totem was a Hex Totem, the effect is doubled.\n\"The Ravage senses us. We need to work fast.\" -Haddie Kaur, Ravages of the Abyss Episode 9",
     "synergy": "Inner Strength, Counterforce",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "6.7.0",
+        "date": "18 April 2023",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased repair speed bonus to 8/9/10% (was 6/7/8%)"
+          },
+          {
+            "type": "buff",
+            "text": "Now also activates after blessing a totem"
+          }
+        ]
+      },
+      {
+        "version": "6.1.0",
+        "date": "19 July 2022",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased repair speed buff to 6/7/8% (was 4/5/6%)"
+          },
+          {
+            "type": "buff",
+            "text": "Now doubles the bonus if you cleanse a Hex totem"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 118,
@@ -1169,9 +4999,21 @@ const PERKS = [
     "name": "Parental Guidance",
     "character": "Yoichi Asakawa",
     "category": "Stealth",
-    "description": "Stun the killer (pallet, flashlight, locker): no scratch marks or noise for 6 s. Half-decent deception perk when it activates.",
+    "description": "Whenever you stun the Killer, for 5/6/7s:\nYou make no Grunts of Pain.\nYou leave no Pools of Blood.\nYou leave no Scratch Marks.",
     "synergy": "Quick & Quiet, Smash Hit",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 119,
@@ -1179,9 +5021,83 @@ const PERKS = [
     "name": "Pharmacy",
     "character": "Quentin Smith",
     "category": "Chest/Healing",
-    "description": "First chest opens very fast and guarantees a medkit. Removes chest RNG; pairs well with Appraisal and Ace in the Hole.",
+    "description": "Whenever you unlock a Chest, it will contain a rare Med-Kit.\nYou unlock Chests 75/100/125% faster.\nThe range at which the Killer hears you unlocking Chests is 12m shorter.",
     "synergy": "Appraisal, Ace in the Hole, Build to Last",
-    "synergyCount": 4
+    "synergyCount": 4,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.2.0",
+        "date": "23 September 2025",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Unlocking chests is 75/100/125% faster (was 70/85/100%)."
+          },
+          {
+            "type": "nerf",
+            "text": "The hearing distance for noises from unlocking chests is reduced by 12 meters (was 16 meters)."
+          }
+        ]
+      },
+      {
+        "version": "8.5.2",
+        "date": "",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Reduces the distance chest unlocking sounds can be heard from by 16 metres (was 20)"
+          }
+        ]
+      },
+      {
+        "version": "8.4.0",
+        "date": "28 November 2024",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "No longer required you to be injured to take effect"
+          },
+          {
+            "type": "buff",
+            "text": "Unlocking chests is 70/85/100% faster (was 40/60/80% faster)"
+          },
+          {
+            "type": "buff",
+            "text": "The hearing distance for noises from unlocking chests are reduced by 20 meters (was 8 meters)"
+          }
+        ]
+      },
+      {
+        "version": "6.1.0",
+        "date": "19 July 2022",
+        "changes": [
+          {
+            "type": "qol",
+            "text": "Now guarantees an Emergency Med-Kit in every chest (was just the first chest opened), when injured"
+          }
+        ]
+      },
+      {
+        "version": "2.6.0",
+        "date": "19 March 2019",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "All tiers now reduce the audible distance by 8 meters"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 120,
@@ -1189,9 +5105,73 @@ const PERKS = [
     "name": "Plunderer's Instinct",
     "character": "Base game (all)",
     "category": "Chest",
-    "description": "See all chest auras from long distance + higher rarity items from chests. Reveals basement indirectly. Marginal benefit.",
+    "description": "Within 32/48/64m of locked Chests and dropped items, you see their Auras.\nWhenever you unlock a Chest, you are 50% more likely to find an item of higher rarity.\n\"The pioneers used to loot these babies for hours.\" -Lost Tapes: Aizeyu",
     "synergy": "Appraisal, Pharmacy, Suitwise",
-    "synergyCount": 1
+    "synergyCount": 1,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "8.4.0",
+        "date": "28 November 2024",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased the range at which unopened chests and items are revealed to you to 32/48/64 meters (was 16/24/32 meters)"
+          },
+          {
+            "type": "buff",
+            "text": "Increases the odds of finding higher rarity items from chests by 50%. (was 14/24/46%)"
+          }
+        ]
+      },
+      {
+        "version": "3.3.1",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Now shows the auras of dropped items"
+          },
+          {
+            "type": "buff",
+            "text": "Now only shows the aura of unopened chests"
+          }
+        ]
+      },
+      {
+        "version": "2.6.0",
+        "date": "19 March 2019",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Changed rarity modifier to considerably for all tiers"
+          }
+        ]
+      },
+      {
+        "version": "1.3.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Added a modifier to increase the chance of finding a higher rarity item"
+          },
+          {
+            "type": "nerf",
+            "text": "Reduced aura reading range of tiers 1 and 2"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 121,
@@ -1199,9 +5179,49 @@ const PERKS = [
     "name": "Poised",
     "character": "Jane Romero",
     "category": "Stealth",
-    "description": "No scratch marks 30 s when a gen pops. Passive; occasionally loses a killer but usually too short to matter.",
+    "description": "The first time you start repairing each Generator, you see the Killer's Aura for 8s.\nWhenever a Generator is completed, you leave no Scratch Marks for 20/25/30s.\n“Ok, stay calm. Don't overthink it and just keep moving forward: you got this.” -Jane Romero",
     "synergy": "Poise, Dark Sense",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.2.0",
+        "date": "23 September 2025",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased Killer aura reveal duration when repairing a generator for the first time to 8 seconds (was 6 seconds)."
+          },
+          {
+            "type": "buff",
+            "text": "Increased time where you leave no scratch marks after a generator is completed to 20/25/30 seconds (was 10/12/14 seconds)."
+          }
+        ]
+      },
+      {
+        "version": "8.3.0",
+        "date": "8 October 2024",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Now reveals the Killer's aura for 6 seconds when first starting repairs on a generator"
+          },
+          {
+            "type": "buff",
+            "text": "Increased the duration scratch marks are hidden for when completing a generator to 10/12/14 seconds (was 6/8/10 seconds)"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 122,
@@ -1209,9 +5229,35 @@ const PERKS = [
     "name": "Potential Energy",
     "character": "Vittorio Toscano",
     "category": "Generator",
-    "description": "Crouch to store gen progress tokens (up to 25 charges, loses 1/s not on gen). Spend tokens on a gen for instant progress. Very easy to lose all stored progress.",
+    "description": "While repairing, use Active Ability Button 2 to earn Tokens instead of progress, up to 10/15/20 Tokens.\nWhile you have at least 1 Token, Active Ability Button 2 to spend all Tokens and gain 1% progress for each Token spent.\nWhenever you take damage, lose all Tokens.\n\"When you look a layer deeper, you realize… everything is connected.\" - Vittorio Toscano",
     "synergy": "Prove Thyself, Fast Track",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.1.0",
+        "date": "29 July 2025",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "No longer requires a minimum time spent repairing to activate (was 12/10/8 seconds)"
+          },
+          {
+            "type": "buff",
+            "text": "Decreased the amount of repair required to earn a token to 1% (was 1.5%)"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 123,
@@ -1219,9 +5265,31 @@ const PERKS = [
     "name": "Premonition",
     "character": "Base game (all)",
     "category": "Information",
-    "description": "Directional audio ping when killer looks at you. Useful for stealth; weaker than active info perks.",
+    "description": "While the Killer is within 36m of you and inside a 45 degree cone, whenever you look at them, you hear a sound cue. Cooldown: 60/45/30s.\n\"I have a bad feeling about this!\"",
     "synergy": "Iron Will, Calm Spirit",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "2.6.2",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased the activation range to 36 meters for all tiers"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 124,
@@ -1229,9 +5297,45 @@ const PERKS = [
     "name": "Quick & Quiet",
     "character": "Meg Thomas",
     "category": "Stealth",
-    "description": "Silent vault + locker entry (30 s cooldown). Blocks I'm All Ears notification. Best paired with Head On or Dance With Me.",
+    "description": "You hide in Lockers and vault silently. The Killer is not alerted. Cooldown: 25/20/15s.",
     "synergy": "Head On, Dance With Me, Deception",
-    "synergyCount": 8
+    "synergyCount": 8,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "8.6.0",
+        "date": "2 April 2025",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Decreased cooldown to 25/20/15 seconds (was 30/25/20 seconds)"
+          }
+        ]
+      },
+      {
+        "version": "1.5.2",
+        "date": "",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Added a 30/25/20 seconds cooldown"
+          },
+          {
+            "type": "buff",
+            "text": "Will now reduce audio and noise notification range by 100% instead of just noise notification range by 90%"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 125,
@@ -1239,9 +5343,31 @@ const PERKS = [
     "name": "Reactive Healing",
     "character": "Ada Wong",
     "category": "Healing",
-    "description": "When a survivor within 32 m takes a hit: you heal 15% of your health state automatically. Can be okay but does very little overall.",
+    "description": "While injured, whenever another Survivor within 32m of you takes damage, you gain 40/45/50% missing healing progress.",
     "synergy": "Botany Knowledge, Solidarity",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "6.2.0",
+        "date": "30 August 2022",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased healing values to 40%/45%/50% (was 25%/30%/35%)"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 126,
@@ -1249,9 +5375,21 @@ const PERKS = [
     "name": "Residual Manifest",
     "character": "Haddie Kaur",
     "category": "Debuff",
-    "description": "Apply blindness status to killers you flashlight blind. Unique effect; rarely changes outcome vs most killers.",
+    "description": "Whenever you blind the Killer, they gain Blindness for 20/25/30s.\nYou can rummage Chests 1 time. The first time you rummage a Chest, it will contain an uncommon Flashlight.\n\"I'll never see what Haddie sees. But so long as I'm with her, I know I'm safe.\" -Jordan Rois, Ravages of the Abyss Episode 5",
     "synergy": "Flashbang, Champion of Light",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 127,
@@ -1259,9 +5397,21 @@ const PERKS = [
     "name": "Rookie Spirit",
     "character": "Leon S. Kennedy",
     "category": "Information",
-    "description": "See auras of regressing gens after hitting 3 skill checks. Outclassed by Deja Vu; situational vs ruin/regression builds.",
+    "description": "After you hit 5/4/3 basic repair Skill Checks, while a Generator is regressing, you see its Aura.\n\"I'll stop this, lieutenant. I promise.\" -Leon S. Kennedy",
     "synergy": "Deja Vu (strictly better), Alert",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 128,
@@ -1269,9 +5419,45 @@ const PERKS = [
     "name": "Scene Partner",
     "character": "Nicolas Cage",
     "category": "Information",
-    "description": "When killer comes within 36 m: scream and reveal killer aura 5 s. Doubles as info tool despite being a 'meme' perk.",
+    "description": "While you are within the Killer's Terror Radius, whenever you look at them:\nScream, then see the Killer's Aura for 4/5/6s.\nThere is a 50% chance you will scream again.If you do, you see the Killer's Aura for 2s more.\nCooldown: 40s.\n“This is not in the script!” –Nicolas Cage",
     "synergy": "Iron Will (offset the scream), Calm Spirit",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "8.4.0",
+        "date": "28 November 2024",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Now reveals the Killer's aura for 4/5/6 seconds (was 3/4/5)"
+          },
+          {
+            "type": "buff",
+            "text": "Reduced the cooldown to 40 seconds (was 60 seconds)"
+          }
+        ]
+      },
+      {
+        "version": "7.1.0",
+        "date": "25 July 2023",
+        "changes": [
+          {
+            "type": "note",
+            "text": "No changes from PTB"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 129,
@@ -1279,19 +5465,21 @@ const PERKS = [
     "name": "Self-Preservation",
     "character": "Lee Yun-Jin",
     "category": "Stealth",
-    "description": "Suppress scratch marks + aura briefly when a nearby injured survivor is hit. Passive safety tool; hard to control.",
+    "description": "Whenever another Survivor is hooked, you gain Elusive for 20/25/30s.\n\"Something I learned in the industry: when the axe is swinging, keep your head down.\" -Yun-jin",
     "synergy": "Iron Will, Lucky Break",
-    "synergyCount": 0
-  },
-  {
-    "id": 130,
-    "tier": "Weak/Niche",
-    "name": "Situation Awareness",
-    "character": "Base game (all)",
-    "category": "Information",
-    "description": "See survivor auras while repairing a generator. Marginal team info; Bond is generally better.",
-    "synergy": "Bond, Empathy",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "rework",
+            "text": "Now applies Elusive for 20/25/30s when another survivor is hooked."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 131,
@@ -1299,9 +5487,45 @@ const PERKS = [
     "name": "Small Game",
     "character": "Base game (all)",
     "category": "Totem",
-    "description": "Audio/visual ping when looking near a totem; notify on team cleanses. Outclassed by maps or Extra Sensory Perception.",
+    "description": "Within 8/10/12m of you, whenever you look at a Totem in a 45 degree cone, you hear a sound cue. Cooldown: 14/12/10s.\nWhenever a Survivor cleanses a Totem, you earn 1 Token, up to 5.\nFor each Token, the cone is 5 degrees smaller.\n\"Nope.\" -Lost Tapes: Andy",
     "synergy": "Inner Strength, Counterforce",
-    "synergyCount": 2
+    "synergyCount": 2,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "4.7.0",
+        "date": "4 May 2021",
+        "changes": [
+          {
+            "type": "rework",
+            "text": "Changed to be just totem based, now gains a token for every cleansed totem in a match, each token reduces cone width by 5 degrees"
+          },
+          {
+            "type": "qol",
+            "text": "No longer triggers on the totem you are currently cleansing"
+          }
+        ]
+      },
+      {
+        "version": "1.3.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "rework",
+            "text": "Redesigned to work in a similar fashion to Premonition, now emits a warning sound when looking at a trap or totem within a range of 45 degrees"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 132,
@@ -1309,9 +5533,31 @@ const PERKS = [
     "name": "Smash Hit",
     "character": "Lee Yun-Jin",
     "category": "Chase/Stun",
-    "description": "Speed boost + no scratch marks/noise after successfully pallet-stunning the killer. Rewards aggressive looping.",
+    "description": "Whenever you Pallet-stun the Killer:\nYou gain 50% Haste for 4s.\nYou gain Exhausted for 30/25/20s.\n\"I've dealt with psychopaths in suits. You're just uglier and worse dressed.\" -Yun-jin",
     "synergy": "Sprint Burst, Windows of Opportunity",
-    "synergyCount": 1
+    "synergyCount": 1,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "7.1.0",
+        "date": "25 July 2023",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Reduced the exhaustion duration to 30/35/20 seconds (was 60/50/40)"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 133,
@@ -1319,9 +5565,31 @@ const PERKS = [
     "name": "Soul Guard",
     "character": "Cheryl Mason",
     "category": "Anti-Slug/Endurance",
-    "description": "Recover 50% faster from dying state. If there is an active hex totem when you recover: gain endurance briefly. Hex dependency makes it unreliable.",
+    "description": "While hexed, you can fully recover.\nWhenever you fully recover, you gain Endurance for 4/6/8s. Cooldown: 30s.",
     "synergy": "Unbreakable, Boon: Exponential",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "4.7.0",
+        "date": "4 May 2021",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Added a 30 second cooldown between activations"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 134,
@@ -1329,9 +5597,61 @@ const PERKS = [
     "name": "Soul Survivor",
     "character": "Laurie Strode",
     "category": "End-Game",
-    "description": "As survivors die: repair gens and open gates faster (up to 100% faster). Best 1v1 end-game perk. Pair with hatch offering.",
+    "description": "Whenever a Survivor dies, you earn 1 Token.\nFor each Token, within 20/22/24m, the Killer cannot see your Aura.\nWhen all other Survivors are dead:\nYou repair 75% faster.\nYou open Exit Gates and the Hatch 50% faster.\nWhen the trial starts, you are more likely to be the Obsession.\n“It was the boogeyman.” -Laurie Strode",
     "synergy": "Resilience, Sole Survivor",
-    "synergyCount": 1
+    "synergyCount": 1,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "6.1.0",
+        "date": "19 July 2022",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "When you're the last Survivor alive, gain 75% action speed when repairing generators and 50% action speed while opening an exit gate or the Hatch"
+          }
+        ]
+      },
+      {
+        "version": "3.7.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "qol",
+            "text": "Not lights up as soon as 1 token is acquired"
+          }
+        ]
+      },
+      {
+        "version": "2.3.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased aura disruption range by 4 meters for all tiers"
+          }
+        ]
+      },
+      {
+        "version": "2.1.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "mechanic",
+            "text": "Functionality change, for each survivor killed or sacrificed, your aura will not be readable within 16/18/20 meters from the killer"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 135,
@@ -1339,19 +5659,63 @@ const PERKS = [
     "name": "Stake Out",
     "character": "Detective Tapp",
     "category": "Skill Checks",
-    "description": "Stand in killer terror radius without being chased: gain tokens (max 4). Each token converts a Good skill check into a Great. Passive time-save.",
+    "description": "After hiding for 15s within the Killer's Terror Radius, you earn 1 Token, up to 2/3/4.\nWhenever you hit a good basic Skill Check, spend 1 Token:\nThe good Skill Check becomes a great Skill Check.\nYou gain 1% more progress.\n\"I had you, I had you on your knees. You're runnin' scared because we had you. We're gonna close this case!\" -Detective David Tapp",
     "synergy": "Prove Thyself, Deja Vu",
-    "synergyCount": 1
+    "synergyCount": 1,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "3.7.0",
+        "date": "28 April 2020",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Now adds an additional 1% progression bonus for Great skill checks"
+          }
+        ]
+      },
+      {
+        "version": "2.0.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "qol",
+            "text": "No longer loses token progression when a token is consumed"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 136,
     "tier": "Weak/Niche",
-    "name": "Stamina",
-    "character": "Aurélie Dubois",
+    "name": "Rapid Response",
+    "character": "Orela Rose",
     "category": "Exhaustion/Support",
-    "description": "After losing a health state (not being downed): you and a nearby survivor gain endurance briefly. Passive safety perk; hard to control activation.",
+    "description": "Whenever you fast-exit a Locker, you gain Exhausted for 30/25/20s.\nWhenever you gain Exhausted, you see the Killer's Aura for 2s.\n\"All right. You got this. 3... 2... 1... go!\" -Orela Rose",
     "synergy": "Dead Hard, Overcome",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 137,
@@ -1359,9 +5723,31 @@ const PERKS = [
     "name": "Still Sight",
     "character": "Aestri Yazar & Baermar Uraz",
     "category": "Information",
-    "description": "Stand still for 2 s → see auras of Generators, Chests, and Killer within 24 m. Also activates while being healed. Decent info perk; outclassed by Extra Sensory Perception.",
+    "description": "After being idle for 4/3/2s, within 24m, until you start moving:\nYou see the Killer's Aura.\nYou see the Auras of Chests.\nYou see the Auras of Generators.\n\"Breathe in. Breathe out. Now open your eyes.\" -Baermar",
     "synergy": "Open Handed, Deja Vu",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.1.0",
+        "date": "29 July 2025",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Decreased the time it takes to activate to 4/3/2 seconds (was 6/5/4)"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 138,
@@ -1369,9 +5755,51 @@ const PERKS = [
     "name": "Streetwise",
     "character": "Nea Karlsson",
     "category": "Item Conservation",
-    "description": "Item depletion rate reduced 20% for you + nearby allies. Niche; useful with medkits or toolboxes to squeeze extra uses.",
+    "description": "The first time you deplete an Item's Charges, you see the Killer's Aura for 8s.\nWhenever you loot an item from a Chest, it has 60/70/80% more Charges.\n\"You're doing it wrong! Let me show you how it's done.\" - Nea",
     "synergy": "Build to Last, Medkits",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.1.0",
+        "date": "29 July 2025",
+        "changes": [
+          {
+            "type": "rework",
+            "text": "The first time you deplete an item with charges, see the Killer's aura for 8 seconds. Items with charges retrieved from chests have +60/70/80% charges."
+          }
+        ]
+      },
+      {
+        "version": "3.0.0",
+        "date": "18 June 2019",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased efficiency values to 15%/20%/25% up from 10%/12%/15%"
+          }
+        ]
+      },
+      {
+        "version": "2.3.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "The effects now persist for 15 seconds after the perk owner is out of range"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 139,
@@ -1379,9 +5807,21 @@ const PERKS = [
     "name": "Strength in Shadows",
     "character": "Sable Ward",
     "category": "Healing",
-    "description": "Self-heal in the basement at 50% normal speed (no medkit needed). Niche — only useful if you're already in basement.",
+    "description": "While in the Basement:\nYou can heal yourself at 70% speed.\nWhenever you finish healing, you see the Killer's Aura for 6/8/10s.\n\"I'm getting out of here, if it's the last thing I do.” -Sable",
     "synergy": "Wicked, Boon: Circle of Healing",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 141,
@@ -1389,9 +5829,47 @@ const PERKS = [
     "name": "Teamwork: Power of Two",
     "character": "Talita Lyra",
     "category": "Team",
-    "description": "After healing a survivor: both get 5% haste while near each other. Extremely small effect; almost always better options exist.",
+    "description": "Whenever you finish healing another Survivor, while you stay within 8/12/16m of each other, you both gain 5% Haste. When either of you leaves the range, this ends after 4s.\n“You good? Then keep up.” –Thalita Lyra",
     "synergy": "Blood Pact, Made for This",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "8.3.0",
+        "date": "8 October 2024",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Changed the distance limit to 8/12/16 metres (was 12)"
+          },
+          {
+            "type": "buff",
+            "text": "The Haste effect now lingers for 4 seconds after exceeding the range limit allowing a grace period to re-enter it"
+          },
+          {
+            "type": "buff",
+            "text": "No longer deactivates when either Survivor loses a health state"
+          },
+          {
+            "type": "buff",
+            "text": "Removed the cooldown"
+          },
+          {
+            "type": "note",
+            "text": "This effect does not stack"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 142,
@@ -1399,9 +5877,21 @@ const PERKS = [
     "name": "Teamwork: Throwdown",
     "character": "Michonne Grimes",
     "category": "Rescue",
-    "description": "After unhooking a survivor: that survivor gains a speed boost and you gain endurance for a few seconds. Minor version of Babysitter.",
+    "description": "Whenever you blind or Pallet-stun the Killer, for 6/8/10s, other injured Survivors within 24m:\nGain Endurance.\nSee the Killer's Aura.\n\"Facing evil brings good people together.\" -Michonne Grimes",
     "synergy": "Babysitter (strictly better), Borrowed Time",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 143,
@@ -1409,9 +5899,41 @@ const PERKS = [
     "name": "Technician",
     "character": "Feng Min",
     "category": "Generator",
-    "description": "Failed skill checks make 50% less noise + only lose 3% progress (instead of 8%). Helps beginners; largely pointless for experienced players.",
+    "description": "While repairing a Generator:\nThe range of Generator repair noises is 8m shorter.\nWhenever you miss a basic Skill Check, the Generator does not explode, but loses 5/4/3% more progress.\n“I'm gonna stealth this one.” -Feng Min",
     "synergy": "Prove Thyself, Hyperfocus",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "4.3.0",
+        "date": "20 October 2020",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Now prevents explosions from missed skill checks at the cost of an extra 5/4/3% progression penalty"
+          }
+        ]
+      },
+      {
+        "version": "2.5.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "All tiers now reduce the audible distance by 8 meters"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 144,
@@ -1419,9 +5941,59 @@ const PERKS = [
     "name": "Tenacity",
     "character": "Detective Tapp",
     "category": "Anti-Slug",
-    "description": "Crawl and recover simultaneously; blocks your aura + nearly silent. On its own not enough; pairs with flip-flop builds.",
+    "description": "While downed:\nYou gain 30/40/50% Haste.\nYou can crawl and recover at the same time.\nYour Grunts of Pain are 75% quieter.\n\"What the hell is this? I'm taking this bastard down!\" -Detective David Tapp",
     "synergy": "Flip-Flop, Unbreakable, Boon: Exponential",
-    "synergyCount": 4
+    "synergyCount": 4,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.3.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Re-added the ability to recover while crawling."
+          },
+          {
+            "type": "buff",
+            "text": "Increased Haste effect to 30/40/50% (was 15/20/25)."
+          }
+        ]
+      },
+      {
+        "version": "9.2.0",
+        "date": "23 September 2025",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Added a new effect: Prevents your aura from being read while in the Dying State."
+          },
+          {
+            "type": "nerf",
+            "text": "Decreased crawling speed bonus to 15/20/25% (was 30/40/50%)."
+          }
+        ]
+      },
+      {
+        "version": "6.1.0",
+        "date": "19 July 2022",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Grunts of pain while in the dying state now have their volume reduced by 75%"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 145,
@@ -1429,9 +6001,21 @@ const PERKS = [
     "name": "Clean Break",
     "character": "Taurie Cain",
     "category": "Passive Heal",
-    "description": "Activate while being healed: become Broken for 60 s, then auto-heal to full health. Ends the healing action immediately. Strong anti-tracking tool in the right build.",
+    "description": "Whenever you finish healing another Survivor, while being healed by another Survivor, use Active Ability Button 1 to gain Broken.\nAfter 80/70/60s, if you are not downed, you are instantly healed.\n\"I'll be fine! Don't stick your neck out for me.\" -Taurie Cain",
     "synergy": "Resilience, Flow State",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 146,
@@ -1439,9 +6023,45 @@ const PERKS = [
     "name": "Urban Evasion",
     "character": "Nea Karlsson",
     "category": "Stealth",
-    "description": "Crouch-walk at 50% faster speed (doubles to normal walk speed). Marginal benefit; useful for specific stealth approaches.",
+    "description": "While crouched, you gain 90/95/100% Haste.\n\"The paint is still fresh but I'm long gone.\" -Nea",
     "synergy": "Fixated, Ghost Notes",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "1.7.0",
+        "date": "14 September 2017",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Removed uninjured requirement"
+          },
+          {
+            "type": "buff",
+            "text": "Increased movement speed bonus to 90/95/100% up from 40/45/50%"
+          }
+        ]
+      },
+      {
+        "version": "1.3.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased movement speed bonus to 40/45/50% up from 10/12/15%"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 147,
@@ -1449,9 +6069,21 @@ const PERKS = [
     "name": "Visionary",
     "character": "Felix Richter",
     "category": "Information",
-    "description": "See generator auras while in a locker. Almost never useful — info you almost never need from inside a locker.",
+    "description": "Within 32m of you, you see the Auras of Generators.\nWhenever a Generator is completed, cooldown: 20/18/16s.",
     "synergy": "Deja Vu (strictly better)",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 148,
@@ -1459,9 +6091,55 @@ const PERKS = [
     "name": "Wake Up",
     "character": "Quentin Smith",
     "category": "End-Game",
-    "description": "50% faster gate opening + reveals gate auras to all when powered. Counters Remember Me partially; useless vs No Way Out.",
+    "description": "When all Generators are completed:\nYou see the Auras of Exit Gate Switches.\nWhile opening an Exit Gate, other Survivors see your Aura.\nFor each Survivor alive, you open Exit Gates 8/10/12.5% faster.",
     "synergy": "No One Left Behind, Hope, Adrenaline",
-    "synergyCount": 2
+    "synergyCount": 2,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "8.5.2",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Removed the 128 metre exit gate aura reveal range limit"
+          },
+          {
+            "type": "rework",
+            "text": "Opening speed bonus now varies based on the number of Survivors alive, granting 8/10/12.5% per Survivor instead of a flat 15/20/25%."
+          }
+        ]
+      },
+      {
+        "version": "5.5.0",
+        "date": "25 January 2022",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased Exit Gate speed boost to 15/20/25% (was 5/10/15%)."
+          }
+        ]
+      },
+      {
+        "version": "2.6.0",
+        "date": "19 March 2019",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "All tiers reveal auras at 128 meters."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 149,
@@ -1469,9 +6147,111 @@ const PERKS = [
     "name": "We're Gonna Live Forever",
     "character": "David King",
     "category": "Altruism/BP",
-    "description": "Protection hits grant tokens (up to 4) → bonus BP for each token used on an action. Good for farming BP; weak competitively.",
+    "description": "You heal downed Survivors 100% faster.\nWhenever you finish healing a downed Survivor, they gain Endurance for 6/8/10s. Cooldown: 30s.\n“Come on then, let's ‘ave it! I don't give a shit pal.” -David King",
     "synergy": "Empathy, Borrowed Time",
-    "synergyCount": 2
+    "synergyCount": 2,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "8.3.2",
+        "date": "",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Revert the heal speed increase to 100% (was 150%)"
+          }
+        ]
+      },
+      {
+        "version": "8.3.0",
+        "date": "8 October 2024",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased Healing speed to 150% (was 100%)"
+          },
+          {
+            "type": "buff",
+            "text": "Removed the pre-conditions required to activate the Endurance Status Effect"
+          },
+          {
+            "type": "nerf",
+            "text": "Added a 30 second cooldown to the Endurance Status Effect"
+          }
+        ]
+      },
+      {
+        "version": "7.1.0",
+        "date": "25 July 2023",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Adjusted description to indicate that it works for ALL blinds, not just flashlights"
+          }
+        ]
+      },
+      {
+        "version": "6.1.0",
+        "date": "19 July 2022",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Removed the bloodpoint bonus"
+          },
+          {
+            "type": "rework",
+            "text": "Performing certain actions (Safe unhooks, protection hits, Flashlight or pallets saves) will activate the perk's secondary function. When it's active, healing another Survivor from the dying state will grant them endurance for 6/8/10 seconds."
+          }
+        ]
+      },
+      {
+        "version": "4.3.0",
+        "date": "20 October 2020",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Now also grants tokens for Flashlight or Pallet saves"
+          },
+          {
+            "type": "buff",
+            "text": "Added an effect to increase the healing speed of survivors in the dying state by 100%"
+          }
+        ]
+      },
+      {
+        "version": "2.7.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "qol",
+            "text": "Changed to use the Safe Hook Rescue score event"
+          }
+        ]
+      },
+      {
+        "version": "1.7.0",
+        "date": "14 September 2017",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Reduced maximum bloodpoint gain from 100/150/200% to 50/75/100%"
+          },
+          {
+            "type": "nerf",
+            "text": "Reduced the bonus for each stack from 50% to 25%"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 150,
@@ -1479,9 +6259,59 @@ const PERKS = [
     "name": "Ace in the Hole",
     "character": "Ace Visconti",
     "category": "Chest",
-    "description": "Keep item add-ons on escape. Only matters if you use add-ons + survive with item. Almost never relevant or impactful.",
+    "description": "Whenever you loot an item from a Chest, it will have:\nA Visceral or lower rarity add-on.\n50/75/100% chance for an Uncommon or lower rarity add-on.\nWhen you escape, you keep your add-ons.\n“Everything that glitters isn't gold. But gold isn't worth a damn in this place, so this should come in handy.” -Ace",
     "synergy": "Pharmacy, Appraisal",
-    "synergyCount": 1
+    "synergyCount": 1,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "8.4.0",
+        "date": "28 November 2024",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Can now grant Ultra Rare add-ons (was limited to Very Rare)"
+          },
+          {
+            "type": "buff",
+            "text": "Increased the chance of getting a second addon (of Uncommon rarity or lower) to 50/75/100% (was 10/25/50%)"
+          }
+        ]
+      },
+      {
+        "version": "3.6.0",
+        "date": "10 March 2020",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Add-ons on found items are now kept when escaping with the item"
+          }
+        ]
+      },
+      {
+        "version": "2.1.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Added a 10/25/50% chance for a second add-on of Uncommon rarity or lower"
+          },
+          {
+            "type": "buff",
+            "text": "Now has a 100% chance for a Very Rare add-on regardless of tier"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 151,
@@ -1489,9 +6319,31 @@ const PERKS = [
     "name": "Apocalyptic Ingenuity",
     "character": "Rick Grimes",
     "category": "Utility",
-    "description": "After 2 chests are opened: rebuild a broken pallet (fragile, breaks on a missed stun). Activation requires two chests — very slow and situational.",
+    "description": "After you rummage or unlock 2 Chests, while next to a Broken Pallet, use Active Ability Button 1 for 4s to create a Fragile Pallet.\nWithin 24/28/32m, you see the Auras of Broken Pallets.\n“Without the fences, this place is worthless.” -Rick Grimes",
     "synergy": "Appraisal (chest synergy)",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.1.0",
+        "date": "29 July 2025",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Decreased time required to rebuild pallet to 4 seconds (was 8 seconds)"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 152,
@@ -1499,9 +6351,43 @@ const PERKS = [
     "name": "Blood Rush",
     "character": "Renato Lyra",
     "category": "Exhaustion",
-    "description": "Remove exhaustion immediately, but break yourself in the process (can't be healed until end of match). Sounds strong but wildly niche and often counterproductive.",
+    "description": "Until all Generators are completed, whenever you are unhooked, for the next 40/50/60s, while Exhausted, use Active Ability Button 1 to lose Exhausted instantly.\nThis is disabled by conspicuous actions.\n“Just gotta… push through.” –Renato Lyra",
     "synergy": "Vigil (strictly better)",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "8.3.0",
+        "date": "8 October 2024",
+        "changes": [
+          {
+            "type": "rework",
+            "text": "Now activates after each unhook rather than the second but for a limited duration of 40/50/60 seconds"
+          },
+          {
+            "type": "buff",
+            "text": "No longer applies the Broken Status Effect"
+          },
+          {
+            "type": "nerf",
+            "text": "Now also deactivates when a Conspicuous Action is performed"
+          },
+          {
+            "type": "nerf",
+            "text": "Now disabled once the Exit Gates are powered"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 153,
@@ -1509,9 +6395,31 @@ const PERKS = [
     "name": "Breakdown",
     "character": "Jeff Johansen",
     "category": "Sabotage",
-    "description": "Destroy the hook you were just unhooked from. Passive sabo; completely random impact depending on hook location. No control.",
+    "description": "Whenever you are unhooked:\nThe Hook breaks, then is repaired after 180s.\nYou see the Killer's Aura for 4/5/6s.\n“Named Belly of the Beast, this wood piece had a story to tell; it didn't waste its second chance.” –Jeff (ink & oil wash on wood)",
     "synergy": "Saboteur (active and better)",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.3.2",
+        "date": "",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Reverted to the version before 9.3.0"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 154,
@@ -1519,9 +6427,43 @@ const PERKS = [
     "name": "Collective Stealth",
     "character": "Renato Lyra",
     "category": "Stealth/Team",
-    "description": "After healing a survivor: both you and that survivor leave no scratch marks while within 16 m of each other (20 s). Pointless — takes more effort than it gives.",
+    "description": "Whenever another Survivor finishes healing you, while within 8/12/16m of each other, you both leave no Scratch Marks. When either of you leaves the range, this ends after 4s.\n“I'm good, I'm good… but keep it down.” –Renato Lyra",
     "synergy": "Ghost Notes (better scratch-mark option)",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "8.3.0",
+        "date": "8 October 2024",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "The Haste effect now lingers for 4 seconds after exceeding the range limit allowing a grace period to re-enter it"
+          },
+          {
+            "type": "buff",
+            "text": "No longer deactivates when either Survivor loses a health state"
+          },
+          {
+            "type": "buff",
+            "text": "Removed the cooldown"
+          },
+          {
+            "type": "note",
+            "text": "This effect does not stack"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 155,
@@ -1529,9 +6471,21 @@ const PERKS = [
     "name": "Cut Loose",
     "character": "Talita Lyra",
     "category": "Stealth",
-    "description": "Second fast vault in a row within 15 s: silent and no scratch marks for 3 s. Activates on second vault only — Worse Quick & Quiet in nearly every scenario.",
+    "description": "While chased by the Killer, whenever you medium or fast-vault:\nFor up to 4/5/6s, your medium and fast vaults are silent.\nDuring that time, whenever you medium or fast-vault, the timer is reset.\nCooldown: 45s.\n“I know how we can get out of here. Quick, this way.” –Thalita Lyra",
     "synergy": "Quick & Quiet (strictly better)",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 156,
@@ -1539,9 +6493,21 @@ const PERKS = [
     "name": "Deadline",
     "character": "Alan Wake",
     "category": "Skill Checks",
-    "description": "While injured: 2× skill check frequency; missed skill checks deal 5% instead of 10%. Randomizes skill check positions = dangerous.",
+    "description": "While injured, basic Skill Checks:\nAre 6/8/10% more likely to appear.\nAppear in random places.\nWhenever you miss a basic Skill Check, you lose 50% less progress.\n“The night had been one desperate situation after another.” – Departure",
     "synergy": "Autodidact (synergy, but both are weak)",
-    "synergyCount": 2
+    "synergyCount": 2,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 157,
@@ -1549,9 +6515,21 @@ const PERKS = [
     "name": "Invocation: Treacherous Crows",
     "character": "Taurie Cain",
     "category": "Invocation",
-    "description": "Spend 60 s in basement → become broken permanently → killer disturbing crows = 2 s aura reveal. WORST PERK IN THE GAME. Never use.",
+    "description": "While in the Basement next to the circle, use Active Ability Button 2 to invoke. While invoking, other Survivors see your Aura and can join your Invocation.\nWhen the Invocation is completed:\nWhenever the Killer scares a Crow while a Survivor is in their Terror Radius, all Survivors see the Killer's Aura for 1/1.5/2s.\nYou become injured.\nYou gain Broken.\nEach Invocation can only be completed once per trial.\n\"Remember your training. They taught you all about the crows.\" -Taurie Cain",
     "synergy": "Do not use. Bring Kindred instead.",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 158,
@@ -1559,9 +6537,45 @@ const PERKS = [
     "name": "Invocation: Weaving Spiders",
     "character": "Sable Ward",
     "category": "Invocation",
-    "description": "Spend 60 s in basement → become broken permanently + block all gens briefly. Massive cost; situational team payoff.",
+    "description": "While in the Basement next to the circle, use Active Ability Button 1 to invoke. While invoking, other Survivors see your Aura and can join your Invocation.\nWhen the Invocation is completed:\nAll Generators gain 8/9/10 permanent charges.\nYou become injured.\nYou gain Broken.\nEach Invocation can only be completed once per trial.\n\"I call upon the spirits of the night, to aid us in our desperate flight!\" -Sable",
     "synergy": "None recommended",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "8.4.0",
+        "date": "28 November 2024",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Description was updated to match the new invocation (Treacherous Crows), but no gameplay change otherwise."
+          }
+        ]
+      },
+      {
+        "version": "8.0.0",
+        "date": "3 June 2024",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Decreased the time it takes to complete the Invocation to 60 seconds. (was 120 seconds)"
+          },
+          {
+            "type": "buff",
+            "text": "Increased the time it takes for an Invocation to completely regress to 90 seconds. (was 6 seconds)"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 159,
@@ -1569,9 +6583,41 @@ const PERKS = [
     "name": "Left Behind",
     "character": "Bill Overbeck",
     "category": "End-Game/Selfish",
-    "description": "Last survivor alive: see hatch aura. Encourages selfish playstyle. Almost no benefit to team.",
+    "description": "When all other Survivors are dead, while within 24/28/32m of the Hatch, you see it's Aura.\n\"I'm not horseshittin' around. I'm doing this alone!\" -Bill",
     "synergy": "Soul Survivor (similar selfish playstyle)",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "3.2.0",
+        "date": "17 September 2019",
+        "changes": [
+          {
+            "type": "rework",
+            "text": "When you are the last Survivor alive in the trial, the hatch aura is revealed to you within a 24/28/32 meter range"
+          }
+        ]
+      },
+      {
+        "version": "2.7.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased repair speed bonus from 19/22/25% to 55/65/75%"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 160,
@@ -1579,9 +6625,31 @@ const PERKS = [
     "name": "Low Profile",
     "character": "Ada Wong",
     "category": "Stealth",
-    "description": "After a survivor dies: you leave no scratch marks + your aura is hidden. Only activates after someone dies — the worst time to need stealth.",
+    "description": "When all other Survivors are downed or hooked, for 70/80/90s:\nYou make no Grunts of Pain.\nYou leave no Pools of Blood.\nYou leave no Scratch Marks.",
     "synergy": "None recommended",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "6.2.0",
+        "date": "30 August 2022",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Added grunts of pain to the effects affected by the perk"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 161,
@@ -1589,9 +6657,53 @@ const PERKS = [
     "name": "Lucky Star",
     "character": "Ellen Ripley",
     "category": "Utility",
-    "description": "After being healed to healthy: see aura of generator the healer was last on, briefly. Nearly zero practical value.",
+    "description": "While hiding in a Locker, you make no Grunts of Pain.\nWhenever you exit a Locker, for 30s:\nYou see the Aura of the closest Generator.\nYou see the Auras of other Survivors.\nYou make no Grunts of Pain.\nYou leave no Pools of Blood.\nCooldown: 35/30/25s.\n“You are my… lucky star…” –Ellen Ripley",
     "synergy": "None recommended",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.2.0",
+        "date": "23 September 2025",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Decreased cooldown to 35/30/25 seconds (was 40/35/30 seconds)."
+          }
+        ]
+      },
+      {
+        "version": "8.3.0",
+        "date": "8 October 2024",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Removed the time limit for suppressing grunts of pain while inside the locker"
+          },
+          {
+            "type": "buff",
+            "text": "Now applies for 30 seconds after exiting a Locker (was 10)"
+          },
+          {
+            "type": "buff",
+            "text": "Now prevents blood pools as part of the timed effects after leaving the locker"
+          },
+          {
+            "type": "nerf",
+            "text": "No longer prevents blood pools while inside the locker"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 162,
@@ -1599,9 +6711,51 @@ const PERKS = [
     "name": "Mettle of Man",
     "character": "Ash Williams",
     "category": "Endurance",
-    "description": "After 3 protection hits: tank an extra hit. Nearly impossible to activate; protection hits are already huge sacrifices.",
+    "description": "After taking 3 protection hits, while injured and until you go down, the next time you would be downed by the Killer, take no damage instead.\nWhen you become healthy, while you are at least 12/14/16m from the Killer, they see your Aura.\nWhen the trial starts, you are more likely to be the Obsession.\n\"Evil has a bullseye on my back the size of Tiger Stadium.\" -Ash Williams",
     "synergy": "We're Gonna Live Forever (easier to run)",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "6.2.0",
+        "date": "30 August 2022",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Reverted to its previous behaviour prior to 6.1.2"
+          }
+        ]
+      },
+      {
+        "version": "3.3.1",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Mettle of Man can now be activated and triggered more than once"
+          }
+        ]
+      },
+      {
+        "version": "3.0.0",
+        "date": "18 June 2019",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Changed condition for earning tokens from getting hit by a basic attack to the Protection Hit score event"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 163,
@@ -1609,9 +6763,31 @@ const PERKS = [
     "name": "Mirrored Illusion",
     "character": "Aestri Yazar & Baermar Uraz",
     "category": "Deception",
-    "description": "Stand still briefly near a Generator → spawn a visible copy of yourself on it (visible to the Killer). Rarely fools killers for more than a second or two.",
+    "description": "After repairing 20% of Generators, while next to a Chest, Exit Gate Switch, Generator, or Totem, use Active Ability Button 2 to create a static illusion for 40/50/60s.\n\"Just... stay there... perfect!\" -Baermar",
     "synergy": "Deception (better fake perk)",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "8.2.0",
+        "date": "27 August 2024",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Activates after completing a total of 20% worth of repair progress on generators. (was 50%)"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 164,
@@ -1619,9 +6795,45 @@ const PERKS = [
     "name": "No Mither",
     "character": "David King",
     "category": "Hard Mode",
-    "description": "Start the match injured and permanently broken. Killer sees this immediately. Can self-recover infinitely. Designed to be a hard-mode perk.",
+    "description": "When the trial starts, you become injured, then:\nYou gain Broken.\nYour Grunts of Pain are 100% quieter.\nYou leave no Pools of Blood.\nYou recover 15/20/25% faster.\nYou can fully recover.\n“I lost it and lamped him one. Had a few pints afterwards, moved on. Couldn't be mithered with it. Can't be arsed.” -David King",
     "synergy": "Resilience, Deadline (injured state perks)",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.2.0",
+        "date": "23 September 2025",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased the volume reduction for grunts of pain to 100% across all tiers (was 25/50/75%)."
+          }
+        ]
+      },
+      {
+        "version": "5.3.0",
+        "date": "19 October 2021",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Grunts of pain reduction increased to 25/50/75% (was 0/25/50%)."
+          },
+          {
+            "type": "buff",
+            "text": "Added effect: Your recovery speed is increased by 15/20/25%"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 165,
@@ -1629,9 +6841,35 @@ const PERKS = [
     "name": "Red Herring",
     "character": "Zarina Kassir",
     "category": "Distraction",
-    "description": "Prep a gen → enter a locker → trigger a fake skill check miss on that gen. Rarely fools killers; too much setup for tiny payoff.",
+    "description": "After you repair a Generator for at least 1s, you see its Aura.\nWhen you hide in a Locker, the Killer is alerted to the Generator. Cooldown: 25/20/15s.\n\"The news edits out what is burdensome and complex, which is the truth.\" -Zarina Kassir",
     "synergy": "Wiretap, Blast Mine (better gen traps)",
-    "synergyCount": 2
+    "synergyCount": 2,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "8.6.0",
+        "date": "2 April 2025",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Decreased repair requirement to 1 second (was 3 seconds)"
+          },
+          {
+            "type": "buff",
+            "text": "Decreased cooldown to 25/20/15 seconds (was 30/25/20 seconds)"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 166,
@@ -1639,9 +6877,31 @@ const PERKS = [
     "name": "Repressed Alliance",
     "character": "Cheryl Mason",
     "category": "Generator",
-    "description": "Block a gen yourself for 30 s. Usually backfires — gives killer time to pressure other gens. Only benefit: freeze a 99% gen.",
+    "description": "After repairing Generators for 55/50/45s, while repairing a Generator alone, use Active Ability Button 1 to block that generator for 30s.",
     "synergy": "Wiretap (better gen utility)",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "5.3.0",
+        "date": "19 October 2021",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Generator repair requirement reduced to 55/50/45 seconds (was 80/70/60 seconds)"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 167,
@@ -1649,9 +6909,35 @@ const PERKS = [
     "name": "Road Life",
     "character": "V (Bovine Yak)",
     "category": "Healing",
-    "description": "After stunning the killer or after someone unhooked: gain 100% healing speed for 8 s. Contrived activation makes it almost never trigger when you need it.",
+    "description": "While injured, not Broken and repairing a Generator:\nWhenever you hit a basic great Skill Check, you earn 1 Token.\nWhenever you miss a basic Skill Check, you lose 1 token.\nWhen you have 6/5/4 Tokens, spend all Tokens to heal 100% faster until you stop healing.\n“Remind me to teach you how to patch your own pedals, Krit.” -Vee Boonyasak",
     "synergy": "None recommended",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.2.0",
+        "date": "23 September 2025",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Lowered tokens needed for healing speed effect to 6/5/4 (from 8/7/6)."
+          },
+          {
+            "type": "buff",
+            "text": "Lowered tokens lost on missed skill checks to 1/1/1 (from 2/2/2)."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 168,
@@ -1659,9 +6945,21 @@ const PERKS = [
     "name": "Scavenger",
     "character": "Gabriel Soma",
     "category": "Item Recycle",
-    "description": "Rummage chest for a toolbox. Hit 5 great skill checks to refill a depleted toolbox (then -50% gen speed 30 s). Outclassed by Build to Last.",
+    "description": "While repairing and while your Toolbox is empty, whenever you hit a great basic Skill Check, you earn 1 Token.\nWhen you have 5 Tokens, spend them all:\nYour Toolbox is recharged instantly.\nYou repair 50% slower for 40/35/30s.\nYou can rummage Chests 1 time. The first time you rummage a Chest, it will contain an uncommon Toolbox.\n“It's amazing what people will throw away around here.” –Gabriel Soma",
     "synergy": "Build to Last (strictly better)",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 169,
@@ -1669,9 +6967,21 @@ const PERKS = [
     "name": "Specialist",
     "character": "Lara Croft",
     "category": "Chest/Generator",
-    "description": "Get a token per chest search (max 6) → hit a great skill check on a gen to spend all for big progress. Only useful in chest builds.",
+    "description": "Whenever you rummage or unlock a Chest, you earn 1 Token, up to 6.\nWhile repairing a Generator, whenever you hit a great basic Skill Check, spend all Tokens. For each Token spent, the Generator gains 2/3/4% permanent progress.\n\"Well, then. Doesn't this feel familiar?\" -Lara Croft",
     "synergy": "Appraisal, Moment of Glory",
-    "synergyCount": 2
+    "synergyCount": 2,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 170,
@@ -1679,9 +6989,21 @@ const PERKS = [
     "name": "Teamwork: Toughen Up",
     "character": "Rick Grimes",
     "category": "Stealth/Team",
-    "description": "While injured, whenever another Survivor within 24 m blinds or Pallet-stuns the Killer, for 30 s: you make no Grunts of Pain, leave no Pools of Blood, and leave no Scratch Marks. Very situational — requires a teammate to land a stun/blind while you are already injured.",
+    "description": "Whenever another Survivor within 24m of you blinds or Pallet-stuns the Killer, for 20/25/30s:\nYou make no Grunts of Pain.\nYou leave no Pools of Blood.\nYou leave no Scratch Marks.\n“They're fucking with the wrong people.” -Rick Grimes",
     "synergy": "",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 171,
@@ -1689,9 +7011,21 @@ const PERKS = [
     "name": "Teamwork: Soft-Spoken",
     "character": "Eleven",
     "category": "Generator/Team",
-    "description": "For each other Survivor repairing a Generator with you, the range of Generator repair noises is 25% smaller. While repairing with at least 1 other Survivor, you repair 5% faster. Minor but consistent passive bonus on co-op gens.",
+    "description": "For each other Survivor repairing a Generator with you, the range of Generator repair noises is 15/20/25% smaller.\nWhile repairing with at least 1 other Survivor, you repair 5% faster.\n\"I make my own rules.\" —Eleven",
     "synergy": "",
-    "synergyCount": 0
+    "synergyCount": 0,
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   }
 ];
 
@@ -1709,7 +7043,8 @@ const KILLERS = [
       "A Nurse's Calling",
       "Stridor",
       "Thanatophobia"
-    ]
+    ],
+    "portrait": "images/CharPortraits/K04_TheNurse_Portrait.png"
   },
   {
     "rank": 2,
@@ -1724,7 +7059,8 @@ const KILLERS = [
       "Dragon's Grip",
       "Hex: Blood Favour",
       "Hex: Undying"
-    ]
+    ],
+    "portrait": "images/CharPortraits/Yemen/K21_TheBlight_Portrait.png"
   },
   {
     "rank": 3,
@@ -1739,7 +7075,8 @@ const KILLERS = [
       "Hex: Overture of Doom",
       "Ravenous",
       "Wandering Eye"
-    ]
+    ],
+    "portrait": "images/CharPortraits/Maple/T_UI_K41_TheKrasue_Portrait.png"
   },
   {
     "rank": 4,
@@ -1754,7 +7091,8 @@ const KILLERS = [
       "Enduring",
       "Lightborn",
       "Tinkerer"
-    ]
+    ],
+    "portrait": "images/CharPortraits/K03_TheHillbilly_Portrait.png"
   },
   {
     "rank": 5,
@@ -1769,7 +7107,8 @@ const KILLERS = [
       "Coup de Grâce",
       "Hoarder",
       "Oppression"
-    ]
+    ],
+    "portrait": "images/CharPortraits/Aurora/K22_TheTwins_Portrait.png"
   },
   {
     "rank": 6,
@@ -1784,7 +7123,8 @@ const KILLERS = [
       "Hex: Nothing But Misery",
       "Forever Entwined",
       "None Are Free"
-    ]
+    ],
+    "portrait": "images/CharPortraits/Icecream/K39_TheGhoul_Portrait.png"
   },
   {
     "rank": 7,
@@ -1799,7 +7139,8 @@ const KILLERS = [
       "Genetic Limits",
       "Forced Hesitation",
       "Machine Learning"
-    ]
+    ],
+    "portrait": "images/CharPortraits/Umbra/K32_TheSingularity_Portrait.png"
   },
   {
     "rank": 8,
@@ -1814,7 +7155,8 @@ const KILLERS = [
       "Hex: Wretched Fate",
       "Human Greed",
       "Dominance"
-    ]
+    ],
+    "portrait": "images/CharPortraits/Eclair/K37_TheDracula_Portrait.png"
   },
   {
     "rank": 9,
@@ -1829,7 +7171,8 @@ const KILLERS = [
       "Spirit Fury",
       "Hex: Haunted Ground",
       "Rancor"
-    ]
+    ],
+    "portrait": "images/CharPortraits/Haiti/K13_TheSpirit_Portrait.png"
   },
   {
     "rank": 10,
@@ -1844,7 +7187,8 @@ const KILLERS = [
       "Zanshin Tactics",
       "Blood Echo",
       "Nemesis"
-    ]
+    ],
+    "portrait": "images/CharPortraits/Sweden/K18_TheOni_Portrait.png"
   },
   {
     "rank": 11,
@@ -1859,7 +7203,8 @@ const KILLERS = [
       "Corrupt Intervention",
       "Infectious Fright",
       "Dark Devotion"
-    ]
+    ],
+    "portrait": "images/CharPortraits/Mali/K15_ThePlague_Portrait.png"
   },
   {
     "rank": 12,
@@ -1874,7 +7219,8 @@ const KILLERS = [
       "Grim Embrace",
       "Scourge Hook: Pain Resonance",
       "Hex: Pentimento"
-    ]
+    ],
+    "portrait": "images/CharPortraits/Ion/K26_TheArtist_Portrait.png"
   },
   {
     "rank": 13,
@@ -1889,7 +7235,8 @@ const KILLERS = [
       "Fire Up",
       "Remember Me",
       "Blood Warden"
-    ]
+    ],
+    "portrait": "images/CharPortraits/England/K10_TheNightmare_Portrait.png"
   },
   {
     "rank": 14,
@@ -1904,7 +7251,8 @@ const KILLERS = [
       "All-Shaking Thunder",
       "Scourge Hook: Jagged Compass",
       "No Quarter"
-    ]
+    ],
+    "portrait": "images/CharPortraits/Gelato/K38_TheHoundmaster_Portrait.png"
   },
   {
     "rank": 15,
@@ -1919,7 +7267,8 @@ const KILLERS = [
       "Superior Anatomy",
       "Awakened Awareness",
       "Terminus"
-    ]
+    ],
+    "portrait": "images/CharPortraits/Orion/K29_TheMasterMind_Portrait.png"
   },
   {
     "rank": 16,
@@ -1934,7 +7283,8 @@ const KILLERS = [
       "Weave Attunement",
       "Languid Touch",
       "Dark Arrogance"
-    ]
+    ],
+    "portrait": "images/CharPortraits/Churros/K36_TheLich_Portrait.png"
   },
   {
     "rank": 17,
@@ -1949,7 +7299,8 @@ const KILLERS = [
       "Forced Penance",
       "Trail of Torment",
       "Deathbound"
-    ]
+    ],
+    "portrait": "images/CharPortraits/Wales/K20_TheExecutioner_Portrait.png"
   },
   {
     "rank": 18,
@@ -1964,7 +7315,8 @@ const KILLERS = [
       "Deadlock",
       "Hex: Plaything",
       "Scourge Hook: Gift of Pain"
-    ]
+    ],
+    "portrait": "images/CharPortraits/Gemini/K25_TheCenobite_Portrait.png"
   },
   {
     "rank": 19,
@@ -1979,7 +7331,8 @@ const KILLERS = [
       "Hex: Two Can Play",
       "Friends 'til the End",
       "Batteries Included"
-    ]
+    ],
+    "portrait": "images/CharPortraits/Yerkes/K34_TheYerkes_Portrait.png"
   },
   {
     "rank": 20,
@@ -1994,7 +7347,8 @@ const KILLERS = [
       "Unbound",
       "Unforeseen",
       "Undone"
-    ]
+    ],
+    "portrait": "images/CharPortraits/Applepie/K35_TheUnknown_Portrait.png"
   },
   {
     "rank": 21,
@@ -2009,7 +7363,8 @@ const KILLERS = [
       "Help Wanted",
       "Phantom Fear",
       "Haywire"
-    ]
+    ],
+    "portrait": "images/CharPortraits/Ketchup/K40_TheAnimatronic_Portrait.png"
   },
   {
     "rank": 22,
@@ -2024,7 +7379,8 @@ const KILLERS = [
       "Beast of Prey",
       "Territorial Imperative",
       "Hex: Huntress Lullaby"
-    ]
+    ],
+    "portrait": "images/CharPortraits/DLC5/K08_TheHuntress_Portrait.png"
   },
   {
     "rank": 23,
@@ -2039,7 +7395,8 @@ const KILLERS = [
       "Gearhead",
       "Dead Man's Switch",
       "Hex: Retribution"
-    ]
+    ],
+    "portrait": "images/CharPortraits/Ukraine/K19_TheDeathslinger_Portrait.png"
   },
   {
     "rank": 24,
@@ -2054,7 +7411,8 @@ const KILLERS = [
       "Hex: Devour Hope",
       "Hex: Ruin",
       "Hex: The Third Seal"
-    ]
+    ],
+    "portrait": "images/CharPortraits/DLC3/K05_TheHag_Portrait.png"
   },
   {
     "rank": 25,
@@ -2069,7 +7427,8 @@ const KILLERS = [
       "Monitor & Abuse",
       "Overcharge",
       "Overwhelming Presence"
-    ]
+    ],
+    "portrait": "images/CharPortraits/DLC4/K07_TheDoctor_Portrait.png"
   },
   {
     "rank": 26,
@@ -2084,7 +7443,8 @@ const KILLERS = [
       "Bloodhound",
       "Predator",
       "Shadowborn"
-    ]
+    ],
+    "portrait": "images/CharPortraits/K02_TheWraith_Portrait.png"
   },
   {
     "rank": 27,
@@ -2099,7 +7459,8 @@ const KILLERS = [
       "Dissolution",
       "Darkness Revealed",
       "Septic Touch"
-    ]
+    ],
+    "portrait": "images/CharPortraits/Meteor/K28_TheDredge_Portrait.png"
   },
   {
     "rank": 28,
@@ -2114,7 +7475,8 @@ const KILLERS = [
       "Rapid Brutality",
       "Alien Instinct",
       "Ultimate Weapon"
-    ]
+    ],
+    "portrait": "images/CharPortraits/Wormhole/K33_TheXenomorph_Portrait.png"
   },
   {
     "rank": 29,
@@ -2129,7 +7491,8 @@ const KILLERS = [
       "Lethal Pursuer",
       "Hysteria",
       "Eruption"
-    ]
+    ],
+    "portrait": "images/CharPortraits/Eclipse/K24_TheNemesis_Portrait.png"
   },
   {
     "rank": 30,
@@ -2144,7 +7507,8 @@ const KILLERS = [
       "Nowhere to Hide",
       "Hex: Face the Darkness",
       "Hubris"
-    ]
+    ],
+    "portrait": "images/CharPortraits/Quantum/K30_TheKnight_Portrait.png"
   },
   {
     "rank": 31,
@@ -2159,7 +7523,8 @@ const KILLERS = [
       "Scourge Hook: Floods of Rage",
       "Call of Brine",
       "Merciless Storm"
-    ]
+    ],
+    "portrait": "images/CharPortraits/Kepler/K27_TheOnryo_Portrait.png"
   },
   {
     "rank": 32,
@@ -2174,7 +7539,8 @@ const KILLERS = [
       "Starstruck",
       "Hex: Crowd Control",
       "No Way Out"
-    ]
+    ],
+    "portrait": "images/CharPortraits/Comet/K23_TheTrickster_Portrait.png"
   },
   {
     "rank": 33,
@@ -2189,7 +7555,8 @@ const KILLERS = [
       "Bamboozle",
       "Coulrophobia",
       "Pop Goes the Weasel"
-    ]
+    ],
+    "portrait": "images/CharPortraits/Guam/K12_TheClown_Portrait.png"
   },
   {
     "rank": 34,
@@ -2204,7 +7571,8 @@ const KILLERS = [
       "Scourge Hook: Hangman's Trick",
       "Surveillance",
       "Make Your Choice"
-    ]
+    ],
+    "portrait": "images/CharPortraits/Finland/K11_ThePig_Portrait.png"
   },
   {
     "rank": 35,
@@ -2219,7 +7587,8 @@ const KILLERS = [
       "Knock Out",
       "Barbecue & Chilli",
       "Franklin's Demise"
-    ]
+    ],
+    "portrait": "images/CharPortraits/Cannibal/K09_TheCannibal_Portrait.png"
   },
   {
     "rank": 36,
@@ -2234,7 +7603,8 @@ const KILLERS = [
       "Save the Best for Last",
       "Play with Your Food",
       "Dying Light"
-    ]
+    ],
+    "portrait": "images/CharPortraits/DLC2/K06_TheShape_Portrait.png"
   },
   {
     "rank": 37,
@@ -2249,7 +7619,8 @@ const KILLERS = [
       "Discordance",
       "Mad Grit",
       "Iron Maiden"
-    ]
+    ],
+    "portrait": "images/CharPortraits/Kenya/K14_TheLegion_Portrait.png"
   },
   {
     "rank": 38,
@@ -2264,7 +7635,8 @@ const KILLERS = [
       "Surge",
       "Mindbreaker",
       "Cruel Limits"
-    ]
+    ],
+    "portrait": "images/CharPortraits/Qatar/K17_TheDemogorgon_Portrait.png"
   },
   {
     "rank": 39,
@@ -2279,7 +7651,8 @@ const KILLERS = [
       "Furtive Chase",
       "I'm All Ears",
       "Thrilling Tremors"
-    ]
+    ],
+    "portrait": "images/CharPortraits/Oman/K16_TheGhostface_Portrait.png"
   },
   {
     "rank": 40,
@@ -2294,7 +7667,8 @@ const KILLERS = [
       "Unnerving Presence",
       "Brutal Strength",
       "Agitation"
-    ]
+    ],
+    "portrait": "images/CharPortraits/K01_TheTrapper_Portrait.png"
   },
   {
     "rank": 41,
@@ -2309,7 +7683,8 @@ const KILLERS = [
       "Turn Back the Clock",
       "Secret Project",
       "Hex: Hive Mind"
-    ]
+    ],
+    "portrait": "images/CharPortraits/Poutine/T_UI_K42_TheFirst_Portrait.png"
   },
   {
     "rank": 42,
@@ -2324,7 +7699,8 @@ const KILLERS = [
       "THWACK!",
       "Leverage",
       "Game Afoot"
-    ]
+    ],
+    "portrait": "images/CharPortraits/Saturn/K31_TheSkullMerchant_Portrait.png"
   }
 ];
 
@@ -2335,7 +7711,29 @@ const KILLER_PERKS = [
     "name": "Corrupt Intervention",
     "character": "Plague",
     "category": "Gen Control",
-    "description": "Blocks the 3 furthest generators for 2 minutes; forces survivors into your side of the map during the critical early game regardless of your skill level."
+    "description": "When the trial starts, the 3 farthest Generators from you are blocked for 80/100/120s, or until you down a Survivor.\n“It shall be known across the land that the Gods curse the unfaithful.” (The Tablet of Adiris, 3.7.)",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "6.1.0",
+        "date": "19 July 2022",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Corrupt Intervention will now deactivate early if a Survivor enters the dying state."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1002,
@@ -2343,7 +7741,63 @@ const KILLER_PERKS = [
     "name": "Scourge Hook: Pain Resonance",
     "character": "Artist",
     "category": "Gen Control",
-    "description": "Hooking a survivor on a Scourge Hook instantly explodes the highest-progress generator; arguably the best hook-synergy gen-regression perk in the game."
+    "description": "When the trial starts:\n4 random Hooks become Scourge Hooks.\nYou earn 4 Tokens.\nThe first time each Survivor is hooked on a Scourge Hook, spend 1 Token, then the Generator with the most progress:\nExplodes, loses 10/15/20% progress and starts regressing.\nSurvivors repairing it scream.\n\"The pain spills beyond flesh/darkness staining the horizon.\" -Girl in the Shadow by Carmina Mora",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "8.0.0",
+        "date": "3 June 2024",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Decreased the amount of progress lost to 10/15/20%. (was 15/20/25%)"
+          }
+        ]
+      },
+      {
+        "version": "7.5.0",
+        "date": "30 January 2024",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Does not create a loud noise notification if no progress is lost on the Generator"
+          }
+        ]
+      },
+      {
+        "version": "6.7.0",
+        "date": "18 April 2023",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Now triggers the first time each survivor is hooked on a scourge hook"
+          },
+          {
+            "type": "buff",
+            "text": "Increased regression to 15/20/25% (was 9/12/15%)"
+          }
+        ]
+      },
+      {
+        "version": "6.1.0",
+        "date": "19 July 2022",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Removed scream effect on Survivors repairing the exploding generator, generator will spark to show regression"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1003,
@@ -2351,7 +7805,61 @@ const KILLER_PERKS = [
     "name": "Dead Man's Switch",
     "character": "Deathslinger",
     "category": "Gen Control",
-    "description": "While carrying a survivor, any generator a survivor abandons is blocked until the carry ends; pairs perfectly with Scourge Hook: Pain Resonance to lock gens."
+    "description": "When you hook a Survivor, the first time a Survivor stops repairing a Generator, it is blocked for 25/30/35s. Cooldown: 25/30/35s.\n\"I've seen the look on a man's face when he realizes he's going to die.\" -Caleb Quinn",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.2.0",
+        "date": "23 September 2025",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Decreased generator blocking duration to 25/30/35 seconds (was 40/45/50 seconds)."
+          }
+        ]
+      },
+      {
+        "version": "8.3.0",
+        "date": "8 October 2024",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Removed the activation time limit after a hook"
+          },
+          {
+            "type": "buff",
+            "text": "Now blocks the affected generator for 40/45/50 seconds instead of until the (old) activation window ended"
+          },
+          {
+            "type": "nerf",
+            "text": "Now only able to block one generator"
+          },
+          {
+            "type": "nerf",
+            "text": "Cannot reactivate while it is already blocking a generator"
+          }
+        ]
+      },
+      {
+        "version": "5.5.0",
+        "date": "25 January 2022",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Removed the Obsession mechanic, the perk now triggers when hooking any survivor."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1004,
@@ -2359,7 +7867,77 @@ const KILLER_PERKS = [
     "name": "Hex: Ruin",
     "character": "Hag",
     "category": "Hex",
-    "description": "Unattended generators slowly regress; forces teams to constantly repair rather than split-push, especially brutal on indoor maps with long travel times."
+    "description": "When the trial starts, a Dull Totem ignites.\nWhile a Generator is not being repaired, it regresses at 100/125/150% speed.\n“A curse is upon you. It will be your ruin.”",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.2.0",
+        "date": "23 September 2025",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased the generator regression to 100/125/150% (was 50/75/100%)."
+          }
+        ]
+      },
+      {
+        "version": "7.5.0",
+        "date": "30 January 2024",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "No longer deactivates when a Survivor is killed"
+          }
+        ]
+      },
+      {
+        "version": "6.1.0",
+        "date": "19 July 2022",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Once any Survivor is killed by any means, the Hex: Ruin Totem reverts to a Dull Totem"
+          },
+          {
+            "type": "nerf",
+            "text": "Halved regression speed from 100/150/200% to 50/75/100%"
+          }
+        ]
+      },
+      {
+        "version": "3.5.0",
+        "date": "21 January 2020",
+        "changes": [
+          {
+            "type": "rework",
+            "text": "Now causes generators to regress at 100/150/200% of the normal regression rate if survivors stop working on it"
+          }
+        ]
+      },
+      {
+        "version": "2.6.0",
+        "date": "19 March 2019",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Made good skill check regression variable across tiers, now 3/4/5%"
+          },
+          {
+            "type": "buff",
+            "text": "All tiers now affect all survivors"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1005,
@@ -2367,7 +7945,103 @@ const KILLER_PERKS = [
     "name": "Hex: Thrill of the Hunt",
     "character": "General (all killers)",
     "category": "Hex",
-    "description": "Slows all totem-cleansing by 20-40% and notifies you each time a totem is cleansed; protects other hexes and gives intel on survivor totem runs."
+    "description": "When the trial starts, a Dull Totem ignites.\nFor each Dull and Hex Totem remaining, you have 1 Token.\nFor each Token, Survivors bless and cleanse totems 8/10/12% slower.",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "8.4.2",
+        "date": "",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Reduced the cleansing and blessing speed reduction to 8/10/12% (was 10/12/14%)"
+          }
+        ]
+      },
+      {
+        "version": "8.4.0",
+        "date": "28 November 2024",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "No longer grants bonus bloodpoints in the Hunter category for each token"
+          },
+          {
+            "type": "buff",
+            "text": "Survivors' Cleansing and Blessing speed is reduced by 10/12/14% for each Token. (was 8/9/10%)"
+          }
+        ]
+      },
+      {
+        "version": "5.3.0",
+        "date": "19 October 2021",
+        "changes": [
+          {
+            "type": "qol",
+            "text": "Survivor penalty now applies to both Cleansing and Blessing actions (was just Cleansing)."
+          },
+          {
+            "type": "buff",
+            "text": "Penalty stacks increased to 8/9/10% per stack (was 4/5/6%). Maximum penalty increased to 40/45/50% (was 30%)."
+          },
+          {
+            "type": "nerf",
+            "text": "Loud noise notification has been removed"
+          }
+        ]
+      },
+      {
+        "version": "2.6.0",
+        "date": "19 March 2019",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "All tiers now grant 10% more Bloodpoints per remaining totem"
+          }
+        ]
+      },
+      {
+        "version": "1.5.2",
+        "date": "",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Reduced cleansing speed penalty to 4/5/6%"
+          },
+          {
+            "type": "buff",
+            "text": "Increased Hunter Bloodpoint bonus to 6/8/10%"
+          }
+        ]
+      },
+      {
+        "version": "1.5.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "The Killer will now receive a notification when someone starts cleansing a Hex totem"
+          },
+          {
+            "type": "qol",
+            "text": "Tokens will now be granted for each remaining totem on the map"
+          },
+          {
+            "type": "qol",
+            "text": "Removed condition that required a hook save to gain a token"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1006,
@@ -2375,7 +8049,19 @@ const KILLER_PERKS = [
     "name": "Turn Back the Clock",
     "character": "The First / Henry Creel",
     "category": "Gen Control",
-    "description": "After hooking a survivor, activate within 20 m to explode a generator and start regression; reliable targeted gen pressure on every hook."
+    "description": "After hooking a Survivor, for the next 40/50/60s, use Active Ability Button 1 to make target Generator you can see within 20m explode, lose 10% progress and start regressing.\n“Nothing will happen to you... Nothing that you don't deserve!” -Henry Creel",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1007,
@@ -2383,7 +8069,33 @@ const KILLER_PERKS = [
     "name": "Eruption",
     "character": "Nemesis",
     "category": "Gen Control",
-    "description": "Injuring a survivor near a Scourge Hook causes nearby generators to violently explode; pairs with hit-heavy killers for devastating area gen pressure."
+    "description": "Whenever you damage a Generator, when you down a Survivor, all Generators damaged this way:\nExplode, lose 10% progress and start regressing.\nSurvivors repairing them scream, then you see their Auras for 8/10/12s.\nCooldown: 30s.\n\"It can use weapons?\" -Jill Valentine",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "6.1.0",
+        "date": "19 July 2022",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased Generator reduction when a Survivor enters the dying state to 10% (was 6%)"
+          },
+          {
+            "type": "buff",
+            "text": "Increased duration of Incapacitated status effect to 15/20/25 seconds (was 12/14/16 seconds)"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1008,
@@ -2391,7 +8103,73 @@ const KILLER_PERKS = [
     "name": "Pop Goes the Weasel",
     "character": "Clown",
     "category": "Gen Control",
-    "description": "Kicking a generator within 35 seconds of a hook instantly removes 20% progress; the most consistent on-demand gen-regression perk available."
+    "description": "Whenever you hook a Survivor, for the next 35/40/45s, when you damage a Generator, it explodes and loses 15% more progress.",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Now regresses the generator by 15% of the total progress instead of 20% of the current progress"
+          }
+        ]
+      },
+      {
+        "version": "8.0.0",
+        "date": "3 June 2024",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Decreased the amount of progress lost to 20%. (was 30%)"
+          }
+        ]
+      },
+      {
+        "version": "7.0.0",
+        "date": "13 June 2023",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased progress regression percentage to 30% (was 20%)"
+          }
+        ]
+      },
+      {
+        "version": "6.1.0",
+        "date": "19 July 2022",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Changed regression to be 20% of current progress (was 25% of total)"
+          }
+        ]
+      },
+      {
+        "version": "4.3.0",
+        "date": "20 October 2020",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Reduced activation window from 40/50/60 seconds to 35/40/45 seconds"
+          }
+        ]
+      },
+      {
+        "version": "3.0.0",
+        "date": "18 June 2019",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Changed activation window from 30 seconds to 40/50/60 seconds"
+          },
+          {
+            "type": "buff",
+            "text": "Changed regression values from 15/20/25% to 25% for all tiers"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1009,
@@ -2399,7 +8177,39 @@ const KILLER_PERKS = [
     "name": "Grim Embrace",
     "character": "Artist",
     "category": "Gen Control",
-    "description": "Hooking all 4 survivors once blocks every generator for 30 seconds and reveals the obsession; snowballs strongly when you rotate hooks efficiently."
+    "description": "Whenever you hook a Survivor for the first time, earn 1 Token.\nWhen you move 16m away from the hooked Survivor, all Generators are blocked for 6/8/10s.\nWhen you have 4 Tokens, when you move 16m away from the hooked Survivor:\nAll Generators are blocked for 40s.\nYou see the Obsession's Aura for 10s.\n\"Are we nothing but prisoners to our sorrow?\" -Carmina Mora",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "8.0.0",
+        "date": "3 June 2024",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Decreased the block duration before reaching 4 tokens to 6/8/10 seconds. (was 8/10/12 seconds)"
+          }
+        ]
+      },
+      {
+        "version": "7.1.0",
+        "date": "25 July 2023",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased the Obsession aura reveal duration to 6 seconds (was 5)"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1010,
@@ -2407,7 +8217,29 @@ const KILLER_PERKS = [
     "name": "Deadlock",
     "character": "Cenobite / Pinhead",
     "category": "Gen Control",
-    "description": "Each completed generator causes the next highest-progress generator to block for 30 seconds; automatically punishes gen-rush coordination."
+    "description": "Whenever a Generator is completed, the Generator with the most progress is blocked for 15/20/25s.\n\"Nobody escapes us.\" -Pinhead",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "8.0.0",
+        "date": "3 June 2024",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Decreased the block duration to 15/20/25 seconds. (was 20/25/30 seconds)"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1011,
@@ -2415,7 +8247,41 @@ const KILLER_PERKS = [
     "name": "Hex: Undying",
     "character": "Blight",
     "category": "Hex",
-    "description": "When another hex totem is cleansed, its effect transfers here; gives your best hex a second life and reveals survivors who cleanse near it."
+    "description": "When the trial starts, a Dull Totem ignites.\nWhen another Hex Totem is blessed or cleansed, it replaces this one and keeps any Tokens it had.\nYou see the Auras of Survivors within 2/3/4m of Dull Totems.",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "4.5.0",
+        "date": "9 February 2021",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Transferred totems now keep any tokens they may have"
+          },
+          {
+            "type": "mechanic",
+            "text": "When another Hex totem is cleansed, that totem transfers to the Hex: Undying totem and Hex: Undying is deactivated"
+          },
+          {
+            "type": "buff",
+            "text": "Increased activation range from 2 meters for all tiers to 2/3/4 meters"
+          },
+          {
+            "type": "nerf",
+            "text": "Now only reveals auras of survivors around dull totems"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1012,
@@ -2423,7 +8289,37 @@ const KILLER_PERKS = [
     "name": "No Way Out",
     "character": "Trickster",
     "category": "End-Game",
-    "description": "Each first-time hook adds a token delaying exit gate opening at end-game; stacks to a devastating 60-second delay that can close out close matches."
+    "description": "The first time you hook each Survivor, you earn 1 Token.\nWhen all Generators are completed, when a Survivor starts opening an Exit Gate:\nIt is blocked 12s, plus 6/9/12s for each Token.\nYou are alerted.\n\"That sound when you bleed...let me hear it again.\" -Hak Ji-woon",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "5.1.0",
+        "date": "27 July 2021",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased base time from 10 to 12 seconds"
+          },
+          {
+            "type": "buff",
+            "text": "Increased bonus duration from 4/6/8 seconds to 6/9/12 seconds"
+          },
+          {
+            "type": "qol",
+            "text": "Now waits for a survivor to interact with an exit gate switch before activating and triggers a loud noise notification when they do"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1013,
@@ -2431,7 +8327,71 @@ const KILLER_PERKS = [
     "name": "Hex: No One Escapes Death",
     "character": "General (all killers)",
     "category": "End-Game",
-    "description": "After all generators complete, gain Exposed status and a speed boost until a dull totem is cleansed; reliable free comeback mechanic every match."
+    "description": "When all Generators are completed, a Dull Totem ignites:\nSurvivors gain Exposed.\nYou gain 2/3/4% Haste.\nWithin 4m, Survivors see the Hex Totem's Aura, expanding to 24m over 30s.\n\"And the beast became faster and more powerful as if The Entity's shadowy whips were lashing at its back.\"",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "6.1.0",
+        "date": "19 July 2022",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Once the Hex's effect is revealed to the Survivors, its Hex Totem's aura is shown to the Survivors at a range of 4 meters. This range increases steadily over the next 30 seconds to 24 meters"
+          }
+        ]
+      },
+      {
+        "version": "2.3.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Removed the missed attack cooldown speed bonus"
+          },
+          {
+            "type": "nerf",
+            "text": "Reduced movement speed bonus to 2/3/4%"
+          },
+          {
+            "type": "buff",
+            "text": "Now applies the Exposed status effect at all levels"
+          }
+        ]
+      },
+      {
+        "version": "1.5.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Changed to be a Hex perk"
+          },
+          {
+            "type": "buff",
+            "text": "Removed the timer, the effects apply when the exit games are powered and remain until the Hex is cleansed"
+          }
+        ]
+      },
+      {
+        "version": "1.0.5",
+        "date": "",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Added a time limit of 120 seconds and reduced movement speed bonus to 3/4/4%"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1014,
@@ -2439,7 +8399,29 @@ const KILLER_PERKS = [
     "name": "Lethal Pursuer",
     "character": "Nemesis",
     "category": "Information",
-    "description": "Reveals all survivor auras for 9 seconds at match start; the best opening information perk to immediately locate your first chase target."
+    "description": "When the trial starts, you see the Auras of all Survivors for 7/8/9s.\nWhenever you see a Survivor's Aura for a duration, it is 2s longer.\n\"...it knows what it wants and won't stop till it gets it.\" -Carlos Oliveira",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "6.1.0",
+        "date": "19 July 2022",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Any time a Survivor's aura is shown for a period of time, its duration is increased by 2 seconds."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1015,
@@ -2447,7 +8429,41 @@ const KILLER_PERKS = [
     "name": "Hex: Blood Favour",
     "character": "Blight",
     "category": "Hex",
-    "description": "During a chase after a survivor drops a pallet, block that pallet for 3 seconds; brutally effective at pallet-heavy tiles, makes many loops unsafe."
+    "description": "When the trial starts, a Dull Totem ignites.\nWhenever you damage a Survivor, Upright Pallets within 24/28/32m of them are blocked for 15s.\n“It would be no leap of the imagination to suggest that the trials are a biological response of sorts.” -Journal of Talbot Grimes",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "5.3.0",
+        "date": "19 October 2021",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Now triggers on losing a health state (rather than just basic attacks)."
+          },
+          {
+            "type": "buff",
+            "text": "Radius increased to 32 meters (was 16 meters)."
+          },
+          {
+            "type": "buff",
+            "text": "Pallet blocking is now centered around the survivor losing health."
+          },
+          {
+            "type": "buff",
+            "text": "Removed the cooldown"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1016,
@@ -2455,7 +8471,19 @@ const KILLER_PERKS = [
     "name": "Hex: Hive Mind",
     "character": "The First / Henry Creel",
     "category": "Hex",
-    "description": "Converts a dull totem; when 4 generators are completed, all remaining generators explode simultaneously; punishes fast gen-rushing teams in late game."
+    "description": "The first time you hook a Survivor, a Dull Totem ignites.\nThe Auras of Generators show their progress.\nWhen 1 Generator remains:\nAll Generators explode, lose 6/8/10% progress and start regressing.\nThe Hex Totem is extinguished.\n“You... let us in. And now, you are going to have to let us stay.” -Henry Creel",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1017,
@@ -2463,7 +8491,19 @@ const KILLER_PERKS = [
     "name": "Nowhere to Hide",
     "character": "Knight",
     "category": "Information",
-    "description": "Kicking a generator reveals all survivor auras within 24 m for 6 seconds; outstanding information that makes every gen kick doubly valuable."
+    "description": "Whenever you damage a Generator, for 3/4/5s, you see the Auras of Survivors within 24m of you.\n\"Out with you, cowards! Show yourselves!\" - Tarhos Kovács",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1018,
@@ -2471,7 +8511,39 @@ const KILLER_PERKS = [
     "name": "Agitation",
     "character": "Trapper",
     "category": "Utility",
-    "description": "Increases movement speed and reduces struggle effects while carrying a survivor; near-mandatory for basement builds and anti-rescue strategies."
+    "description": "While carrying a Survivor:\nYou gain 6/12/18% Haste.\nYour Terror Radius is 12m larger.\n\"At some point, the excitement of hooking one of us becomes more important than the desire to kill us.\"",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "2.6.2",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Standardised terror radius bonus to 12 meters across all tiers"
+          }
+        ]
+      },
+      {
+        "version": "1.7.0",
+        "date": "14 September 2017",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased terror radius bonus to 6/8/12 meters"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1019,
@@ -2479,7 +8551,63 @@ const KILLER_PERKS = [
     "name": "Barbecue & Chilli",
     "character": "Cannibal / Bubba",
     "category": "Information",
-    "description": "After hooking a survivor, all other survivors' auras are revealed for 4 seconds; the best passive information perk for finding your next target after every hook."
+    "description": "Whenever you hook a Survivor, for 5s, you see the Auras of all Survivors who are at least 60/50/40m away from the hooked Survivor.\n\"I just can't take no pleasure in killing. There's just some things you gotta do. Don't mean you have to like it.\" -Drayton Sawyer",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "7.1.0",
+        "date": "25 July 2023",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased the reveal duration to 5 seconds (was 4)"
+          }
+        ]
+      },
+      {
+        "version": "6.1.0",
+        "date": "19 July 2022",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "No longer rewards bonus bloodpoints"
+          }
+        ]
+      },
+      {
+        "version": "2.6.0",
+        "date": "19 March 2019",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Reduced the minimum distance for aura reading to 40 meters across all tiers"
+          }
+        ]
+      },
+      {
+        "version": "1.7.2",
+        "date": "",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Adjusted the bonus score event when hooking a survivor to only trigger if there is a survivor already on the hook"
+          },
+          {
+            "type": "buff",
+            "text": "Now awards bloodpoints post trial rather than during the game, like the perk \"\"We're Gonna Live Forever\"\""
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1020,
@@ -2487,7 +8615,73 @@ const KILLER_PERKS = [
     "name": "Tinkerer",
     "character": "Hillbilly",
     "category": "Information",
-    "description": "When a generator reaches 70% progress, gain Undetectable for 12 seconds and a notification; lets you silently ambush survivors on key gens."
+    "description": "The first time each Generator has 70% progress:\nYou gain Undetectable for 12/14/16s.\nYou are alerted.\n\"The Hillbilly makes impressive tools out of scraps. Tools aimed at maiming us in creative ways...\" -Notebook",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "6.1.0",
+        "date": "19 July 2022",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Can now only be triggered once on each generator."
+          }
+        ]
+      },
+      {
+        "version": "4.1.0",
+        "date": "28 July 2020",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased Undetectable duration to 12/14/16 seconds (up from 8/10/12 seconds)"
+          },
+          {
+            "type": "buff",
+            "text": "Reduced the trigger percentage to 70% repair progress (down from 85%)"
+          }
+        ]
+      },
+      {
+        "version": "3.4.0",
+        "date": "3 December 2019",
+        "changes": [
+          {
+            "type": "mechanic",
+            "text": "Now grants the Undetectable Status Effect"
+          }
+        ]
+      },
+      {
+        "version": "2.1.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "rework",
+            "text": "Now creates a loud noise notification and reduces the Terror Radius to 0 meters for 8/10/12 seconds when a generator reaches 85% repair progress"
+          }
+        ]
+      },
+      {
+        "version": "1.3.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Now only affects positive modifiers"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1021,
@@ -2495,7 +8689,19 @@ const KILLER_PERKS = [
     "name": "Secret Project",
     "character": "The First / Henry Creel",
     "category": "Gen Control",
-    "description": "When a totem is blessed or cleansed, block random generators for 20-30 seconds and gain Undetectable; heavily punishes any totem interaction."
+    "description": "Whenever a totem is blessed or cleansed, a random unblocked Generator is blocked for 20/25/30s.\nWhenever 1 or more Generators are blocked, you gain Undetectable for 30s.\n“You are a prisoner here, just like me.” -Henry Creel",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1022,
@@ -2503,7 +8709,43 @@ const KILLER_PERKS = [
     "name": "A Nurse's Calling",
     "character": "Nurse",
     "category": "Information",
-    "description": "Reveals auras of survivors healing or being healed within 20-28 m; effectively neutralises healing-heavy teams and forces them to heal in unsafe spots."
+    "description": "Within 28/30/32m of injured Survivors who are healing or being healed, you see their Auras.\n“Still attached to the fragments of her past life, she is drawn to those in need of help.”",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.2.0",
+        "date": "23 September 2025",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased range to 28/30/32 metres (was 20/24/28)."
+          },
+          {
+            "type": "nerf",
+            "text": "No longer affects Survivors who are in the Dying State."
+          }
+        ]
+      },
+      {
+        "version": "1.1.2",
+        "date": "",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Reduced range to 20/24/28 meters"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1023,
@@ -2511,7 +8753,57 @@ const KILLER_PERKS = [
     "name": "Sloppy Butcher",
     "character": "General (all killers)",
     "category": "Utility",
-    "description": "Basic attacks inflict Mangled and Hemorrhage, slowing healing speed and causing wounds to bleed more; strong on every killer with zero effort."
+    "description": "Whenever you damage a Survivor with a basic-attack:\nThey gain Hemorrhage for 70/80/90s.\nThey gain Mangled for 70/80/90s.\nSurvivors with Hemorrhage lose healing progress 25% faster.\n\"It's in its sadistic nature. There is no swift kill as it delights in the obscene spectacle of our agonizing suffering.\"",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "7.6.0",
+        "date": "12 March 2024",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "The Mangled effect is now subject to a timer to give the player choice over waiting it out or healing"
+          },
+          {
+            "type": "buff",
+            "text": "The Hemorrhage status progression has been standardised to 25% for all tiers (was 15/20/25%)"
+          }
+        ]
+      },
+      {
+        "version": "2.1.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Added the mangled status effect"
+          }
+        ]
+      },
+      {
+        "version": "1.0.5",
+        "date": "",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Decreased the frequency of bleeding for tier III"
+          },
+          {
+            "type": "buff",
+            "text": "Increased the frequency of bleeding for tiers I and II"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1024,
@@ -2519,7 +8811,59 @@ const KILLER_PERKS = [
     "name": "Surge",
     "character": "Demogorgon",
     "category": "Gen Control",
-    "description": "Downing a survivor within 32 m of a generator causes it to explode and regress; completely free gen pressure on every down with no extra input."
+    "description": "Whenever you down a Survivor with a basic-attack, Generators within 32m:\nExplode, lose 6/7/8% progress and start regressing.\nSurvivor repairing them scream.\n“The creature appears to have some unknown influence over electricity and nearby electronics.” -Hawkins National Laboratory",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "7.5.0",
+        "date": "30 January 2024",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Does not create a loud noise notification if no progress is lost on the Generator"
+          }
+        ]
+      },
+      {
+        "version": "7.3.3",
+        "date": "",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Reverted to the original name, \"Surge\" with the return of the Stranger Things chapter"
+          }
+        ]
+      },
+      {
+        "version": "6.1.0",
+        "date": "19 July 2022",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "No longer has a cooldown"
+          }
+        ]
+      },
+      {
+        "version": "5.3.0",
+        "date": "19 October 2021",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Renamed from \"Surge\" to \"Jolt\" due to the departure of the Stranger Things chapter"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1025,
@@ -2527,7 +8871,33 @@ const KILLER_PERKS = [
     "name": "Hex: Pentimento",
     "character": "Artist",
     "category": "Hex",
-    "description": "Restoring a cleansed totem as a Pentimento totem applies stacking debuffs (slowdowns, aura blocks, speed boosts); brutally punishes totem-cleansing teams."
+    "description": "You see the Auras of cleansed Totems, and can rekindle each once.\nWithin 16m, Survivors see the Auras of Rekindled Totems.\nWhile a totem is rekindled, Survivors heal and repair 20% slower, plus 1/2/3% for each additional Rekindled Totem.\nWhen all 5 Totems are rekindled at once, they are blocked.\n“A pentimento is concealed art. There is often a desire to see that which is beyond.\" -A Guide to Art & Process",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "8.7.0",
+        "date": "6 May 2025",
+        "changes": [
+          {
+            "type": "rework",
+            "text": "The first Rekindled Totem now slows healing and repairs by 20% with an additional 1/2/3% penalty for each additional Rekindled Totem."
+          },
+          {
+            "type": "nerf",
+            "text": "Survivors cursed by this perk see Rekindled Totems' auras within 16m"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1026,
@@ -2535,7 +8905,43 @@ const KILLER_PERKS = [
     "name": "Hex: Devour Hope",
     "character": "Hag",
     "category": "Hex",
-    "description": "Gain Exposed stacks after safe unhooks; at 5 tokens you can down survivors instantly and mori them; near-unbeatable when the totem survives."
+    "description": "When the trial starts, a Dull Totem ignites.\nWhenever a Survivor is unhooked while you are at least 24m away, earn 1 Token, up to 5:\n2 Tokens | 10s after hooking a Survivor, gain 3/4/5% Haste for 10s.\n3 Tokens | Survivors gain Exposed.\n5 Tokens | You can Kill downed Survivors.\n“If you do nothing, you have their blood on your hands. If you save them, her hunger grows.“",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "2.6.0",
+        "date": "19 March 2019",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Made the Haste effect variable across tiers (3/4/5%)"
+          },
+          {
+            "type": "buff",
+            "text": "Made all perk effects available to all tiers"
+          }
+        ]
+      },
+      {
+        "version": "1.5.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "qol",
+            "text": "Removed the tier III 1 token generator repair penalty and replaced it with the speed boost at 2 tokens"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1027,
@@ -2543,7 +8949,19 @@ const KILLER_PERKS = [
     "name": "Hex: Wretched Fate",
     "character": "Dark Lord / Dracula",
     "category": "Hex",
-    "description": "Survivors who touch a completed generator become Oblivious until another is completed; disrupts team coordination and information-sharing after gens pop."
+    "description": "The first time a Generator is completed, a Dull Totem ignites.\nThe Obsession:\nRepairs 27/30/33% slower.\nSees the Hex Totem's Aura within 12m.\n\"So toil, mortal, toil! Your effort will be for naught!\" - Dracula",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1028,
@@ -2551,7 +8969,29 @@ const KILLER_PERKS = [
     "name": "Bamboozle",
     "character": "Clown",
     "category": "Chase",
-    "description": "Kicking a window blocks it for 20 seconds and increases your vault speed; dramatically reduces loop options in multi-window tiles."
+    "description": "Whenever you vault a Window, it is blocked for Survivors for 8/12/16s.\nYou basic-vault Windows 5/10/15% faster.\nOnly 1 Window can be blocked at a time.",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "2.5.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Updated description to reflect that Bamboozle does not work with pallets"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1029,
@@ -2559,7 +8999,19 @@ const KILLER_PERKS = [
     "name": "Unforeseen",
     "character": "Unknown",
     "category": "Stealth",
-    "description": "After kicking a generator, gain Undetectable until it stops regressing; lets you silently reposition after a kick without alerting nearby survivors."
+    "description": "Whenever you damage a Generator:\nYour Terror Radius is set to that Generator for 22/26/30s and its radius is 32m.\nYou gain Undetectable for that time.\nCooldown: 30s.\n\"Mom, if you find this, I'm sorry...” - Final Journal Entry, 07/12/1991",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1030,
@@ -2567,7 +9019,19 @@ const KILLER_PERKS = [
     "name": "Friends 'til the End",
     "character": "Good Guy / Chucky",
     "category": "Information",
-    "description": "When your obsession is hooked, the new obsession's aura is revealed for 8 seconds; disrupts obsession builds and produces consistent free intel."
+    "description": "Whenever you hook a Survivor that is not the Obsession:\nThe Obsession gains Exposed for 20s.\nYou see the Obsession's Aura for 6/8/10s.\nWhenever you hook the Obsession, another Survivor:\nScreams, then you are alerted.\nBecomes the Obsession.\n\"I got some fresh meat lined up, and I'm not gonna let you spoil it, not this time!\" -Chucky",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1031,
@@ -2575,7 +9039,39 @@ const KILLER_PERKS = [
     "name": "Furtive Chase",
     "character": "Ghostface",
     "category": "Stealth",
-    "description": "Hooking the obsession grants a token reducing your terror radius; stacks up to 4 times and can shrink your terror radius to near zero over the match."
+    "description": "Whenever you hook the Obsession:\nYou gain 10% Haste for 14/16/18s.\nYou gain Undetectable for 14/16/18s.\nWhenever the Obsession is unhooked, the Survivor who unhooked them becomes the Obsession.\n\"You have no idea what I have planned for you. It'll be in the news for weeks: I'll make sure of it.\" –The Ghost Face",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "8.7.0",
+        "date": "6 May 2025",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased Haste effect after hooking the Obsession to 10%. (was 5%)"
+          }
+        ]
+      },
+      {
+        "version": "5.5.0",
+        "date": "25 January 2022",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "No longer loses all tokens when the Obsession is sacrificed or killed."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1032,
@@ -2583,7 +9079,19 @@ const KILLER_PERKS = [
     "name": "Dissolution",
     "character": "Dredge",
     "category": "Chase",
-    "description": "A pallet that is fast-vaulted during a chase breaks 3 seconds later; progressively removes the safest pallets survivors rely on in key loops."
+    "description": "3s after a Survivor takes damage, for 12/16/20s, the next time a Survivor fast-vaults a Pallet while within your Terror Radius, it is destroyed.\n\"The Garden shall be a place of perfect Joy; through Joy, nothing shall stand in our way.\" –Otto Stamper",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1033,
@@ -2591,7 +9099,43 @@ const KILLER_PERKS = [
     "name": "Call of Brine",
     "character": "Onryo / Sadako",
     "category": "Gen Control",
-    "description": "A kicked generator regresses faster for 60 seconds and sends a Loud Noise notification when touched; reliable intel on who is contesting your gens."
+    "description": "Whenever you damage a Generator, it regresses 30/40/50% faster for 70s.\nFor that time, whenever a Survivor hits a good basic Skill Check while repairing that Generator, you are alerted.",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.0.0",
+        "date": "17 June 2025",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased duration to 70 seconds (was 60 seconds)."
+          },
+          {
+            "type": "buff",
+            "text": "Increased bonus Generator regression to 130/140/150% (was 115/120/125%)."
+          }
+        ]
+      },
+      {
+        "version": "6.7.0",
+        "date": "18 April 2023",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Reduced the regression speed to 115/120/125% (was 150/175/200%)"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1034,
@@ -2599,7 +9143,19 @@ const KILLER_PERKS = [
     "name": "Scourge Hook: Floods of Rage",
     "character": "Onryo / Sadako",
     "category": "Information",
-    "description": "When a survivor is unhooked from a Scourge Hook, all other survivors' auras are revealed for 5 seconds; strong information after every Scourge unhook."
+    "description": "When the trial starts, 4 random Hooks become Scourge Hooks.\nWhenever a Survivor is unhooked from a Scourge Hook, you see the Auras of other Survivors for 5/6/7s.",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1035,
@@ -2607,7 +9163,43 @@ const KILLER_PERKS = [
     "name": "Discordance",
     "character": "Legion",
     "category": "Information",
-    "description": "Two or more survivors repairing the same generator triggers a Loud Noise notification and aura reveal; punishes grouping on generators mid-game."
+    "description": "Within 64/96/128m of you, whenever a Generator is being repaired by at least 2 Survivors, you are alerted.\nWhile that Generator is being repaired by at least 2 Survivors, you see its Aura. When it is no longer being repaired by at least 2 Survivors, this ends after 4s.\n\"Smartasses get killed. We always see to that.\" -The Legion",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "4.3.2",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Decreased lingering aura duration to 4 seconds"
+          },
+          {
+            "type": "buff",
+            "text": "Increased range to 64/96/128 meters"
+          }
+        ]
+      },
+      {
+        "version": "4.3.0",
+        "date": "20 October 2020",
+        "changes": [
+          {
+            "type": "rework",
+            "text": "Discordance now has limited range of 32/64/96 meters. It triggers one loud noise for a Generator when it's first marked. The aura of the Generator remains visible as long as the conditions are fulfilled. From the time the conditions are no longer fulfilled, the aura remains for another 8 seconds"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1036,
@@ -2615,7 +9207,39 @@ const KILLER_PERKS = [
     "name": "Coup de Grâce",
     "character": "Twins",
     "category": "Chase",
-    "description": "Each completed generator grants a token enabling a much longer lunge; spending tokens provides a dramatic reach advantage in late-game chases."
+    "description": "Whenever a Generator is completed, you earn 2 Tokens, up to 5.\nWhenever you lunge-attack, spend 1 Token to make it 70/75/80% longer.",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "7.1.0",
+        "date": "25 July 2023",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Now gains 2 tokens per generator completion but remains capped at 5"
+          }
+        ]
+      },
+      {
+        "version": "5.5.0",
+        "date": "25 January 2022",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased lunge distance modifier to 70/75/80% (was 40/50/60%)"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1037,
@@ -2623,7 +9247,19 @@ const KILLER_PERKS = [
     "name": "Starstruck",
     "character": "Trickster",
     "category": "Utility",
-    "description": "While carrying a survivor, nearby healthy survivors become Exposed for 15 seconds; devastating when combined with Agitation to cover large areas."
+    "description": "While carrying a Survivor, Survivors within your Terror Radius gain Exposed. This ends 26/28/30s after:\nThey leave your Terror Radius.\nYou drop or hook the carried Survivor.\nCooldown: 60s.\n\"Enjoy this moment, few get so close.\" -Hak Ji-woon",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1038,
@@ -2631,7 +9267,39 @@ const KILLER_PERKS = [
     "name": "Dragon's Grip",
     "character": "Blight",
     "category": "Gen Control",
-    "description": "After kicking a generator, the next survivor to touch it screams and briefly becomes Exposed; baits survivors off gens and punishes the first touch."
+    "description": "Whenever you damage a Generator, for the next 30s, the first Survivor that repairs that Generator:\nThey scream, then you are alerted to their position for 4s.\nThey gain Exposed for 60s.\nCooldown: 60/45/30s.\n“Such potential in this compound... even the slightest trace causes unnatural effects.” -Journal of Talbot Grimes",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.1.0",
+        "date": "29 July 2025",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Decreased cooldown to 60/45/30 seconds (was 60/50/40)"
+          }
+        ]
+      },
+      {
+        "version": "8.1.0",
+        "date": "16 July 2024",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Decreased the cooldown to 60/50/40 seconds. (was 120/100/80 seconds)"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1039,
@@ -2639,7 +9307,73 @@ const KILLER_PERKS = [
     "name": "Enduring",
     "character": "Hillbilly",
     "category": "Chase",
-    "description": "Reduces pallet stun duration significantly; strong on any killer who gets stunned frequently and wants to maintain chase aggression at pallet-heavy tiles."
+    "description": "While not carrying a Survivor, Pallet-stuns are 40/45/50% shorter.\n\"He stops at nothing.\"",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "3.0.0",
+        "date": "18 June 2019",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Now only affects pallets stuns"
+          },
+          {
+            "type": "buff",
+            "text": "Changed to apply a flat 40/45/50% reduction in stun duration rather than a 50/60/75% increase in recovery speed"
+          }
+        ]
+      },
+      {
+        "version": "2.6.3",
+        "date": "2 April 2019",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Now affects Decisive Strike's stun"
+          }
+        ]
+      },
+      {
+        "version": "1.7.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased stun reduction to 50/60% for tiers I and II"
+          }
+        ]
+      },
+      {
+        "version": "1.2.1d",
+        "date": "",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Unknown"
+          }
+        ]
+      },
+      {
+        "version": "1.2.1",
+        "date": "25 October 2016",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Unknown"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1040,
@@ -2647,7 +9381,39 @@ const KILLER_PERKS = [
     "name": "Fire Up",
     "character": "Freddy / The Nightmare",
     "category": "Utility",
-    "description": "Each completed generator gives a stacking speed bonus to many killer actions; scales into a powerful all-round buff when facing fast gen-rush teams."
+    "description": "Whenever a Generator is completed, earn 1 Token, up to 5.\nFor each Token:\nYou basic-break Pallets and Breakable Walls 4/5/6% faster.\nYou damage Generators 4/5/6% faster.\nYou pick-up and drop Survivors 4/5/6% faster.\nYou basic-vault Windows 4/5/6% faster.\n“Now why don't you just fucking die?” - Freddy Krueger",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "8.5.2",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased the stackable speed bonus to 4/5/6% for each generator (was 3/3.5/4%)"
+          }
+        ]
+      },
+      {
+        "version": "2.6.0",
+        "date": "19 March 2019",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Simplified buff scaling to 3/3.5/4% per completed generator"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1041,
@@ -2655,7 +9421,39 @@ const KILLER_PERKS = [
     "name": "Scourge Hook: Gift of Pain",
     "character": "Cenobite / Pinhead",
     "category": "Utility",
-    "description": "Survivors unhooked from a Scourge Hook suffer Hemorrhage and reduced healing speed for the rest of the match; cumulative punishment across multiple hooks."
+    "description": "When the trial starts, 4 random Hooks become Scourge Hooks.\nWhenever a Survivor is unhooked from a Scourge Hook:\nThey gain Hemorrhage for 90s.\nThey gain Mangled for 90s.\nWhen they are healed, until they take damage, they heal and repair 10/13/16% slower.\n\"We'll tear your soul apart.\" -Pinhead",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "7.6.0",
+        "date": "12 March 2024",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "The Mangled effect is now subject to a timer to give the player choice over waiting it out or healing"
+          }
+        ]
+      },
+      {
+        "version": "6.1.0",
+        "date": "19 July 2022",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased Healing and Repairing speed penalty to 10/13/16% (was 7/8/9%)"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1042,
@@ -2663,7 +9461,29 @@ const KILLER_PERKS = [
     "name": "Thrilling Tremors",
     "character": "Ghostface",
     "category": "Gen Control",
-    "description": "After picking up a survivor, all generators not being repaired are blocked for 16 seconds and their locations are revealed; passive gen-lock on carries."
+    "description": "Whenever you pick-up a Survivor, all Generators not being repaired are blocked for 16s. Cooldown: 40/35/30s.\n\"The night assists me and it's endless here.\" -The Ghost Face",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.0.0",
+        "date": "17 June 2025",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Reduced cooldown to 40/35/30 seconds (was 100/80/60 seconds)."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1043,
@@ -2671,7 +9491,19 @@ const KILLER_PERKS = [
     "name": "Scourge Hook: Jagged Compass",
     "character": "Houndmaster",
     "category": "Gen Control",
-    "description": "Hooking on a Scourge Hook causes the nearest generator to regress for 30 seconds; completely passive gen regression requiring no additional input."
+    "description": "When the trial starts, 4 random Hooks become Scourge Hooks.\nWhenever a Survivor is unhooked, the Hook becomes a Scourge Hook.\nWhenever you hook a Survivor on a Scourge Hook, for 6/8/10s, you see the Aura of the Generator with the most progress.\n\"Drop anchor! I will chart us a new course.\" -Portia Maye",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1044,
@@ -2679,7 +9511,65 @@ const KILLER_PERKS = [
     "name": "Hex: Crowd Control",
     "character": "Trickster",
     "category": "Hex",
-    "description": "Survivors who fast-vault a window in a chase trigger this hex, briefly blocking that window; discourages window-spamming at key loop tiles."
+    "description": "The first time a Survivor medium or fast-vaults a Window, a Dull Totem ignites.\nThe last 4/5/6 Windows Survivors medium or fast-vault are blocked.\nYou basic-vault blocked Windows 15% faster.\nYou see the Auras of blocked Windows within 24m.\n\"You have no control. People like you never did.\" -Hak Ji-woon",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "The Hex Totem is now ignited the first time a Survivor medium or fast-vaults a Window."
+          },
+          {
+            "type": "buff",
+            "text": "Increased the max number of blocked Windows to 4/5/6 (was 3/4/5)"
+          },
+          {
+            "type": "buff",
+            "text": "Now increases your vault speed on blocked Windows by 15%"
+          },
+          {
+            "type": "buff",
+            "text": "Now reveals the Auras of blocked Windows within 24m"
+          }
+        ]
+      },
+      {
+        "version": "8.3.0",
+        "date": "8 October 2024",
+        "changes": [
+          {
+            "type": "rework",
+            "text": "The last 3/4/5 vaults that Survivors rush vault are blocked by the Entity (previously applied to vaults within the last 14/17/20 seconds)"
+          },
+          {
+            "type": "buff",
+            "text": "Vaults are blocked until the Hex Totem is cleansed"
+          }
+        ]
+      },
+      {
+        "version": "7.1.0",
+        "date": "25 July 2023",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased the window block duration to 40/50/60 seconds (was 14/17/20)"
+          }
+        ]
+      },
+      {
+        "version": "5.1.0",
+        "date": "27 July 2021",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased effect duration to 14/17/20 seconds"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1045,
@@ -2687,7 +9577,49 @@ const KILLER_PERKS = [
     "name": "Predator",
     "character": "Wraith",
     "category": "Information",
-    "description": "Scratch marks appear slightly sooner and are brighter; minor but consistent tracking improvement for all basic-attack killers in close chases."
+    "description": "When you stop chasing a Survivor, you see their Aura for 4s. Cooldown: 60/50/40s.\n\"Never stop moving and hope you're always two steps ahead of the beast.\" -Notebook",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "8.3.2",
+        "date": "",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Decreased the duration of the aura reveal to 4 seconds (was 6 seconds)"
+          }
+        ]
+      },
+      {
+        "version": "8.3.0",
+        "date": "8 October 2024",
+        "changes": [
+          {
+            "type": "rework",
+            "text": "Now reveals the aura of Survivors who escape a chase for 6 seconds with a 60/50/40 second cooldown"
+          }
+        ]
+      },
+      {
+        "version": "2.1.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "mechanic",
+            "text": "Changed the way scratch marks are distributed - a smaller cone rather than a longer duration."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1046,
@@ -2695,7 +9627,19 @@ const KILLER_PERKS = [
     "name": "Rapid Brutality",
     "character": "Xenomorph",
     "category": "Chase",
-    "description": "After a basic attack, your movement speed no longer slows; lets you close the gap faster after landing a hit for immediate follow-up pressure."
+    "description": "Whenever you damage a Survivor with a basic-attack, you gain 5% Haste for 8/9/10s.\nWhile chasing a Survivor, you cannot gain Bloodlust.\n“Catch it, put it in the airlock, get rid of it.” –Dallas",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1047,
@@ -2703,7 +9647,77 @@ const KILLER_PERKS = [
     "name": "Remember Me",
     "character": "Freddy / The Nightmare",
     "category": "End-Game",
-    "description": "Each hit on the obsession adds a token increasing exit gate opening time; builds to a massive 32-second gate delay that can close out close end-games."
+    "description": "Whenever the Obsession takes damage, you earn 1 Token, up to 3/4/5.\nFor each Token, Survivors who are not the Obsession open Exit Gates 30% slower.\n“You don't remember? You must. You're my number one, and you'll never wake up again.” - Freddy Krueger",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.0.0",
+        "date": "17 June 2025",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Updated description to more accurately reflect its in-game effect."
+          }
+        ]
+      },
+      {
+        "version": "8.5.2",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased the maximum number of tokens to 3/4/5 (was 2/3/4)"
+          },
+          {
+            "type": "buff",
+            "text": "Token limit increase means the maximum opening time increase is now 18/24/30 (was 12/18/24)"
+          }
+        ]
+      },
+      {
+        "version": "7.1.0",
+        "date": "25 July 2023",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Now increases exit gate opening time by 6 seconds for each token (was 4)"
+          },
+          {
+            "type": "note",
+            "text": "Made the limit of 2/3/4 tokens worth of duration clearer"
+          }
+        ]
+      },
+      {
+        "version": "5.5.0",
+        "date": "25 January 2022",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Trigger condition changed to the Obsession losing a health state (was triggered on basic attack only)"
+          }
+        ]
+      },
+      {
+        "version": "2.7.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Reduced penalty per hit to 4 seconds with a new maximum of 8/12/16 additional seconds"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1048,
@@ -2711,7 +9725,19 @@ const KILLER_PERKS = [
     "name": "Merciless Storm",
     "character": "Onryo / Sadako",
     "category": "Gen Control",
-    "description": "When a generator reaches 90% completion, trigger a demanding skill check; failure regresses the gen; creates clutch last-second intervention moments."
+    "description": "The first time each Generator has 90% progress: Survivors repairing it get special Skill Checks. If they miss one of these or stop repairing, that Generator is blocked for 16/18/20s.",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1049,
@@ -2719,7 +9745,29 @@ const KILLER_PERKS = [
     "name": "Terminus",
     "character": "Mastermind / Wesker",
     "category": "End-Game",
-    "description": "When end-game collapse begins, all uninjured survivors become Broken for 60 seconds; prevents last-second heals before escaping through exit gates."
+    "description": "When all Generators are completed: all injured, downed, and hooked Survivors gain Broken.\nWhen an Exit Gate is opened, this ends after 35/40/45s.",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Updated to trigger earlier when Generators are completed to block healing abilities of Survivors occurring simultaneously."
+          }
+        ]
+      },
+      {
+        "version": "9.0.0",
+        "date": "17 June 2025",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased Broken duration once exit gates are open to 35/40/45 seconds (was 20/25/30 seconds)."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1050,
@@ -2727,7 +9775,29 @@ const KILLER_PERKS = [
     "name": "Coulrophobia",
     "character": "Clown",
     "category": "Utility",
-    "description": "Survivors within your terror radius heal 50% slower; area-of-effect healing debuff that punishes grouped healing strategies when you patrol."
+    "description": "Survivors within your Terror Radius:\nHeal 30/40/50% slower.\nWhile healing, basic Skill Checks spin 50% faster.",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "6.1.0",
+        "date": "19 July 2022",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Healing Skill Checks move 50% faster for Survivors under the effect of this perk."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1051,
@@ -2735,7 +9805,19 @@ const KILLER_PERKS = [
     "name": "Phantom Fear",
     "character": "Animatronic / Springtrap",
     "category": "Information",
-    "description": "When a survivor exits the Oblivious status near you, they scream and their aura is revealed for a few seconds; reveals survivors escaping traps or Oblivious effects."
+    "description": "Whenever a Survivor within your Terror Radius looks at you, they scream, then you see their Aura for 2s. Cooldown: 80/70/60s.\n\"Excellent. Your screams please me.\" -Springtrap",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1052,
@@ -2743,7 +9825,49 @@ const KILLER_PERKS = [
     "name": "Hex: The Third Seal",
     "character": "Hag",
     "category": "Hex",
-    "description": "Survivors you damage with basic attacks become Blind; denies aura reading across the whole team and heavily hinders coordination."
+    "description": "When the trial starts, a Dull Totem ignites.\nWhenever you damage a Survivor, they gain Blindness.\nThis applies for up to 2/3/4 Survivors.\n“She touched your skin, you bear the witch's mark!”",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "5.3.0",
+        "date": "19 October 2021",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Blindness effect now triggers off basic attacks and special attacks (was just basic attacks)"
+          }
+        ]
+      },
+      {
+        "version": "1.9.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Blindness status effect now blocks auras of hooked and downed survivors"
+          }
+        ]
+      },
+      {
+        "version": "1.4.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Now affects the aura reading of Maps"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1053,
@@ -2751,7 +9875,33 @@ const KILLER_PERKS = [
     "name": "Alien Instinct",
     "character": "Xenomorph",
     "category": "Information",
-    "description": "After hooking a survivor, the furthest survivor from the hook has their aura revealed for 6 seconds; passive information on the safest survivor after every hook."
+    "description": "Whenever you hook a Survivor, the farthest injured Survivor:\nGains Oblivious for 40/50/60s.\nYou see their Aura for 8s.\n“Yellow light's for my eyes only.” –Dallas",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "8.6.0",
+        "date": "2 April 2025",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased aura reveal duration to 8 seconds (was 5 seconds)"
+          },
+          {
+            "type": "buff",
+            "text": "Increased Oblivious duration to 40/50/60 seconds (was 16/18/20 seconds)"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1054,
@@ -2759,7 +9909,53 @@ const KILLER_PERKS = [
     "name": "Brutal Strength",
     "character": "Trapper",
     "category": "Utility",
-    "description": "Increases the speed at which you break generators, pallets and breakable walls by 20-30%; broadly useful quality-of-life for M1 killers who rely on pallet breaks."
+    "description": "You basic-break Pallets and Breakable Walls, and damage Generators 10/15/20% faster.\n\"It's more than muscles. A dark power motivates the beast.\"",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "2.1.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Effect now applies to Generators as well"
+          }
+        ]
+      },
+      {
+        "version": "1.7.0",
+        "date": "14 September 2017",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Reduced destruction speed to 10/15/20%"
+          },
+          {
+            "type": "note",
+            "text": "Base pallet speed was increased by 15% in this patch (3 seconds to 2.6)"
+          }
+        ]
+      },
+      {
+        "version": "1.0.5",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased destruction speed to 20/30/40%"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1055,
@@ -2767,7 +9963,43 @@ const KILLER_PERKS = [
     "name": "Leverage",
     "character": "Skull Merchant",
     "category": "Utility",
-    "description": "Each injured or dead survivor reduces Scourge Hook sabotage repair speed; increasingly oppressive in 3-gen scenarios with multiple injured survivors."
+    "description": "Whenever a Survivor unhooks another or themselves, they heal 20/25/30% slower for 60s.\n“Good. Now we can move in for the kill.” -Adriana Imai",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.2.0",
+        "date": "23 September 2025",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Decreased healing speed reduction value to 20/25/30% (was 30/40/50%)."
+          },
+          {
+            "type": "buff",
+            "text": "Increased healing speed reduction duration to 60 seconds (was 30 seconds)."
+          }
+        ]
+      },
+      {
+        "version": "8.3.0",
+        "date": "8 October 2024",
+        "changes": [
+          {
+            "type": "rework",
+            "text": "No longer token based, now reduces the healing speed of an unhooking Survivor by 30/40/50% for 30 seconds."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1056,
@@ -2775,7 +10007,19 @@ const KILLER_PERKS = [
     "name": "Rancor",
     "character": "Spirit",
     "category": "End-Game",
-    "description": "After all generators are complete, reveal your obsession's aura periodically and gain the ability to mori them; strong finishing tool in the end-game."
+    "description": "Whenever a Generator is completed:\nYou are alerted to the position of all Survivors for 3s.\nThe Obsession sees your Aura for 5/4/3s.\nWhen all Generators are completed:\nThe Obsession gains Exposed.\nYou can Kill the Obsession.",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1057,
@@ -2783,7 +10027,57 @@ const KILLER_PERKS = [
     "name": "Mindbreaker",
     "character": "Demogorgon",
     "category": "Gen Control",
-    "description": "Survivors repairing generators suffer Exhaustion while the gen is not at maximum regression rate; directly counters exhaustion-perk looping strategies."
+    "description": "While Survivors are repairing a Generator:\nThey gain Blindness.\nThey gain Exhausted.\nWhen they stop repairing a Generator, this ends after 3/4/5s.\n\"The specimen's apparent telepathic ability can evoke feelings of dread and fatigue in nearby individuals.\" -Hawkins National Laboratory",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "7.3.3",
+        "date": "",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Reverted to the original name, \"Mindbreaker\" with the return of the Stranger Things chapter"
+          }
+        ]
+      },
+      {
+        "version": "5.3.0",
+        "date": "19 October 2021",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Now applies Exhausted and Blindness to survivors (was just Exhausted)"
+          },
+          {
+            "type": "note",
+            "text": "Renamed from \"Mindbreaker\" to \"Fearmonger\""
+          }
+        ]
+      },
+      {
+        "version": "4.3.0",
+        "date": "20 October 2020",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased Exhaustion duration from 1/2/3 second(s) to 3/4/5 seconds"
+          },
+          {
+            "type": "buff",
+            "text": "Removed generator progress condition"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1058,
@@ -2791,7 +10085,33 @@ const KILLER_PERKS = [
     "name": "Genetic Limits",
     "character": "Singularity",
     "category": "Chase",
-    "description": "After a Hindered survivor is no longer slowed, inflict Exhaustion on them; excellent on killers whose powers can apply the Hindered status effect."
+    "description": "Whenever a Survivor takes damage, they gain Exhausted for 6/7/8s.\n“THE ORGANIC BODY IS SO LIMITED.” –HUX-A7-13",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Updated to apply the Exhausted status effect simultaneously when the health state loss is recognized on Survivors, not afterwards."
+          }
+        ]
+      },
+      {
+        "version": "8.3.0",
+        "date": "8 October 2024",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Now applies to Survivors who finish a healing action rather than when they lose a health state"
+          },
+          {
+            "type": "nerf",
+            "text": "Reduced the Exhausted effect duration to 6/7/8 seconds (was 24/28/32)"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1059,
@@ -2799,7 +10119,39 @@ const KILLER_PERKS = [
     "name": "Overwhelming Presence",
     "character": "Doctor",
     "category": "Utility",
-    "description": "Survivors within your terror radius deplete item charges much faster; punishes toolbox, flashlight and medkit-heavy teams with zone pressure."
+    "description": "Whenever a Survivor uses an item within 32m of you, they gain Exhausted for 15s.\nWhenever a Survivor within 32m of you gains Exhausted, you see the closest Exhausted Survivor's Aura for 2/3/4s. Cooldown: 25s.\n\"Shit!! I dropped the gauze!\"",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.1.0",
+        "date": "29 July 2025",
+        "changes": [
+          {
+            "type": "rework",
+            "text": "Reworked to cause Exhaustion on Survivors who start using an item within 32 metres (previous effect was Terror Radius based and increased the item consumption rate). Also reveals the aura of the closest Exhausted Survivor when a Survivor gains the Exhausted status within 32 metres."
+          }
+        ]
+      },
+      {
+        "version": "1.7.0",
+        "date": "14 September 2017",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased item consumption rate penalty from 40/45/50% to 80/90/100%"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1060,
@@ -2807,7 +10159,59 @@ const KILLER_PERKS = [
     "name": "Scourge Hook: Hangman's Trick",
     "character": "Pig / Amanda Young",
     "category": "Information",
-    "description": "Survivors who sabotage a Scourge Hook scream and reveal their aura for 8 seconds; deters and immediately exposes hook saboteurs near you."
+    "description": "When the trial starts, 4 random Hooks become Scourge Hooks.\nWhile carrying a Survivor, you see the Auras of Survivors within 12/14/16m of Scourge Hooks.\nWhenever a Survivor starts sabotaging a Hook, you are alerted.\n\"No excuses, no equivocations… No crying.\" -Amanda Young",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.1.0",
+        "date": "29 July 2025",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased aura reading range to 12/14/16 meters (was 8/10/12)."
+          }
+        ]
+      },
+      {
+        "version": "7.1.0",
+        "date": "25 July 2023",
+        "changes": [
+          {
+            "type": "rework",
+            "text": "Now reveals the auroa of survivors within 8/9/10 meters of scourge hooks (was 2/4/6 of regular ones)"
+          }
+        ]
+      },
+      {
+        "version": "3.6.0",
+        "date": "10 March 2020",
+        "changes": [
+          {
+            "type": "rework",
+            "text": "Replaced repair timer functionality with aura reading of survivors within 2/4/6 meters of a hook"
+          }
+        ]
+      },
+      {
+        "version": "2.1.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Now reduces the automatic repair timer on Sabotaged Bear Traps by 60 seconds"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1061,
@@ -2815,7 +10219,47 @@ const KILLER_PERKS = [
     "name": "Hex: Retribution",
     "character": "Deathslinger",
     "category": "Hex",
-    "description": "When a survivor cleanses any dull totem, all survivors become Oblivious for 30 seconds and the cleanser's aura is revealed; punishes dull totem cleanup."
+    "description": "When the trial starts, a Dull Totem ignites.\nWhenever a Survivor starts blessing or cleansing a Totem, they gain Oblivious for 40/50/60s.\nWhenever a Hex Totem is blessed or cleansed, you see the Auras of all Survivors for 20s.\n\"Bloody fool, you pulled the trigger on yourself.\" -Caleb Quinn",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.0.0",
+        "date": "17 June 2025",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased the Oblivious duration to 40/50/60 seconds (was 35/40/56 seconds)."
+          },
+          {
+            "type": "buff",
+            "text": "Increased the reveal duration on Hex Totem cleanse to 20 seconds (was 15 seconds)."
+          }
+        ]
+      },
+      {
+        "version": "5.3.0",
+        "date": "19 October 2021",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Oblivious condition changed to trigger from interacting with any type of totem (was just cleansing hex totems)"
+          },
+          {
+            "type": "buff",
+            "text": "Increased aura reveal time to 15 seconds (was 10 seconds)"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1062,
@@ -2823,7 +10267,19 @@ const KILLER_PERKS = [
     "name": "Hex: Haunted Ground",
     "character": "Spirit",
     "category": "Hex",
-    "description": "Two hex totems spawn; when either is cleansed, all survivors become Exposed for 60 seconds and the cleansed totem is revealed; high-risk high-reward burst exposure."
+    "description": "When the trial starts, 2 Dull Totems ignite.\nWhen either of those Hex Totems is blessed or cleansed:\nAll Survivors gain Exposed for 40/50/60s.\nThe other Totem is extinguished.\n“Her home became profane.”",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1063,
@@ -2831,7 +10287,19 @@ const KILLER_PERKS = [
     "name": "Forever Entwined",
     "character": "Ghoul / Kaneki",
     "category": "Gen Control",
-    "description": "Power hits generate tokens; spend tokens to block generators near a hooked survivor briefly; a zoning tool tied to Ghoul's offensive power."
+    "description": "Whenever a Survivor takes damage, you earn 1 Token, up to 6/7/8.\nFor each Token:\nYou hook Survivors 4% faster.\nYou pick-up and drop Survivors 4% faster.\n\"You tried to devour me so you have no room to complain if I eat you, do you?\" -Ken Kaneki",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1064,
@@ -2839,7 +10307,53 @@ const KILLER_PERKS = [
     "name": "Zanshin Tactics",
     "character": "Oni",
     "category": "Information",
-    "description": "Reveals the auras of breakable pallets, vaultable windows and dropped pallets near you; valuable map-awareness tool for learning loop geometry."
+    "description": "Within 32m, you see the Auras of Pallets and windows.\nWhenever a Survivor drops a Pallet, you see their Aura for 3/4/5s.\n“Within your enemy's strength is weakness.” -Renjiro's Doctrine 12:5",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "8.3.2",
+        "date": "",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Decreased the duration of the aura reveal to 3/4/5 seconds (was 6/7/8 seconds)"
+          }
+        ]
+      },
+      {
+        "version": "8.3.0",
+        "date": "8 October 2024",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Now reveals the aura of Survivors who drop a pallet for 6/7/8 seconds"
+          },
+          {
+            "type": "nerf",
+            "text": "No longer reveals the aura of Breakable Walls"
+          }
+        ]
+      },
+      {
+        "version": "4.7.0",
+        "date": "4 May 2021",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Removed cooldown"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1065,
@@ -2847,7 +10361,29 @@ const KILLER_PERKS = [
     "name": "Infectious Fright",
     "character": "Plague",
     "category": "Information",
-    "description": "Putting a survivor in the dying state causes all survivors within 24 m to scream and reveal their auras; excellent chain-down information on every down."
+    "description": "Whenever a Survivor is downed, Survivors within your Terror Radius scream and you are alerted for 4/5/6s.\n“Horror overcomes the heart of infidels who cry at the feet of the fallen.” (Hymn of Praise, 11. 4)",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "3.1.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "No longer limited to basic attacks, will now trigger whenever a Survivor is put into the dying state"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1066,
@@ -2855,7 +10391,51 @@ const KILLER_PERKS = [
     "name": "Ultimate Weapon",
     "character": "Xenomorph",
     "category": "Information",
-    "description": "After opening a locker, all survivors within 32 m scream and reveal their auras; one of the best freely-activated information perks available to all killers."
+    "description": "Whenever you search a Locker, Survivors within 40m:\nGain Blindness for 30s.\nScream.\nCooldown: 55/50/45s.\n“I can't lie to you about your chances, but... you have my sympathies.” –Ash",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.2.0",
+        "date": "23 September 2025",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased range when opening a locker to 40 meters (was 32 meters)."
+          },
+          {
+            "type": "buff",
+            "text": "Reduced cooldown to 55/50/45 seconds (was 80/70/60 seconds)."
+          }
+        ]
+      },
+      {
+        "version": "7.7.0",
+        "date": "23 April 2024",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Now activates for 15 seconds (was 30 seconds)."
+          },
+          {
+            "type": "nerf",
+            "text": "Now reveals Survivor auras for 3 seconds instead of causing them to scream and show their position."
+          },
+          {
+            "type": "nerf",
+            "text": "Increased cooldown to 80/70/60 seconds (was 40/35/30 seconds)."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1067,
@@ -2863,7 +10443,29 @@ const KILLER_PERKS = [
     "name": "Languid Touch",
     "character": "Lich / Vecna",
     "category": "Chase",
-    "description": "Survivors affected by your power suffer Exhaustion for a period; excellent on Vecna whose varied spells can trigger this frequently and reliably."
+    "description": "Whenever a Survivor within 36m of you scares a Crow, they gain Exhausted for 6/8/10s. Cooldown: 5s.\n“Submit to me. It is inevitable.” - Vecna",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "8.4.0",
+        "date": "28 November 2024",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Reduced the cooldown to 5 seconds (was 20)"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1068,
@@ -2871,7 +10473,49 @@ const KILLER_PERKS = [
     "name": "Save the Best for Last",
     "character": "The Shape / Myers",
     "category": "Chase",
-    "description": "Attacking non-obsession survivors gains tokens that reduce hit-recovery time; spending tokens rewards efficient obsession tracking with faster follow-up attacks."
+    "description": "Whenever you damage a Survivor who is not the Obsession with a basic-attack, you earn 1 Token, up to 6/7/8.\nFor each Token, your basic-attack cooldown are 4% shorter.\nWhenever the Obsession takes damage, lose 2 Tokens.\nWhile the Obsession is dead, you cannot earn Tokens.\n\"Death has come to your little town, sheriff.\" -Dr. Sam Loomis",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "2.1.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "mechanic",
+            "text": "Now token based, tokens are gained by attacking Survivors who are not the Obsession. Each token is worth a stackable 5% decreased cooldown on successful attacks. Attacking the Obsession makes you lose 4/3/2 tokens."
+          }
+        ]
+      },
+      {
+        "version": "1.9.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Save The Best for Last's text and functionality has been updated. The successful attack cooldown will not be lost when changing targets during a chase and will continue to be active as long as a chase is held for more than 20 seconds."
+          }
+        ]
+      },
+      {
+        "version": "1.5.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "mechanic",
+            "text": "Removed the flat successful and missed attack cooldowns from STBFL and replaced them with a Successful attack cooldown that is triggered after chasing a survivor for 20 consecutive seconds."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1069,
@@ -2879,7 +10523,19 @@ const KILLER_PERKS = [
     "name": "Hex: Plaything",
     "character": "Cenobite / Pinhead",
     "category": "Hex",
-    "description": "Each first-time hook activates a hex totem inflicting Oblivious on the hooked survivor; denies aura-reading to multiple survivors simultaneously."
+    "description": "The first time you hook each Survivor, they are hexed and a Dull Totem ignites.\nFor 90s, the Hex Totem is blocked to other Survivors.\nThe hexed Survivors:\nGain Oblivious.\nWithin 24/20/16m of the Hex totem, they see it's Aura.\n\"We came. Now you must come with us. Taste our pleasures.\" -Pinhead",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1070,
@@ -2887,7 +10543,53 @@ const KILLER_PERKS = [
     "name": "Oppression",
     "character": "Twins",
     "category": "Gen Control",
-    "description": "Kicking a generator causes three other random generators to regress simultaneously; massive area-wide gen regression with one input."
+    "description": "Whenever you damage a Generator, up to 4 other Generators start regressing. Survivors repairing them get a special Skill Check. Cooldown: 45/40/35s.\n\"Damn them as they would damn us.\" -Charlotte Deshayes",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.2.0",
+        "date": "23 September 2025",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased random generator selection to 4 (was 3)."
+          },
+          {
+            "type": "buff",
+            "text": "Decreased cooldown to 45/40/35 seconds (was 60/50/40 seconds)."
+          }
+        ]
+      },
+      {
+        "version": "8.1.0",
+        "date": "16 July 2024",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Decreased the cooldown to 60/50/40 seconds. (was 120/100/80 seconds)"
+          }
+        ]
+      },
+      {
+        "version": "7.5.0",
+        "date": "30 January 2024",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Only causes a regression event on the Generator that was kicked"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1071,
@@ -2895,7 +10597,63 @@ const KILLER_PERKS = [
     "name": "Franklin's Demise",
     "character": "Cannibal / Bubba",
     "category": "Utility",
-    "description": "Survivors you hit lose their held item which depletes on the ground; destroys flashlights, medkits and toolboxes over time with no special play required."
+    "description": "Whenever you damage a Survivor with a basic attack, they drop their item.\nWithin 32/48/64m, you see the Auras of dropped items.\n\"Sally, I hear something. Stop! Stop!\" - Franklin",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.1.0",
+        "date": "29 July 2025",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased item aura reading range to 32/48/64 meters (was 32/32/32)."
+          },
+          {
+            "type": "nerf",
+            "text": "No longer causes dropped items to lose charges over time."
+          }
+        ]
+      },
+      {
+        "version": "5.0.0",
+        "date": "15 June 2021",
+        "changes": [
+          {
+            "type": "rework",
+            "text": "The perk \"\"Franklin's Demise\"\" will no longer destroy items. Instead, it will drain charge from items over time and leave them empty."
+          }
+        ]
+      },
+      {
+        "version": "4.1.0",
+        "date": "28 July 2020",
+        "changes": [
+          {
+            "type": "rework",
+            "text": "Instead of the item losing charges when dropped, the Entity will consume the item after 150/120/90 seconds if it is not picked up. Additionally, Franklin's Demise will reveal the aura of items on the ground within 32 meters."
+          }
+        ]
+      },
+      {
+        "version": "1.7.2",
+        "date": "",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Changed to only work on basic attacks"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1072,
@@ -2903,7 +10661,47 @@ const KILLER_PERKS = [
     "name": "Gearhead",
     "character": "Deathslinger",
     "category": "Information",
-    "description": "After downing a survivor, great skill checks on generators reveal the repairer's aura briefly; inconsistent information that requires survivor mistakes."
+    "description": "Whenever a Survivor takes damage, for the next 30s, whenever a Survivor repairing a Generator hits a good basic Skill Check, you see their Aura for 6/7/8s.\n\"Sometimes a man's best work is what puts him in the grave.\" -The prison warden",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "6.7.0",
+        "date": "18 April 2023",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Now triggers on Good Skill Checks instead of Great Skill Checks"
+          },
+          {
+            "type": "buff",
+            "text": "Now triggers for every Skill Check while it is active (previously just the first Skill Check)"
+          }
+        ]
+      },
+      {
+        "version": "5.5.0",
+        "date": "25 January 2022",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Now activates on health state changes"
+          },
+          {
+            "type": "rework",
+            "text": "While Gearhead is active, the next time a Survivor completes a Great Skill Check while repairing, their Aura is revealed to you for 6/8/10 seconds. Gearhead then deactivates."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1073,
@@ -2911,7 +10709,75 @@ const KILLER_PERKS = [
     "name": "Spies from the Shadows",
     "character": "General (all killers)",
     "category": "Information",
-    "description": "Crows disturbed by survivors within 36 m send a notification; very minor tracking benefit with limited range and slow notification speed."
+    "description": "Whenever a Survivor scares a Crow within 20/28/36m of you, you are alerted. Cooldown: 5s.\n\"In the shadows they torment, scarring our minds with each scream.\"",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "2.6.0",
+        "date": "19 March 2019",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Added a 5 second cooldown between perk activations"
+          },
+          {
+            "type": "nerf",
+            "text": "Reduced the range from 32/40/48 to 20/28/36 meters"
+          }
+        ]
+      },
+      {
+        "version": "2.5.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased the changes of a visual notification to 100% for all tiers"
+          },
+          {
+            "type": "buff",
+            "text": "Increased the notification range from 16/24/36 to 32/40/48 meters"
+          },
+          {
+            "type": "qol",
+            "text": "Added crow outline in the Loud Noise notifications"
+          }
+        ]
+      },
+      {
+        "version": "1.0.5",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased the range to 16/24/36 meters (up from 12/24/36)"
+          },
+          {
+            "type": "buff",
+            "text": "Increased the odds of triggering to 50/50/75% (up from 25/50/75%)"
+          }
+        ]
+      },
+      {
+        "version": "1.0.2",
+        "date": "",
+        "changes": [
+          {
+            "type": "qol",
+            "text": "No longer triggers when the killer disturbs the crows"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1074,
@@ -2919,7 +10785,43 @@ const KILLER_PERKS = [
     "name": "Human Greed",
     "character": "Dark Lord / Dracula",
     "category": "Stealth",
-    "description": "Opening a chest grants Undetectable for 30 seconds; extremely situational and only worthwhile in very specific locker or ambush builds."
+    "description": "Whenever a Survivor gets within 8m of a locked Chest, you see their Aura for 3/4/5s.\nYou can lock unlocked Chests. Cooldown: 10s.\nYou see the Auras of locked Chests.\n\"Come running, one and all, and see what fortune awaits you.\" - Dracula",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "8.4.1",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased the aura reveal duration to 3/4/5 seconds (was 3 seconds for all tiers)"
+          }
+        ]
+      },
+      {
+        "version": "8.4.0",
+        "date": "28 November 2024",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Reduced the cooldown on kicking chests to close them to 30/25/20 seconds (was 60/45/30)"
+          },
+          {
+            "type": "buff",
+            "text": "Survivor's no longer open closed chests 50% faster"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1075,
@@ -2927,7 +10829,49 @@ const KILLER_PERKS = [
     "name": "Trail of Torment",
     "character": "Executioner / Pyramid Head",
     "category": "Stealth",
-    "description": "Kicking a generator grants Undetectable until it stops regressing; brief stealth window for repositioning after a kick."
+    "description": "Whenever you damage a Generator, until it stops regressing:\nYou gain undetectable.\nSurvivors see that Generator's Aura.\nCooldown: 60/45/30s.",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "8.1.0",
+        "date": "16 July 2024",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Decreased the cooldown to 60/45/30 seconds. (was 80/70/60 seconds)"
+          }
+        ]
+      },
+      {
+        "version": "7.1.0",
+        "date": "25 July 2023",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Regression no longer stops when a Survivor is injured or put into the dying state"
+          }
+        ]
+      },
+      {
+        "version": "4.3.0",
+        "date": "20 October 2020",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Now lasts until the kicked generator stops regressing or a survivor is injured of put into the dying state by any means"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1076,
@@ -2935,7 +10879,37 @@ const KILLER_PERKS = [
     "name": "Surveillance",
     "character": "Pig / Amanda Young",
     "category": "Information",
-    "description": "Regressing generators are highlighted in white; useful for tracking contested gens but provides no active benefit by itself."
+    "description": "You see the Auras of regressing Generators.\nWhenever a Generator stops regressing, you see its Aura for 8/12/16s.\nGenerator repair noises can be heard from 8m farther away.\n\"Are you gonna behave?\" -Amanda Young",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "2.5.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Now increases generator repair sound audible range by 8 meters"
+          },
+          {
+            "type": "buff",
+            "text": "Regressing generator's auras are now shown in white for the entire duration of the regression and now change to yellow once the regression is interrupted, the yellow aura persists for 8/12/16 seconds"
+          },
+          {
+            "type": "buff",
+            "text": "Effect now applies to all generators"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1077,
@@ -2943,7 +10917,39 @@ const KILLER_PERKS = [
     "name": "Deerstalker",
     "character": "General (all killers)",
     "category": "Information",
-    "description": "Reveals the auras of dying survivors within 24 m; occasionally useful to confirm downed positions but rarely worth a full perk slot."
+    "description": "Every 40/35/30s, the Survivor with the least time in chase sees your Aura for 3s.\nWhile a Survivor sees your Aura, you see their Aura.",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.2.0",
+        "date": "23 September 2025",
+        "changes": [
+          {
+            "type": "rework",
+            "text": "When a Survivor sees your aura, you see their aura. Every 40/35/30 seconds, reveal your aura to the Survivor with the lowest chase time for 3 seconds."
+          }
+        ]
+      },
+      {
+        "version": "2.6.0",
+        "date": "19 March 2019",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased aura reading to 20/28/36 meters"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1078,
@@ -2951,7 +10957,43 @@ const KILLER_PERKS = [
     "name": "Deathbound",
     "character": "Executioner / Pyramid Head",
     "category": "Information",
-    "description": "When a survivor heals another far from you, the healer screams and their aura is briefly revealed; punishes long-distance healing with minor intel."
+    "description": "Whenever a Survivor finishes healing another, they scream. Then, until they take damage, while they are at least 12/8/4m away from that Survivor:\nThey gain Oblivious.\nThey see that Survivor's Aura.",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "8.6.0",
+        "date": "2 April 2025",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Decreased Oblivious activation range to 12/8/4 meters (was 16/12/8 meters)"
+          }
+        ]
+      },
+      {
+        "version": "8.3.0",
+        "date": "8 October 2024",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Removed the requirement for Survivors to be at least 32 metres away from the Killer"
+          },
+          {
+            "type": "buff",
+            "text": "The Oblivious status effect can now be applied until the healer loses a health state (was limited to 60 seconds)"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1079,
@@ -2959,7 +11001,29 @@ const KILLER_PERKS = [
     "name": "Hex: Huntress Lullaby",
     "character": "Huntress",
     "category": "Hex",
-    "description": "Hooks stack tokens progressively shrinking skill-check zones and eventually removing the warning sound; powerful if uncleansed but vulnerable early."
+    "description": "When the trial starts, a Dull Totem ignites.\nWhenever you hook a Survivor, earn 1 Token. For each Token, Basic Skill Check warnings appear later and good success zones are smaller.\nWhile you have 5 Tokens, Basic Skill Check warnings don't appear.\nWhenever a Survivor misses a basic Skill Check, they lose 2/4/6% more progress.",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "4.3.0",
+        "date": "20 October 2020",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Now only affects Healing and Repairing skill checks"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1080,
@@ -2967,7 +11031,19 @@ const KILLER_PERKS = [
     "name": "Hex: Face the Darkness",
     "character": "Knight",
     "category": "Hex",
-    "description": "Hooking a non-obsession survivor activates a hex; the furthest survivor screams periodically; steady information stream if the totem survives."
+    "description": "Whenever you damage a Survivor, they are hexed and a Dull Totem ignites.\nEvery 35/30/25s, other Survivors not within your Terror Radius scream, then you see their Auras for 2s.\nWhen the hexed Survivor is downed or becomes healthy, the Hex Totem is extinguished.\n\"I shall make an example of one. These mewling worms will never know peace.\"- Tarhos Kovács",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1081,
@@ -2975,7 +11051,29 @@ const KILLER_PERKS = [
     "name": "Nemesis",
     "character": "Oni",
     "category": "Utility",
-    "description": "Being blinded or pallet-stunned makes the responsible survivor your new obsession; disrupts obsession builds but has limited standalone value."
+    "description": "Whenever a Survivor blinds you, Locker-stuns or Pallet-stuns you, they become the Obsession.\nWhenever a Survivor becomes the Obsession:\nThey gain Oblivious for 40/50/60s.\nYou see their Aura for 8s.\n“Only a fool would spit in a demon's face and declare victory.” -Renjiro's Doctrine 4:9",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "8.6.0",
+        "date": "2 April 2025",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased aura reveal duration to 8 seconds (was 4 seconds)"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1082,
@@ -2983,7 +11081,63 @@ const KILLER_PERKS = [
     "name": "Machine Learning",
     "character": "Singularity",
     "category": "Gen Control",
-    "description": "Kicking a generator grants Undetectable; when that gen is repaired, instantly gain Bloodlust; fun snowball potential but very situational."
+    "description": "Whenever you damage a Generator, it becomes compromised.\nWhen that Generator is completed by Survivors:\nYou gain 8% Haste for 40/50/60s.\nYou gain Undetectable for 40/50/60s.\nOnly one Generator can be compromised at a time.\n“YOU WILL HOLD NO DOMINION OVER ME.” –HUX-A7-13",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.0.0",
+        "date": "17 June 2025",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Decreased Haste value to 8% (was 10%)."
+          },
+          {
+            "type": "buff",
+            "text": "Increased duration to 40/50/60 seconds (was 30/35/40 seconds)."
+          }
+        ]
+      },
+      {
+        "version": "8.3.2",
+        "date": "",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Decreased the duration of the effect once activated to 35/40/45 seconds (was 40/50/60 seconds)"
+          }
+        ]
+      },
+      {
+        "version": "8.3.0",
+        "date": "8 October 2024",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Removed the pre-condition of damaging one generator before it can be used to Compromise another, it will now Compromise the generator that is damaged"
+          }
+        ]
+      },
+      {
+        "version": "8.1.0",
+        "date": "16 July 2024",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased the Undetectable and Haste duration to 40/50/60 seconds. (was 20/25/30 seconds)"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1083,
@@ -2991,7 +11145,43 @@ const KILLER_PERKS = [
     "name": "Weave Attunement",
     "character": "Lich / Vecna",
     "category": "Information",
-    "description": "When a survivor depletes an item, reveal all survivor auras for 30 seconds; incredibly powerful against item-heavy teams, near-useless otherwise."
+    "description": "The first time each item is depleted, it is dropped.\nWhile a Survivor is within 12m of a dropped item:\nYou see their Aura.\nThey see the item's Aura.\nWhenever a Survivor picks-up an item, they gain Oblivious for 20/25/30s.\n“No number of novelties will protect you from me!” - Vecna",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "8.4.1",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased the aura reveal radius to 12 metres (was 8)"
+          }
+        ]
+      },
+      {
+        "version": "8.4.0",
+        "date": "28 November 2024",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Reduced the range at which Survivors auras are revealed to 8 metres (was 12 metres)"
+          },
+          {
+            "type": "nerf",
+            "text": "Affected Survivors now see the item's aura"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1084,
@@ -2999,7 +11189,29 @@ const KILLER_PERKS = [
     "name": "Game Afoot",
     "character": "Skull Merchant",
     "category": "Chase",
-    "description": "Hitting the obsession grants a brief movement speed bonus; minor chase benefit that rarely changes game outcomes."
+    "description": "While chasing the Obsession, whenever you basic-break Pallets or Breakable Walls, or damage Generators, you gain 7% Haste for 8/9/10s.\nWhenever you damage the Survivor with the most chase time with a basic-attack, they become the Obsession.\n“This one might actually be a challenge... ” -Adriana Imai",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "8.7.0",
+        "date": "6 May 2025",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased Haste effect when breaking an object while chasing the Obsession to 7%. (was 5%)"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1085,
@@ -3007,7 +11219,29 @@ const KILLER_PERKS = [
     "name": "Dominance",
     "character": "Dark Lord / Dracula",
     "category": "Information",
-    "description": "After your power hits a survivor, nearby generators are highlighted briefly; minor gen-location intel that is too short-lived to be reliable."
+    "description": "The first time each Chest is being unlocked and each Totem is being blessed or cleansed by a Survivor, it is blocked for 8/12/16s.\n\"Tragic, is it not? How powerless you must feel.\" -Dracula",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "8.4.0",
+        "date": "28 November 2024",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased the time the totem or chest is blocked to 8/12/16 seconds (was 4/6/8)"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1086,
@@ -3015,7 +11249,19 @@ const KILLER_PERKS = [
     "name": "Spirit Fury",
     "character": "Spirit",
     "category": "Chase",
-    "description": "The second pallet stun in a chase breaks the pallet automatically; best combined with Enduring to negate pallet cost entirely in looping chases."
+    "description": "After you break 4/3/2 Pallets, when you are Pallet-stunned, the Pallet is destroyed.\n“Fury is her blood.”",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1087,
@@ -3023,7 +11269,43 @@ const KILLER_PERKS = [
     "name": "Make Your Choice",
     "character": "Pig / Amanda Young",
     "category": "Chase",
-    "description": "An unhooked survivor far from you becomes Exposed for 60 seconds; powerful on killers who can quickly reach distant hooks, weak on slow killers."
+    "description": "When a Survivor rescues another from a hook at least 32 meters away from you, Make your Choice causes the Survivor to scream and applies the Exposed status effect to them for 40/50/60 seconds.\nMake your Choice has a cooldown of 40/50/60 seconds.\nExposed Survivors will be downed by basic attacks even if uninjured.\n\"You'd be surprised what tools can save a life.\" -Amanda Young",
+    "versionHistory": [
+      {
+        "version": "Unknown",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Now causes the survivor to scream when unhooking another survivor"
+          }
+        ]
+      },
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "2.3.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Made the Exposed effect duration variable (was 60 seconds for all tiers, now 40/50/60 seconds"
+          },
+          {
+            "type": "buff",
+            "text": "Changed the unhook range to 32 meters at all levels"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1088,
@@ -3031,7 +11313,29 @@ const KILLER_PERKS = [
     "name": "Hubris",
     "character": "Knight",
     "category": "Chase",
-    "description": "Being stunned by a pallet makes the responsible survivor Exposed for 15 seconds; punishes stun play but requires eating a pallet stun first."
+    "description": "Whenever you are stunned by a Survivor, they gain Exposed for 20/25/30s. Cooldown: 20s.\n\"You have made a grave mistake, standing in opposition to me this day.\" - Tarhos Kovács",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.1.0",
+        "date": "29 July 2025",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased the duration of the Exposed effect to 20/25/30 seconds (was 10/15/20)"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1089,
@@ -3039,7 +11343,43 @@ const KILLER_PERKS = [
     "name": "Play with Your Food",
     "character": "The Shape / Myers",
     "category": "Chase",
-    "description": "Each chase left without a hit grants tokens of movement speed; counter-intuitively rewards letting survivors go rather than finishing chases."
+    "description": "Whenever you stop chasing the Obsession, you earn 1 Token, up to 3.\nFor each Token, gain 3/4/5% Haste.\nWhenever you attack, lose 1 Token.\n“You've fooled them, haven't you Michael? But not me.” -Dr. Sam Loomis",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "3.7.0",
+        "date": "28 April 2020",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Rewritten description to specify tokens are consumed on basic and special attacks"
+          }
+        ]
+      },
+      {
+        "version": "1.2.1d",
+        "date": "",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Reduced movement speed bonus from 5/6/7% to 3/4/5%"
+          },
+          {
+            "type": "nerf",
+            "text": "Added a cooldown period (after losing or gaining a charge) before you can gain an additional charge"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1090,
@@ -3047,7 +11387,29 @@ const KILLER_PERKS = [
     "name": "I'm All Ears",
     "character": "Ghostface",
     "category": "Information",
-    "description": "After a survivor performs a rushed vault during a chase, reveal their aura for 6 seconds; punishes panic-vaulting but requires an active chase."
+    "description": "Whenever a Survivor fast-enters or fast-exits a Locker, or medium or fast-vaults within 48m of you, you see their Aura for 8s. Cooldown: 60/45/30s.\n“There is no need to worry. I've been preparing my whole life for this.\" –The Ghost Face",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "8.1.0",
+        "date": "16 July 2024",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Decreased the cooldown to 60/45/30 seconds. (was 60/50/40 seconds)"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1091,
@@ -3055,7 +11417,57 @@ const KILLER_PERKS = [
     "name": "Monitor & Abuse",
     "character": "Doctor",
     "category": "Stealth",
-    "description": "Outside chases your terror radius shrinks; in chases your field of view expands; decent stealth approach tool outclassed by most dedicated alternatives."
+    "description": "While chasing a Survivor, your Terror Radius is 5/10/15% bigger.\nWhile not chasing a Survivor, your Terror Radius is 15/20/25% smaller.\n\"It's time for your treatment!\" -The Doctor",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.2.0",
+        "date": "23 September 2025",
+        "changes": [
+          {
+            "type": "note",
+            "text": "While in a chase, your Terror Radius is now increased by 5/10/15% (was 6/7/8 meters)."
+          },
+          {
+            "type": "note",
+            "text": "Otherwise, your Terror Radius is now decreased by 15/20/25% (was 6/7/8 meters)."
+          }
+        ]
+      },
+      {
+        "version": "7.5.0",
+        "date": "30 January 2024",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Removed the FoV clause due to the addition of the FoV slider setting"
+          }
+        ]
+      },
+      {
+        "version": "2.6.0",
+        "date": "19 March 2019",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Changed FOV modifier text from slightly/moderately/considerably to 3/5/10 degrees"
+          },
+          {
+            "type": "buff",
+            "text": "Simplified Terror Radius values to 8 meters for all tiers"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1092,
@@ -3063,7 +11475,19 @@ const KILLER_PERKS = [
     "name": "Forced Hesitation",
     "character": "Singularity",
     "category": "Chase",
-    "description": "Downing a survivor Hinders all nearby standing survivors for 5 seconds; minor area slow on grouped survivors close to the downed target."
+    "description": "Whenever you down a Survivor, other Survivors within 16m of the downed Survivor gain 20% Hindered for 10s. Cooldown: 40/35/30s.\n“THE ORGANIC MIND'S CAPACITY FOR EMPATHY GOES BEYOND HINDRANCE.” –HUX-A7-13",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Plot Twist can no longer force this Perk's effect to activate out of the Killer's control."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1093,
@@ -3071,7 +11495,29 @@ const KILLER_PERKS = [
     "name": "Forced Penance",
     "character": "Executioner / Pyramid Head",
     "category": "Utility",
-    "description": "Survivors who take a protection hit become Broken for 80 seconds; counters protection-hit farming but has no value against survivors playing solo."
+    "description": "Whenever a Survivor takes a protection hit, they gain Broken for 60/70/80s.",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "4.3.0",
+        "date": "20 October 2020",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased Broken status effect duration to 60/70/80 seconds."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1094,
@@ -3079,7 +11525,33 @@ const KILLER_PERKS = [
     "name": "Superior Anatomy",
     "character": "Mastermind / Wesker",
     "category": "Chase",
-    "description": "After a survivor vaults, you can vault the same spot faster for a few seconds; minor chase utility that rarely wins tiles on its own."
+    "description": "Whenever a Survivor fast-vaults within 12m of you, the next time you basic-vault a window, it is 30/35/40% faster. Cooldown: 25s.",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.0.0",
+        "date": "17 June 2025",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased area of detection to 12 meters (was 8 meters)."
+          },
+          {
+            "type": "buff",
+            "text": "Decreased cooldown to 25 seconds (was 30 seconds)."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1095,
@@ -3087,7 +11559,43 @@ const KILLER_PERKS = [
     "name": "Batteries Included",
     "character": "Good Guy / Chucky",
     "category": "Utility",
-    "description": "Gain Haste when a survivor touches a generator near you; very minor speed boost with inconsistent activation conditions."
+    "description": "Within 16m of a completed Generator, you gain 5% Haste. When you leave the range, this ends after 1/3/5s.\n“Surprise! Did you miss me, Andy?” -Chucky",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.0.0",
+        "date": "17 June 2025",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Reduced Haste bonus to 5% (was 7%)."
+          },
+          {
+            "type": "buff",
+            "text": "Increased area around completed Generator to 16 meters (was 12 meters)."
+          }
+        ]
+      },
+      {
+        "version": "8.7.0",
+        "date": "6 May 2025",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased Haste effect when near a powered generator to 7%. (was 5%)"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1096,
@@ -3095,7 +11603,29 @@ const KILLER_PERKS = [
     "name": "Darkness Revealed",
     "character": "Dredge",
     "category": "Information",
-    "description": "Opening a locker reveals survivor auras within 16 m for 3 seconds; useful in locker-centric builds but too situational for general use."
+    "description": "Whenever you search a Locker, you see the Auras of Survivors within 8m of Lockers for 6/7/8s. Cooldown: 30s.\n\"Stay in the light, my children. In darkness, your fear will expose you.\" –Otto Stamper",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "8.1.0",
+        "date": "16 July 2024",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased the duration of the aura reveal to 6/7/8 seconds. (was 3/4/5 seconds)"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1097,
@@ -3103,7 +11633,19 @@ const KILLER_PERKS = [
     "name": "Whispers",
     "character": "General (all killers)",
     "category": "Information",
-    "description": "Every 30 seconds, a notification triggers if a survivor is within 32 m; slow and imprecise tracking with no directional information provided."
+    "description": "While within 48/40/32m of a Survivor, you randomly hear whispers.\n\"It's unclear as to the motivations of The Fog, but it is undeniable that it often takes the beast's side.\" -Notebook",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1098,
@@ -3111,7 +11653,29 @@ const KILLER_PERKS = [
     "name": "Awakened Awareness",
     "character": "Mastermind / Wesker",
     "category": "Information",
-    "description": "While carrying a survivor, reveal all survivor auras within 32 m; great for intercepting rescuers but only active during the carry."
+    "description": "While carrying a Survivor, within 16/18/20m of you, you see the Auras of other Survivors.",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "6.2.0",
+        "date": "30 August 2022",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Change from PTB: Removed the 2 second aura linger"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1099,
@@ -3119,7 +11683,67 @@ const KILLER_PERKS = [
     "name": "Dark Devotion",
     "character": "Plague",
     "category": "Stealth",
-    "description": "Hitting the obsession transfers your terror radius to them for 30 seconds; complex stealth mechanic requiring specific setups to use effectively."
+    "description": "Whenever the Obsession takes damage, for 35/40/45s:\nYour Terror Radius is set to 40m.\nThe Obsession has your Terror Radius.\nYou gain Undetectable.\n“And terror shall take hold of a defiant non-believer, who shall falsely announce my arrival.” (The Tablet of Adiris, 48.9)",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.0.0",
+        "date": "17 June 2025",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased duration of Terror Radius transfer to Obsession to 35/40/45 seconds (was 20/25/30 seconds)."
+          },
+          {
+            "type": "buff",
+            "text": "Increased size of transferred Terror Radius to 40 meters (was 32 meters)."
+          }
+        ]
+      },
+      {
+        "version": "6.1.0",
+        "date": "19 July 2022",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Now triggers when a Survivor loses a health state by any means (previously only triggered on basic attacks)"
+          }
+        ]
+      },
+      {
+        "version": "3.4.0",
+        "date": "3 December 2019",
+        "changes": [
+          {
+            "type": "mechanic",
+            "text": "Changed to use the Undetectable status effect"
+          }
+        ]
+      },
+      {
+        "version": "3.1.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Removed cooldown"
+          },
+          {
+            "type": "buff",
+            "text": "Increased effect duration to 20/25/30 seconds"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1100,
@@ -3127,7 +11751,51 @@ const KILLER_PERKS = [
     "name": "THWACK!",
     "character": "Skull Merchant",
     "category": "Utility",
-    "description": "After picking up a survivor near a Scourge Hook, gain brief Haste; minor mobility perk with very limited activation conditions."
+    "description": "When the trial starts, you earn 3 Tokens, up to 3.\nWhenever you hook a Survivor, you earn 1 Token.\nWhenever you break a Pallet or Breakable Wall, spend 1 Token. Then, all Survivors within 36m scream and you see their Auras for 4/5/6s.\n“All those who stood in her path feared her mighty THWACK!” –Sonhadores Sombrios, Issue #3",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.0.0",
+        "date": "17 June 2025",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased reveal area to 36 meters (was 24 meters)."
+          },
+          {
+            "type": "buff",
+            "text": "Increased Survivor aura reveal to 4/5/6 seconds (was 3/4/5 seconds)."
+          }
+        ]
+      },
+      {
+        "version": "8.3.0",
+        "date": "8 October 2024",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Now a token perk which starts with 3 tokens, an addition token is gained for each hook on a Survivor"
+          },
+          {
+            "type": "buff",
+            "text": "Changed the location reveal to 4 seconds across all tiers (was 3/4/5)"
+          },
+          {
+            "type": "nerf",
+            "text": "Reduced the radius at which Survivors scream to 24 metres (was 28/30/32 metres)"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1101,
@@ -3135,7 +11803,29 @@ const KILLER_PERKS = [
     "name": "Dark Arrogance",
     "character": "Lich / Vecna",
     "category": "Stealth",
-    "description": "Vaulting a window grants brief Undetectable; very situational stealth window requiring a chase that goes through vaultable windows."
+    "description": "You basic-vault Windows 15/20/25% faster.\nWhenever you are blinded or Pallet-stunned, the duration is 15% longer.\n“Run all you want. I will not be denied.” - Vecna",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.2.0",
+        "date": "23 September 2025",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Decreased the blind and pallet stun duration increase to 15% (was 25%)."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1102,
@@ -3143,7 +11833,39 @@ const KILLER_PERKS = [
     "name": "Blood Warden",
     "character": "Freddy / The Nightmare",
     "category": "End-Game",
-    "description": "Hooking a survivor during end-game collapse blocks both exit gates for 30 seconds; high-risk end-game perk requiring a hook during the collapse itself."
+    "description": "When an Exit Gate is opened, once per trial, when you hook a Survivor, both Exits are blocked for 40/50/60s.\nYou see the Auras of Survivors within Exit Thresholds.\n“This is my world. And you can't ever leave.” - Freddy Krueger",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "8.4.1",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased the block duration for tier one and two to 40/50 seconds (was 30/40 seconds). (This wasn't noted in the patch notes)."
+          }
+        ]
+      },
+      {
+        "version": "2.5.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "qol",
+            "text": "Added a timer on the perk in the HUD to better indicate when and for how long Blood Warden is active"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1103,
@@ -3151,7 +11873,33 @@ const KILLER_PERKS = [
     "name": "Scourge Hook: Monstrous Shrine",
     "character": "General (all killers)",
     "category": "Utility",
-    "description": "Hooks near Scourge Hooks grant bonus Bloodpoints and slightly accelerate hook stages; passive minor bonus with limited active impact on survivor behaviour."
+    "description": "When the trial starts:\n4 random Hooks become Scourge Hooks.\nThe Basement Hooks become Scourge Hooks.\nWhile you are at least 24m away from a Survivor on a Scourge Hook, they are sacrificed 10/15/20% faster.\n\"Then you will know that there is no escape. When hanging in the depths, you face the dark one.\"",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "6.1.0",
+        "date": "19 July 2022",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Renamed from \"Monstrous Shrine\" to \"Scourge Hook: Monstrous Shrine\""
+          },
+          {
+            "type": "rework",
+            "text": "Scourge Hooks grant 10/15/20% faster Entity progression if the Killer is not within 24 meters. Basement hooks count as Scourge Hooks"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1104,
@@ -3159,7 +11907,71 @@ const KILLER_PERKS = [
     "name": "Overcharge",
     "character": "Doctor",
     "category": "Gen Control",
-    "description": "Kicking a generator causes a very difficult skill check; failure results in extra regression; countered entirely by experienced survivors."
+    "description": "Whenever you damage a Generator:\nIts regression speed will go from 85% to 130% over the next 30s.\nThe next Survivor who starts repairing it gets a special Skill Check. If they miss it, they lose 2/3/4% more progress.\n\"It is a trap. But a trap one must step in…\" -The Doctor",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "7.5.0",
+        "date": "30 January 2024",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Only causes a regression event on the Generator that was kicked"
+          }
+        ]
+      },
+      {
+        "version": "6.7.0",
+        "date": "18 April 2023",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Reduced the regression when the Skill Check is missed to 2/3/4% (was 3/4/5%)"
+          },
+          {
+            "type": "buff",
+            "text": "Increased the starting regression speed to 85% (was 75%)"
+          },
+          {
+            "type": "nerf",
+            "text": "Decreased the maximum regression speed to 130% (was 200%)"
+          }
+        ]
+      },
+      {
+        "version": "6.1.0",
+        "date": "19 July 2022",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "After Overcharge is applied to a generator, its regression speed increases from 75% of normal to 200% of normal over the next 30 seconds"
+          },
+          {
+            "type": "note",
+            "text": "Regression speed was nerfed from the PTB - it was 100%-400%"
+          }
+        ]
+      },
+      {
+        "version": "2.6.3",
+        "date": "2 April 2019",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased skill check difficulty to tremendously across all tiers"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1105,
@@ -3167,7 +11979,19 @@ const KILLER_PERKS = [
     "name": "Ravenous",
     "character": "Krasue",
     "category": "Chase",
-    "description": "After hooking a survivor, gain a brief burst of Haste; minor post-hook mobility boost that barely changes chase or patrol outcomes."
+    "description": "The first time you hook each Survivor, you earn 1 Token.\nWhen you have 4 Tokens, all Survivors:\nScream.\nGain Exposed for 40/50/60s.\n“Weeping Ginevra's blood streams/The devil smells the weak.” -Fabbro Barone's Ginevra",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1106,
@@ -3175,7 +11999,43 @@ const KILLER_PERKS = [
     "name": "Bitter Murmur",
     "character": "General (all killers)",
     "category": "Information",
-    "description": "Completed generators reveal the auras of nearby survivors for 5 seconds; reactive information that arrives after the fact and is rarely actionable."
+    "description": "Whenever a Generator is completed, you see the Auras of Survivors within 16m of it for 5s.\nWhen all Generators are completed, you see the Auras of all Survivors for 5/7/10s.",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "2.1.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "rework",
+            "text": "Now shows the auras of survivors within 16 meters of a generator when it's completed for 5 seconds"
+          },
+          {
+            "type": "buff",
+            "text": "Changed exit gate powered effect to last gen completion and increased tier 3 duration to 10 seconds"
+          }
+        ]
+      },
+      {
+        "version": "1.5.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased aura reading duration to 5/7/9 seconds"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1107,
@@ -3183,7 +12043,53 @@ const KILLER_PERKS = [
     "name": "Thanatophobia",
     "character": "Nurse",
     "category": "Utility",
-    "description": "Each injured, dying or hooked survivor applies a small action-speed penalty; requires a large number of injured survivors to reach meaningful slow values."
+    "description": "For each injured, downed, or hooked Survivor, all Survivors:\nCleanse totems 1/1.5/2% slower.\nRepair 1/1.5/2% slower.\nSabotage Hooks 1/1.5/2% slower.\nWhile 4 Survivors are either injured, downed or hooked, all above actions are additionally 12% slower.\n\"She plays with us and revels in our pain.\"",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "6.1.0",
+        "date": "19 July 2022",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased individual penalties for repairing, sabotaging, and Totem cleansing to 4.5/5/5.5% (was 4/4.5/5%)"
+          }
+        ]
+      },
+      {
+        "version": "4.3.0",
+        "date": "20 October 2020",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "No longer affects Healing speed"
+          },
+          {
+            "type": "buff",
+            "text": "Increased penalties to 4/4.5/5%"
+          }
+        ]
+      },
+      {
+        "version": "2.6.0",
+        "date": "19 March 2019",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Tier values are incremented at a rate of 3/3.5/4% up to a maximum of 12/14/16%"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1108,
@@ -3191,7 +12097,29 @@ const KILLER_PERKS = [
     "name": "Dying Light",
     "character": "The Shape / Myers",
     "category": "Utility",
-    "description": "Hooking the obsession gives all other survivors a stacking action penalty; complex to trigger and the obsession itself gains a counter-bonus."
+    "description": "Whenever you hook a Survivor that is not the Obsession, earn 1 token.\nWhile the Obsession is alive, for each Token:\nOther Survivors heal 2/2.5/3% slower.\nOther Survivors repair 2/2.5/3% slower.\nOther Survivors sabotage Hooks 2/2.5/3% slower.\nThe Obsession:\nHeals other Survivors 33% faster.\nUnhooks other Survivors 33% faster.\n\"This isn't a man...\" -Dr.Sam Loomis",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "3.2.0",
+        "date": "17 September 2019",
+        "changes": [
+          {
+            "type": "rework",
+            "text": "Reworked to apply a 2/2.5/3% penalty to Repair, Healing, and Sabotage speeds to every non-obsession survivor for each hook on a non-obsession (counted as tokens). The Obsession gains a 33% action speed bonus to unhooking and healing other survivors. The effects persist for as long as the Obsession is alive."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1109,
@@ -3199,7 +12127,33 @@ const KILLER_PERKS = [
     "name": "Blood Echo",
     "character": "Oni",
     "category": "Chase",
-    "description": "Putting a survivor in the dying state removes all Exhaustion tokens from Exhausted survivors; specifically counters exhaustion-perk heavy teams."
+    "description": "Whenever you hook a Survivor, for 20/25/30s, all injured Survivors:\nGain Exhausted.\nGain Hemorrhage.\n“Attack an enemy with precision and their allies will feel it.” -Renjiro's Doctrine 6:3",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "8.3.0",
+        "date": "8 October 2024",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Removed the cooldown"
+          },
+          {
+            "type": "nerf",
+            "text": "Reduced the duration of the Hemorrhage and Exhausted status effects to 20/25/30 seconds (was 45)"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1110,
@@ -3207,7 +12161,63 @@ const KILLER_PERKS = [
     "name": "Lightborn",
     "character": "Hillbilly",
     "category": "Utility",
-    "description": "Greatly reduces blindness duration from flashlights; absolute hard counter to flashlight-user teams, otherwise dead weight in every other match."
+    "description": "Whenever a Survivor attempts to blind you, you see their Aura for 6/8/10s.\nYou cannot be blinded.\n\"These monsters… they adapt! They emerge with strange new abilities.\" -Vigo's Journal",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "5.0.0",
+        "date": "15 June 2021",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Updated to reflect that it affects blindness from flashbangs, and blast mines"
+          }
+        ]
+      },
+      {
+        "version": "4.1.0",
+        "date": "28 July 2020",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Now reveals the aura of any survivor that attempts to blind you for 6/8/10 seconds"
+          },
+          {
+            "type": "buff",
+            "text": "Grants immunity to blindness caused by Flashlights and Firecrackers"
+          }
+        ]
+      },
+      {
+        "version": "2.6.2",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased resistance to blindness from 20/40/60% to 60/70/80%"
+          }
+        ]
+      },
+      {
+        "version": "1.7.0",
+        "date": "14 September 2017",
+        "changes": [
+          {
+            "type": "qol",
+            "text": "Removed Dim vision"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1111,
@@ -3215,7 +12225,59 @@ const KILLER_PERKS = [
     "name": "Cruel Limits",
     "character": "Demogorgon",
     "category": "Chase",
-    "description": "Completed generators block all windows and vaults in their area for 30 seconds; zone control that only activates after generators are already finished."
+    "description": "Whenever a Generator is completed:\nYou see the Auras of all Windows for 20/25/30s.\nAll Windows are blocked for Survivors for 20/25/30s.\n“The specimen seems to be able to perform some kind of telekinesis that impacts the state of nearby objects, as if they existed in some other form within a dimension alternate to our own.” -Hawkins National Laboratory",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "7.3.3",
+        "date": "",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Reverted to the original name, \"Cruel Limits\" with the return of the Stranger Things chapter"
+          }
+        ]
+      },
+      {
+        "version": "7.1.0",
+        "date": "25 July 2023",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Now blocks all windows and vault locations (previously only within 32 meters of the completed generator)"
+          }
+        ]
+      },
+      {
+        "version": "5.3.0",
+        "date": "19 October 2021",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Renamed from \"Cruel Limits\" to \"Claustrophobia\""
+          }
+        ]
+      },
+      {
+        "version": "4.3.0",
+        "date": "20 October 2020",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased radius to 32 meters"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1112,
@@ -3223,7 +12285,19 @@ const KILLER_PERKS = [
     "name": "Mad Grit",
     "character": "Legion",
     "category": "Chase",
-    "description": "Removes attack cooldown on a missed basic attack while carrying a survivor; counters bodyblock rescues but rarely activates in normal gameplay."
+    "description": "While carrying a Survivor:\nWhenever you miss a basic attack, your cooldown is 100% shorter.\nWhenever you damage a Survivor with a basic attack, the carried Survivor gains no wiggle progress for 2/3/4s.\n“There's no getting out of this now. We're too good at it.” -The Legion",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1113,
@@ -3231,7 +12305,33 @@ const KILLER_PERKS = [
     "name": "Hysteria",
     "character": "Nemesis",
     "category": "Information",
-    "description": "When a healthy survivor is injured, all already-injured survivors become Oblivious for 30 seconds; information denial that requires a grouped team."
+    "description": "Whenever a healthy Survivor becomes injured, all injured Survivors gain Oblivious for 30/35/40s. Cooldown: 20s.\n\"Sorry I got a little jumpy there. Didn't know quite what to expect.\" -Robert Kendo",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "8.6.0",
+        "date": "2 April 2025",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased Oblivious duration to 30/35/40 seconds (was 20/25/30 seconds)"
+          },
+          {
+            "type": "buff",
+            "text": "Decreased cooldown to 20 seconds (was 30 seconds)"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1114,
@@ -3239,7 +12339,57 @@ const KILLER_PERKS = [
     "name": "Beast of Prey",
     "character": "Huntress",
     "category": "Stealth",
-    "description": "Reaching maximum Bloodlust grants Undetectable and a Bloodpoint bonus; difficult to consistently activate since Bloodlust is rare at high MMR."
+    "description": "Whenever you gain Bloodlust, gain Undetectable for 30/35/40s.\n\"Where did she go?\"",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "8.5.2",
+        "date": "",
+        "changes": [
+          {
+            "type": "rework",
+            "text": "Undetectable is now granted for 30/35/40 seconds after gaining Bloodlust instead of while Bloodlost is active."
+          },
+          {
+            "type": "nerf",
+            "text": "No longer grants bonus Bloodpoints for actions in the Hunter category."
+          }
+        ]
+      },
+      {
+        "version": "3.4.0",
+        "date": "3 December 2019",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Updated to use the Undetectable status effect"
+          }
+        ]
+      },
+      {
+        "version": "2.3.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Now awards 30/40/50% more Bloodpoints in the Hunter category"
+          },
+          {
+            "type": "buff",
+            "text": "Changed to hide the red stain until Bloodlust is lost"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1115,
@@ -3247,7 +12397,39 @@ const KILLER_PERKS = [
     "name": "Unbound",
     "character": "Unknown",
     "category": "Information",
-    "description": "While using your power, reveal auras of survivors further than 12 m; informational perk tied entirely to Unknown's specific power mechanic."
+    "description": "Whenever a Survivor takes damage, for the next 24/27/30s, whenever you basic-vault a window, gain 7% Haste for 10s.\n\"I heard it. Running. It was getting closer!” - Anonymous Testimony, 09/09/1979",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.0.0",
+        "date": "17 June 2025",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Reduced Haste bonus after vaulting a window to 7% (was 10%)."
+          }
+        ]
+      },
+      {
+        "version": "8.7.0",
+        "date": "6 May 2025",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased the Haste effect after vaulting a window to 10%. (was 5%)"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1116,
@@ -3255,7 +12437,29 @@ const KILLER_PERKS = [
     "name": "All-Shaking Thunder",
     "character": "Houndmaster",
     "category": "Gen Control",
-    "description": "After hooking a survivor, the next generator you kick receives extra regression; a one-time bonus per hook that provides minor additional regression."
+    "description": "Whenever you fall from at least 1.25m, your lunge-attacks are 75% longer for 15/20/25s. Cooldown: 5s.\n\"Go on. Run. Tell your friends I'm coming for them.\" -Portia Maye",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.2.0",
+        "date": "23 September 2025",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased lunge attack distance increase duration to 15/20/25 seconds (was 8/12/16 seconds)."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1117,
@@ -3263,7 +12467,33 @@ const KILLER_PERKS = [
     "name": "Hoarder",
     "character": "Twins",
     "category": "Information",
-    "description": "When a survivor picks up an item from a chest or the ground, receive a noise notification and aura reveal; punishes item collection in a limited radius."
+    "description": "When the trial starts, 2 more Chests appear.\nWhenever a Survivor picks-up an item or starts unlocking a Chest within 32/48/64m of you, you are alerted.",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "4.4.1",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased the distance at which Survivor locations are revealed from 24/36/48 meters to 32/48/64 meters"
+          },
+          {
+            "type": "nerf",
+            "text": "Removed the stipulation that it decreases the rarity of items found in chests"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1118,
@@ -3271,7 +12501,29 @@ const KILLER_PERKS = [
     "name": "Septic Touch",
     "character": "Dredge",
     "category": "Utility",
-    "description": "Survivors performing healing actions within your terror radius gain Mangled and Hemorrhage; area-based healing denial that requires proximity."
+    "description": "While a Survivor within your Terror Radius is healing:\nThey gain Blindness.\nThey gain Exhausted.\nWhen they stop healing, this ends after 20/25/30s.\n\"Do not admit to fear, or pain, or doubt. These are the seeds from which darkness grows.\" –Otto Stamper",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.2.0",
+        "date": "23 September 2025",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased the linger duration of the Blindness and Exhausted status effects to 20/25/30 seconds (was 6/8/10 seconds)."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1119,
@@ -3279,7 +12531,53 @@ const KILLER_PERKS = [
     "name": "Knock Out",
     "character": "Cannibal / Bubba",
     "category": "Utility",
-    "description": "Non-obsession survivors you down cannot be found by other survivors' auras within 24 m; makes solo-rescue attempts harder and pairs well with Agitation."
+    "description": "Whenever a Survivor drops a Pallet, for the next 6s, if they move 6m away from it, they gain 5% Hindered for 3/4/5s.\n\"Oh, that gun's no good. The old way… with a sledge! You see, that way's better. They die better that way.\" -Nubbins Sawyer",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "8.6.0",
+        "date": "2 April 2025",
+        "changes": [
+          {
+            "type": "rework",
+            "text": "When a Survivor drops a pallet, if they move 6/6/6 meters away from it within 6/6/6 seconds, they gain 5/5/5% Hindered for 3/4/5 seconds."
+          }
+        ]
+      },
+      {
+        "version": "6.1.0",
+        "date": "19 July 2022",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Recovery speed is reduced by 25% for Survivors under the effect of this perk"
+          }
+        ]
+      },
+      {
+        "version": "4.1.0",
+        "date": "28 July 2020",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Added an effect to slow survivors crawling by 50% and afflict them with the blindness status effect for 15 seconds after being put into the dying state."
+          },
+          {
+            "type": "nerf",
+            "text": "Now only triggers on basic attacks"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1120,
@@ -3287,7 +12585,29 @@ const KILLER_PERKS = [
     "name": "Wandering Eye",
     "character": "Krasue",
     "category": "Information",
-    "description": "After kicking a generator, all survivor auras are briefly revealed for 2 seconds; extremely short reveal window that is hard to act on."
+    "description": "Whenever you start chasing a Survivor, for the next 5s, you see the Auras of all other injured Survivors within 20m. Cooldown: 40/35/30s.\n“A drop does not satiate/when a river is needed.” -Elliot Campbell's Grandeur of Samuel",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.2.0",
+        "date": "23 September 2025",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased range of aura-reveal to 20/20/20 meters (from 16/16/16)."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1121,
@@ -3295,7 +12615,49 @@ const KILLER_PERKS = [
     "name": "Iron Maiden",
     "character": "Legion",
     "category": "Information",
-    "description": "You open lockers faster; survivors found inside become Exposed and their aura is revealed for 30 seconds; enables locker-patrol builds."
+    "description": "Whenever a Survivor exits a Locker:\nThey gain Exposed for 30s.\nThey scream, then you are alerted to their location for 4s.\nYou open Lockers 30/40/50% faster.\n“This is no place for cowards.” -The Legion",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "4.5.0",
+        "date": "9 February 2021",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased Exposed duration to 30 seconds"
+          }
+        ]
+      },
+      {
+        "version": "3.2.0",
+        "date": "17 September 2019",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Reverted Survivor location notification back to 4 seconds from 3 seconds. (Not noted in the Patch Notes)"
+          }
+        ]
+      },
+      {
+        "version": "2.5.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Reduced Survivor location notification from 4 seconds to 3 seconds"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1122,
@@ -3303,7 +12665,19 @@ const KILLER_PERKS = [
     "name": "Hex: Nothing But Misery",
     "character": "Ghoul / Kaneki",
     "category": "Hex",
-    "description": "Power hits stack Broken on survivors; potent on Ghoul whose Kagune can hit multiple survivors rapidly, near-useless on killers without a power hit."
+    "description": "After you damage Survivors with a basic-attack 8 times, a Dull Totem ignites.\nWhenever you damage a Survivor with a basic-attack, they gain 5% Hindered for 10/12.5/15s.\n\"All of the liabilities of this world are due to the inadequacies of the person involved.\" -Ken Kaneki",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1123,
@@ -3311,7 +12685,19 @@ const KILLER_PERKS = [
     "name": "Help Wanted",
     "character": "Animatronic / Springtrap",
     "category": "Information",
-    "description": "After kicking a generator, reveal survivor auras within 24 m briefly; minor aura information tied to gen kicks."
+    "description": "Whenever you damage a Generator, it is compromised.\nWhen that Generator is completed by Survivors, your basic-attack cooldowns are 25% shorter for 40/50/60s.\nOnly 1 Generator can be compromised at a time.\n\"You only think you are in control...\" -Springtrap",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1124,
@@ -3319,7 +12705,19 @@ const KILLER_PERKS = [
     "name": "None Are Free",
     "character": "Ghoul / Kaneki",
     "category": "Utility",
-    "description": "After hitting survivors multiple times with your power, apply additional effects; power-specific perk best suited to Ghoul's multi-hit playstyle."
+    "description": "The first time you hook each Survivor, earn 1 Token.\nWhen all Generators are completed, for each Token:\nUpright Pallets are blocked for 12/14/16s.\nWindows are blocked for 12/14/16s.\n\"I'm not wrong. What's wrong is this messed-up world!\" -Ken Kaneki",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1125,
@@ -3327,7 +12725,19 @@ const KILLER_PERKS = [
     "name": "Hex: Overture of Doom",
     "character": "Krasue",
     "category": "Hex",
-    "description": "Breaking a pallet converts the nearest dull totem into a Hex: Overture of Doom totem; activates a chain effect but requires totem survival."
+    "description": "When the trial starts, a Dull Totem ignites and hexes the farthest Generator from it.\nAfter a Survivor repairs the hexed Generator for 5 seconds:\nYou gain Undetectable for 20/25/30s.\nFor that time, your Terror Radius is set to that Generator.\nWhen the hexed Generator is repaired, the next farthest Generator is hexed.\n“From salvation's ruin, be warned/death comes from all around.” -Giovanni Serrata's Fog Hill",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1126,
@@ -3335,7 +12745,19 @@ const KILLER_PERKS = [
     "name": "Hex: Two Can Play",
     "character": "Good Guy / Chucky",
     "category": "Hex",
-    "description": "When a survivor blinds you, inflict Blind on that survivor for the same duration; hard counter to dedicated flashlight users, niche otherwise."
+    "description": "While this Hex is dull, each time you are blinded or stunned by a Survivor 4/3/2 times, a Dull Totem ignites.\nWhenever you are blinded or stunned by a Survivor you are not carrying, they are blinded for 1.5s.\n“From now on, no more Mr. Good Guy.” -Chucky",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1127,
@@ -3343,7 +12765,43 @@ const KILLER_PERKS = [
     "name": "Unrelenting",
     "character": "General (all killers)",
     "category": "Chase",
-    "description": "Reduces missed basic attack cooldown; marginal benefit and generally outclassed by other chase perks."
+    "description": "Whenever you miss a basic-attack, your cooldown is 20/25/30% shorter.",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "1.4.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "No longer affects successful attacks"
+          },
+          {
+            "type": "buff",
+            "text": "Increased cooldown on missed attacks"
+          }
+        ]
+      },
+      {
+        "version": "1.2.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased the attack cooldown reduction for all tiers"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1128,
@@ -3351,7 +12809,47 @@ const KILLER_PERKS = [
     "name": "Territorial Imperative",
     "character": "Huntress",
     "category": "Information",
-    "description": "While in the basement, receive notifications when survivors enter the killer shack or main building; very limited detection area."
+    "description": "Whenever a Survivor enters the Basement while you are 24m away from it, you see their Aura for 4/5/6s. Cooldown: 45s.",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "7.1.0",
+        "date": "25 July 2023",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased the reveal duration to 4/5/6 seconds (was 3)"
+          },
+          {
+            "type": "buff",
+            "text": "Reduced the required distance from basement to 24 meters (was 32)"
+          },
+          {
+            "type": "nerf",
+            "text": "Standardised and increased the cooldown to 45 seconds"
+          }
+        ]
+      },
+      {
+        "version": "3.0.0",
+        "date": "18 June 2019",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Reduced cooldown to 30/25/20 from 60/45/30"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1129,
@@ -3359,7 +12857,53 @@ const KILLER_PERKS = [
     "name": "Iron Grasp",
     "character": "General (all killers)",
     "category": "Utility",
-    "description": "Reduces survivor struggling and Boil Over resistance while carrying; minor counter to struggling survivors, rarely a priority pick."
+    "description": "While carrying a Survivor:\nThey wiggle 4/8/12% slower.\nTheir wiggle is 75% weaker.",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "2.6.0",
+        "date": "19 March 2019",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased Struggle reduction effect to 75% for all tiers"
+          }
+        ]
+      },
+      {
+        "version": "1.5.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Reduced time to wiggle effect from 15/27/36% to 4/8/12%"
+          },
+          {
+            "type": "buff",
+            "text": "Returned Struggle reduction effect to its previous values, 25/50/75% (changed from 20/40/60%)"
+          }
+        ]
+      },
+      {
+        "version": "1.0.5",
+        "date": "",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Reduced Struggle reduction effect to 20/40/60% (down from 25/50/75%)"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1130,
@@ -3367,7 +12911,73 @@ const KILLER_PERKS = [
     "name": "Shadowborn",
     "character": "Wraith",
     "category": "Utility",
-    "description": "Increases field of view permanently; passive quality-of-life perk outclassed by perks with active information or chase benefits."
+    "description": "Whenever you are blinded, gain 6/8/10% Haste for 10s.\n\"Shining in the darkest dark, his eyes pierce the night and sting your soul.\"",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "7.5.0",
+        "date": "30 January 2024",
+        "changes": [
+          {
+            "type": "rework",
+            "text": "Now grants 6/8/10% haste when blinded by any means (changed with the addition of the FoV slider setting)"
+          }
+        ]
+      },
+      {
+        "version": "3.2.0",
+        "date": "17 September 2019",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Fixed tier 1 value to match the actual value used (8% -> 9%)"
+          }
+        ]
+      },
+      {
+        "version": "2.6.0",
+        "date": "19 March 2019",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Changed description to use actual values"
+          }
+        ]
+      },
+      {
+        "version": "1.8.3",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Removed negative effects"
+          },
+          {
+            "type": "buff",
+            "text": "Increased FOV to 9/12/15 from 3/5/10"
+          }
+        ]
+      },
+      {
+        "version": "1.0.5",
+        "date": "",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Reduced the field of view bonus for all tiers"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1131,
@@ -3375,7 +12985,39 @@ const KILLER_PERKS = [
     "name": "Bloodhound",
     "character": "Wraith",
     "category": "Information",
-    "description": "Blood pools are more visible and scratch marks are slightly brighter; very minor tracking improvement barely noticeable at high level."
+    "description": "Pools of Blood are brighter and last 2/3/4s longer.\n\"Pebbles shimmering in the moonlight; my life drips down in a trail so easy to follow.\"",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "1.8.3",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased Tiers I and II so that all Tiers use the same blood intensity"
+          }
+        ]
+      },
+      {
+        "version": "1.0.5",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased the time blood marks are shown to 2/3/4 seconds"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1132,
@@ -3383,7 +13025,53 @@ const KILLER_PERKS = [
     "name": "Unnerving Presence",
     "character": "Trapper",
     "category": "Utility",
-    "description": "Survivors performing actions within your terror radius face reduced skill-check zones; mild penalty that skilled survivors learn to play around quickly."
+    "description": "Survivors within your Terror Radius get 10% more basic Skill Checks.\nThe good zone of basic Skill Checks is 40/50/60% smaller.\n\"Its presence befalls us.\"",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "2.6.2",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased all tiers to the tier III value of 10%"
+          }
+        ]
+      },
+      {
+        "version": "1.7.0",
+        "date": "14 September 2017",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased the chance to trigger skill checks from 3/5/8% to 6/8/10%"
+          },
+          {
+            "type": "buff",
+            "text": "Increased skill check success zone reduction from 5/10/15 to 40%/50%/60%."
+          }
+        ]
+      },
+      {
+        "version": "1.0.5",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Significantly increased the chance to trigger skill checks"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1133,
@@ -3391,7 +13079,29 @@ const KILLER_PERKS = [
     "name": "Stridor",
     "character": "Nurse",
     "category": "Information",
-    "description": "Increases the volume of survivor breathing and grunts of pain; useful for tracking injured survivors by sound but outclassed by aura perks."
+    "description": "Survivors' breathing noises are 15/20/25% louder and their Grunts of Pain are 30/40/50% louder.\n“If you don't stop and catch your breath… she will.”",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "5.1.0",
+        "date": "",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Effects that modify sound are now multiplicative rather than additive. This means that sounds that are reduced to 0%, such as injured noises by the perk \"\"Iron Will,\"\" will no longer be increased by perks such as \"\"Stridor\"\" and will instead remain at 0."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1134,
@@ -3399,7 +13109,49 @@ const KILLER_PERKS = [
     "name": "Insidious",
     "character": "General (all killers)",
     "category": "Stealth",
-    "description": "Standing still makes you Undetectable; only viable as a rare basement ambush gimmick and never a reliable competitive pick."
+    "description": "After being idle for 3/2/1s, you gain Undetectable until you act.",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.1.0",
+        "date": "29 July 2025",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Decreased the time it takes to activate to 3/2/1 second (was 4/3/2)"
+          }
+        ]
+      },
+      {
+        "version": "3.4.0",
+        "date": "3 December 2019",
+        "changes": [
+          {
+            "type": "mechanic",
+            "text": "Updated to use the Undetectable status effect"
+          }
+        ]
+      },
+      {
+        "version": "1.0.5",
+        "date": "",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Decreased time taken to become stealthy from 6/4/3 seconds to 4/3/2 seconds"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1135,
@@ -3407,7 +13159,19 @@ const KILLER_PERKS = [
     "name": "No Quarter",
     "character": "Houndmaster",
     "category": "Utility",
-    "description": "After hooking a survivor, gain brief Haste; negligible mobility bonus that almost never changes game outcomes."
+    "description": "While self-healing, whenever a Survivor has 75% progress, they get special Skill Checks. If they miss one of these or stop healing, they gain Broken for 20/25/30s.\n\"Fire another broadside! Don't stop until the sea takes them!\" -Portia Maye",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1136,
@@ -3415,7 +13179,57 @@ const KILLER_PERKS = [
     "name": "Distressing",
     "character": "General (all killers)",
     "category": "Utility",
-    "description": "Massively increases your terror radius and grants bonus Bloodpoints; larger terror radius alerts survivors much earlier, actively hurting your game."
+    "description": "Your Terror Radius is 20/25/30% larger.\n\"Bask in their fear.\"",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "8.4.0",
+        "date": "28 November 2024",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Your Terror Radius is increased by 20/25/30%. (was 22/24/26%)"
+          },
+          {
+            "type": "nerf",
+            "text": "No longer grants 100% bonus bloodpoints in the Deviousness category"
+          }
+        ]
+      },
+      {
+        "version": "2.6.0",
+        "date": "19 March 2019",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased tiers I and II to also give 100% bonus bloodpoints"
+          }
+        ]
+      },
+      {
+        "version": "1.7.0",
+        "date": "14 September 2017",
+        "changes": [
+          {
+            "type": "buff",
+            "text": "Increased terror radius increase to 22/24/26%"
+          },
+          {
+            "type": "buff",
+            "text": "Increased bonus bloodpoint gain to 50/75/100%"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1137,
@@ -3423,7 +13237,19 @@ const KILLER_PERKS = [
     "name": "Undone",
     "character": "Unknown",
     "category": "Gen Control",
-    "description": "After your power affects a survivor, generators regress slightly; power-specific minor regression that barely registers against competent teams."
+    "description": "Whenever a Survivor misses a basic Skill Check, earn 3 Tokens, up to 18/24/30.\nWhenever you damage a Generator, spend all Tokens. For each Token spent:\nThe Generator loses 1% progress.\nThe Generator is blocked for 1s.\nWhen that Generator is unblocked, it begins regressing. Cooldown: 60s.\n\"Erratic behavior in machinery could be related to [REDACTED], further testing required.” - OSS Report, 12/02/1943",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1138,
@@ -3431,7 +13257,33 @@ const KILLER_PERKS = [
     "name": "Haywire",
     "character": "Animatronic / Springtrap",
     "category": "Gen Control",
-    "description": "Your power charge near a generator causes brief regression when reaching a threshold; extremely situational, inconsistent and minor in effect."
+    "description": "Exit Gate Switches with at least 80% progress regress at 80/90/100% speed.\nWhile they are regressing, Survivors see the Exit Gate Lights flicker randomly.\n\"There will be no redemption for you.\" -Springtrap",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      },
+      {
+        "version": "9.0.0",
+        "date": "17 June 2025",
+        "changes": [
+          {
+            "type": "nerf",
+            "text": "Increased minimum regression threshold to 80% (was 50%)."
+          },
+          {
+            "type": "buff",
+            "text": "Increased regression speed to 80/90/100% (was 40/45/50%)."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 1139,
@@ -3439,7 +13291,19 @@ const KILLER_PERKS = [
     "name": "Shattered Hope",
     "character": "General (all killers)",
     "category": "Utility",
-    "description": "Instantly destroys a Boon totem within your terror radius; only valuable against Boon-heavy teams and otherwise a complete waste of a perk slot."
+    "description": "Whenever you snuff a Boon Totem:\nYou see the Auras of all Survivors within its range for 6/7/8s.\nIt is destroyed.\n\"Nothing is permanent here. Nothing except our endless perdition.\" -Unknown, Notebook",
+    "versionHistory": [
+      {
+        "version": "9.5.0",
+        "date": "17 March 2026",
+        "changes": [
+          {
+            "type": "note",
+            "text": "Wording updated as part of the efforts in 9.5.0 to make descriptions and effects simpler and more standardised."
+          }
+        ]
+      }
+    ]
   }
 ];
 
@@ -3452,7 +13316,8 @@ const SURVIVORS = [
     "status": "Paid",
     "price": "Ash vs Evil Dead DLC ~$5",
     "notes": "Worst overall; perks require too much support, large and incredibly loud. Even walking he wheezes.",
-    "perks": []
+    "perks": [],
+    "portrait": "images/CharPortraits/Ash/S17_AshleyJWilliams_Portrait.png"
   },
   {
     "rank": 51,
@@ -3462,7 +13327,8 @@ const SURVIVORS = [
     "status": "Paid",
     "price": "~500 AC / ~$5",
     "notes": "Bad perks but very quiet noise — one of the quietest survivors. Large model is the drawback.",
-    "perks": []
+    "perks": [],
+    "portrait": "images/CharPortraits/DLC3/S07_AceVisconti_Portrait.png"
   },
   {
     "rank": 50,
@@ -3472,7 +13338,8 @@ const SURVIVORS = [
     "status": "Paid",
     "price": "Silent Hill DLC ~$8",
     "notes": "All perks are very niche with contrived activation times. Small & moderate saves her.",
-    "perks": []
+    "perks": [],
+    "portrait": "images/CharPortraits/Wales/S22_CherylMason_Portrait.png"
   },
   {
     "rank": 49,
@@ -3482,7 +13349,8 @@ const SURVIVORS = [
     "status": "Paid",
     "price": "The Walking Dead DLC ~$8",
     "notes": "Quiet when injured. Ingenuity lets you rebuild pallets but activation is horrendous (needs 2 chests).",
-    "perks": []
+    "perks": [],
+    "portrait": "images/CharPortraits/Lasagna/S47_RickGrimes_Portrait.png"
   },
   {
     "rank": 48,
@@ -3492,7 +13360,8 @@ const SURVIVORS = [
     "status": "Paid",
     "price": "~500 AC / ~$5",
     "notes": "Distortion is decent; otherwise loud and large. Aftercare and Breakdown are pretty mid.",
-    "perks": []
+    "perks": [],
+    "portrait": "images/CharPortraits/Kenya/S15_JeffJohansen_Portrait.png"
   },
   {
     "rank": 47,
@@ -3502,7 +13371,8 @@ const SURVIVORS = [
     "status": "Paid",
     "price": "~500 AC / ~$5",
     "notes": "Very quiet despite being large. Background Player is good; other perks largely pointless.",
-    "perks": []
+    "perks": [],
+    "portrait": "images/CharPortraits/Saturn/S36_RenatoLyra_Portrait.png"
   },
   {
     "rank": 46,
@@ -3512,7 +13382,8 @@ const SURVIVORS = [
     "status": "Paid",
     "price": "~500 AC / ~$5",
     "notes": "Small and quiet. All perks are very weak — Cut Loose is worse Quick & Quiet; Friendly Competition is minor.",
-    "perks": []
+    "perks": [],
+    "portrait": "images/CharPortraits/Saturn/S35_ThalitaLyra_Portrait.png"
   },
   {
     "rank": 45,
@@ -3522,7 +13393,8 @@ const SURVIVORS = [
     "status": "Paid",
     "price": "~500 AC / ~$5",
     "notes": "Super mid perks overall. Boon: Dark Theory is barely noticeable at 3% haste.",
-    "perks": []
+    "perks": [],
+    "portrait": "images/CharPortraits/Kepler/S30_YoichiAsakawa_Portrait.png"
   },
   {
     "rank": 44,
@@ -3532,7 +13404,8 @@ const SURVIVORS = [
     "status": "Paid",
     "price": "Alan Wake 2 DLC ~$10",
     "notes": "Screams very loudly — huge detriment. Champion of Light is great for flashlight plays though.",
-    "perks": []
+    "perks": [],
+    "portrait": "images/CharPortraits/Zodiac/S40_AlanWake_Portrait.png"
   },
   {
     "rank": 43,
@@ -3542,7 +13415,8 @@ const SURVIVORS = [
     "status": "Paid",
     "price": "Cyberpunk 2077 DLC ~$10",
     "notes": "Small model helps. 1 2 3 4 (tambourine) buffs skill checks. Road Life has contrived activation.",
-    "perks": []
+    "perks": [],
+    "portrait": "images/CharPortraits/Maple/T_UI_S49_VeeBoonyasak_Portrait.png"
   },
   {
     "rank": 42,
@@ -3552,7 +13426,8 @@ const SURVIVORS = [
     "status": "Paid",
     "price": "~500 AC / ~$5",
     "notes": "Large & loud. Quick Gambit is really powerful for loopers. Potential Energy is more detriment than positive.",
-    "perks": []
+    "perks": [],
+    "portrait": "images/CharPortraits/Quantum/S34_VittorioToscano_Portrait.png"
   },
   {
     "rank": 41,
@@ -3562,7 +13437,8 @@ const SURVIVORS = [
     "status": "Paid",
     "price": "~500 AC / ~$5",
     "notes": "Deliverance is solid. Autodidact can be hit-or-miss for team. Diversion is fun but nearly useless.",
-    "perks": []
+    "perks": [],
+    "portrait": "images/CharPortraits/Haiti/S14_AdamFrancis_Portrait.png"
   },
   {
     "rank": 40,
@@ -3572,7 +13448,8 @@ const SURVIVORS = [
     "status": "Paid",
     "price": "Castlevania DLC ~$8",
     "notes": "Rare licensed survivor. Quiet despite large model. Eyes of Belmond provides solid aura extension.",
-    "perks": []
+    "perks": [],
+    "portrait": "images/CharPortraits/Eclair/S44_TrevorBelmont_Portrait.png"
   },
   {
     "rank": 39,
@@ -3582,7 +13459,8 @@ const SURVIVORS = [
     "status": "Paid",
     "price": "~500 AC / ~$5",
     "notes": "Coherent basement-themed perks. Wicked is underrated (100% self-unhook in basement). Small & moderate.",
-    "perks": []
+    "perks": [],
+    "portrait": "images/CharPortraits/Applepie/S41_SableWard_Portrait.png"
   },
   {
     "rank": 38,
@@ -3592,7 +13470,8 @@ const SURVIVORS = [
     "status": "Free",
     "price": "Base game",
     "notes": "Iron Will is one of the best perks in game. Other two perks are fairly niche. Large and loud.",
-    "perks": []
+    "perks": [],
+    "portrait": "images/CharPortraits/S04_JakePark_Portrait.png"
   },
   {
     "rank": 37,
@@ -3602,7 +13481,8 @@ const SURVIVORS = [
     "status": "Paid",
     "price": "Stranger Things DLC ~$8",
     "notes": "Solid perks but all require setup/coordination. Babysitter is a decent anti-tunnel for teammates.",
-    "perks": []
+    "perks": [],
+    "portrait": "images/CharPortraits/Qatar/S18_SteveHarrington_Portrait.png"
   },
   {
     "rank": 36,
@@ -3612,7 +13492,8 @@ const SURVIVORS = [
     "status": "Free",
     "price": "Base game (Left 4 Dead crossover)",
     "notes": "Unbreakable is excellent. Left Behind is probably one of the worst perks in game. Very loud.",
-    "perks": []
+    "perks": [],
+    "portrait": "images/CharPortraits/L4D/S08_WilliamBillOverbeck_Portrait.png"
   },
   {
     "rank": 35,
@@ -3622,7 +13503,8 @@ const SURVIVORS = [
     "status": "Paid",
     "price": "Halloween DLC ~$8",
     "notes": "DS is the best anti-tunnel perk. Object of Obsession puts you in constant danger. Small but loud.",
-    "perks": []
+    "perks": [],
+    "portrait": "images/CharPortraits/DLC2/S06_LaurieStrode_Portrait.png"
   },
   {
     "rank": 34,
@@ -3632,7 +13514,8 @@ const SURVIVORS = [
     "status": "Paid",
     "price": "~500 AC / ~$5",
     "notes": "Overcome is strong for post-hit distance. Boon: Exponential is niche but insane when it works.",
-    "perks": []
+    "perks": [],
+    "portrait": "images/CharPortraits/Ion/S29_JonahVasquez_Portrait.png"
   },
   {
     "rank": 33,
@@ -3642,7 +13525,8 @@ const SURVIVORS = [
     "status": "Paid",
     "price": "~500 AC / ~$5",
     "notes": "Power Struggle can be incredibly strong but activates rarely. Small and quiet — great stats.",
-    "perks": []
+    "perks": [],
+    "portrait": "images/CharPortraits/Aurora/S24_ElodieRakoto_Portrait.png"
   },
   {
     "rank": 32,
@@ -3652,7 +13536,8 @@ const SURVIVORS = [
     "status": "Paid",
     "price": "~500 AC / ~$5",
     "notes": "Note: OLD perks. Vigil is very good. See rank #2 for Quentin's new version with updated perks.",
-    "perks": []
+    "perks": [],
+    "portrait": "images/CharPortraits/England/S11_QuentinSmith_Portrait.png"
   },
   {
     "rank": 31,
@@ -3662,7 +13547,8 @@ const SURVIVORS = [
     "status": "Paid",
     "price": "~500 AC / ~$5",
     "notes": "Quiet despite large. Troubleshooter is great in chase. Scavenger is wildly bad — far worse than Built to Last.",
-    "perks": []
+    "perks": [],
+    "portrait": "images/CharPortraits/Umbra/S37_GabrielSoma_Portrait.png"
   },
   {
     "rank": 30,
@@ -3672,7 +13558,8 @@ const SURVIVORS = [
     "status": "Paid",
     "price": "~500 AC / ~$5",
     "notes": "Built to Last is the best item-recovery perk. Desperate Measures scales well. Visionary is weird and bad.",
-    "perks": []
+    "perks": [],
+    "portrait": "images/CharPortraits/Yemen/S23_FelixRichter_Portrait.png"
   },
   {
     "rank": 29,
@@ -3682,7 +13569,8 @@ const SURVIVORS = [
     "status": "Paid",
     "price": "~500 AC / ~$5",
     "notes": "Treacherous Crows may be worst perk in game. Shoulder the Burden is very high-risk but highly strong.",
-    "perks": []
+    "perks": [],
+    "portrait": "images/CharPortraits/Gelato/S45_TaurieCain_Portrait.png"
   },
   {
     "rank": 28,
@@ -3692,17 +13580,19 @@ const SURVIVORS = [
     "status": "Paid",
     "price": "~500 AC / ~$5",
     "notes": "Decent range of perks. Residual Manifest applies blindness to killers you flashlight. Small & moderate.",
-    "perks": []
+    "perks": [],
+    "portrait": "images/CharPortraits/Meteor/S31_HaddieKaur_Portrait.png"
   },
   {
     "rank": 27,
-    "name": "Aurélie Dubois",
+    "name": "Orela Rose",
     "modelSize": "Small",
     "noise": "Moderate",
     "status": "Paid",
     "price": "~500 AC / ~$5",
     "notes": "Cohesive healing/altruism set. Do No Harm scales with hook count. Duty of Care gives 25% haste on body block.",
-    "perks": []
+    "perks": [],
+    "portrait": "images/CharPortraits/Jerky/S46_OrelaRose_Portrait.png"
   },
   {
     "rank": 26,
@@ -3712,7 +13602,8 @@ const SURVIVORS = [
     "status": "Paid",
     "price": "Alien DLC ~$10",
     "notes": "Chemical Trap is her only half-decent perk. Other two are gimmicky with little effect.",
-    "perks": []
+    "perks": [],
+    "portrait": "images/CharPortraits/Wormhole/S39_EllenRipley_Portrait.png"
   },
   {
     "rank": 25,
@@ -3722,7 +13613,8 @@ const SURVIVORS = [
     "status": "Paid",
     "price": "The Walking Dead DLC ~$8",
     "notes": "Conviction (get up from dying state 30s) is unique and strong. Last Stand stuns killer on vault.",
-    "perks": []
+    "perks": [],
+    "portrait": "images/CharPortraits/Lasagna/S48_MichonneGrimes_Portrait.png"
   },
   {
     "rank": 24,
@@ -3732,7 +13624,8 @@ const SURVIVORS = [
     "status": "Paid",
     "price": "~500 AC / ~$5",
     "notes": "Head On is her best — locker stun. Solidarity transfers 70% heal to yourself. Recently buffed.",
-    "perks": []
+    "perks": [],
+    "portrait": "images/CharPortraits/Mali/S16_JaneRomero_Portrait.png"
   },
   {
     "rank": 23,
@@ -3742,7 +13635,8 @@ const SURVIVORS = [
     "status": "Paid",
     "price": "Stranger Things DLC ~$8",
     "notes": "Solid range. ESP is arguably better than Stillsight. Small model and moderate sounds.",
-    "perks": []
+    "perks": [],
+    "portrait": "images/CharPortraits/Poutine/T_UI_S51_Eleven_Portrait.png"
   },
   {
     "rank": 22,
@@ -3752,7 +13646,8 @@ const SURVIVORS = [
     "status": "Paid",
     "price": "~500 AC / ~$5",
     "notes": "Quiet (or changeable via Bellmore cosmetic). Bardic Inspiration is interesting randomiser perk.",
-    "perks": []
+    "perks": [],
+    "portrait": "images/CharPortraits/Churros/S42_TheTroupe_Portrait.png"
   },
   {
     "rank": 21,
@@ -3762,7 +13657,8 @@ const SURVIVORS = [
     "status": "Paid",
     "price": "Saw DLC ~$5-8",
     "notes": "Very quiet despite large model. Perk range is average; Detective's Hunch is handy on gen pop.",
-    "perks": []
+    "perks": [],
+    "portrait": "images/CharPortraits/Finland/S12_DetectiveDavidTapp_Portrait.png"
   },
   {
     "rank": 20,
@@ -3772,7 +13668,8 @@ const SURVIVORS = [
     "status": "Paid",
     "price": "Resident Evil DLC ~$10",
     "notes": "Good starter character perks. Flashbang is fun and practical. Bite the Bullet silences healing.",
-    "perks": []
+    "perks": [],
+    "portrait": "images/CharPortraits/Eclipse/S27_LeonSKennedy_Portrait.png"
   },
   {
     "rank": 19,
@@ -3782,7 +13679,8 @@ const SURVIVORS = [
     "status": "Paid",
     "price": "Resident Evil: PROJECT W DLC ~$10",
     "notes": "Among best for size+noise. Wiretap is surprisingly useful. Cosmetics are bright red though.",
-    "perks": []
+    "perks": [],
+    "portrait": "images/CharPortraits/Orion/S32_AdaWong_Portrait.png"
   },
   {
     "rank": 18,
@@ -3792,7 +13690,8 @@ const SURVIVORS = [
     "status": "Paid",
     "price": "~500 AC / ~$5",
     "notes": "Dead Hard possibly best perk in game; No Mither possibly worst. Best and worst in one character.",
-    "perks": []
+    "perks": [],
+    "portrait": "images/CharPortraits/DLC5/S10_DavidKing_Portrait.png"
   },
   {
     "rank": 17,
@@ -3802,7 +13701,8 @@ const SURVIVORS = [
     "status": "Free",
     "price": "Base game",
     "notes": "Bond is excellent info perk. Prove Thyself still solid. Many perks nerfed over the years.",
-    "perks": []
+    "perks": [],
+    "portrait": "images/CharPortraits/S01_DwightFairfield_Portrait.png"
   },
   {
     "rank": 16,
@@ -3812,7 +13712,8 @@ const SURVIVORS = [
     "status": "Paid",
     "price": "Stranger Things DLC ~$8",
     "notes": "Great starter character. Change of Plan and Full Circuit are both passive wins. Better Boom is fun.",
-    "perks": []
+    "perks": [],
+    "portrait": "images/CharPortraits/Poutine/T_UI_S50_DustinHenderson_Portrait.png"
   },
   {
     "rank": 15,
@@ -3822,7 +13723,8 @@ const SURVIVORS = [
     "status": "Paid",
     "price": "Resident Evil DLC ~$10",
     "notes": "Resurgence is one of the best perks in game. Small model. Practical and solid overall.",
-    "perks": []
+    "perks": [],
+    "portrait": "images/CharPortraits/Eclipse/S26_JillValentine_Portrait.png"
   },
   {
     "rank": 14,
@@ -3832,7 +13734,8 @@ const SURVIVORS = [
     "status": "Paid",
     "price": "~500 AC / ~$5",
     "notes": "Fast Track is excellent (permanent gen charges on great skill checks). Small & moderate sounds.",
-    "perks": []
+    "perks": [],
+    "portrait": "images/CharPortraits/Comet/S25_YunJinLee_Portrait.png"
   },
   {
     "rank": 13,
@@ -3842,7 +13745,8 @@ const SURVIVORS = [
     "status": "Paid",
     "price": "Stranger Things DLC ~$8",
     "notes": "Fixated + Inner Strength are both solid. Loud is the main drawback. Small model is great.",
-    "perks": []
+    "perks": [],
+    "portrait": "images/CharPortraits/Qatar/T_UI_S19_NancyWheeler_Portrait.png"
   },
   {
     "rank": 12,
@@ -3852,7 +13756,8 @@ const SURVIVORS = [
     "status": "Free",
     "price": "Base game",
     "notes": "Balanced Landing is great when maps cooperate. Small but loud. Streetwise requires chest interaction.",
-    "perks": []
+    "perks": [],
+    "portrait": "images/CharPortraits/S05_NeaKarlsson_Portrait.png"
   },
   {
     "rank": 11,
@@ -3862,7 +13767,8 @@ const SURVIVORS = [
     "status": "Paid",
     "price": "~1000 AC / ~$10",
     "notes": "Plot Twist is actually really good. Dramaturgy has 2 strong and 2 weak effects. Large but quiet.",
-    "perks": []
+    "perks": [],
+    "portrait": "images/CharPortraits/Venus/S38_NicolasCage_Portrait.png"
   },
   {
     "rank": 10,
@@ -3872,7 +13778,8 @@ const SURVIVORS = [
     "status": "Paid",
     "price": "~500 AC / ~$5",
     "notes": "Any Means Necessary (pick up pallets) is really fun and useful. Lucky Break is decent. Small & moderate.",
-    "perks": []
+    "perks": [],
+    "portrait": "images/CharPortraits/Sweden/S20_YuiKimura_Portrait.png"
   },
   {
     "rank": 9,
@@ -3882,7 +13789,8 @@ const SURVIVORS = [
     "status": "Paid",
     "price": "~500 AC / ~$5",
     "notes": "Off the Record is one of best anti-tunnel perks. For the People is niche but insane when used. Small & quiet.",
-    "perks": []
+    "perks": [],
+    "portrait": "images/CharPortraits/Ukraine/S21_ZarinaKassir_Portrait.png"
   },
   {
     "rank": 8,
@@ -3892,7 +13800,8 @@ const SURVIVORS = [
     "status": "Free",
     "price": "Base game",
     "notes": "Focused healing perks all useful. Botany Knowledge is a great flat buff. Very loud is the only drawback.",
-    "perks": []
+    "perks": [],
+    "portrait": "images/CharPortraits/S03_ClaudetteMorel_Portrait.png"
   },
   {
     "rank": 7,
@@ -3902,7 +13811,8 @@ const SURVIVORS = [
     "status": "Paid",
     "price": "~500 AC / ~$5",
     "notes": "Best boon character with two solid boons. Clairvoyance is good hatch-finder. Small & moderate.",
-    "perks": []
+    "perks": [],
+    "portrait": "images/CharPortraits/Hubble/S28_MikaelaReid_Portrait.png"
   },
   {
     "rank": 6,
@@ -3912,7 +13822,8 @@ const SURVIVORS = [
     "status": "Paid",
     "price": "Resident Evil: Requiem DLC ~$10",
     "notes": "Reassurance is incredibly valuable — pauses hook timer. Small and quiet. Great overall stats.",
-    "perks": []
+    "perks": [],
+    "portrait": "images/CharPortraits/Orion/S33_RebeccaChambers_Portrait.png"
   },
   {
     "rank": 5,
@@ -3922,7 +13833,8 @@ const SURVIVORS = [
     "status": "Paid",
     "price": "~500 AC / ~$5",
     "notes": "Lithe and Alert are both meta-level perks. Very loud is the only downside. Small model.",
-    "perks": []
+    "perks": [],
+    "portrait": "images/CharPortraits/DLC4/S09_FengMin_Portrait.png"
   },
   {
     "rank": 4,
@@ -3932,7 +13844,8 @@ const SURVIVORS = [
     "status": "Paid",
     "price": "~500 AC / ~$5",
     "notes": "Windows of Opportunity is one of the most popular perks in game. Small and quiet — great stats.",
-    "perks": []
+    "perks": [],
+    "portrait": "images/CharPortraits/Guam/S13_KateDenson_Portrait.png"
   },
   {
     "rank": 3,
@@ -3942,7 +13855,8 @@ const SURVIVORS = [
     "status": "Paid",
     "price": "Tomb Raider DLC ~$10",
     "notes": "Finesse is one of the best chase perks. Very quiet. Other two perks suffer from chest-based activations.",
-    "perks": []
+    "perks": [],
+    "portrait": "images/CharPortraits/Donut/S43_LaraCroft_Portrait.png"
   },
   {
     "rank": 2,
@@ -3952,7 +13866,8 @@ const SURVIVORS = [
     "status": "Paid",
     "price": "~500 AC / ~$5",
     "notes": "Five Moves Ahead rivals Windows of Opportunity. Very quiet despite large model. Flow State scales passively.",
-    "perks": []
+    "perks": [],
+    "portrait": "images/CharPortraits/Quiche/T_UI_S52_KwonTaeYoung_Portrait.png"
   },
   {
     "rank": 1,
@@ -3962,7 +13877,8 @@ const SURVIVORS = [
     "status": "Free",
     "price": "Base game",
     "notes": "Sprint Burst and Adrenaline are both debatably meta forever. Best perk offering in game. Free starter.",
-    "perks": []
+    "perks": [],
+    "portrait": "images/CharPortraits/S02_MegThomas_Portrait.png"
   }
 ];
 
@@ -3999,7 +13915,7 @@ const BUILDS = [
   },
   {
     "name": "Locker Assassin",
-    "perks": "Head On + Quick & Quiet + Flash Grenade",
+    "perks": "Head On + Quick & Quiet + Flashbang",
     "strategy": "Quick & Quiet silences your locker entry. Head On stuns from inside. Flash Grenade thrown at feet blinds the stunned killer. Chain for maximum disruption and escape."
   },
   {
@@ -4081,10 +13997,10 @@ const CHAR_VALUE = [
     "name": "Base game (all)",
     "status": "Free",
     "price": "",
-    "perkCount": 13,
-    "tierScore": 33,
+    "perkCount": 12,
+    "tierScore": 32,
     "synergyScore": 33,
-    "totalScore": 66,
+    "totalScore": 65,
     "bestPerk": "Slippery Meat",
     "bestTier": "Excellent",
     "perks": [
@@ -4183,55 +14099,9 @@ const CHAR_VALUE = [
         "tierScore": 1,
         "synergyCount": 0,
         "category": "Information"
-      },
-      {
-        "id": 130,
-        "name": "Situation Awareness",
-        "tier": "Weak/Niche",
-        "tierScore": 1,
-        "synergyCount": 0,
-        "category": "Information"
       }
     ],
     "rank": 0
-  },
-  {
-    "name": "Claudette Morel",
-    "status": "Free",
-    "price": "Base game",
-    "perkCount": 3,
-    "tierScore": 9,
-    "synergyScore": 22,
-    "totalScore": 31,
-    "bestPerk": "Botany Knowledge",
-    "bestTier": "Decent",
-    "perks": [
-      {
-        "id": 29,
-        "name": "Botany Knowledge",
-        "tier": "Decent",
-        "tierScore": 3,
-        "synergyCount": 10,
-        "category": "Healing"
-      },
-      {
-        "id": 40,
-        "name": "Empathy",
-        "tier": "Decent",
-        "tierScore": 3,
-        "synergyCount": 8,
-        "category": "Information"
-      },
-      {
-        "id": 64,
-        "name": "Self-Care",
-        "tier": "Decent",
-        "tierScore": 3,
-        "synergyCount": 4,
-        "category": "Healing"
-      }
-    ],
-    "rank": 1
   },
   {
     "name": "Meg Thomas",
@@ -4267,6 +14137,44 @@ const CHAR_VALUE = [
         "tierScore": 1,
         "synergyCount": 8,
         "category": "Stealth"
+      }
+    ],
+    "rank": 1
+  },
+  {
+    "name": "Claudette Morel",
+    "status": "Free",
+    "price": "Base game",
+    "perkCount": 3,
+    "tierScore": 9,
+    "synergyScore": 21,
+    "totalScore": 30,
+    "bestPerk": "Botany Knowledge",
+    "bestTier": "Decent",
+    "perks": [
+      {
+        "id": 29,
+        "name": "Botany Knowledge",
+        "tier": "Decent",
+        "tierScore": 3,
+        "synergyCount": 10,
+        "category": "Healing"
+      },
+      {
+        "id": 40,
+        "name": "Empathy",
+        "tier": "Decent",
+        "tierScore": 3,
+        "synergyCount": 7,
+        "category": "Information"
+      },
+      {
+        "id": 64,
+        "name": "Self-Care",
+        "tier": "Decent",
+        "tierScore": 3,
+        "synergyCount": 4,
+        "category": "Healing"
       }
     ],
     "rank": 2
@@ -4429,8 +14337,8 @@ const CHAR_VALUE = [
     "price": "Base game",
     "perkCount": 3,
     "tierScore": 5,
-    "synergyScore": 15,
-    "totalScore": 20,
+    "synergyScore": 14,
+    "totalScore": 19,
     "bestPerk": "Prove Thyself",
     "bestTier": "Decent",
     "perks": [
@@ -4447,7 +14355,7 @@ const CHAR_VALUE = [
         "name": "Bond",
         "tier": "Weak/Niche",
         "tierScore": 1,
-        "synergyCount": 4,
+        "synergyCount": 3,
         "category": "Information"
       },
       {
@@ -5260,6 +15168,44 @@ const CHAR_VALUE = [
     "rank": 28
   },
   {
+    "name": "Leon S. Kennedy",
+    "status": "Paid",
+    "price": "Resident Evil DLC ~$10",
+    "perkCount": 3,
+    "tierScore": 5,
+    "synergyScore": 3,
+    "totalScore": 8,
+    "bestPerk": "Flashbang",
+    "bestTier": "Decent",
+    "perks": [
+      {
+        "id": 43,
+        "name": "Flashbang",
+        "tier": "Decent",
+        "tierScore": 3,
+        "synergyCount": 3,
+        "category": "Chase/Stun"
+      },
+      {
+        "id": 82,
+        "name": "Bite the Bullet",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "synergyCount": 0,
+        "category": "Healing/Stealth"
+      },
+      {
+        "id": 127,
+        "name": "Rookie Spirit",
+        "tier": "Weak/Niche",
+        "tierScore": 1,
+        "synergyCount": 0,
+        "category": "Information"
+      }
+    ],
+    "rank": 29
+  },
+  {
     "name": "Gabriel Soma",
     "status": "Paid",
     "price": "~500 AC / ~$5",
@@ -5295,7 +15241,7 @@ const CHAR_VALUE = [
         "category": "Item Recycle"
       }
     ],
-    "rank": 29
+    "rank": 30
   },
   {
     "name": "Zarina Kassir",
@@ -5333,7 +15279,7 @@ const CHAR_VALUE = [
         "category": "Distraction"
       }
     ],
-    "rank": 30
+    "rank": 31
   },
   {
     "name": "V (Bovine Yak)",
@@ -5371,7 +15317,7 @@ const CHAR_VALUE = [
         "category": "Healing"
       }
     ],
-    "rank": 31
+    "rank": 32
   },
   {
     "name": "Detective Tapp",
@@ -5409,7 +15355,7 @@ const CHAR_VALUE = [
         "category": "Information"
       }
     ],
-    "rank": 32
+    "rank": 33
   },
   {
     "name": "Alan Wake",
@@ -5445,44 +15391,6 @@ const CHAR_VALUE = [
         "tierScore": 0,
         "synergyCount": 2,
         "category": "Skill Checks"
-      }
-    ],
-    "rank": 33
-  },
-  {
-    "name": "Leon S. Kennedy",
-    "status": "Paid",
-    "price": "Resident Evil DLC ~$10",
-    "perkCount": 3,
-    "tierScore": 5,
-    "synergyScore": 2,
-    "totalScore": 7,
-    "bestPerk": "Flashbang",
-    "bestTier": "Decent",
-    "perks": [
-      {
-        "id": 43,
-        "name": "Flashbang",
-        "tier": "Decent",
-        "tierScore": 3,
-        "synergyCount": 2,
-        "category": "Chase/Stun"
-      },
-      {
-        "id": 82,
-        "name": "Bite the Bullet",
-        "tier": "Weak/Niche",
-        "tierScore": 1,
-        "synergyCount": 0,
-        "category": "Healing/Stealth"
-      },
-      {
-        "id": 127,
-        "name": "Rookie Spirit",
-        "tier": "Weak/Niche",
-        "tierScore": 1,
-        "synergyCount": 0,
-        "category": "Information"
       }
     ],
     "rank": 34
@@ -5716,7 +15624,7 @@ const CHAR_VALUE = [
     "rank": 40
   },
   {
-    "name": "Aurélie Dubois",
+    "name": "Orela Rose",
     "status": "Paid",
     "price": "~500 AC / ~$5",
     "perkCount": 3,
@@ -5744,7 +15652,7 @@ const CHAR_VALUE = [
       },
       {
         "id": 136,
-        "name": "Stamina",
+        "name": "Rapid Response",
         "tier": "Weak/Niche",
         "tierScore": 1,
         "synergyCount": 0,
